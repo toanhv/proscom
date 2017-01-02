@@ -31,7 +31,7 @@ define('TIMER_COUNTER_HEADER', '0000001100000100');
 #Kiểm tra chế độ hoạt động của module
 define('CHECK_SYSTEM_MODE_HEADER', '10000100');
 #Kiểm tra chế độ hoạt động của tải
-define('CHECK_OUTPUT_MODE_HEADER', '10000100');
+define('CHECK_OUTPUT_MODE_HEADER', '10000101');
 #Kiểm tra giá trị ngưỡng đang cài đặt ở Module
 define('CHECK_PARAMETER_HEADER', '10000110');
 #Kiểm tra giá TIMER và COUNTER đang  cài đặt ở Module
