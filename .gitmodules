@@ -1,3 +1,0 @@
-[submodule "socket/proscom_socket"]
-	path = socket/proscom_socket
-	url = ../proscom_socket.git
