@@ -6,7 +6,7 @@ return [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=124.158.12.89;dbname=proscom',
             'username' => 'proscom',
-            'password' => 'proscom@123',
+            'password' => 'proscom@123312##',
             'charset' => 'utf8',
             'enableSchemaCache' => true,
             'schemaCacheDuration' => 3600,
