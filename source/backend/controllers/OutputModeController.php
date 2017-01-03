@@ -107,6 +107,9 @@ class OutputModeController extends AppController {
                 if ($values['OutputMode']['convection_pump']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['convection_pump']['mode'] = MANUAL_B2;
                 }
+                if ($values['OutputMode']['convection_pump']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['convection_pump']['mode'] = MANUAL_B12;
+                }
             }
             $model->convection_pump = $values['OutputMode']['convection_pump']['mode'] . $convectionPumptime;
             //cwsp_pump - Bơm cấp nước lạnh
@@ -118,6 +121,9 @@ class OutputModeController extends AppController {
             } elseif ($values['OutputMode']['cwsp_pump']['mode'] == MANUAL_B1) {
                 if ($values['OutputMode']['cwsp_pump']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['cwsp_pump']['mode'] = MANUAL_B2;
+                }
+                if ($values['OutputMode']['cwsp_pump']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['cwsp_pump']['mode'] = MANUAL_B12;
                 }
             }
             $model->cold_water_supply_pump = $values['OutputMode']['cwsp_pump']['mode'] . $cwspPumptime;
@@ -131,6 +137,9 @@ class OutputModeController extends AppController {
                 if ($values['OutputMode']['return_pump']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['return_pump']['mode'] = MANUAL_B2;
                 }
+                if ($values['OutputMode']['return_pump']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['return_pump']['mode'] = MANUAL_B12;
+                }
             }
             $model->return_pump = $values['OutputMode']['return_pump']['mode'] . $returnPumptime;
             //pressure_pump - Bơm tăng áp
@@ -142,6 +151,9 @@ class OutputModeController extends AppController {
             } elseif ($values['OutputMode']['pressure_pump']['mode'] == MANUAL_B1) {
                 if ($values['OutputMode']['pressure_pump']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['pressure_pump']['mode'] = MANUAL_B2;
+                }
+                if ($values['OutputMode']['pressure_pump']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['pressure_pump']['mode'] = MANUAL_B12;
                 }
             }
             $model->incresed_pressure_pump = $values['OutputMode']['pressure_pump']['mode'] . $pressurePumptime;
@@ -155,6 +167,9 @@ class OutputModeController extends AppController {
                 if ($values['OutputMode']['heat_pump']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['heat_pump']['mode'] = MANUAL_B2;
                 }
+                if ($values['OutputMode']['heat_pump']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['heat_pump']['mode'] = MANUAL_B12;
+                }
             }
             $model->heat_pump = $values['OutputMode']['heat_pump']['mode'] . BACKUP;
             //heater_resis - Điện trở nhiệt bồn gia nhiệt
@@ -166,6 +181,9 @@ class OutputModeController extends AppController {
             } elseif ($values['OutputMode']['heater_resis']['mode'] == MANUAL_B1) {
                 if ($values['OutputMode']['heater_resis']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['heater_resis']['mode'] = MANUAL_B2;
+                }
+                if ($values['OutputMode']['heater_resis']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['heater_resis']['mode'] = MANUAL_B12;
                 }
             }
             $model->heater_resister = $values['OutputMode']['heater_resis']['mode'] . '00000000' . $heaterResisPumptime;
@@ -179,6 +197,9 @@ class OutputModeController extends AppController {
                 if ($values['OutputMode']['3way']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['3way']['mode'] = MANUAL_B2;
                 }
+                if ($values['OutputMode']['3way']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['3way']['mode'] = MANUAL_B12;
+                }
             }
             $model->three_way_valve = $values['OutputMode']['3way']['mode'] . BACKUP;
             //blakflow - Van một chiều
@@ -191,22 +212,12 @@ class OutputModeController extends AppController {
                 if ($values['OutputMode']['blakflow']['pump'] == PUMP_MASTER) {
                     $values['OutputMode']['blakflow']['mode'] = MANUAL_B2;
                 }
+                if ($values['OutputMode']['blakflow']['pump'] == PUMP_ALL) {
+                    $values['OutputMode']['blakflow']['mode'] = MANUAL_B12;
+                }
             }
             $model->backflow_valve = $values['OutputMode']['blakflow']['mode'] . BACKUP;
-            //reserved
-            /**
-              if ($values['OutputMode']['reserved']['mode'] == AUTO_B1) {
-              if ($values['OutputMode']['reserved']['pump'] == PUMP_MASTER) {
-              $values['OutputMode']['reserved']['mode'] = AUTO_B2;
-              }
-              } elseif ($values['OutputMode']['reserved']['mode'] == MANUAL_B1) {
-              if ($values['OutputMode']['reserved']['pump'] == PUMP_MASTER) {
-              $values['OutputMode']['reserved']['mode'] = MANUAL_B2;
-              }
-              }
-              $model->reserved = $values['OutputMode']['reserved']['mode'] . Socket::alldec2bin($values['OutputMode']['reserved']['time'], 8);
-             * 
-             */
+
             if ($model->save(false)) {
                 if ($model->toClient()) {
                     $model->OperationLog();
