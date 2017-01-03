@@ -248,6 +248,11 @@ AppAsset::register($this);
         <!-- END FOOTER -->
         <?php $this->endBody() ?>
         <script>
+            var MANUAL_B1 = '<?php echo MANUAL_B1; ?>';
+            var MANUAL_B2 = '<?php echo MANUAL_B2; ?>';
+            var MANUAL_B12 = '<?php echo MANUAL_B12; ?>';
+            var AUTO_B1 = '<?php echo AUTO_B1; ?>';
+            var AUTO_B2 = '<?php echo AUTO_B2; ?>';
             jQuery(document).ready(function () {
                 Metronic.init(); // init metronic core components
                 Layout.init(); // init current layout

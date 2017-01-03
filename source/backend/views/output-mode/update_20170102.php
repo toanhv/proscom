@@ -17,7 +17,12 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <form id="update-output-mode" method="post" action="/output-mode/update?id=<?php echo $model->id ?>">
+    <!-- <?=
+    $this->render('_form', [
+        'model' => $model,
+    ])
+    ?> -->
+    <form id="update-output-mode" method="post" action="/index.php/output-mode/update?id=<?php echo $model->id ?>">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
         <div class="params">
             <div class="border row row100">
@@ -492,74 +497,64 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                 </div>
             </div>
 
-            <!--            <div class="border row row100">
-                            <div class="row20 params-left padding10">
-                                Reserved
-                            </div>
-                            <input type="hidden" id="reserved_mode" name="OutputMode[reserved][mode]" value="<?php echo $model->getReservedMode() ?>">
-                            <input type="hidden" id="reserved_pump" name="OutputMode[reserved][pump]" value="<?php echo $model->getReservedPump() ?>">
-                            <input type="hidden" id="reserved_time" name="OutputMode[reserved][time]" value="<?php echo $model->getReservedTime() ?>">
-                                    <div class="row80 params-right border-left">
-                                        <div class="row50 border-right">
-                                            <ul class="mode-select">
-                                                <li class="row50" id="loadmode-33">
-                                                    <span id="reserved_auto" onclick="setPumpMode('reserved', '
-            <?php echo AUTO_B1 ?>')" class="<?php
-            if ($model->getReservedMode() ==
-                    AUTO_B1)
-                echo 'active';
-            else
-                echo '';
-            ?>">Auto</span>
-                                        </li>
-                                        <li class="row50 border-left" id="loadmode-34">
-                                            <span id="reserved_slave" onclick="setPumpPump('reserved', '<?php echo PUMP_SLAVE ?>')" class="<?php
-            if ($model->getReservedPump() == PUMP_ALL || $model->
-                            getReservedPump() == PUMP_SLAVE)
-                echo 'active';
-            else
-                echo '';
-            ?>">Valve 1 Master</span>
-                                        </li>
-                                        <li class="row50 border-top" id="loadmode-35">
-                                            <span id="reserved_manual" onclick="setPumpMode('reserved', '<?php echo MANUAL_B1 ?>')" class="<?php
-            if ($model->getReservedMode() == MANUAL_B1)
-                echo 'active';
-            else
-                echo '';
-            ?>">Manual</span>
-                                        </li>
-                                        <li class="row50 border-left border-top" id="loadmode-36">
-                                            <
-                span id="reserved_master" onclick="setPumpPump('reserved', '<?php echo PUMP_MASTER ?>')" class="<?php
-            if ($model->getReservedPump() == PUMP_ALL || $model->getReservedPump() == PUMP_MASTER)
-                echo 'active';
-            else
-                echo '';
-            ?>
-                ">Valve 2 Master</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="row50 padding10">
-                                    <p>Time wait for master Valve</p>
-                                    <
-                select class="form-control row80" id="reserved_select" onchange="changePumpTime('reserved')" <?php if ($model->getReservedMode() == MANUAL_B1) echo 'disabled' ?>>
-                                                <option <?ph
-                p if ($model->getReservedTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                          
-                                      <option <?php if ($model->getReservedTime() == 1) echo 'selected="selected"'; ?>>1</option>
-              
-                                                  <option <?php if ($model->getReservedTime() == 2) echo 'selected="selected"'; ?>>2</option>
-  
-                                                              <option <?php if ($model->getReservedTime() == 3) echo 'selected="selected "'; ?>>3</option>
-                                        <option <?php if ($model->getReservedTime() == 4) echo 'select ed="selected"'; ?>>4</option>
-                                        <option <?php if ($model->getReservedTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                                    </select>
-                                    <span class="row20">min</span>
-                                </div>
-                            </div>
-                        </div>-->
+            <div class="border row row100">
+                <div class="row20 params-left padding10">
+                    Reserved
+                </div>
+                <input type="hidden" id="reserved_mode" name="OutputMode[reserved][mode]" value="<?php echo $model->getReservedMode() ?>">
+                <input type="hidden" id="reserved_pump" name="OutputMode[reserved][pump]" value="<?php echo $model->getReservedPump() ?>">
+                <input type="hidden" id="reserved_time" name="OutputMode[reserved][time]" value="<?php echo $model->getReservedTime() ?>">
+                <div class="row80 params-right border-left">
+                    <div class="row50 border-right">
+                        <ul class="mode-select">
+                            <li class="row50" id="loadmode-33">
+                                <span id="reserved_auto" onclick="setPumpMode('reserved', '<?php echo AUTO_B1 ?>')" class="<?php
+                                if ($model->getReservedMode() == AUTO_B1)
+                                    echo 'active';
+                                else
+                                    echo '';
+                                ?>">Auto</span>
+                            </li>
+                            <li class="row50 border-left" id="loadmode-34">
+                                <span id="reserved_slave" onclick="setPumpPump('reserved', '<?php echo PUMP_SLAVE ?>')" class="<?php
+                                if ($model->getReservedPump() == PUMP_ALL || $model->getReservedPump() == PUMP_SLAVE)
+                                    echo 'active';
+                                else
+                                    echo '';
+                                ?>">Valve 1 Master</span>
+                            </li>
+                            <li class="row50 border-top" id="loadmode-35">
+                                <span id="reserved_manual" onclick="setPumpMode('reserved', '<?php echo MANUAL_B1 ?>')" class="<?php
+                                if ($model->getReservedMode() == MANUAL_B1)
+                                    echo 'active';
+                                else
+                                    echo '';
+                                ?>">Manual</span>
+                            </li>
+                            <li class="row50 border-left border-top" id="loadmode-36">
+                                <span id="reserved_master" onclick="setPumpPump('reserved', '<?php echo PUMP_MASTER ?>')" class="<?php
+                                if ($model->getReservedPump() == PUMP_ALL || $model->getReservedPump() == PUMP_MASTER)
+                                    echo 'active';
+                                else
+                                    echo '';
+                                ?>">Valve 2 Master</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row50 padding10">
+                        <p>Time wait for master Valve</p>
+                        <select class="form-control row80" id="reserved_select" onchange="changePumpTime('reserved')" <?php if ($model->getReservedMode() == MANUAL_B1) echo 'disabled' ?>>
+                            <option <?php if ($model->getReservedTime() == 0) echo 'selected="selected"'; ?>>0</option>
+                            <option <?php if ($model->getReservedTime() == 1) echo 'selected="selected"'; ?>>1</option>
+                            <option <?php if ($model->getReservedTime() == 2) echo 'selected="selected"'; ?>>2</option>
+                            <option <?php if ($model->getReservedTime() == 3) echo 'selected="selected"'; ?>>3</option>
+                            <option <?php if ($model->getReservedTime() == 4) echo 'selected="selected"'; ?>>4</option>
+                            <option <?php if ($model->getReservedTime() == 5) echo 'selected="selected"'; ?>>5</option>
+                        </select>
+                        <span class="row20">min</span>
+                    </div>
+                </div>
+            </div>
             <div class="row100" style="text-align:center">
                 <input type="submit" value="Save and Send" class="btn btn-primary"/>
                 <!-- <input type="button" class="btn btn-primary" value="Send to Module" /> -->

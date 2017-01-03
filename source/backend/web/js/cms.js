@@ -88,8 +88,6 @@ function setPumpPump(id, val) {
         }
     } else {
         $('#' + id + '_pump').val(val);
-        //  $('#'+id+'_master').removeClass("active");
-        //  $('#'+id+'_slave').removeClass("active");
         if (val == '00000000') {
             $("#" + id + "_master").removeClass("active");
         } else {

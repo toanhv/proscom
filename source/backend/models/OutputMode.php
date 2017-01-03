@@ -31,11 +31,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getConvectionPump() {
-        return substr($this->convection_pump, 8, 8);
+        $pump = '';
+        switch ($this->getConvectionMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getConvectionTime() {
-        $bin = substr($this->convection_pump, 16, 8);
+        $bin = substr($this->convection_pump, 8, 8);
         return bindec($bin);
     }
 
@@ -44,11 +58,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getCwspPump() {
-        return substr($this->cold_water_supply_pump, 8, 8);
+        $pump = '';
+        switch ($this->getCwspMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getCwspTime() {
-        $bin = substr($this->cold_water_supply_pump, 16, 8);
+        $bin = substr($this->cold_water_supply_pump, 8, 8);
         return bindec($bin);
     }
 
@@ -57,11 +85,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getReturnPumpPump() {
-        return substr($this->return_pump, 8, 8);
+        $pump = '';
+        switch ($this->getReturnPumpMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getReturnPumpTime() {
-        $bin = substr($this->return_pump, 16, 8);
+        $bin = substr($this->return_pump, 8, 8);
         return bindec($bin);
     }
 
@@ -70,11 +112,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getPressurePumpPump() {
-        return substr($this->incresed_pressure_pump, 8, 8);
+        $pump = '';
+        switch ($this->getPressurePumpMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getPressurePumpTime() {
-        $bin = substr($this->incresed_pressure_pump, 16, 8);
+        $bin = substr($this->incresed_pressure_pump, 8, 8);
         return bindec($bin);
     }
 
@@ -83,11 +139,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getHeatPumpPump() {
-        return substr($this->heat_pump, 8, 8);
+        $pump = '';
+        switch ($this->getHeatPumpMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getHeatPumpTime() {
-        $bin = substr($this->heat_pump, 16, 8);
+        $bin = substr($this->heat_pump, 8, 8);
         return bindec($bin);
     }
 
@@ -96,11 +166,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getHeaterResisPump() {
-        return substr($this->heater_resister, 8, 8);
+        $pump = '';
+        switch ($this->getHeaterResisMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getHeaterResisTime() {
-        $bin = substr($this->heater_resister, 16, 8);
+        $bin = substr($this->heater_resister, 8, 8);
         return bindec($bin);
     }
 
@@ -109,11 +193,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function get3wayPump() {
-        return substr($this->three_way_valve, 8, 8);
+        $pump = '';
+        switch ($this->get3wayMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function get3wayTime() {
-        $bin = substr($this->three_way_valve, 16, 8);
+        $bin = substr($this->three_way_valve, 8, 8);
         return bindec($bin);
     }
 
@@ -122,11 +220,25 @@ class OutputMode extends OutputModeBase {
     }
 
     public function getBlakflowPump() {
-        return substr($this->backflow_valve, 8, 8);
+        $pump = '';
+        switch ($this->getBlakflowMode()) {
+            case AUTO_B1:
+            case MANUAL_B1:
+                $pump = PUMP_SLAVE;
+                break;
+            case AUTO_B2:
+            case MANUAL_B2:
+                $pump = PUMP_MASTER;
+                break;
+            case MANUAL_B12:
+                $pump = PUMP_ALL;
+                break;
+        }
+        return $pump;
     }
 
     public function getBlakflowTime() {
-        $bin = substr($this->backflow_valve, 16, 8);
+        $bin = substr($this->backflow_valve, 8, 8);
         return bindec($bin);
     }
 
