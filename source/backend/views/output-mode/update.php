@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-1">
                                 <span id="convection_pump_auto" onclick="setPumpMode('convection_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getConvectionMode() == AUTO_B1)
+                                if (in_array($model->getConvectionMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                 ?>">Pump 1 Slave</span>
                             </li>
                             <li class="row50 border-top <?php
-                            if ($model->getConvectionMode() == MANUAL_B1)
+                            if (in_array($model->getConvectionMode(), [MANUAL_B1, MANUAL_B2]))
                                 echo 'active';
                             else
                                 echo '';
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-5">
                                 <span id="cwsp_pump_auto" onclick="setPumpMode('cwsp_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getCwspMode() == AUTO_B1)
+                                if (in_array($model->getCwspMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -107,7 +107,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-7">
                                 <span id="cwsp_pump_manual" onclick="setPumpMode('cwsp_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->getCwspMode() == MANUAL_B1)
+                                if (in_array($model->getCwspMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -150,7 +150,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-9">
                                 <span id="return_pump_auto" onclick="setPumpMode('return_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getReturnPumpMode() == AUTO_B1)
+                                if (in_array($model->getReturnPumpMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -166,7 +166,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-11">
                                 <span id="return_pump_manual" onclick="setPumpMode('return_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->getReturnPumpMode() == MANUAL_B1)
+                                if (in_array($model->getReturnPumpMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -209,7 +209,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-13">
                                 <span id="pressure_pump_auto" onclick="setPumpMode('pressure_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getPressurePumpMode() == AUTO_B1)
+                                if (in_array($model->getPressurePumpMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -225,7 +225,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-15">
                                 <span id="pressure_pump_manual" onclick="setPumpMode('pressure_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->getPressurePumpMode() == MANUAL_B1)
+                                if (in_array($model->getPressurePumpMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -268,7 +268,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-17">
                                 <span id="heat_pump_auto" onclick="setPumpMode('heat_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getHeatPumpMode() == AUTO_B1)
+                                if (in_array($model->getHeatPumpMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -284,7 +284,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-19">
                                 <span id="heat_pump_manual" onclick="setPumpMode('heat_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->getHeatPumpMode() == MANUAL_B1)
+                                if (in_array($model->getHeatPumpMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -327,7 +327,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-21">
                                 <span id="heater_resis_auto" onclick="setPumpMode('heater_resis', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getHeaterResisMode() == AUTO_B1)
+                                if (in_array($model->getHeaterResisMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -343,7 +343,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-23">
                                 <span id="heater_resis_manual" onclick="setPumpMode('heater_resis', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->getHeaterResisMode() == MANUAL_B1)
+                                if (in_array($model->getHeaterResisMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -386,7 +386,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-25">
                                 <span id="3way_auto" onclick="setPumpMode('3way', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->get3wayMode() == AUTO_B1)
+                                if (in_array($model->get3wayMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -402,7 +402,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-27">
                                 <span id="3way_manual" onclick="setPumpMode('3way', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->get3wayMode() == MANUAL_B1)
+                                if (in_array($model->get3wayMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -445,7 +445,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <ul class="mode-select">
                             <li class="row50" id="loadmode-29">
                                 <span id="3blakflow_auto" onclick="setPumpMode('blakflow', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if ($model->getBlakflowMode() == AUTO_B1)
+                                if (in_array($model->getBlakflowMode(), [AUTO_B1, AUTO_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -461,7 +461,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-31">
                                 <span id="blakflow_manual" onclick="setPumpMode('blakflow', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if ($model->getBlakflowMode() == MANUAL_B1)
+                                if (in_array($model->getBlakflowMode(), [MANUAL_B1, MANUAL_B2]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -491,79 +491,9 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                     </div>
                 </div>
             </div>
-
-            <!--            <div class="border row row100">
-                            <div class="row20 params-left padding10">
-                                Reserved
-                            </div>
-                            <input type="hidden" id="reserved_mode" name="OutputMode[reserved][mode]" value="<?php echo $model->getReservedMode() ?>">
-                            <input type="hidden" id="reserved_pump" name="OutputMode[reserved][pump]" value="<?php echo $model->getReservedPump() ?>">
-                            <input type="hidden" id="reserved_time" name="OutputMode[reserved][time]" value="<?php echo $model->getReservedTime() ?>">
-                                    <div class="row80 params-right border-left">
-                                        <div class="row50 border-right">
-                                            <ul class="mode-select">
-                                                <li class="row50" id="loadmode-33">
-                                                    <span id="reserved_auto" onclick="setPumpMode('reserved', '
-            <?php echo AUTO_B1 ?>')" class="<?php
-            if ($model->getReservedMode() ==
-                    AUTO_B1)
-                echo 'active';
-            else
-                echo '';
-            ?>">Auto</span>
-                                        </li>
-                                        <li class="row50 border-left" id="loadmode-34">
-                                            <span id="reserved_slave" onclick="setPumpPump('reserved', '<?php echo PUMP_SLAVE ?>')" class="<?php
-            if ($model->getReservedPump() == PUMP_ALL || $model->
-                            getReservedPump() == PUMP_SLAVE)
-                echo 'active';
-            else
-                echo '';
-            ?>">Valve 1 Master</span>
-                                        </li>
-                                        <li class="row50 border-top" id="loadmode-35">
-                                            <span id="reserved_manual" onclick="setPumpMode('reserved', '<?php echo MANUAL_B1 ?>')" class="<?php
-            if ($model->getReservedMode() == MANUAL_B1)
-                echo 'active';
-            else
-                echo '';
-            ?>">Manual</span>
-                                        </li>
-                                        <li class="row50 border-left border-top" id="loadmode-36">
-                                            <
-                span id="reserved_master" onclick="setPumpPump('reserved', '<?php echo PUMP_MASTER ?>')" class="<?php
-            if ($model->getReservedPump() == PUMP_ALL || $model->getReservedPump() == PUMP_MASTER)
-                echo 'active';
-            else
-                echo '';
-            ?>
-                ">Valve 2 Master</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="row50 padding10">
-                                    <p>Time wait for master Valve</p>
-                                    <
-                select class="form-control row80" id="reserved_select" onchange="changePumpTime('reserved')" <?php if ($model->getReservedMode() == MANUAL_B1) echo 'disabled' ?>>
-                                                <option <?ph
-                p if ($model->getReservedTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                          
-                                      <option <?php if ($model->getReservedTime() == 1) echo 'selected="selected"'; ?>>1</option>
-              
-                                                  <option <?php if ($model->getReservedTime() == 2) echo 'selected="selected"'; ?>>2</option>
-  
-                                                              <option <?php if ($model->getReservedTime() == 3) echo 'selected="selected "'; ?>>3</option>
-                                        <option <?php if ($model->getReservedTime() == 4) echo 'select ed="selected"'; ?>>4</option>
-                                        <option <?php if ($model->getReservedTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                                    </select>
-                                    <span class="row20">min</span>
-                                </div>
-                            </div>
-                        </div>-->
             <div class="row100" style="text-align:center">
                 <input type="submit" value="Save and Send" class="btn btn-primary"/>
-                <!-- <input type="button" class="btn btn-primary" value="Send to Module" /> -->
-                <a href="/modules/view?id=<?php echo $model->module->id ?>" class="btn btn-primary">Cancel</a>
+                <a href="/modules/view?id=<?php echo $model->module->id; ?>" class="btn btn-primary">Cancel</a>
             </div>
         </div>
 
