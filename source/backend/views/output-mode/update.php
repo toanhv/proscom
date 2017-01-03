@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                 ?>">Pump 1 Slave</span>
                             </li>
                             <li class="row50 border-top <?php
-                            if (in_array($model->getConvectionMode(), [MANUAL_B1, MANUAL_B2]))
+                            if (in_array($model->getConvectionMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                 echo 'active';
                             else
                                 echo '';
@@ -107,7 +107,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-7">
                                 <span id="cwsp_pump_manual" onclick="setPumpMode('cwsp_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getCwspMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->getCwspMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -166,7 +166,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-11">
                                 <span id="return_pump_manual" onclick="setPumpMode('return_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getReturnPumpMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->getReturnPumpMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -225,7 +225,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-15">
                                 <span id="pressure_pump_manual" onclick="setPumpMode('pressure_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getPressurePumpMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->getPressurePumpMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -284,7 +284,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-19">
                                 <span id="heat_pump_manual" onclick="setPumpMode('heat_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getHeatPumpMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->getHeatPumpMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -343,7 +343,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-23">
                                 <span id="heater_resis_manual" onclick="setPumpMode('heater_resis', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getHeaterResisMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->getHeaterResisMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -402,7 +402,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-27">
                                 <span id="3way_manual" onclick="setPumpMode('3way', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->get3wayMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->get3wayMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
@@ -461,7 +461,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             </li>
                             <li class="row50 border-top" id="loadmode-31">
                                 <span id="blakflow_manual" onclick="setPumpMode('blakflow', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getBlakflowMode(), [MANUAL_B1, MANUAL_B2]))
+                                if (in_array($model->getBlakflowMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
                                     echo 'active';
                                 else
                                     echo '';
