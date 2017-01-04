@@ -188,35 +188,9 @@ class OutputModeController extends AppController {
             }
             $model->heater_resister = $values['OutputMode']['heater_resis']['mode'] . '00000000' . $heaterResisPumptime;
             //3way - Van ba ngả
-            //$twayPumptime = Socket::alldec2bin($values['OutputMode']['3way']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['3way']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['3way']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['3way']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['3way']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['3way']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['3way']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['3way']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['3way']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->three_way_valve = $values['OutputMode']['3way']['mode'] . BACKUP;
+            $model->three_way_valve = BACKUP . BACKUP;
             //blakflow - Van một chiều
-            //$blakflowPumptime = Socket::alldec2bin($values['OutputMode']['blakflow']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['blakflow']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['blakflow']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['blakflow']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['blakflow']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['blakflow']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['blakflow']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['blakflow']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['blakflow']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->backflow_valve = $values['OutputMode']['blakflow']['mode'] . BACKUP;
+            $model->backflow_valve = BACKUP . BACKUP;
 
             if ($model->save(false)) {
                 if ($model->toClient()) {
