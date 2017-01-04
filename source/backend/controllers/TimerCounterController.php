@@ -49,7 +49,7 @@ class TimerCounterController extends AppController {
         if ($_GET['reload'] == 'true') {
             $module->checkTimerCounter();
             sleep(TIME_OUT_REFRESH);
-            return $this->redirect(['view', 'id' => $id]);
+            return $this->redirect(['home']);
         }
 
         return $this->render('view', [
