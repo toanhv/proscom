@@ -22,42 +22,42 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Convection Pump',
                 'format' => 'html',
-                'value' => $model->getConvectionTemp(),
+                'value' => $model->getConvectionTemp() . ' &deg;C',
             ],
             [
                 'label' => 'Cold Water Supply Pump',
                 'format' => 'html',
-                'value' => 'Water level M1: ' . $model->getCwsplv1() . ' - Water level M2: ' . $model->getCwsplv2(),
+                'value' => 'Water level M1: ' . $model->getCwsplv1() . ' &deg;C' . ' - Water level M2: ' . $model->getCwsplv2() . ' &deg;C',
             ],
             [
                 'label' => 'Return Pump',
                 'format' => 'html',
-                'value' => 'Begin time ilde(hh:mm): ' . $model->getReturnPumpBegin() . '<br>End ilde time(hh:mm): ' . $model->getReturnPumpEnd() . '<br>Rang to turn on the pump: ' . $model->getReturnPumpDeltat(),
+                'value' => 'Begin time ilde(hh:mm): ' . $model->getReturnPumpBegin() . '<br>End ilde time(hh:mm): ' . $model->getReturnPumpEnd() . '<br>Rang to turn on the pump: ' . $model->getReturnPumpDeltat() . ' &deg;C',
             ],
             [
                 'label' => 'Incresed Pressure Pump',
                 'format' => 'html',
-                'value' => 'Pressure to turn on the pump(Psi): ' . $model->getPressurePumpP1(),
+                'value' => 'Pressure to turn on the pump(Psi): ' . $model->getPressurePumpP1() . ' &deg;C',
             ],
             [
                 'label' => 'Heat Pump',
                 'format' => 'html',
-                'value' => 'Temperature to turn on the pump: ' . $model->getHeatPumpT1(),
+                'value' => 'Temperature to turn on the pump: ' . $model->getHeatPumpT1() . ' &deg;C',
             ],
             [
                 'label' => 'Heat Resistor',
                 'format' => 'html',
-                'value' => 'Temperature to turn on the Resistor: ' . $model->getHeaterResisT1() . '<br>Delay time to return on Resistor(min): ' . $model->getHeaterResisDelay(),
+                'value' => 'Temperature to turn on the Resistor: ' . $model->getHeaterResisT1() . ' &deg;C' . '<br>Delay time to return on Resistor(min): ' . $model->getHeaterResisDelay(),
             ],
             [
                 'label' => 'Three Way Valve',
                 'format' => 'html',
-                'value' => 'Begin time ilde(hh:mm): ' . $model->get3wayBeginTime() . '<br>End time ilde(hh:mm): ' . $model->get3wayEndTime() . '<br>Rang to change direction: ' . $model->get3wayTempDelta(),
+                'value' => 'Begin time ilde(hh:mm): ' . $model->get3wayBeginTime() . '<br>End time ilde(hh:mm): ' . $model->get3wayEndTime() . '<br>Rang to change direction: ' . $model->get3wayTempDelta() . ' &deg;C',
             ],
             [
                 'label' => 'Backflow Valve',
                 'format' => 'html',
-                'value' => 'Temperature value to open Valve: ' . $model->getBackflowTemp(),
+                'value' => 'Temperature value to open Valve: ' . $model->getBackflowTemp() . ' &deg;C',
             ],
         ],
     ])
