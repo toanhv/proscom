@@ -20,11 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             [
-                'label' => 'ID',
-                'value' => $idModule,
-            ],
-            'module.name',
-            [
                 'label' => 'Convection Pump',
                 'format' => 'html',
                 'value' => $model->getConvectionTemp(),

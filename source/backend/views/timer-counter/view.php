@@ -18,11 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
     DetailView::widget([
         'model' => $model,
         'attributes' => [
-            [
-                'label' => 'ID',
-                'value' => $idModule,
-            ],
-            'module.name',
             'counter',
             'timer_1',
             'timer_2',
