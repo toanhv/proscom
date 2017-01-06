@@ -257,8 +257,6 @@ class OutputMode extends OutputModeBase {
 
     public function toClient() {
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->module->country->code . $this->module->privincial->code . $this->module->distric->code . $this->module->customer_code);
-        echo $id;
-        die;
         $data = new \backend\models\DataClient();
         $data->module_id = $this->module_id;
         $data->ie_name = OUTPUT_MODE_CONFIG_HEADER;
