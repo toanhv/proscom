@@ -35,7 +35,7 @@ class ConfigurationLogDB extends \yii\db\ActiveRecord
             [['module_id', 'created_by'], 'integer'],
             [['created_time'], 'safe'],
             [['created_by'], 'required'],
-            [['message'], 'string', 'max' => 500]
+            [['message'], 'string', 'max' => 2000]
         ];
     }
 
