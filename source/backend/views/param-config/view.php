@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Incresed Pressure Pump',
                 'format' => 'html',
-                'value' => 'Pressure to turn on the pump(Psi): ' . $model->getPressurePumpP1() . ' &deg;C',
+                'value' => 'Pressure to turn on the pump: ' . $model->getPressurePumpP1() . ' Psi',
             ],
             [
                 'label' => 'Heat Pump',
