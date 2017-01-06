@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'label' => 'Backflow Valve',
-                'value' => 'Temperature value to open Valve: ' . $this->getBackflowTemp(),
+                'value' => 'Temperature value to open Valve: ' . $model->getBackflowTemp(),
             ],
         ],
     ])
