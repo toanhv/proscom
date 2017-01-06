@@ -38,20 +38,12 @@ class ParamConfig extends ParamConfigBase {
         return bindec(substr($this->cold_water_supply_pump, 8, 8));
     }
 
-    public function getReturnPumpT1Start() {
-        return bindec(substr($this->return_pump, 0, 8));
+    public function getReturnPumpBegin() {
+        return bindec(substr($this->return_pump, 0, 8)) . ':' . bindec(substr($this->return_pump, 8, 8));
     }
 
-    public function getReturnPumpT2Start() {
-        return bindec(substr($this->return_pump, 8, 8));
-    }
-
-    public function getReturnPumpT1End() {
-        return bindec(substr($this->return_pump, 16, 8));
-    }
-
-    public function getReturnPumpT2End() {
-        return bindec(substr($this->return_pump, 24, 8));
+    public function getReturnPumpEnd() {
+        return bindec(substr($this->return_pump, 16, 8)) . ':' . bindec(substr($this->return_pump, 24, 8));
     }
 
     public function getReturnPumpDeltat() {
@@ -70,31 +62,19 @@ class ParamConfig extends ParamConfigBase {
         return bindec(substr($this->heat_resistor, 0, 8));
     }
 
-    public function getHeaterResisT2() {
+    public function getHeaterResisDelay() {
         return bindec(substr($this->heat_resistor, 8, 8));
     }
 
-    public function getHeaterResisDelay() {
-        return bindec(substr($this->heat_resistor, 16, 8));
+    public function get3wayBeginTime() {
+        return bindec(substr($this->three_way_valve, 0, 8)) . ':' . bindec(substr($this->three_way_valve, 8, 8));
     }
 
-    public function get3wayT1h() {
-        return bindec(substr($this->three_way_valve, 0, 8));
+    public function get3wayEndTime() {
+        return bindec(substr($this->three_way_valve, 16, 8)) . ':' . bindec(substr($this->three_way_valve, 24, 8));
     }
 
-    public function get3wayT1m() {
-        return bindec(substr($this->three_way_valve, 8, 8));
-    }
-
-    public function get3wayT2h() {
-        return bindec(substr($this->three_way_valve, 16, 8));
-    }
-
-    public function get3wayT2m() {
-        return bindec(substr($this->three_way_valve, 24, 8));
-    }
-
-    public function get3wayTemp() {
+    public function get3wayTempDelta() {
         return bindec(substr($this->three_way_valve, 32, 8));
     }
 
@@ -136,6 +116,14 @@ class ParamConfig extends ParamConfigBase {
         $log->module_id = $this->module_id;
         $log->created_by = Yii::$app->user->getId();
         $log->message = 'Paramater: ';
+        $log->message .= 'Convection Pump (' . $this->getConvectionTemp() . ')';
+        $log->message .= '; Cold Water Supply Pump (Water level M1: ' . $this->getCwsplv1() . ' - Water level M2: ' . $this->getCwsplv2() . ')';
+        $log->message .= '; Return Pump (Begin ilde time: ' . $this->getReturnPumpBegin() . ' - End ilde time: ' . $this->getReturnPumpEnd() . ' - Rang to turn on the pump: ' . $this->getReturnPumpDeltat() . ')';
+        $log->message .= '; Increase Pressure Pump (Pressure to turn on the pump: ' . $this->getPressurePumpP1() . ')';
+        $log->message .= '; Heat Pump (Temperature to turn on the pump: ' . $this->getHeatPumpT1() . ')';
+        $log->message .= '; Heater Resistor (Temperature to turn on the Resistor: ' . $this->getHeaterResisT1() . ' - Delay time to return on Resistor: ' . $this->getHeaterResisDelay() . ')';
+        $log->message .= '; Three way Valve (Begin time ilde: ' . $this->get3wayBeginTime() . ' - End time ilde: ' . $this->get3wayEndTime() . ' - Rang to change direction: ' . $this->get3wayTempDelta() . ')';
+        $log->message .= '; Backflow Valve (Temperature value to open Valve: ' . $this->getBackflowTemp() . ')';
         $log->created_time = new \yii\db\Expression('NOW()');
         $log->save(false);
     }

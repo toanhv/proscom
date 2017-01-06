@@ -5,9 +5,9 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\TimerCounter */
-$idModule = $model->module->country->code . $model->module->privincial->code . $model->module->distric->code . $model->module->customer_code;
-$this->title = $idModule . ' - ' . $model->module->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Timer Counters'), 'url' => ['index']];
+$module = $model->module;
+$idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
+$this->title = $idModule . ' - ' . $module->name;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="timer-counter-view">

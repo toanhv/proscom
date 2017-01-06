@@ -4,7 +4,6 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\ParamConfig;
-use backend\models\Modules;
 use backend\models\ParamConfigSearch;
 use common\socket\Socket;
 use yii\web\NotFoundHttpException;
@@ -45,14 +44,21 @@ class ParamConfigController extends AppController {
      * @param string $id
      * @return mixed
      */
-    public function actionView($id) {
-        $model = $this->findModel($id);
-
-        $module = $model->module;
-        if ($_GET['reload'] == 'true') {
+    public function actionView() {
+        $moduleId = \Yii::$app->session->get('module_id', 0);
+        if (!$moduleId) {
+            return $this->goHome();
+        }
+        $module = \backend\models\Modules::findOne($moduleId);
+        if ($module && $module->paramConfigs) {
+            $model = $this->findModel($module->paramConfigs->id);
+        } else {
+            return $this->goHome();
+        }
+        if ($module->mode_id && $_GET['reload'] == 'true') {
             $module->checkParametter();
             sleep(TIME_OUT_REFRESH);
-            return $this->redirect(['view', 'id' => $id]);
+            return $this->redirect(['view']);
         }
         return $this->render('view', [
                     'model' => $model,
@@ -96,7 +102,6 @@ class ParamConfigController extends AppController {
 
         if (Yii::$app->request->isPost) {
             $values = Yii::$app->request->post();
-            //$model->module_id = $values['module_id'];
             $model->convection_pump = Socket::alldec2bin($values['convection_pump']);
             $model->cold_water_supply_pump = Socket::alldec2bin($values['cold_water_supply_pump_lv1'])
                     . Socket::alldec2bin($values['cold_water_supply_pump_lv2']);

@@ -1,16 +1,9 @@
 <?php
-
-use yii\helpers\Html;
-use yii\grid\GridView;
-use yii\widgets\Pjax;
-use backend\widgets\AwsGridView;
-use common\socket\Socket;
-
-$this->title = Yii::t('backend', 'Report Alarms');
+$this->title = Yii::t('backend', 'Alarms Report');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="title"><?php echo $module->getModuleId() . ' - ' . \yii\helpers\Html::encode($module->name); ?></h1>
-<form method="post" action="/index.php/report/reportalarm" id="report-sensor-alarm">
+<form method="post" action="/report/reportalarm" id="report-sensor-alarm">
     <div class="params">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
 
@@ -27,7 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
 </form>
 
 <?php if (count($alarms) > 0): ?>
-                <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script type="text/javascript">
         console.log("start chart");
         google.charts.load('current', {'packages': ['corechart']});

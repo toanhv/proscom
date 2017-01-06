@@ -1,17 +1,10 @@
 <?php
-
-use yii\helpers\Html;
-use yii\grid\GridView;
-use yii\widgets\Pjax;
-use backend\widgets\AwsGridView;
-use common\socket\Socket;
-
-$this->title = Yii::t('backend', 'Report Sensors');
+$this->title = Yii::t('backend', 'Sensors Report');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="title"><?php echo $module->getModuleId() . ' - ' . \yii\helpers\Html::encode($module->name); ?></h1>
-<form method="post" action="/index.php/report/index" id="report-sensor-alarm">
-    <div class="params">
+<form method="post" action="/report/index" id="report-sensor-alarm">
+    <div class="params" style="alignment-adjust: middle">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
 
         From:
@@ -63,20 +56,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     apsuat_duongong.addRows(<?php echo count($sensors) ?>);
                     nhietdo_duongong_1.addRows(<?php echo count($sensors) ?>);
 
-              <?php foreach ($sensors as $k => $sens): ?>
-                    danthu = addData(danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_dan_thu) ?>);
-                    bonsolar = addData(danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_bon_solar) ?>);
-                    mucnuoc_bonsolar = addData(mucnuoc_bonsolar,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_muc_nuoc_bon_solar) ?>);
-                    nhietdo_bongianhiet = addData(nhietdo_bongianhiet,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_bon_gia_nhiet) ?>);
-                    apsuat_bongianhiet = addData(apsuat_bongianhiet,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_ap_suat_bon_gia_nhiet) ?>);
-                    bucxa_danthu = addData(bucxa_danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_buc_xa_dan_thu) ?>);
-                    nhietdinh_bonsolar = addData(nhietdinh_bonsolar,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_dinh_bon_solar) ?>);
-                    tran = addData(tran,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_tran) ?>);
-                    nhietdo_duongong_2 = addData(nhietdo_duongong_2,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_duong_ong_2) ?>);
-                    duphong = addData(duphong,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->du_phong) ?>);
-                    apsuat_duongong = addData(apsuat_duongong,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_ap_suat_duong_ong) ?>);
-                    nhietdo_duongong_1 = addData(nhietdo_duongong_1,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_duong_ong_1) ?>);
-              <?php endforeach; ?>
+    <?php foreach ($sensors as $k => $sens): ?>
+                        danthu = addData(danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_dan_thu) ?>);
+                        bonsolar = addData(danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_bon_solar) ?>);
+                        mucnuoc_bonsolar = addData(mucnuoc_bonsolar,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_muc_nuoc_bon_solar) ?>);
+                        nhietdo_bongianhiet = addData(nhietdo_bongianhiet,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_bon_gia_nhiet) ?>);
+                        apsuat_bongianhiet = addData(apsuat_bongianhiet,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_ap_suat_bon_gia_nhiet) ?>);
+                        bucxa_danthu = addData(bucxa_danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_buc_xa_dan_thu) ?>);
+                        nhietdinh_bonsolar = addData(nhietdinh_bonsolar,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_dinh_bon_solar) ?>);
+                        tran = addData(tran,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_tran) ?>);
+                        nhietdo_duongong_2 = addData(nhietdo_duongong_2,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_duong_ong_2) ?>);
+                        duphong = addData(duphong,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->du_phong) ?>);
+                        apsuat_duongong = addData(apsuat_duongong,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_ap_suat_duong_ong) ?>);
+                        nhietdo_duongong_1 = addData(nhietdo_duongong_1,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_duong_ong_1) ?>);
+    <?php endforeach; ?>
 
                     drawChart(danthu, 'draw-dan-thu', 'Solar panels temp');
                     drawChart(bonsolar, 'draw-bon-solar', 'Solar tank temp');
@@ -120,7 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             }
 
                         },
-                        chartArea:{ backgroundColor: '#f1f8e9'}
+                        chartArea: {backgroundColor: '#f1f8e9'}
                     };
 
                     var chart = new google.charts.Line(document.getElementById(id));

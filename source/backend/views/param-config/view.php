@@ -6,58 +6,60 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ParamConfig */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Param Configs'), 'url' => ['index']];
+$module = $model->module;
+$idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
+$this->title = $idModule . ' - ' . $module->name;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="param-config-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a(Yii::t('backend', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?=
-        Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('backend', 'Are you sure you want to delete this item?'),
-                'method' => 'post',
-            ],
-        ])
-        ?>
-    </p>
-
     <?=
     DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            [
+                'label' => 'ID',
+                'value' => $idModule,
+            ],
             'module.name',
-            'convection_pump',
-            'cold_water_supply_pump',
-            'return_pump',
-            'incresed_pressure_pump',
-            'heat_pump',
-            'heat_resistor',
-            'three_way_valve',
-            'backflow_valve',
-            'updated_at',
-            'updated_by',
-            'created_at',
-            'created_by',
+            [
+                'label' => 'Convection Pump',
+                'value' => $model->getConvectionTemp(),
+            ],
+            [
+                'label' => 'Cold Water Supply Pump',
+                'value' => 'Water level M1: ' . $model->getCwsplv1() . ' - Water level M2: ' . $model->getCwsplv2(),
+            ],
+            [
+                'label' => 'Return Pump',
+                'value' => 'Begin ilde time: ' . $model->getReturnPumpBegin() . ' - End ilde time: ' . $model->getReturnPumpEnd() . ' - Rang to turn on the pump: ' . $model->getReturnPumpDeltat(),
+            ],
+            [
+                'label' => 'Incresed Pressure Pump',
+                'value' => 'Pressure to turn on the pump: ' . $model->getPressurePumpP1(),
+            ],
+            [
+                'label' => 'Heat Pump',
+                'value' => 'Temperature to turn on the pump: ' . $model->getHeatPumpT1(),
+            ],
+            [
+                'label' => 'Heat Resistor',
+                'value' => 'Temperature to turn on the Resistor: ' . $model->getHeaterResisT1() . ' - Delay time to return on Resistor: ' . $model->getHeaterResisDelay(),
+            ],
+            [
+                'label' => 'Three Way Valve',
+                'value' => 'Begin time ilde: ' . $model->get3wayBeginTime() . ' - End time ilde: ' . $model->get3wayEndTime() . ' - Rang to change direction: ' . $model->get3wayTempDelta(),
+            ],
+            [
+                'label' => 'Backflow Valve',
+                'value' => 'Temperature value to open Valve: ' . $this->getBackflowTemp(),
+            ],
         ],
     ])
     ?>
     <p>
-        <?= Html::a(Yii::t('backend', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?=
-        Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('backend', 'Are you sure you want to delete this item?'),
-                'method' => 'post',
-            ],
-        ])
-        ?>
+        <?= Html::a(Yii::t('backend', 'Setting'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
     </p>
 </div>

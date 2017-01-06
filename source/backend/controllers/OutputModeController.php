@@ -4,10 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\OutputMode;
-use backend\models\Modules;
-use backend\models\DataClient;
 use backend\models\OutputModeSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\socket\Socket;
@@ -47,13 +44,21 @@ class OutputModeController extends AppController {
      * @param string $id
      * @return mixed
      */
-    public function actionView($id) {
-        $model = $this->findModel($id);
-        $module = $model->module;
+    public function actionView() {
+        $moduleId = \Yii::$app->session->get('module_id', 0);
+        if (!$moduleId) {
+            return $this->goHome();
+        }
+        $module = \backend\models\Modules::findOne($moduleId);
+        if ($module && $module->outputModes) {
+            $model = $this->findModel($module->outputModes->id);
+        } else {
+            return $this->goHome();
+        }
         if ($module->mode_id && $_GET['reload'] == 'true') {
             $module->checkOutputMode();
             sleep(TIME_OUT_REFRESH);
-            return $this->redirect(['view', 'id' => $id]);
+            return $this->redirect(['view']);
         }
         return $this->render('view', [
                     'model' => $model,

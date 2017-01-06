@@ -9,6 +9,18 @@ class TimerCounter extends \common\models\TimerCounterBase {
     /**
      * @inheritdoc
      */
+    public function rules() {
+        return [
+            [['module_id'], 'required'],
+            [['module_id', 'counter'], 'integer'],
+            [['timer_1', 'timer_2', 'timer_3'], 'integer', 'min' => 60],
+            [['created_at'], 'safe']
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function attributeLabels() {
         return [
             'id' => Yii::t('backend', 'ID'),

@@ -7,42 +7,14 @@ use yii\helpers\Html;
 
 $idModule = $model->module->country->code . $model->module->privincial->code . $model->module->distric->code . $model->module->customer_code;
 $this->title = $idModule . ' - ' . $model->module->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Modules'), 'url' => ['/modules/view?id=' . $model->module->id]];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Param Configs'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="param-config-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <!-- <?=
-    $this->render('_form', [
-        'model' => $model,
-    ])
-    ?> -->
-
-
     <form method="post" action="/index.php/param-config/update?id=<?php echo $model->id ?>">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
         <div class="params">
-
-<!--            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Module
-                </div>
-                <div class="row80 params-right border-left">
-
-                    <div class="row50 padding10">
-                        <select class="form-control row80" name="module_id">
-                            <?php foreach ($modules as $key => $m): ?>
-                                <option value="<?php echo $key ?>" <?php if ($model->module_id == $key) echo 'selected="selected"'; ?>><?php echo $m ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                        <span class="row20">&#8451;</span>
-                    </div>
-                </div>
-            </div>-->
             <div class="border row row100">
                 <div class="row20 params-left padding10">
                     Convection Pump
@@ -118,7 +90,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->getReturnPumpT1Start() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->return_pump, 0, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -134,7 +106,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->getReturnPumpT2Start() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->return_pump, 8, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -153,7 +125,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->getReturnPumpT1End() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->return_pump, 16, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -169,7 +141,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->getReturnPumpT2End() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->return_pump, 24, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -256,20 +228,6 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                             <span class="row20">&#8451;</span>
                         </div>
                     </div>
-<!--                    <div class="row100 border-bottom">
-                        <div class="row80 padding10">
-                            <p class="title">Temperature value to turn on Resistor 2</p>
-                            <i>(R2 ON when temperature in the Heater tank lower than this value)</i>
-                        </div>
-                        <div class="row20 padding10">
-                            <select class="form-control row80" name="heater_resister_t2">
-                                <?php for ($i = 1; $i < 6; $i++): ?>
-                                    <option value="<?php echo $i ?>" <?php if ($model->getHeaterResisT2() == $i) echo 'selected="selected"'; ?>><?php echo $i ?></option>
-                                <?php endfor; ?>
-                            </select>
-                            <span class="row20">&#8451;</span>
-                        </div>
-                    </div>-->
                     <div class="row100 border-bottom">
                         <div class="row80 padding10">
                             <p class="title">Delay time to return on Resistor</p>
@@ -308,7 +266,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->get3wayT1h() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->three_way_valve, 0, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -324,7 +282,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->get3wayT1m() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->three_way_valve, 8, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -343,7 +301,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->get3wayT2h() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->three_way_valve, 16, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -359,7 +317,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                                             $number = $i;
                                         }
                                         ?>
-                                        <option value="<?php echo $number; ?>" <?php if ($model->get3wayT2m() == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
+                                        <option value="<?php echo $number; ?>" <?php if (bindec(substr($model->three_way_valve, 24, 8)) == $i) echo 'selected="selected"'; ?>><?php echo $number; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -375,7 +333,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
                         <div class="row20 padding10">
                             <select class="form-control row80" name="3way_temp">
                                 <?php for ($i = 1; $i < 6; $i++): ?>
-                                    <option value="<?php echo $i ?>" <?php if ($model->get3wayTemp() == $i) echo 'selected="selected"'; ?>><?php echo $i ?></option>
+                                    <option value="<?php echo $i ?>" <?php if ($model->get3wayTempDelta() == $i) echo 'selected="selected"'; ?>><?php echo $i ?></option>
                                 <?php endfor; ?>
                             </select>
                             <span class="row20">&#8451;</span>
@@ -409,17 +367,8 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
             <div class="row100" style="text-align:center">
                 <input type="submit" class="btn btn-primary" value="Save and Send" />
-                <!-- <input type="button" class="btn btn-primary" value="Send to Module" /> -->
                 <a href="/modules/view?id=<?php echo $model->module->id ?>" class="btn btn-primary">Cancel</a>
             </div>
         </div>
     </form>
-
-
-
-
-
-
-
-
 </div>
