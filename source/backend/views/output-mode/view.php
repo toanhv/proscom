@@ -25,35 +25,35 @@ $this->params['breadcrumbs'][] = $this->title;
             'module.name',
             [
                 'label' => 'Convection Pump',
-                'value' => $model->getConvectionPumpDetail() . 'min',
+                'value' => $model->getConvectionPumpDetail() . ' min',
             ],
             [
                 'label' => 'Cold Water Supply Pump',
-                'value' => $model->getColdWaterSupplyPumpDetail() . 'min',
+                'value' => $model->getColdWaterSupplyPumpDetail() . ' min',
             ],
             [
                 'label' => 'Return Pump',
-                'value' => $model->getReturnPumpDetail() . 'min',
+                'value' => $model->getReturnPumpDetail() . ' min',
             ],
             [
                 'label' => 'Incresed Pressure Pump',
-                'value' => $model->getIncresedPressurePumpDetail() . 'min',
+                'value' => $model->getIncresedPressurePumpDetail() . ' min',
             ],
             [
                 'label' => 'Heat Pump',
-                'value' => $model->getHeatPumpDetail() . 'min',
+                'value' => $model->getHeatPumpDetail() . ' min',
             ],
             [
                 'label' => 'Heater Resister',
-                'value' => $model->getHeaterResisterDetail() . 'min',
+                'value' => $model->getHeaterResisterDetail() . ' min',
             ],
             [
                 'label' => 'Three Way',
-                'value' => $model->getThreeWayDetail() . 'min',
+                'value' => $model->getThreeWayDetail() . ' min',
             ],
             [
                 'label' => 'Blakflow Valve',
-                'value' => $model->getBlakflowValveDetail() . 'min',
+                'value' => $model->getBlakflowValveDetail() . ' min',
             ],
         ],
     ])
