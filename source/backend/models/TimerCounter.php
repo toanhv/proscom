@@ -13,7 +13,8 @@ class TimerCounter extends \common\models\TimerCounterBase {
         return [
             [['module_id'], 'required'],
             [['module_id', 'counter'], 'integer'],
-            [['timer_1', 'timer_2', 'timer_3'], 'integer', 'min' => 60],
+            [['timer_1', 'timer_2'], 'integer', 'min' => 60],
+            [['timer_3'], 'integer', 'min' => 3],
             [['created_at'], 'safe']
         ];
     }
