@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Cold Water Supply Pump',
                 'format' => 'html',
-                'value' => 'Water level M1: ' . $model->getCwsplv1() . ' &deg;C' . ' - Water level M2: ' . $model->getCwsplv2() . ' &deg;C',
+                'value' => 'Water level M1: ' . $model->getCwsplv1() . ' &deg;C' . '<br>Water level M2: ' . $model->getCwsplv2() . ' &deg;C',
             ],
             [
                 'label' => 'Return Pump',
