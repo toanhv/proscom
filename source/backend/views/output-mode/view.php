@@ -25,35 +25,35 @@ $this->params['breadcrumbs'][] = $this->title;
             'module.name',
             [
                 'label' => 'Convection Pump',
-                'value' => $model->getConvectionPumpDetail(),
+                'value' => $model->getConvectionPumpDetail() . 'min',
             ],
             [
                 'label' => 'Cold Water Supply Pump',
-                'value' => $model->getColdWaterSupplyPumpDetail(),
+                'value' => $model->getColdWaterSupplyPumpDetail() . 'min',
             ],
             [
                 'label' => 'Return Pump',
-                'value' => $model->getReturnPumpDetail(),
+                'value' => $model->getReturnPumpDetail() . 'min',
             ],
             [
                 'label' => 'Incresed Pressure Pump',
-                'value' => $model->getIncresedPressurePumpDetail(),
+                'value' => $model->getIncresedPressurePumpDetail() . 'min',
             ],
             [
                 'label' => 'Heat Pump',
-                'value' => $model->getHeatPumpDetail(),
+                'value' => $model->getHeatPumpDetail() . 'min',
             ],
             [
                 'label' => 'Heater Resister',
-                'value' => $model->getHeaterResisterDetail(),
+                'value' => $model->getHeaterResisterDetail() . 'min',
             ],
             [
                 'label' => 'Three Way',
-                'value' => $model->getThreeWayDetail(),
+                'value' => $model->getThreeWayDetail() . 'min',
             ],
             [
                 'label' => 'Blakflow Valve',
-                'value' => $model->getBlakflowValveDetail(),
+                'value' => $model->getBlakflowValveDetail() . 'min',
             ],
         ],
     ])
