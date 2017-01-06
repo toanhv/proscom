@@ -118,11 +118,11 @@ class ParamConfig extends ParamConfigBase {
         $log->message = 'Paramater: ';
         $log->message .= 'Convection Pump (' . $this->getConvectionTemp() . ')';
         $log->message .= '; Cold Water Supply Pump (Water level M1: ' . $this->getCwsplv1() . ' - Water level M2: ' . $this->getCwsplv2() . ')';
-        $log->message .= '; Return Pump (Begin ilde time: ' . $this->getReturnPumpBegin() . ' - End ilde time: ' . $this->getReturnPumpEnd() . ' - Rang to turn on the pump: ' . $this->getReturnPumpDeltat() . ')';
-        $log->message .= '; Increase Pressure Pump (Pressure to turn on the pump: ' . $this->getPressurePumpP1() . ')';
+        $log->message .= '; Return Pump (Begin time ilde(hh:mm): ' . $this->getReturnPumpBegin() . ' - End ilde time(hh:mm): ' . $this->getReturnPumpEnd() . ' - Rang to turn on the pump: ' . $this->getReturnPumpDeltat() . ')';
+        $log->message .= '; Increase Pressure Pump (Pressure to turn on the pump(Psi): ' . $this->getPressurePumpP1() . ')';
         $log->message .= '; Heat Pump (Temperature to turn on the pump: ' . $this->getHeatPumpT1() . ')';
-        $log->message .= '; Heater Resistor (Temperature to turn on the Resistor: ' . $this->getHeaterResisT1() . ' - Delay time to return on Resistor: ' . $this->getHeaterResisDelay() . ')';
-        $log->message .= '; Three way Valve (Begin time ilde: ' . $this->get3wayBeginTime() . ' - End time ilde: ' . $this->get3wayEndTime() . ' - Rang to change direction: ' . $this->get3wayTempDelta() . ')';
+        $log->message .= '; Heater Resistor (Temperature to turn on the Resistor: ' . $this->getHeaterResisT1() . ' - Delay time to return on Resistor(min): ' . $this->getHeaterResisDelay() . ')';
+        $log->message .= '; Three way Valve (Begin time ilde(hh:mm): ' . $this->get3wayBeginTime() . ' - End time ilde(hh:mm): ' . $this->get3wayEndTime() . ' - Rang to change direction: ' . $this->get3wayTempDelta() . ')';
         $log->message .= '; Backflow Valve (Temperature value to open Valve: ' . $this->getBackflowTemp() . ')';
         $log->created_time = new \yii\db\Expression('NOW()');
         $log->save(false);

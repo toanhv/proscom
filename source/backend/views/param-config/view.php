@@ -32,12 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Return Pump',
                 'format' => 'html',
-                'value' => 'Begin ilde time: ' . $model->getReturnPumpBegin() . '<br>End ilde time: ' . $model->getReturnPumpEnd() . '<br>Rang to turn on the pump: ' . $model->getReturnPumpDeltat(),
+                'value' => 'Begin time ilde(hh:mm): ' . $model->getReturnPumpBegin() . '<br>End ilde time(hh:mm): ' . $model->getReturnPumpEnd() . '<br>Rang to turn on the pump: ' . $model->getReturnPumpDeltat(),
             ],
             [
                 'label' => 'Incresed Pressure Pump',
                 'format' => 'html',
-                'value' => 'Pressure to turn on the pump: ' . $model->getPressurePumpP1(),
+                'value' => 'Pressure to turn on the pump(Psi): ' . $model->getPressurePumpP1(),
             ],
             [
                 'label' => 'Heat Pump',
@@ -47,12 +47,12 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Heat Resistor',
                 'format' => 'html',
-                'value' => 'Temperature to turn on the Resistor: ' . $model->getHeaterResisT1() . '<br>Delay time to return on Resistor: ' . $model->getHeaterResisDelay(),
+                'value' => 'Temperature to turn on the Resistor: ' . $model->getHeaterResisT1() . '<br>Delay time to return on Resistor(min): ' . $model->getHeaterResisDelay(),
             ],
             [
                 'label' => 'Three Way Valve',
                 'format' => 'html',
-                'value' => 'Begin time ilde: ' . $model->get3wayBeginTime() . '<br>End time ilde: ' . $model->get3wayEndTime() . '<br>Rang to change direction: ' . $model->get3wayTempDelta(),
+                'value' => 'Begin time ilde(hh:mm): ' . $model->get3wayBeginTime() . '<br>End time ilde(hh:mm): ' . $model->get3wayEndTime() . '<br>Rang to change direction: ' . $model->get3wayTempDelta(),
             ],
             [
                 'label' => 'Backflow Valve',
