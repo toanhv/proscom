@@ -1,13 +1,15 @@
 <?php
 
-use kartik\widgets\DateTimePicker;
-use yii\helpers\Html;
-use kartik\builder\Form;
+use backend\models\OperationLogSearch;
 use kartik\widgets\ActiveForm;
+use yii\helpers\Html;
+use yii\jui\DatePicker;
+use yii\web\View;
+use yii\widgets\ActiveForm as ActiveForm2;
 
-/* @var $this yii\web\View */
-/* @var $model backend\models\OperationLogSearch */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $this View */
+/* @var $model OperationLogSearch */
+/* @var $form ActiveForm2 */
 ?>
 
 <div class="operation-log-search">
@@ -19,39 +21,21 @@ use kartik\widgets\ActiveForm;
     ]);
     ?>
 
-    <?=
-    Form::widget([
+    <?php
+    echo DatePicker::widget([
         'model' => $model,
-        'form' => $form,
-        'columns' => 2,
-        'attributes' => [
-            'fromDate' => [
-                'type' => Form::INPUT_WIDGET,
-                'widgetClass' => DateTimePicker::className(),
-                'label' => 'From date',
-                'options' => [
-                    'value' => date('Y-m-d', strtotime('-1 days')),
-                ],
-                'pluginOptions' => [
-                    'autoclose' => true,
-                    'format' => 'yyyy-mm-dd',
-                    'todayHighlight' => true,
-                ]
-            ],
-            'toDate' => [
-                'type' => Form::INPUT_WIDGET,
-                'widgetClass' => DateTimePicker::className(),
-                'label' => 'To date',
-                'options' => [
-                    'value' => date('Y-m-d', strtotime('-1 days')),
-                ],
-                'pluginOptions' => [
-                    'autoclose' => true,
-                    'format' => 'yyyy-mm-dd',
-                    'todayHighlight' => true,
-                ]
-            ]
-        ]
+        'attribute' => 'fromDate',
+        'language' => 'en',
+        'dateFormat' => 'yyyy-MM-dd',
+    ]);
+    ?>
+
+    <?php
+    echo DatePicker::widget([
+        'model' => $model,
+        'attribute' => 'toDate',
+        'language' => 'en',
+        'dateFormat' => 'yyyy-MM-dd',
     ]);
     ?>
 

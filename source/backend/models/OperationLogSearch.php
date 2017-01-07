@@ -18,7 +18,7 @@ class OperationLogSearch extends OperationLog {
     public function rules() {
         return [
             [['id', 'module_id'], 'integer'],
-            [['created_time', 'message'], 'safe'],
+            [['created_time', 'message', 'fromDate', 'toDate'], 'safe'],
         ];
     }
 
@@ -42,7 +42,7 @@ class OperationLogSearch extends OperationLog {
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => ['defaultOrder' => ['id' => SORT_DESC]]
+            'sort' => ['defaultOrder' => ['created_time' => SORT_DESC]]
         ]);
 
         $this->load($params);
@@ -54,7 +54,6 @@ class OperationLogSearch extends OperationLog {
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
             'module_id' => $this->module_id,
         ]);
 
