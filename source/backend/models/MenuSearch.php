@@ -56,7 +56,7 @@ class MenuSearch extends Menu {
             'desc' => ['parent.order' => SORT_DESC, 't.order' => SORT_DESC],
             'label' => 'order',
         ];
-        $sort->defaultOrder = ['menuParent.name' => SORT_ASC];
+        $sort->defaultOrder = ['order' => SORT_ASC];
 
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
