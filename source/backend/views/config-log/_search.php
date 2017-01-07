@@ -1,10 +1,7 @@
 <?php
 
 use backend\models\ConfigurationLogSearch;
-use kartik\widgets\DateTimePicker;
-use yii\helpers\Html;
 use yii\web\View;
-use kartik\builder\Form;
 use kartik\widgets\ActiveForm;
 
 /* @var $this View */
@@ -21,45 +18,25 @@ use kartik\widgets\ActiveForm;
     ]);
     ?>
 
+    From date: 
     <?=
-    Form::widget([
-        'model' => $model,
-        'form' => $form,
-        'columns' => 2,
-        'attributes' => [
-            'fromDate' => [
-                'type' => Form::INPUT_WIDGET,
-                'widgetClass' => DateTimePicker::className(),
-                'label' => 'From date',
-                'options' => [
-                    'value' => date('Y-m-d', strtotime('-1 days')),
-                ],
-                'pluginOptions' => [
-                    'autoclose' => true,
-                    'format' => 'yyyy-mm-dd',
-                    'todayHighlight' => true,
-                ]
-            ],
-            'toDate' => [
-                'type' => Form::INPUT_WIDGET,
-                'widgetClass' => DateTimePicker::className(),
-                'label' => 'To date',
-                'options' => [
-                    'value' => date('Y-m-d', strtotime('-1 days')),
-                ],
-                'pluginOptions' => [
-                    'autoclose' => true,
-                    'format' => 'yyyy-mm-dd',
-                    'todayHighlight' => true,
-                ]
-            ]
-        ]
-    ]);
+    yii\jui\DatePicker::widget([
+        'name' => 'fromDate',
+        'dateFormat' => 'php:d-m-Y',
+        'language' => 'vi',
+            //'value' => \yii\helpers\Html::encode($fromTime)
+    ])
     ?>
-
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('backend', 'Search'), ['class' => 'btn btn-primary']) ?>
-    </div>
+    To date: 
+    <?=
+    yii\jui\DatePicker::widget([
+        'name' => 'toDate',
+        'dateFormat' => 'php:d-m-Y',
+        'language' => 'vi',
+            //'value' => \yii\helpers\Html::encode($toTime)
+    ])
+    ?>
+    <input type="submit" name="REPORT" value="Search"/>
 
     <?php ActiveForm::end(); ?>
 
