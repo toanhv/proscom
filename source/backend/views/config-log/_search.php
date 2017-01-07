@@ -13,18 +13,26 @@ use yii\widgets\ActiveForm;
 
 <div class="operation-log-search">
 
-    <?php
-    $form = ActiveForm::begin([
-                'action' => ['index'],
-                'method' => 'post',
-    ]);
+    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'post']); ?>
+
+    From date 
+    <?=
+    yii\jui\DatePicker::widget([
+        'name' => 'fromDate',
+        'dateFormat' => 'php:Y-m-d',
+        'language' => 'en',
+        'value' => \yii\helpers\Html::encode($model->fromDate)
+    ])
     ?>
-
-    From date
-    <input type="text" name="ConfigurationLogSearch[fromDate]" id="fromDate" value="<?php echo $model->fromDate; ?>">
-
     To date
-    <input type="text"  name="ConfigurationLogSearch[toDate]" id="toDate" value="<?php echo $model->toDate; ?>">
+    <?=
+    yii\jui\DatePicker::widget([
+        'name' => 'toDate',
+        'dateFormat' => 'php:Y-m-d',
+        'language' => 'en',
+        'value' => \yii\helpers\Html::encode($model->toDate)
+    ])
+    ?>
 
     <button type="submit" class="btn-reprt btn-primary">Report</button>
 
