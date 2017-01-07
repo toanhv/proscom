@@ -16,23 +16,15 @@ use yii\widgets\ActiveForm;
     <?php
     $form = ActiveForm::begin([
                 'action' => ['index'],
-                'method' => 'get',
+                'method' => 'post',
     ]);
     ?>
 
-    <?=
-    $form->field($model, 'fromDate')->widget(\yii\jui\DatePicker::classname(), [
-        'language' => 'en',
-        'dateFormat' => 'yyyy-MM-dd',
-    ])->label('From date');
-    ?>
+    From date
+    <input type="text" name="ConfigurationLogSearch[fromDate]" id="fromDate" value="<?php echo $model->fromDate; ?>">
 
-    <?=
-    $form->field($model, 'toDate')->widget(\yii\jui\DatePicker::classname(), [
-        'language' => 'en',
-        'dateFormat' => 'yyyy-MM-dd',
-    ])->label('To date');
-    ?>
+    To date
+    <input type="text"  name="ConfigurationLogSearch[toDate]" id="toDate" value="<?php echo $model->toDate; ?>">
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('backend', 'Search'), ['class' => 'btn btn-primary']) ?>
