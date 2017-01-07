@@ -14,9 +14,10 @@ use Yii;
  * @property integer $order
  * @property string $data
  * @property string $icon
- * @property integer $is_active
+ * @property integer $type
  *
- * @property MenuDB[] $menuDBs
+ * @property MenuDB $parent0
+ * @property MenuDB[] $menus
  */
 class MenuDB extends \yii\db\ActiveRecord
 {
@@ -35,10 +36,10 @@ class MenuDB extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['parent', 'order', 'is_active'], 'integer'],
+            [['parent', 'order', 'type'], 'integer'],
             [['data', 'icon'], 'string'],
             [['name'], 'string', 'max' => 128],
-            [['route'], 'string', 'max' => 256]
+            [['route'], 'string', 'max' => 255]
         ];
     }
 
@@ -55,14 +56,22 @@ class MenuDB extends \yii\db\ActiveRecord
             'order' => Yii::t('backend', 'Order'),
             'data' => Yii::t('backend', 'Data'),
             'icon' => Yii::t('backend', 'Icon'),
-            'is_active' => Yii::t('backend', 'Is Active'),
+            'type' => Yii::t('backend', 'Type'),
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMenuDBs()
+    public function getParent0()
+    {
+        return $this->hasOne(MenuDB::className(), ['id' => 'parent']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMenus()
     {
         return $this->hasMany(MenuDB::className(), ['parent' => 'id']);
     }
