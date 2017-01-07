@@ -14,8 +14,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <input type="text" name="to" id="report_to" value="<?php echo $to ?>">
 
         <input type="hidden" name="export" id="export" value="0">
-        <button onclick="drawGraph()" class="btn btn-primary">Report</button>
-        <button onclick="exportFile()" class="btn btn-primary">Excel</button>
+        <button onclick="drawGraph()" class="btn-reprt btn-primary">Report</button>
+        <button onclick="exportFile()" class="btn-reprt btn-primary">Excel</button>
     </div>
 </form>
 
