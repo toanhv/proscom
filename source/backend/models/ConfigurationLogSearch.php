@@ -18,7 +18,7 @@ class ConfigurationLogSearch extends ConfigurationLog {
     public function rules() {
         return [
             [['id', 'module_id', 'created_by'], 'integer'],
-            [['created_time', 'message'], 'safe'],
+            [['created_time', 'message', 'fromDate', 'toDate'], 'safe'],
         ];
     }
 
