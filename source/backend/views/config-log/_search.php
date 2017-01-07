@@ -1,15 +1,14 @@
 <?php
 
-use backend\models\OperationLogSearch;
-use kartik\widgets\ActiveForm;
+use backend\models\ConfigurationLogSearch;
 use yii\helpers\Html;
 use yii\jui\DatePicker;
 use yii\web\View;
-use yii\widgets\ActiveForm as ActiveForm2;
+use yii\widgets\ActiveForm;
 
 /* @var $this View */
-/* @var $model OperationLogSearch */
-/* @var $form ActiveForm2 */
+/* @var $model ConfigurationLogSearch */
+/* @var $form ActiveForm */
 ?>
 
 <div class="operation-log-search">
@@ -21,22 +20,18 @@ use yii\widgets\ActiveForm as ActiveForm2;
     ]);
     ?>
 
-    <?php
-    echo DatePicker::widget([
-        'model' => $model,
-        'attribute' => 'fromDate',
+    <?=
+    $form->field($model, 'fromDate')->widget(\yii\jui\DatePicker::classname(), [
         'language' => 'en',
         'dateFormat' => 'yyyy-MM-dd',
-    ]);
+    ])->label('From date');
     ?>
 
-    <?php
-    echo DatePicker::widget([
-        'model' => $model,
-        'attribute' => 'toDate',
+    <?=
+    $form->field($model, 'toDate')->widget(\yii\jui\DatePicker::classname(), [
         'language' => 'en',
         'dateFormat' => 'yyyy-MM-dd',
-    ]);
+    ])->label('To date');
     ?>
 
     <div class="form-group">
