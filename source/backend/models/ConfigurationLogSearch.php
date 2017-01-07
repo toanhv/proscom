@@ -54,7 +54,6 @@ class ConfigurationLogSearch extends ConfigurationLog {
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
             'module_id' => $this->module_id,
             'created_by' => $this->created_by,
         ]);

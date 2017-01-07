@@ -24,7 +24,7 @@ use kartik\widgets\ActiveForm;
         'name' => 'fromDate',
         'dateFormat' => 'php:d-m-Y',
         'language' => 'vi',
-            //'value' => \yii\helpers\Html::encode($fromTime)
+        'value' => \yii\helpers\Html::encode($searchModel->fromDate)
     ])
     ?>
     To date: 
@@ -33,7 +33,7 @@ use kartik\widgets\ActiveForm;
         'name' => 'toDate',
         'dateFormat' => 'php:d-m-Y',
         'language' => 'vi',
-            //'value' => \yii\helpers\Html::encode($toTime)
+        'value' => \yii\helpers\Html::encode($searchModel->toDate)
     ])
     ?>
     <input type="submit" name="REPORT" value="Search"/>
