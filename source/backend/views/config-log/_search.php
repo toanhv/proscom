@@ -26,9 +26,7 @@ use yii\widgets\ActiveForm;
     To date
     <input type="text"  name="ConfigurationLogSearch[toDate]" id="toDate" value="<?php echo $model->toDate; ?>">
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('backend', 'Search'), ['class' => 'btn btn-primary']) ?>
-    </div>
+    <button type="submit" class="btn-reprt btn-primary">Report</button>
 
     <?php ActiveForm::end(); ?>
 
