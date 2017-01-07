@@ -1,8 +1,6 @@
 <?php
 
 use backend\models\ConfigurationLogSearch;
-use yii\helpers\Html;
-use yii\jui\DatePicker;
 use yii\web\View;
 use yii\widgets\ActiveForm;
 
@@ -13,12 +11,13 @@ use yii\widgets\ActiveForm;
 
 <div class="operation-log-search">
 
-    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'post']); ?>
+    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'get']); ?>
 
     From date 
     <?=
     yii\jui\DatePicker::widget([
-        'name' => 'fromDate',
+        'model' => $model,
+        'name' => 'ConfigurationLogSearch[fromDate]',
         'dateFormat' => 'php:Y-m-d',
         'language' => 'en',
         'value' => \yii\helpers\Html::encode($model->fromDate)
@@ -27,7 +26,8 @@ use yii\widgets\ActiveForm;
     To date
     <?=
     yii\jui\DatePicker::widget([
-        'name' => 'toDate',
+        'model' => $model,
+        'name' => 'ConfigurationLogSearch[toDate]',
         'dateFormat' => 'php:Y-m-d',
         'language' => 'en',
         'value' => \yii\helpers\Html::encode($model->toDate)

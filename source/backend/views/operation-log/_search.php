@@ -1,8 +1,5 @@
 <?php
 
-use kartik\widgets\DateTimePicker;
-use yii\helpers\Html;
-use kartik\builder\Form;
 use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -12,52 +9,30 @@ use kartik\widgets\ActiveForm;
 
 <div class="operation-log-search">
 
-    <?php
-    $form = ActiveForm::begin([
-                'action' => ['index'],
-                'method' => 'get',
-    ]);
-    ?>
+    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'get']); ?>
 
+    From date 
     <?=
-    Form::widget([
+    yii\jui\DatePicker::widget([
         'model' => $model,
-        'form' => $form,
-        'columns' => 2,
-        'attributes' => [
-            'fromDate' => [
-                'type' => Form::INPUT_WIDGET,
-                'widgetClass' => DateTimePicker::className(),
-                'label' => 'From date',
-                'options' => [
-                    'value' => date('Y-m-d', strtotime('-1 days')),
-                ],
-                'pluginOptions' => [
-                    'autoclose' => true,
-                    'format' => 'yyyy-mm-dd',
-                    'todayHighlight' => true,
-                ]
-            ],
-            'toDate' => [
-                'type' => Form::INPUT_WIDGET,
-                'widgetClass' => DateTimePicker::className(),
-                'label' => 'To date',
-                'options' => [
-                    'value' => date('Y-m-d', strtotime('-1 days')),
-                ],
-                'pluginOptions' => [
-                    'autoclose' => true,
-                    'format' => 'yyyy-mm-dd',
-                    'todayHighlight' => true,
-                ]
-            ]
-        ]
-    ]);
+        'name' => 'OperationLogSearch[fromDate]',
+        'dateFormat' => 'php:Y-m-d',
+        'language' => 'en',
+        'value' => \yii\helpers\Html::encode($model->fromDate)
+    ])
+    ?>
+    To date
+    <?=
+    yii\jui\DatePicker::widget([
+        'model' => $model,
+        'name' => 'OperationLogSearch[toDate]',
+        'dateFormat' => 'php:Y-m-d',
+        'language' => 'en',
+        'value' => \yii\helpers\Html::encode($model->toDate)
+    ])
     ?>
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('backend', 'Search'), ['class' => 'btn btn-primary']) ?>
-    </div>
+    <button type="submit" class="btn-reprt btn-primary">Report</button>
 
     <?php ActiveForm::end(); ?>
 
