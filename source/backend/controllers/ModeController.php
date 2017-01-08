@@ -94,9 +94,13 @@ class ModeController extends AppController {
 
         if ($model->load(Yii::$app->request->post())) {
             $model->image_path = UploadedFile::getInstance($model, 'image_path');
-            $model->image_path = $model->upload();
-            if ($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->image_path) {
+                $model->image_path = $model->upload();
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            } else {
+                $model->addError('image_path', 'Please upload a file.');
             }
         }
         return $this->render('create', [
