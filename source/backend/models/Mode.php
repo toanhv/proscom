@@ -30,10 +30,12 @@ class Mode extends ModeBase {
      */
     public function rules() {
         return [
-            [['name'], 'required'],
+            [['name', 'image_path', 'mode'], 'required'],
             [['updated_at', 'created_at'], 'safe'],
-            [['updated_by', 'created_by'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['updated_by', 'created_by', 'mode'], 'integer'],
+            [['name', 'image_path'], 'string', 'max' => 255],
+            [['name'], 'unique'],
+            [['mode'], 'unique'],
             [['image_path'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
