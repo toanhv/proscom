@@ -97,7 +97,7 @@ class ModeController extends AppController {
             if ($model->image_path) {
                 $model->image_path = $model->upload();
                 if ($model->save()) {
-                    return $this->redirect(['view', 'id' => $model->id]);
+                    return $this->redirect(['index']);
                 }
             } else {
                 $model->addError('image_path', 'Please upload a file.');
