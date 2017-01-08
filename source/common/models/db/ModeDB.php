@@ -39,7 +39,9 @@ class ModeDB extends \yii\db\ActiveRecord
             [['name', 'image_path'], 'required'],
             [['updated_at', 'created_at'], 'safe'],
             [['updated_by', 'created_by', 'mode'], 'integer'],
-            [['name', 'image_path'], 'string', 'max' => 255]
+            [['name', 'image_path'], 'string', 'max' => 255],
+            [['name'], 'unique'],
+            [['mode'], 'unique']
         ];
     }
 
