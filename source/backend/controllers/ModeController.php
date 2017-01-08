@@ -62,9 +62,25 @@ class ModeController extends AppController {
      * @param string $id
      * @return mixed
      */
-    public function actionView($id) {
+    public function actionView() {
+        $moduleId = \Yii::$app->session->get('module_id', 0);
+        if (!$moduleId) {
+            return $this->goHome();
+        }
+
+        $module = Modules::findOne(['id' => $moduleId]);
+
+        if ($module && $module->mode_id && $_GET['reload'] == 'true') {
+            $module->checkSystemMode();
+            sleep(TIME_OUT_REFRESH);
+            return $this->redirect(['view']);
+        }
+
+        $model = $this->findModel($module->mode_id);
+
         return $this->render('view', [
-                    'model' => $this->findModel($id),
+                    'model' => $model,
+                    'module' => $module,
         ]);
     }
 

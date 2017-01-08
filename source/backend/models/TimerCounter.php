@@ -12,9 +12,11 @@ class TimerCounter extends \common\models\TimerCounterBase {
     public function rules() {
         return [
             [['module_id'], 'required'],
-            [['module_id', 'counter'], 'integer'],
-            [['timer_1', 'timer_2'], 'integer', 'min' => 60],
-            [['timer_3'], 'integer', 'min' => 3],
+            [['module_id'], 'integer'],
+            [['counter'], 'integer', 'min' => 0],
+            [['timer_1'], 'integer', 'min' => 5],
+            [['timer_2'], 'integer', 'min' => 60],
+            [['timer_3'], 'integer', 'min' => 180],
             [['created_at'], 'safe']
         ];
     }
@@ -29,8 +31,8 @@ class TimerCounter extends \common\models\TimerCounterBase {
             'counter' => Yii::t('backend', 'Counter'),
             'timer_1' => Yii::t('backend', 'Confirm Timer (sec)'),
             'timer_2' => Yii::t('backend', 'Resend Timer (sec)'),
-            'timer_3' => Yii::t('backend', 'Report Timer (min)'),
-            'created_at' => Yii::t('backend', 'Tạo lúc'),
+            'timer_3' => Yii::t('backend', 'Report Timer (sec)'),
+            'created_at' => Yii::t('backend', 'Created at'),
         ];
     }
 

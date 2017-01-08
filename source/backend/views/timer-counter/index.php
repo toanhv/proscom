@@ -2,8 +2,6 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\widgets\Pjax;
-use backend\widgets\AwsGridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TimerCounterSearch */
@@ -22,18 +20,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]), ['create'], ['class' => 'btn btn-success'])
         ?>
     </p>
-    <?php
-    Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
-    ?>
     <?=
-    AwsGridView::widget([
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'label' => 'Module',
-                'content' => function ($data) {
+                'content' => function($data) {
                     return Html::encode($data->module->name);
                 },
                 'filter' => backend\models\Modules::getAll()
@@ -45,8 +40,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
-    ?>
-    <?php
-    Pjax::end();
-    ?>
+    ?> 
 </div>
