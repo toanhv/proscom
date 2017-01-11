@@ -1146,6 +1146,10 @@
     background-color: #ff5722;
 }
 
+.item-1 .btn,.item-2 .btn,.item-3 .btn,.item-4 .btn,.item-5 .btn {
+	padding-top:5px;
+	padding-bottom:5px;
+}
 
 .select-animation {
     background-color: #01fe03;
