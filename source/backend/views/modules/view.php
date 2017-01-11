@@ -227,7 +227,7 @@ $this->title = 'Overal View';
 
                 <div class="item">
                     <h3>Three way - value</h3>
-                    <div class="row-control">
+                    <div class="row-control item-15">
                         <select class="selectpicker" data-width="70">
                             <option>Auto</option>
                             <option>Manual</option>
@@ -239,7 +239,7 @@ $this->title = 'Overal View';
 
                 <div class="item">
                     <h3>Backflow value</h3>
-                    <div class="row-control">
+                    <div class="row-control item-15">
                         <select class="selectpicker" data-width="70">
                             <option>Auto</option>
                             <option>Manual</option>
