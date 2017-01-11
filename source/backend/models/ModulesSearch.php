@@ -12,6 +12,8 @@ use backend\models\Modules;
  */
 class ModulesSearch extends Modules {
 
+    public $keywork;
+
     /**
      * @inheritdoc
      */
@@ -19,6 +21,8 @@ class ModulesSearch extends Modules {
         return [
             [['id', 'country_id', 'privincial_id', 'distric_id', 'created_by', 'updated_by'], 'integer'],
             [['msisdn', 'customer_code', 'address', 'created_at', 'updated_at'], 'safe'],
+            [['keywork', 'name'], 'string'],
+            [['keywork', 'name'], 'trim'],
         ];
     }
 
@@ -53,19 +57,14 @@ class ModulesSearch extends Modules {
             return $dataProvider;
         }
 
-        $query->andFilterWhere([
-            'country_id' => $this->country_id,
-            'privincial_id' => $this->privincial_id,
-            'distric_id' => $this->distric_id,
-            'created_by' => $this->created_by,
-            'created_at' => $this->created_at,
-            'updated_by' => $this->updated_by,
-            'updated_at' => $this->updated_at,
-        ]);
+        $this->customer_code = substr($this->name, 9);
 
-        $query->andFilterWhere(['like', 'msisdn', $this->msisdn])
-                ->andFilterWhere(['like', 'customer_code', $this->customer_code])
-                ->andFilterWhere(['like', 'address', $this->address]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+                ->orFilterWhere(['like', 'customer_code', $this->name]);
+
+        if ($this->customer_code) {
+            $query->orFilterWhere(['customer_code' => $this->customer_code]);
+        }
 
         return $dataProvider;
     }

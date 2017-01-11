@@ -46,7 +46,7 @@ class ReportController extends AppController {
         ]);
     }
 
-    public function actionReportalarm() {
+    public function actionAlarm() {
         $alarms = array();
         $from = date('Y-m-d', strtotime('-1 day'));
         $to = date('Y-m-d');
@@ -58,7 +58,6 @@ class ReportController extends AppController {
         $alarms = Alarm::getReport($from, $to, $module_id);
         if (Yii::$app->request->isPost) {
             $values = Yii::$app->request->post();
-            //$module_id = $values['module_id'];
             $from = $values['from'];
             $to = $values['to'];
             if ($values['export']) {
@@ -66,7 +65,7 @@ class ReportController extends AppController {
             }
             $alarms = Alarm::getReport($from, $to, $module_id);
         }
-        return $this->render('reportalarm.php', [
+        return $this->render('alarm.php', [
                     'alarms' => $alarms,
                     'from' => $from,
                     'to' => $to,
@@ -123,8 +122,6 @@ class ReportController extends AppController {
         }
         fclose($fp);
         die;
-        // var_dump($from."|".$to."|".$moduleId);
-        // die;
     }
 
     public function exportAlarmCsv($moduleId, $from, $to) {
@@ -166,8 +163,6 @@ class ReportController extends AppController {
         }
         fclose($fp);
         die;
-        // var_dump($from."|".$to."|".$moduleId);
-        // die;
     }
 
 }

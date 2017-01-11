@@ -9,7 +9,10 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('backend', 'Operation Logs');
 $this->params['breadcrumbs'][] = $this->title;
+$module = $searchModel->module;
+$idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
 ?>
+<h3 class="text-center"><?php echo \yii\helpers\Html::encode($idModule . ' - ' . $module->name) ?></h3>
 <div class="configuration-log-index">
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
     <?php

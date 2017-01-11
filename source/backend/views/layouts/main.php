@@ -256,6 +256,7 @@ AppAsset::register($this);
             jQuery(document).ready(function () {
                 Metronic.init(); // init metronic core components
                 Layout.init(); // init current layout
+                $('[data-toggle="tooltip"]').tooltip();
             });
         </script>
     </body>

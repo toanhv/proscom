@@ -6,496 +6,401 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\OutputMode */
 
-$idModule = $model->module->country->code . $model->module->privincial->code . $model->module->distric->code . $model->module->customer_code;
-$this->title = $idModule . ' - ' . $model->module->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Modules'), 'url' => ['/modules/view?id=' . $model->module->id]];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Output Modes'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$module = $model->module;
+$idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
+$this->title = $idModule . ' - ' . $module->name;
 ?>
-<div class="output-mode-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="diagram">
+    <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
     <form id="update-output-mode" method="post" action="/output-mode/update?id=<?php echo $model->id ?>">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
-        <div class="params">
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Convection Pump
-                </div>
-                <input type="hidden" id="convection_pump_mode" name="OutputMode[convection_pump][mode]" value="<?php echo $model->getConvectionMode() ?>">
-                <input type="hidden" id="convection_pump_pump" name="OutputMode[convection_pump][pump]" value="<?php echo $model->getConvectionPump() ?>">
-                <input type="hidden" id="convection_pump_time" name="OutputMode[convection_pump][time]" value="<?php echo $model->getConvectionTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-1">
-                                <span id="convection_pump_auto" onclick="setPumpMode('convection_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getConvectionMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-2">
-                                <span id="convection_pump_slave" onclick="setPumpPump('convection_pump', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getConvectionPump() == PUMP_ALL || $model->getConvectionPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 1 Slave</span>
-                            </li>
-                            <li class="row50 border-top <?php
-                            if (in_array($model->getConvectionMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                echo 'active';
-                            else
-                                echo '';
-                            ?>" id="loadmode-3">
-                                <span id="convection_pump_manual" onclick="setPumpMode('convection_pump', '<?php echo MANUAL_B1 ?>')">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-4">
-                                <span id="convection_pump_master" onclick="setPumpPump('convection_pump', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getConvectionPump() == PUMP_ALL || $model->getConvectionPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 1 Master</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master pump</p>
-                        <select class="form-control row80" id="convection_pump_select" onchange="changePumpTime('convection_pump')" <?php if ($model->getConvectionMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getConvectionTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getConvectionTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getConvectionTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getConvectionTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getConvectionTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getConvectionTime() == 5) echo 'selected="selected"'; ?>>5</option>
+        <div class="container-all">      
+            <div class="control-main control-main-full">
+                <div class="item">
+                    <h3>Convection pump</h3>
+                    <input type="hidden" id="convection_pump_mode" name="convection_pump][mode]" value="<?php echo $model->getConvectionMode() ?>">
+                    <div class="row-control item-6">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
                         </select>
-                        <span class="row20">min</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Cold water supply Pump
-                </div>
-                <input type="hidden" id="cwsp_pump_mode" name="OutputMode[cwsp_pump][mode]" value="<?php echo $model->getCwspMode() ?>">
-                <input type="hidden" id="cwsp_pump_pump" name="OutputMode[cwsp_pump][pump]" value="<?php echo $model->getCwspPump() ?>">
-                <input type="hidden" id="cwsp_pump_time" name="OutputMode[cwsp_pump][time]" value="<?php echo $model->getCwspTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-5">
-                                <span id="cwsp_pump_auto" onclick="setPumpMode('cwsp_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getCwspMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-6">
-                                <span id="cwsp_pump_slave" onclick="setPumpPump('cwsp_pump', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getCwspPump() == PUMP_ALL || $model->getCwspPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 1</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-7">
-                                <span id="cwsp_pump_manual" onclick="setPumpMode('cwsp_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getCwspMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-8">
-                                <span id="cwsp_pump_master" onclick="setPumpPump('cwsp_pump', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getCwspPump() == PUMP_ALL || $model->getCwspPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 2</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master pump</p>
-                        <select class="form-control row80" id="cwsp_pump_select" onchange="changePumpTime('cwsp_pump')" <?php if ($model->getCwspMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getCwspTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getCwspTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getCwspTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getCwspTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getCwspTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getCwspTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                        </select>
-                        <span class="row20">mins</span>
-                    </div>
-                </div>
-            </div>
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select id="style-1" class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Return Pump
-                </div>
-                <input type="hidden" id="return_pump_mode" name="OutputMode[return_pump][mode]" value="<?php echo $model->getReturnPumpMode() ?>">
-                <input type="hidden" id="return_pump_pump" name="OutputMode[return_pump][pump]" value="<?php echo $model->getReturnPumpPump() ?>">
-                <input type="hidden" id="return_pump_time" name="OutputMode[return_pump][time]" value="<?php echo $model->getReturnPumpTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-9">
-                                <span id="return_pump_auto" onclick="setPumpMode('return_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getReturnPumpMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-10">
-                                <span id="return_pump_slave" onclick="setPumpPump('return_pump', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getReturnPumpPump() == PUMP_ALL || $model->getReturnPumpPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 1</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-11">
-                                <span id="return_pump_manual" onclick="setPumpMode('return_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getReturnPumpMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-12">
-                                <span id="return_pump_master" onclick="setPumpPump('return_pump', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getReturnPumpPump() == PUMP_ALL || $model->getReturnPumpPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 2</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master pump</p>
-                        <select class="form-control row80" id="return_pump_select" onchange="changePumpTime('return_pump')" <?php if ($model->getReturnPumpMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getReturnPumpTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getReturnPumpTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getReturnPumpTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getReturnPumpTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getReturnPumpTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getReturnPumpTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                        </select>
-                        <span class="row20">min</span>
-                    </div>
-                </div>
-            </div>
+                            <!--SELECT 02-->
+                            <select id="style-2" class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Incresed pressure Pump
-                </div>
-                <input type="hidden" id="pressure_pump_mode" name="OutputMode[pressure_pump][mode]" value="<?php echo $model->getPressurePumpMode() ?>">
-                <input type="hidden" id="pressure_pump_pump" name="OutputMode[pressure_pump][pump]" value="<?php echo $model->getPressurePumpPump() ?>">
-                <input type="hidden" id="pressure_pump_time" name="OutputMode[pressure_pump][time]" value="<?php echo $model->getPressurePumpTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-13">
-                                <span id="pressure_pump_auto" onclick="setPumpMode('pressure_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getPressurePumpMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-14">
-                                <span id="pressure_pump_slave" onclick="setPumpPump('pressure_pump', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getPressurePumpPump() == PUMP_ALL || $model->getPressurePumpPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 1 ON</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-15">
-                                <span id="pressure_pump_manual" onclick="setPumpMode('pressure_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getPressurePumpMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-16">
-                                <span id="pressure_pump_master" onclick="setPumpPump('pressure_pump', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getPressurePumpPump() == PUMP_ALL || $model->getPressurePumpPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 2 ON</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master pump</p>
-                        <select class="form-control row80" id="pressure_pump_select" onchange="changePumpTime('pressure_pump')" <?php if ($model->getPressurePumpMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getPressurePumpTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getPressurePumpTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getPressurePumpTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getPressurePumpTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getPressurePumpTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getPressurePumpTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                        </select>
-                        <span class="row20">min</span>
-                    </div>
-                </div>
-            </div>
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="convection_pump_time" name="convection_pump[time]" value="<?php echo $model->getConvectionTime() ?>"> min
+                            </div>
+                        </div>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Heat Pump
-                </div>
-                <input type="hidden" id="heat_pump_mode" name="OutputMode[heat_pump][mode]" value="<?php echo $model->getHeatPumpMode() ?>">
-                <input type="hidden" id="heat_pump_pump" name="OutputMode[heat_pump][pump]" value="<?php echo $model->getHeatPumpPump() ?>">
-                <input type="hidden" id="heat_pump_time" name="OutputMode[heat_pump][time]" value="<?php echo $model->getHeatPumpTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-17">
-                                <span id="heat_pump_auto" onclick="setPumpMode('heat_pump', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getHeatPumpMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-18">
-                                <span id="heat_pump_slave" onclick="setPumpPump('heat_pump', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getHeatPumpPump() == PUMP_ALL || $model->getHeatPumpPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 1 Master</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-19">
-                                <span id="heat_pump_manual" onclick="setPumpMode('heat_pump', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getHeatPumpMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-20">
-                                <span id="heat_pump_master" onclick="setPumpPump('heat_pump', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getHeatPumpPump() == PUMP_ALL || $model->getHeatPumpPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Pump 2 Master</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master pump</p>
-                        <select class="form-control row80" id="heat_pump_select" onchange="changePumpTime('heat_pump')" <?php if ($model->getHeatPumpMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getHeatPumpTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getHeatPumpTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getHeatPumpTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getHeatPumpTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getHeatPumpTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getHeatPumpTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                        </select>
-                        <span class="row20">min</span>
-                    </div>
-                </div>
-            </div>
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Heater Resistor
-                </div>
-                <input type="hidden" id="heater_resis_mode" name="OutputMode[heater_resis][mode]" value="<?php echo $model->getHeaterResisMode() ?>">
-                <input type="hidden" id="heater_resis_pump" name="OutputMode[heater_resis][pump]" value="<?php echo $model->getHeaterResisPump() ?>">
-                <input type="hidden" id="heater_resis_time" name="OutputMode[heater_resis][time]" value="<?php echo $model->getHeaterResisTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-21">
-                                <span id="heater_resis_auto" onclick="setPumpMode('heater_resis', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getHeaterResisMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-22">
-                                <span id="heater_resis_slave" onclick="setPumpPump('heater_resis', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getHeaterResisPump() == PUMP_ALL || $model->getHeaterResisPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Resistor 1 Master</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-23">
-                                <span id="heater_resis_manual" onclick="setPumpMode('heater_resis', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getHeaterResisMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-24">
-                                <span id="heater_resis_master" onclick="setPumpPump('heater_resis', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getHeaterResisPump() == PUMP_ALL || $model->getHeaterResisPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Resistor 2 Master</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master Resistor</p>
-                        <select class="form-control row80" id="heater_resis_select" onchange="changePumpTime('heater_resis')" <?php if ($model->getHeaterResisMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getHeaterResisTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getHeaterResisTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getHeaterResisTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getHeaterResisTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getHeaterResisTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getHeaterResisTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                        </select>
-                        <span class="row20">min</span>
-                    </div>
-                </div>
-            </div>
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Three way Valve
-                </div>
-                <input type="hidden" id="3way_mode" name="OutputMode[3way][mode]" value="<?php echo $model->get3wayMode() ?>">
-                <input type="hidden" id="3way_pump" name="OutputMode[3way][pump]" value="<?php echo $model->get3wayPump() ?>">
-                <input type="hidden" id="3way_time" name="OutputMode[3way][time]" value="<?php echo $model->get3wayTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-25">
-                                <span id="3way_auto" onclick="setPumpMode('3way', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->get3wayMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-26">
-                                <span id="3way_slave" onclick="setPumpPump('3way', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->get3wayPump() == PUMP_ALL || $model->get3wayPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Valve 1 Master</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-27">
-                                <span id="3way_manual" onclick="setPumpMode('3way', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->get3wayMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-28">
-                                <span id="3way_master" onclick="setPumpPump('3way', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->get3wayPump() == PUMP_ALL || $model->get3wayPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Valve 2 Master</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master Valve</p>
-                        <select class="form-control row80" id="3way_select" onchange="changePumpTime('3way')" <?php if ($model->get3wayMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->get3wayTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option  <?php if ($model->get3wayTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option  <?php if ($model->get3wayTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option  <?php if ($model->get3wayTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option  <?php if ($model->get3wayTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option  <?php if ($model->get3wayTime() == 5) echo 'selected="selected"'; ?>>5</option>
-                        </select>
-                        <span class="row20">min</span>
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="border row row100">
-                <div class="row20 params-left padding10">
-                    Blakflow Valve
-                </div>
-                <input type="hidden" id="blakflow_mode" name="OutputMode[blakflow][mode]" value="<?php echo $model->getBlakflowMode() ?>">
-                <input type="hidden" id="blakflow_pump" name="OutputMode[blakflow][pump]" value="<?php echo $model->getBlakflowPump() ?>">
-                <input type="hidden" id="blakflow_time" name="OutputMode[blakflow][time]" value="<?php echo $model->getBlakflowTime() ?>">
-                <div class="row80 params-right border-left">
-                    <div class="row50 border-right">
-                        <ul class="mode-select">
-                            <li class="row50" id="loadmode-29">
-                                <span id="3blakflow_auto" onclick="setPumpMode('blakflow', '<?php echo AUTO_B1 ?>')" class="<?php
-                                if (in_array($model->getBlakflowMode(), [AUTO_B1, AUTO_B2]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Auto</span>
-                            </li>
-                            <li class="row50 border-left" id="loadmode-30">
-                                <span id="blakflow_slave" onclick="setPumpPump('blakflow', '<?php echo PUMP_SLAVE ?>')" class="<?php
-                                if ($model->getBlakflowPump() == PUMP_ALL || $model->getBlakflowPump() == PUMP_SLAVE)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Valve 1 Master</span>
-                            </li>
-                            <li class="row50 border-top" id="loadmode-31">
-                                <span id="blakflow_manual" onclick="setPumpMode('blakflow', '<?php echo MANUAL_B1 ?>')" class="<?php
-                                if (in_array($model->getBlakflowMode(), [MANUAL_B1, MANUAL_B2, MANUAL_B12]))
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Manual</span>
-                            </li>
-                            <li class="row50 border-left border-top" id="loadmode-32">
-                                <span id="blakflow_master" onclick="setPumpPump('blakflow', '<?php echo PUMP_MASTER ?>')" class="<?php
-                                if ($model->getBlakflowPump() == PUMP_ALL || $model->getBlakflowPump() == PUMP_MASTER)
-                                    echo 'active';
-                                else
-                                    echo '';
-                                ?>">Valve 2 Master</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row50 padding10">
-                        <p>Time wait for master Valve</p>
-                        <select class="form-control row80" id="blakflow_select" onchange="changePumpTime('blakflow')" <?php if ($model->getBlakflowMode() == MANUAL_B1) echo 'disabled' ?>>
-                            <option <?php if ($model->getBlakflowTime() == 0) echo 'selected="selected"'; ?>>0</option>
-                            <option <?php if ($model->getBlakflowTime() == 1) echo 'selected="selected"'; ?>>1</option>
-                            <option <?php if ($model->getBlakflowTime() == 2) echo 'selected="selected"'; ?>>2</option>
-                            <option <?php if ($model->getBlakflowTime() == 3) echo 'selected="selected"'; ?>>3</option>
-                            <option <?php if ($model->getBlakflowTime() == 4) echo 'selected="selected"'; ?>>4</option>
-                            <option <?php if ($model->getBlakflowTime() == 5) echo 'selected="selected"'; ?>>5</option>
+                <div class="item">
+                    <h3>Cold water supply pump</h3>
+                    <input type="hidden" id="cwsp_pump_mode" name="cwsp_pump[mode]" value="<?php echo $model->getCwspMode() ?>">
+                    <div class="row-control item-7">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
                         </select>
-                        <span class="row20">min</span>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="12">Slave</option>
+                                <option value="11">Master</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="cwsp_pump_time" name="cwsp_pump[time]" value="<?php echo $model->getCwspTime() ?>"> min
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="item">
+                    <h3>Return pump</h3>
+                    <input type="hidden" id="return_pump_mode" name="return_pump[mode]" value="<?php echo $model->getReturnPumpMode() ?>">
+                    <div class="row-control item-8">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
+                        </select>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="return_pump_time" name="return_pump[time]" value="<?php echo $model->getReturnPumpTime() ?>"> min
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>Increase pressure pump</h3>
+                    <input type="hidden" id="pressure_pump_mode" name="pressure_pump[mode]" value="<?php echo $model->getPressurePumpMode() ?>">
+                    <div class="row-control item-9">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
+                        </select>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="pressure_pump_time" name="pressure_pump[time]" value="<?php echo $model->getPressurePumpTime() ?>"> min
+                            </div>
+
+                            <div class="add-info" style="width:170px">
+                                Tem ON Slave <input class="type-text" style="width:30px" type="text" id="pressure_pump_tem" name="pressure_pump[tem]" value="<?php echo $model->getPressurePumpTem() ?>"> <sup>o</sup> C
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+
+                            <div class="add-info" style="width:170px">
+                                Tem ON Slave <input class="type-text" style="width:30px" disabled type="text"> <sup>o</sup> C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>Heat pump</h3>
+                    <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $model->getHeatPumpMode() ?>">
+                    <div class="row-control item-10">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
+                        </select>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="heat_pump_time" name="heat_pump[time]" value="<?php echo $model->getHeatPumpTime() ?>"> min
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>Heater registor</h3>
+                    <input type="hidden" id="heater_resis_mode" name="heater_resis[mode]" value="<?php echo $model->getHeaterResisMode() ?>">
+                    <div class="row-control item-11">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
+                        </select>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="heater_resis_time" name="OutputMode[heater_resis][time]" value="<?php echo $model->getHeaterResisTime() ?>"> min
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>Three-way value</h3>
+                    <div class="row-control item-12">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
+                        </select>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text"> min
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>Backflow value</h3>
+                    <div class="row-control item-13">
+                        <select class="selectpicker select-master" data-width="70">
+                            <option value="1">Auto</option>
+                            <option value="2">Manual</option>
+                        </select>
+
+                        <div class="control-01"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">Master</option>
+                                <option value="12">Slave</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">Slave</option>                
+                                <option value="21">Master</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" type="text"> min
+                            </div>
+                        </div>
+
+                        <div class="control-02"> 
+                            <!--SELECT 01-->
+                            <select class="selectpicker select-sub-1" data-width="80">
+                                <option value="11">ON</option>
+                                <option value="12">OFF</option>
+                            </select>
+
+                            <!--SELECT 02-->
+                            <select class="selectpicker select-sub-2" data-width="80">
+                                <option value="22">OFF</option>                
+                                <option value="21">ON</option>
+                            </select>
+
+                            <div class="add-info">
+                                Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>   
             <div class="row100" style="text-align:center">
                 <input type="submit" value="Save and Send" class="btn btn-primary"/>
-                <a href="/modules/view?id=<?php echo $model->module->id; ?>" class="btn btn-primary">Cancel</a>
             </div>
         </div>
-
     </form>
 </div>

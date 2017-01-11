@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="output-mode-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
 
     <?=
     DetailView::widget([

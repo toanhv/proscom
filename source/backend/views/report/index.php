@@ -1,18 +1,14 @@
 <?php
 $this->title = Yii::t('backend', 'Sensors Report');
-$this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1 class="title"><?php echo $module->getModuleId() . ' - ' . \yii\helpers\Html::encode($module->name); ?></h1>
-<form method="post" action="/report/index" id="report-sensor-alarm">
+<form method="post" action="/report/index" id="report-sensor-alarm">    
     <div class="params" style="alignment-adjust: middle">
+        <h3 class="title"><?php echo $module->getModuleId() . ' - ' . \yii\helpers\Html::encode($module->name); ?></h3>
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
-
         From:
         <input type="text" name="from" id="report_from" value="<?php echo $from ?>">
-
         To:
         <input type="text"  name="to" id="report_to" value="<?php echo $to ?>">
-
         <input type="hidden" name="export" id="export" value="0">
         <button onclick="drawGraph()" class="btn-reprt btn-primary">Report</button>
         <button onclick="exportFile()" class="btn-reprt btn-primary">Excel</button>
@@ -22,14 +18,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php if (count($sensors) > 0): ?>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
-
             console.log("start chart");
             google.charts.load('current', {'packages': ['line']});
             google.charts.setOnLoadCallback(initChart);
 
             function initChart() {
-                console.log("init chart");
+                console.log("init chart sensor");
                 var danthu = initData();
                 var bonsolar = initData();
                 var mucnuoc_bonsolar = initData();
@@ -56,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 apsuat_duongong.addRows(<?php echo count($sensors) ?>);
                 nhietdo_duongong_1.addRows(<?php echo count($sensors) ?>);
 
-    <?php foreach ($sensors as $k => $sens): ?>
+                <?php foreach ($sensors as $k => $sens): ?>
                     danthu = addData(danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_dan_thu) ?>);
                     bonsolar = addData(danthu,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_bon_solar) ?>);
                     mucnuoc_bonsolar = addData(mucnuoc_bonsolar,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_muc_nuoc_bon_solar) ?>);
@@ -69,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     duphong = addData(duphong,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->du_phong) ?>);
                     apsuat_duongong = addData(apsuat_duongong,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_ap_suat_duong_ong) ?>);
                     nhietdo_duongong_1 = addData(nhietdo_duongong_1,<?php echo $k ?>, '<?php echo $sens->created_at ?>',<?php echo bindec($sens->cam_bien_nhiet_do_duong_ong_1) ?>);
-    <?php endforeach; ?>
+                <?php endforeach; ?>
 
                 drawChart(danthu, 'draw-dan-thu', 'Solar panels temp');
                 drawChart(bonsolar, 'draw-bon-solar', 'Solar tank temp');
@@ -99,7 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
             }
 
             function drawChart(data, id, tit) {
-                $('#report-view').append('<div id="' + id + '"></div>');
+                $('#report-view').append('<div class="sensor-report" id="' + id + '"></div>');
                 var options = {
                     chart: {
                         title: tit,
@@ -132,6 +126,4 @@ $this->params['breadcrumbs'][] = $this->title;
             }
     </script>
 <?php endif ?>
-<div id="report-view">
-
-</div>
+<div id="report-view"></div>

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="timer-counter-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
 
     <?=
     $this->render('_form', [

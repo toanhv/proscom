@@ -134,6 +134,11 @@ class OutputMode extends OutputModeBase {
         return bindec($bin);
     }
 
+    public function getPressurePumpTem() {
+        $bin = substr($this->incresed_pressure_pump, 16, 8);
+        return bindec($bin);
+    }
+
     public function getHeatPumpMode() {
         return substr($this->heat_pump, 0, 8);
     }

@@ -106,8 +106,8 @@ class ParamConfigController extends AppController {
             $model->cold_water_supply_pump = Socket::alldec2bin($values['cold_water_supply_pump_lv1'])
                     . Socket::alldec2bin($values['cold_water_supply_pump_lv2']);
             $model->return_pump = Socket::alldec2bin($values['return_pump_t1_start'])
-                    . Socket::alldec2bin($values['return_pump_t2_start'])
                     . Socket::alldec2bin($values['return_pump_t1_end'])
+                    . Socket::alldec2bin($values['return_pump_t2_start'])
                     . Socket::alldec2bin($values['return_pump_t2_end'])
                     . Socket::alldec2bin($values['return_pump_delta_t']);
             $model->incresed_pressure_pump = Socket::alldec2bin($values['pressure_pump_p1']);

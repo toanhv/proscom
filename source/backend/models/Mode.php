@@ -52,7 +52,8 @@ class Mode extends ModeBase {
     public function upload() {
         if ($this->validate()) {
             if (!is_dir(\Yii::getAlias('@webroot') . '/uploads/mode')) {
-                mkdir(\Yii::getAlias('@webroot') . '/uploads/mode', 0664, true);
+                mkdir(\Yii::getAlias('@webroot') . '/uploads/mode', 0777, true);
+                chmod(\Yii::getAlias('@webroot') . '/uploads/mode/', 0777);
             }
             $filePath = '/uploads/mode/' . md5(time()) . '.' . $this->image_path->extension;
             $this->image_path->saveAs(\Yii::getAlias('@webroot') . $filePath);

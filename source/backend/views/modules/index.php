@@ -1,3 +1,24 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model backend\models\ModulesSearch */
+/* @var $form yii\widgets\ActiveForm */
+
+$this->title = 'Home';
+?>
+<div class="page-bar">
+    <?php $form = ActiveForm::begin(); ?>
+    <ul class="page-breadcrumb">
+        <li><i class="fa fa-search"></i><a href="javascript:void(0);">Find module&nbsp;</a></li>
+        <li>
+            <input id="modulessearch-name" name="ModulesSearch[name]" value="<?php echo Html::encode($searchModel->name); ?>" type="text">
+        </li>
+    </ul>   
+    <?php ActiveForm::end(); ?>
+</div>
 <div class="row modules">
     <?php
     $data = $dataProvider->getModels();

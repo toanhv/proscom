@@ -33,6 +33,7 @@ class AppAsset extends AssetBundle {
         'css/custom.css',
         'css/diagram.css',
         'css/jquery.datetimepicker.css',
+        'css/bootstrap-select.css',
     ];
     public $js = [
         'plugins/jquery-ui/jquery-ui.min.js',
@@ -48,9 +49,10 @@ class AppAsset extends AssetBundle {
         'js/metronic/quick-sidebar.js',
         'js/metronic/datatable.js',
         'js/metronic/aws-datatable.js',
-        'js/loader.js',
+        'js/bootstrap-select.js',
         'js/cms.js',
         'js/jquery.datetimepicker.full.min.js',
+        'js/pump.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
