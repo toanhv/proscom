@@ -10,7 +10,7 @@
 /***************Right content *********************/
 .right-content {
     font-size:14px;
-    margin-left:0;
+    margin-left:5px;
     display:inline-block;
     vertical-align:top;
 }
@@ -462,7 +462,7 @@
 }	
 
 .right-info{
-    width:170px;
+    width:200px;
     float:left;
 }
 
@@ -474,9 +474,9 @@
 .info-block .info-block-item{
     background:#fcf8e3;
     border:1px solid #fcd16b;
-    padding:10px 5px;
+    padding:10px 1px 10px 10px;
     border-radius:4px;
-    margin:5px 0;
+    margin:5px;
 }
 
 .info-block .info-block-item .text-01{
@@ -859,7 +859,7 @@
 
 .container-all {
     /*width:810px;*/
-	width:1040px;
+	width:1080px;
     margin:0 auto;	
 }
 
@@ -910,7 +910,7 @@
 
 .control-main {
 	display:inline-block;
-	width:265px;
+	width:270px;
 	vertical-align:top;
 	background:#fff;
 	margin-right:10px;
@@ -936,7 +936,6 @@
 	margin-top:7px;
 	vertical-align:top;
 	border-radius:4px;
-	color:#fff;
 }
 
 .control-main-full .item .control-01, .control-main-full .item .control-02 {
@@ -981,13 +980,6 @@
 	margin-bottom:3px;
 	padding-bottom:0;
 	margin-top:0;
-}
-
-.control-main-center h3{
-	background:#1caf9a;
-	border-radius:4px;
-	padding:12px;
-	color:#fff;
 }
 
 .control-main .btn{
@@ -1069,83 +1061,39 @@
     background-color: #fff;
 }	
 
-
-/***************button private***************/
-.select-sub-1 button,.select-sub-2 button{
-    color: #fff;
-    background-color: #26a69a;
-    border-color: #26a69a;
-}
-.select-sub-1 button:hover, .select-sub-1 button:focus, .select-sub-1 button:active, .select-sub-1 button.active, .select-sub-2 button:hover, .select-sub-2 button:focus, .select-sub-2 button:active, .select-sub-2 button.active {
-    color: #fff;
-    background-color: #1f897f;
-    border-color: #186860;
-}
-.open button.dropdown-toggle {
-    color: #fff;
-    background-color: #26a69a;
-    border-color: #186860;
-}
-.select-sub-1 button:active, .select-sub-1 button.active, .select-sub-2 button:active, .select-sub-2 button.active {
-    background-image: none;
-    background-color: #008697;
-}
-.select-sub-1 button:active:hover, .select-sub-1 button.active:hover, .select-sub-2 button:active:hover, .select-sub-2 button.active:hover{
-    background-color: #008fa1;
-}
-.open button.dropdown-toggle {
-    background-image: none !important;
-}
-
-/***************button selected***************/
-.choosen-1 .select-sub-1 button,.choosen-2 .select-sub-2 button{
+.btn-primary {
     color: #fff;
     background-color: #009cb0;
     border-color: #009cb0;
 }
-
-.choosen-1 .select-sub-1 button:hover,.choosen-1 .select-sub-1 button:focus,.choosen-1 .select-sub-1 button:active,.choosen-1 .select-sub-1 button.active,.choosen-2 .select-sub-2 button:hover,.choosen-2 .select-sub-2 button:focus,.choosen-2 .select-sub-2 button:active,.choosen-2 .select-sub-2 button.active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
     color: #fff;
     background-color: #009cb0;
     border-color: #007888;
 }
-.choosen .open button.dropdown-toggle {
+.open .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #009cb0;
     border-color: #007888;
 }
-.choosen-1 .select-sub-1 button:active,.choosen-1 .select-sub-1 button.active,.choosen-2 .select-sub-2 button:active,.choosen-2 .select-sub-2 button.active{
+.btn-primary:active, .btn-primary.active {
     background-image: none;
     background-color: #008697;
 }
-.choosen-1 .select-sub-1 button:active:hover,.choosen-1 .select-sub-1 button.active:hover,.choosen-2 .select-sub-2 button:active:hover,.choosen-2 .select-sub-2 button.active:hover{
+.btn-primary:active:hover, .btn-primary.active:hover {
     background-color: #008fa1;
 }
-.choosen .open button.dropdown-toggle {
-    background-image: none !important;
-}
-
-
-.choosen-3 .select-sub-1 button,.choosen-4 .select-sub-2 button{
-    color: #fff;
-    background-color: #ff5722;
-    border-color: #ff4408;
-}
-
-.choosen-3 .select-sub-1 button:hover,.choosen-3 .select-sub-1 button:focus,.choosen-3 .select-sub-1 button:active,.choosen-3 .select-sub-1 button.active,.choosen-4 .select-sub-2 button:hover,.choosen-4 .select-sub-2 button:focus,.choosen-4 .select-sub-2 button:active,.choosen-4 .select-sub-2 button.active {
-    color: #fff;
-    background-color: #ff5722;
-    border-color: #ff4408;
-}
-
-.choosen-3 .select-sub-1 button:active,.choosen-3 .select-sub-1 button.active,.choosen-4 .select-sub-2 button:active,.choosen-4 .select-sub-2 button.active{
+.open .btn-primary.dropdown-toggle {
     background-image: none;
-    background-color: #008697;
 }
-.choosen-3 .select-sub-1 button:active:hover,.choosen-3 .select-sub-1 button.active:hover,.choosen-4 .select-sub-2 button:active:hover,.choosen-4 .select-sub-2 button.active:hover{
-    background-color: #ff5722;
+.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+    background-color: #00BCD4;
+    border-color: #00a5bb;
 }
-
+.btn-primary .badge {
+    color: #00BCD4;
+    background-color: #fff;
+}
 
 .select-animation {
     background-color: #01fe03;
