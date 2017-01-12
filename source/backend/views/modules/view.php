@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 
 $this->title = 'Overal View';
+
+$outputMode = $model->outputModes;
 ?>
 <div class="output-mode-view">    
     <div class="info-diagram">
@@ -12,243 +14,277 @@ $this->title = 'Overal View';
     <div class="diagram">
         <div class="container-all">
             <div class="control-main">
-                <div class="item">
-                    <h3>Convection pump</h3>
-                    <div class="row-control item-1">
-                        <select class="selectpicker select-master" data-width="70">
-                            <option value="1">Auto</option>
-                            <option value="2">Manual</option>
-                        </select>
-
-                        <div class="control-01"> 
-                            <!--SELECT 01-->
-                            <select  class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">Master 1</option>
-                                <option value="12">Slave 2</option>
+                <form id="update-output-mode" method="post" action="/output-mode/update?id=<?php echo $model->id ?>">
+                    <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
+                    <div class="item">
+                        <h3>Convection pump</h3>
+                        <input type="hidden" id="convection_pump_mode" name="convection_pump[mode]" value="<?php echo $outputMode->getConvectionMode() ?>">
+                        <input type="hidden" id="convection_pump_time" name="convection_pump[time]" value="<?php echo $outputMode->getConvectionTime() ?>">
+                        <div class="row-control item-6">
+                            <select class="selectpicker select-master" data-width="70">
+                                <option value="1">Auto</option>
+                                <option value="2">Manual</option>
                             </select>
 
-                            <!--SELECT 02-->
-                            <select  class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">Slave 1</option>                
-                                <option value="21">Master 2</option>
-                            </select>
+                            <div class="control-01"> 
+                                <!--SELECT 01-->
+                                <select  class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">Master</option>
+                                    <option value="12">Slave</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select  class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">Slave</option>                
+                                    <option value="21">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="control-02"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">ON</option>
+                                    <option value="12">OFF</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">OFF</option>                
+                                    <option value="21">ON</option>
+                                </select>
+                            </div>
                         </div>
-
-                        <div class="control-02"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">1 ON</option>
-                                <option value="12">2 OFF</option>
-                            </select>
-
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">2 OFF</option>                
-                                <option value="21">1 ON</option>
-                            </select>
-                        </div>
-
-
                     </div>
-                </div>
 
-                <div class="item">
-                    <h3>Cold water supply pump</h3>
-                    <div class="row-control item-2">
-                        <select class="selectpicker select-master" data-width="70">
-                            <option value="1">Auto</option>
-                            <option value="2">Manual</option>
-                        </select>
-
-                        <div class="control-01"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">Master 1</option>
-                                <option value="12">Slave 2</option>
+                    <div class="item">
+                        <h3>Cold water supply pump</h3>
+                        <input type="hidden" id="cwsp_pump_mode" name="cwsp_pump[mode]" value="<?php echo $outputMode->getCwspMode() ?>">
+                        <input type="hidden" id="cwsp_pump_time" name="cwsp_pump[time]" value="<?php echo $outputMode->getCwspTime() ?>">
+                        <div class="row-control item-7">
+                            <select class="selectpicker select-master" data-width="70">
+                                <option value="1">Auto</option>
+                                <option value="2">Manual</option>
                             </select>
 
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">Slave 1</option>                
-                                <option value="21">Master 2</option>
-                            </select>
+                            <div class="control-01"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">Master</option>
+                                    <option value="12">Slave</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">Slave</option>                
+                                    <option value="21">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="control-02"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">ON</option>
+                                    <option value="12">OFF</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">OFF</option>                
+                                    <option value="21">ON</option>
+                                </select>
+                            </div>
                         </div>
-
-                        <div class="control-02"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">1 ON</option>
-                                <option value="12">2 OFF</option>
-                            </select>
-
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">2 OFF</option>                
-                                <option value="21">1 ON</option>
-                            </select>
-                        </div>
-
-
                     </div>
-                </div>
 
-                <div class="item">
-                    <h3>Return pump</h3>
-                    <div class="row-control item-3">
-                        <select class="selectpicker select-master" data-width="70">
-                            <option value="1">Auto</option>
-                            <option value="2">Manual</option>
-                        </select>
-
-                        <div class="control-01"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">Master 1</option>
-                                <option value="12">Slave 2</option>
+                    <div class="item">
+                        <h3>Return pump</h3>
+                        <input type="hidden" id="return_pump_mode" name="return_pump[mode]" value="<?php echo $outputMode->getReturnPumpMode() ?>">
+                        <input type="hidden" id="return_pump_time" name="return_pump[time]" value="<?php echo $outputMode->getReturnPumpTime() ?>">
+                        <div class="row-control item-8">
+                            <select class="selectpicker select-master" data-width="70">
+                                <option value="1">Auto</option>
+                                <option value="2">Manual</option>
                             </select>
 
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">Slave 1</option>                
-                                <option value="21">Master 2</option>
-                            </select>
+                            <div class="control-01"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">Master</option>
+                                    <option value="12">Slave</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">Slave</option>                
+                                    <option value="21">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="control-02"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">ON</option>
+                                    <option value="12">OFF</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">OFF</option>                
+                                    <option value="21">ON</option>
+                                </select>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="control-02"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">1 ON</option>
-                                <option value="12">2 OFF</option>
+                    <div class="item">
+                        <h3>Increase pressure pump</h3>
+                        <input type="hidden" id="pressure_pump_mode" name="pressure_pump[mode]" value="<?php echo $outputMode->getPressurePumpMode() ?>">
+                        <input type="hidden" id="pressure_pump_time" name="pressure_pump[time]" value="<?php echo $outputMode->getPressurePumpTime() ?>">
+                        <input type="hidden" id="pressure_pump_tem" name="pressure_pump[tem]" value="<?php echo $outputMode->getPressurePumpTem() ?>">
+                        <div class="row-control item-9">
+                            <select class="selectpicker select-master" data-width="70">
+                                <option value="1">Auto</option>
+                                <option value="2">Manual</option>
                             </select>
 
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">2 OFF</option>                
-                                <option value="21">1 ON</option>
-                            </select>
+                            <div class="control-01"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">Master</option>
+                                    <option value="12">Slave</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">Slave</option>                
+                                    <option value="21">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="control-02"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">ON</option>
+                                    <option value="12">OFF</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">OFF</option>                
+                                    <option value="21">ON</option>
+                                </select>
+                            </div>
                         </div>
-
-
                     </div>
-                </div>
 
-                <div class="item">
-                    <h3>Increase pressure pump</h3>
-                    <div class="row-control item-4">
-                        <select class="selectpicker select-master" data-width="70">
-                            <option value="1">Auto</option>
-                            <option value="2">Manual</option>
-                        </select>
-
-                        <div class="control-01"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">Master 1</option>
-                                <option value="12">Slave 2</option>
+                    <div class="item">
+                        <h3>Heat pump</h3>
+                        <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $outputMode->getHeatPumpMode() ?>">
+                        <input type="hidden" id="heat_pump_time" name="heat_pump[time]" value="<?php echo $outputMode->getHeatPumpTime() ?>">
+                        <div class="row-control item-10">
+                            <select class="selectpicker select-master" data-width="70">
+                                <option value="1">Auto</option>
+                                <option value="2">Manual</option>
                             </select>
 
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">Slave 1</option>                
-                                <option value="21">Master 2</option>
-                            </select>
+                            <div class="control-01"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">Master</option>
+                                    <option value="12">Slave</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">Slave</option>                
+                                    <option value="21">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="control-02"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">ON</option>
+                                    <option value="12">OFF</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">OFF</option>                
+                                    <option value="21">ON</option>
+                                </select>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="control-02"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">1 ON</option>
-                                <option value="12">2 OFF</option>
+                    <div class="item">
+                        <h3>Heater registor</h3>
+                        <input type="hidden" id="heater_resis_mode" name="heater_resis[mode]" value="<?php echo $outputMode->getHeaterResisMode() ?>">
+                        <input type="hidden" id="heater_resis_time" name="heater_resis[time]" value="<?php echo $outputMode->getHeaterResisTime() ?>">
+                        <div class="row-control item-11">
+                            <select class="selectpicker select-master" data-width="70">
+                                <option value="1">Auto</option>
+                                <option value="2">Manual</option>
                             </select>
 
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">2 OFF</option>                
-                                <option value="21">1 ON</option>
-                            </select>
+                            <div class="control-01"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">Master</option>
+                                    <option value="12">Slave</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">Slave</option>                
+                                    <option value="21">Master</option>
+                                </select>
+                            </div>
+
+                            <div class="control-02"> 
+                                <!--SELECT 01-->
+                                <select class="selectpicker select-sub-1" data-width="80">
+                                    <option value="11">ON</option>
+                                    <option value="12">OFF</option>
+                                </select>
+
+                                <!--SELECT 02-->
+                                <select class="selectpicker select-sub-2" data-width="80">
+                                    <option value="22">OFF</option>                
+                                    <option value="21">ON</option>
+                                </select>
+                            </div>                            
                         </div>
-
-
                     </div>
-                </div>
 
-                <div class="item">
-                    <h3>Heat pump</h3>
-                    <div class="row-control item-5">
-                        <select class="selectpicker select-master" data-width="70">
-                            <option value="1">Auto</option>
-                            <option value="2">Manual</option>
-                        </select>
-
-                        <div class="control-01"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">Master 1</option>
-                                <option value="12">Slave 2</option>
+                    <!--div class="item">
+                        <h3>Three way - value</h3>
+                        <div class="row-control item-12">
+                            <select class="selectpicker" data-width="70">
+                                <option>Auto</option>
+                                <option>Manual</option>
                             </select>
-
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">Slave 1</option>                
-                                <option value="21">Master 2</option>
-                            </select>
+    
+                            <button class="btn btn-success" >Under operation coditions</button>
                         </div>
-
-                        <div class="control-02"> 
-                            <!--SELECT 01-->
-                            <select class="selectpicker select-sub-1" data-width="80">
-                                <option value="11">1 ON</option>
-                                <option value="12">2 OFF</option>
+                    </div>
+    
+                    <div class="item">
+                        <h3>Backflow value</h3>
+                        <div class="row-control item-13">
+                            <select class="selectpicker" data-width="70">
+                                <option>Auto</option>
+                                <option>Manual</option>
                             </select>
-
-                            <!--SELECT 02-->
-                            <select class="selectpicker select-sub-2" data-width="80">
-                                <option value="22">2 OFF</option>                
-                                <option value="21">1 ON</option>
-                            </select>
+    
+                            <button class="btn btn-success" >Under operation coditions</button>
                         </div>
-
-
+                    </div-->
+                    <div class="row100" style="text-align:center">
+                        <input type="hidden" id="url_back" name="url_back" value="/modules/all-view">
+                        <input type="submit" value="Save and Send" class="btn btn-primary"/>
                     </div>
-                </div>
-
-                <div class="item">
-                    <h3>Heater registor</h3>
-                    <div class="row-control item-15">
-                        <select class="selectpicker" data-width="70">
-                            <option>Auto</option>
-                            <option>Manual</option>
-                        </select>
-
-                        <button class="btn btn-success switch" >R1 master</button>
-                        <button class="btn btn-success switch" >R2 slave</button>                
-                    </div>
-                </div>
-
-                <div class="item">
-                    <h3>Three way - value</h3>
-                    <div class="row-control item-15">
-                        <select class="selectpicker" data-width="70">
-                            <option>Auto</option>
-                            <option>Manual</option>
-                        </select>
-
-                        <button class="btn btn-success" >Under operation coditions</button>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <h3>Backflow value</h3>
-                    <div class="row-control item-15">
-                        <select class="selectpicker" data-width="70">
-                            <option>Auto</option>
-                            <option>Manual</option>
-                        </select>
-
-                        <button class="btn btn-success" >Under operation coditions</button>
-                    </div>
-                </div>
-
+                </form>
             </div>
 
             <div class="left-content">
@@ -264,9 +300,17 @@ $this->title = 'Overal View';
                 <div class="c-04">&nbsp;</div>
                 <div class="bg-04">
                     <div class="ctn">
-                    <!--<span class="row-01"></span>-->
-                        <span class="row-02"></span>
-                        <span class="row-03"></span>
+                        <?php $number = bindec($sensors->cam_bien_muc_nuoc_bon_solar); ?>
+                        <?php if ($number == 3) { ?>
+                            <span class="row-01"></span>
+                            <span class="row-02"></span>
+                            <span class="row-03"></span>
+                        <?php } elseif ($number == 2) { ?>
+                            <span class="row-02"></span>
+                            <span class="row-03"></span>
+                        <?php } elseif ($number == 1) { ?>
+                            <span class="row-03"></span>
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -331,7 +375,7 @@ $this->title = 'Overal View';
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Solar tank level</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_muc_nuoc_bon_solar); ?><sup>o</sup>C</span>
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_muc_nuoc_bon_solar); ?>
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Heater tank temp</span>
@@ -339,7 +383,7 @@ $this->title = 'Overal View';
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Heater tank pressure</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?><sup>o</sup>C</span>
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>Psi
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Lingh intensity</span>
@@ -351,7 +395,7 @@ $this->title = 'Overal View';
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?><sup>o</sup>C</span>
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>Psi
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Pipeline temp 1</span>

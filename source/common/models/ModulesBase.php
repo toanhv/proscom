@@ -68,14 +68,14 @@ class ModulesBase extends \common\models\db\ModulesDB {
      * @return \yii\db\ActiveQuery
      */
     public function getOutputModes() {
-        return \common\models\OutputModeBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+        return \common\models\OutputModeBase::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getParamConfigs() {
-        return \common\models\ParamConfigBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+        return \common\models\ParamConfigBase::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
     }
 
     /**

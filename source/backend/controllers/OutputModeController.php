@@ -103,95 +103,23 @@ class OutputModeController extends AppController {
         if (Yii::$app->request->isPost) {
             $values = Yii::$app->request->post();
             //convection_pump - Bơm đối lưu
-            $convectionPumptime = Socket::alldec2bin($values['OutputMode']['convection_pump']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['convection_pump']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['convection_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['convection_pump']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['convection_pump']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['convection_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['convection_pump']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['convection_pump']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['convection_pump']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->convection_pump = $values['OutputMode']['convection_pump']['mode'] . $convectionPumptime;
+            $convectionPumptime = Socket::alldec2bin($values['convection_pump']['time'], 8) . BACKUP;
+            $model->convection_pump = $values['convection_pump']['mode'] . $convectionPumptime;
             //cwsp_pump - Bơm cấp nước lạnh
-            $cwspPumptime = Socket::alldec2bin($values['OutputMode']['cwsp_pump']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['cwsp_pump']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['cwsp_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['cwsp_pump']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['cwsp_pump']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['cwsp_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['cwsp_pump']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['cwsp_pump']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['cwsp_pump']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->cold_water_supply_pump = $values['OutputMode']['cwsp_pump']['mode'] . $cwspPumptime;
+            $cwspPumptime = Socket::alldec2bin($values['cwsp_pump']['time'], 8) . BACKUP;
+            $model->cold_water_supply_pump = $values['cwsp_pump']['mode'] . $cwspPumptime;
             //return_pump - Bơm hồi đường ống
-            $returnPumptime = Socket::alldec2bin($values['OutputMode']['return_pump']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['return_pump']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['return_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['return_pump']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['return_pump']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['return_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['return_pump']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['return_pump']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['return_pump']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->return_pump = $values['OutputMode']['return_pump']['mode'] . $returnPumptime;
+            $returnPumptime = Socket::alldec2bin($values['return_pump']['time'], 8) . BACKUP;
+            $model->return_pump = $values['return_pump']['mode'] . $returnPumptime;
             //pressure_pump - Bơm tăng áp
-            $pressurePumptime = Socket::alldec2bin($values['OutputMode']['pressure_pump']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['pressure_pump']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['pressure_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['pressure_pump']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['pressure_pump']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['pressure_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['pressure_pump']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['pressure_pump']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['pressure_pump']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->incresed_pressure_pump = $values['OutputMode']['pressure_pump']['mode'] . $pressurePumptime;
+            $pressurePumptime = Socket::alldec2bin($values['pressure_pump']['time'], 8);
+            $model->incresed_pressure_pump = $values['pressure_pump']['mode'] . $pressurePumptime . BACKUP;
             //heat_pump - Bơm nhiệt bồn gia nhiệt
-            //$heatPumptime = Socket::alldec2bin($values['OutputMode']['heat_pump']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['heat_pump']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['heat_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['heat_pump']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['heat_pump']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['heat_pump']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['heat_pump']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['heat_pump']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['heat_pump']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->heat_pump = $values['OutputMode']['heat_pump']['mode'] . BACKUP;
+            $model->heat_pump = $values['heat_pump']['mode'] . BACKUP;
             //heater_resis - Điện trở nhiệt bồn gia nhiệt
-            $heaterResisPumptime = Socket::alldec2bin($values['OutputMode']['heater_resis']['time'], 8) . BACKUP;
-            if ($values['OutputMode']['heater_resis']['mode'] == AUTO_B1) {
-                if ($values['OutputMode']['heater_resis']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['heater_resis']['mode'] = AUTO_B2;
-                }
-            } elseif ($values['OutputMode']['heater_resis']['mode'] == MANUAL_B1) {
-                if ($values['OutputMode']['heater_resis']['pump'] == PUMP_MASTER) {
-                    $values['OutputMode']['heater_resis']['mode'] = MANUAL_B2;
-                }
-                if ($values['OutputMode']['heater_resis']['pump'] == PUMP_ALL) {
-                    $values['OutputMode']['heater_resis']['mode'] = MANUAL_B12;
-                }
-            }
-            $model->heater_resister = $values['OutputMode']['heater_resis']['mode'] . '00000000' . $heaterResisPumptime;
+            $heaterResisPumptime = Socket::alldec2bin($values['heater_resis']['time'], 8);
+            $heaterResisPumptem = Socket::alldec2bin($values['heater_resis']['tem'], 8);
+            $model->heater_resister = $values['heater_resis']['mode'] . $heaterResisPumptem . $heaterResisPumptime . BACKUP;
             //3way - Van ba ngả
             $model->three_way_valve = BACKUP . BACKUP;
             //blakflow - Van một chiều
@@ -202,6 +130,9 @@ class OutputModeController extends AppController {
                     $model->OperationLog();
                     $model->configLog();
                     Yii::$app->session->setFlash('success', 'Set Load Mode to module success!');
+                    if ($values['url_back']) {
+                        return $this->redirect($values['url_back']);
+                    }
                     return $this->redirect('/param-config/update');
                 }
             }

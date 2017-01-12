@@ -18,7 +18,7 @@ $this->title = $idModule . ' - ' . $module->name;
             <div class="control-main control-main-full">
                 <div class="item">
                     <h3>Convection pump</h3>
-                    <input type="hidden" id="convection_pump_mode" name="convection_pump][mode]" value="<?php echo $model->getConvectionMode() ?>">
+                    <input type="hidden" id="convection_pump_mode" name="convection_pump[mode]" value="<?php echo $model->getConvectionMode() ?>">
                     <div class="row-control item-6">
                         <select class="selectpicker select-master" data-width="70">
                             <option value="1">Auto</option>
@@ -182,10 +182,6 @@ $this->title = $idModule . ' - ' . $module->name;
                             <div class="add-info">
                                 Wait for Master <input class="type-text" style="width:30px" type="text" id="pressure_pump_time" name="pressure_pump[time]" value="<?php echo $model->getPressurePumpTime() ?>"> min
                             </div>
-
-                            <div class="add-info" style="width:170px">
-                                Tem ON Slave <input class="type-text" style="width:30px" type="text" id="pressure_pump_tem" name="pressure_pump[tem]" value="<?php echo $model->getPressurePumpTem() ?>"> <sup>o</sup> C
-                            </div>
                         </div>
 
                         <div class="control-02"> 
@@ -203,10 +199,6 @@ $this->title = $idModule . ' - ' . $module->name;
 
                             <div class="add-info">
                                 Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
-                            </div>
-
-                            <div class="add-info" style="width:170px">
-                                Tem ON Slave <input class="type-text" style="width:30px" disabled type="text"> <sup>o</sup> C
                             </div>
                         </div>
                     </div>
@@ -282,7 +274,11 @@ $this->title = $idModule . ' - ' . $module->name;
                             </select>
 
                             <div class="add-info">
-                                Wait for Master <input class="type-text" style="width:30px" type="text" id="heater_resis_time" name="OutputMode[heater_resis][time]" value="<?php echo $model->getHeaterResisTime() ?>"> min
+                                Wait for Master <input class="type-text" style="width:30px" type="text" id="heater_resis_time" name="heater_resis[time]" value="<?php echo $model->getHeaterResisTime() ?>"> min
+                            </div>
+
+                            <div class="add-info" style="width:170px">
+                                Tem ON Slave <input class="type-text" style="width:30px" type="text" id="heater_resis_tem" name="heater_resis[tem]" value="<?php echo $model->getHeaterResisTem() ?>"> <sup>o</sup> C
                             </div>
                         </div>
 
@@ -301,6 +297,10 @@ $this->title = $idModule . ' - ' . $module->name;
 
                             <div class="add-info">
                                 Wait for Master <input class="type-text" style="width:30px" disabled type="text"> min
+                            </div>
+
+                            <div class="add-info" style="width:170px">
+                                Tem ON Slave <input class="type-text" style="width:30px" disabled type="text"> <sup>o</sup> C
                             </div>
                         </div>
                     </div>

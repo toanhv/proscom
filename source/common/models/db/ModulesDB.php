@@ -24,8 +24,10 @@ use Yii;
  * @property string $created_at
  * @property integer $updated_by
  * @property string $updated_at
+ * @property integer $status
  *
  * @property AlarmDB[] $alarms
+ * @property ConfigurationLogDB[] $configurationLogs
  * @property DataClientDB[] $dataClients
  * @property ImsiDB[] $imsis
  * @property ModuleStatusDB[] $moduleStatuses
@@ -35,6 +37,7 @@ use Yii;
  * @property UserDB $createdBy
  * @property UserDB $updatedBy
  * @property ModeDB $mode
+ * @property OperationLogDB[] $operationLogs
  * @property OutputModeDB[] $outputModes
  * @property ParamConfigDB[] $paramConfigs
  * @property RuntimeStatisticsDB[] $runtimeStatistics
@@ -58,7 +61,7 @@ class ModulesDB extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'msisdn', 'country_id', 'privincial_id', 'distric_id', 'customer_code'], 'required'],
-            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by'], 'integer'],
+            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by', 'status'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'address', 'password'], 'string', 'max' => 255],
             [['msisdn'], 'string', 'max' => 15],
@@ -92,6 +95,7 @@ class ModulesDB extends \yii\db\ActiveRecord
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_by' => Yii::t('backend', 'Updated By'),
             'updated_at' => Yii::t('backend', 'Updated At'),
+            'status' => Yii::t('backend', 'Status'),
         ];
     }
 
@@ -101,6 +105,14 @@ class ModulesDB extends \yii\db\ActiveRecord
     public function getAlarms()
     {
         return $this->hasMany(AlarmDB::className(), ['module_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConfigurationLogs()
+    {
+        return $this->hasMany(ConfigurationLogDB::className(), ['module_id' => 'id']);
     }
 
     /**
@@ -173,6 +185,14 @@ class ModulesDB extends \yii\db\ActiveRecord
     public function getMode()
     {
         return $this->hasOne(ModeDB::className(), ['id' => 'mode_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOperationLogs()
+    {
+        return $this->hasMany(OperationLogDB::className(), ['module_id' => 'id']);
     }
 
     /**
