@@ -196,7 +196,7 @@
                 <option>Manual</option>
             </select>
 
-            <button class="btn btn-success item-coditions">Under operation coditions</button>
+            <button class="btn btn-success item-coditions" disabled="disabled">Under operation coditions</button>
             <div class="add-info" style="opacity:0.5;">
                 Wait for Master <input class="type-text" style="width:30px;" disabled="disabled" type="text"> min
             </div>
@@ -267,7 +267,7 @@
                 <option>Manual</option>
             </select>
 
-            <button class="btn btn-success item-coditions">Under operation coditions</button>
+            <button class="btn btn-success item-coditions" disabled="disabled">Under operation coditions</button>
             <div class="add-info" style="opacity:0.5;">
                 Wait for Master <input class="type-text" style="width:30px;" disabled="disabled" type="text"> min
             </div>
@@ -283,7 +283,7 @@
                 <option>Manual</option>
             </select>
 
-            <button class="btn btn-success item-coditions">Under operation coditions</button>
+            <button class="btn btn-success item-coditions" disabled="disabled">Under operation coditions</button>
             <div class="add-info" style="opacity:0.5;">
                 Wait for Master <input class="type-text" style="width:30px;" disabled="disabled" type="text"> min
             </div>
