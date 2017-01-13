@@ -15,7 +15,7 @@ $this->title = $idModule . ' - ' . $module->name;
         <div class="row-check-account">
             <p align="center">
                 <a href="javascript:void(0)" id="mode_<?php echo $model->id ?>" class="chosen">
-                    <?php echo $model->getUrlImage(640, 480) ?>
+                    <?php echo $model->getUrlImage(400, 300) ?>
                 </a>
             </p>
             <p align="center">
