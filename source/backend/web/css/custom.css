@@ -57,4 +57,6 @@
 }
 .sensor-report {
     border: 1px solid #ddd;
+    margin-top: 15px;
+    padding: 5px;
 }
