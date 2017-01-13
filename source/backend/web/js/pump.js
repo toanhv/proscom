@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
     selectMaster(dad12, 'three_way_mode');
     selectMaster(dad13, 'backflow_mode');
 
-    $(".input-disable select").prop('disabled', 'disabled');
+    //$(".input-disable select").prop('disabled', 'disabled');
     $(".input-disable input").prop('disabled', 'disabled');
 });
 
