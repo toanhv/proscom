@@ -46,6 +46,7 @@
 .btn-primary {
     min-width: 150px;
     padding: 5px;
+    text-transform: uppercase;
 }
 .item-coditions {
     width:170px;
