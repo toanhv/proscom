@@ -228,7 +228,7 @@ AppAsset::register($this);
                     ])
                     ?>
                                         </div>-->
-                    <?= Alert::widget() ?>
+                    <?php // echo Alert::widget() ?>
                     <?= $content ?>
                 </div>
             </div>
