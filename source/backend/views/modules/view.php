@@ -186,7 +186,7 @@ $outputMode = $model->outputModes;
                                 <option>Manual</option>
                             </select>
 
-                            <button class="btn btn-success" style="width:170px">Under operation coditions</button>
+                            <button class="btn btn-success" style="width:170px" disabled="disabled">Under operation coditions</button>
                         </div>
                     </div>
 
