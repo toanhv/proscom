@@ -123,7 +123,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function getHeatPumpMode() {
-        return ($this->heat_pump && substr($this->heat_pump, 0, 8)) ? substr($this->heat_pump, 0, 8) : BACKUP;
+        return AUTO_B1;
     }
 
     public function getHeatPumpPump() {
@@ -182,7 +182,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function get3wayMode() {
-        return ($this->three_way_valve && substr($this->three_way_valve, 0, 8)) ? substr($this->three_way_valve, 0, 8) : BACKUP;
+        return AUTO_B1;
     }
 
     public function get3wayPump() {
@@ -209,7 +209,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function getBlakflowMode() {
-        return ($this->backflow_valve && substr($this->backflow_valve, 0, 8)) ? substr($this->backflow_valve, 0, 8) : BACKUP;
+        return AUTO_B1;
     }
 
     public function getBlakflowPump() {
