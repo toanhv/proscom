@@ -1,6 +1,7 @@
 <?php
 
 use kartik\widgets\ActiveForm;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\OperationLogSearch */
@@ -9,13 +10,13 @@ use kartik\widgets\ActiveForm;
 
 <div class="operation-log-search">
 
-    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'get']); ?>
+    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'post']); ?>
 
     From date 
     <?=
     yii\jui\DatePicker::widget([
         'model' => $model,
-        'name' => 'OperationLogSearch[fromDate]',
+        'name' => $model->formName() . '[fromDate]',
         'dateFormat' => 'php:Y-m-d',
         'language' => 'en',
         'value' => \yii\helpers\Html::encode($model->fromDate)
@@ -25,12 +26,14 @@ use kartik\widgets\ActiveForm;
     <?=
     yii\jui\DatePicker::widget([
         'model' => $model,
-        'name' => 'OperationLogSearch[toDate]',
+        'name' => $model->formName() . '[toDate]',
         'dateFormat' => 'php:Y-m-d',
         'language' => 'en',
         'value' => \yii\helpers\Html::encode($model->toDate)
     ])
     ?>
+
+    <input name="<?php echo $model->formName(); ?>[message]" value="<?php echo Html::encode($model->message); ?>" type="text" placeholder="message filter">
 
     <button type="submit" class="btn-reprt btn-primary">Report</button>
 

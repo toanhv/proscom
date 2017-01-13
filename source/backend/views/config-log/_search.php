@@ -3,6 +3,7 @@
 use backend\models\ConfigurationLogSearch;
 use yii\web\View;
 use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 
 /* @var $this View */
 /* @var $model ConfigurationLogSearch */
@@ -11,13 +12,13 @@ use yii\widgets\ActiveForm;
 
 <div class="operation-log-search">
 
-    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'get']); ?>
+    <?php $form = ActiveForm::begin(['action' => ['index'], 'method' => 'post']); ?>
 
     From date 
     <?=
     yii\jui\DatePicker::widget([
         'model' => $model,
-        'name' => 'ConfigurationLogSearch[fromDate]',
+        'name' => $model->formName() . '[fromDate]',
         'dateFormat' => 'php:Y-m-d',
         'language' => 'en',
         'value' => \yii\helpers\Html::encode($model->fromDate)
@@ -27,12 +28,14 @@ use yii\widgets\ActiveForm;
     <?=
     yii\jui\DatePicker::widget([
         'model' => $model,
-        'name' => 'ConfigurationLogSearch[toDate]',
+        'name' => $model->formName() . '[toDate]',
         'dateFormat' => 'php:Y-m-d',
         'language' => 'en',
         'value' => \yii\helpers\Html::encode($model->toDate)
     ])
     ?>
+
+    <input name="<?php echo $model->formName(); ?>[message]" value="<?php echo Html::encode($model->message); ?>" type="text" placeholder="message filter">
 
     <button type="submit" class="btn-reprt btn-primary">Report</button>
 

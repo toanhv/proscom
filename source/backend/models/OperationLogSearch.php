@@ -18,6 +18,7 @@ class OperationLogSearch extends OperationLog {
     public function rules() {
         return [
             [['id', 'module_id'], 'integer'],
+            [['created_time', 'message', 'fromDate', 'toDate'], 'trim'],
             [['created_time', 'message', 'fromDate', 'toDate'], 'safe'],
         ];
     }

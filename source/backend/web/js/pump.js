@@ -15,8 +15,11 @@ jQuery(document).ready(function () {
     selectMaster(dad9, 'pressure_pump_mode');
     selectMaster(dad10, 'heat_pump_mode');
     selectMaster(dad11, 'heater_resis_mode');
-    selectMaster(dad12, '00000000');
-    selectMaster(dad13, '00000000');
+    selectMaster(dad12, 'three_way_mode');
+    selectMaster(dad13, 'backflow_mode');
+
+    $(".input-disable select").prop('disabled', 'disabled');
+    $(".input-disable input").prop('disabled', 'disabled');
 });
 
 function selectMaster(clazz, item) {

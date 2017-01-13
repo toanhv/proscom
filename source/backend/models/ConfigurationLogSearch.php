@@ -18,6 +18,7 @@ class ConfigurationLogSearch extends ConfigurationLog {
     public function rules() {
         return [
             [['id', 'module_id', 'created_by'], 'integer'],
+            [['created_time', 'message', 'fromDate', 'toDate'], 'trim'],
             [['created_time', 'message', 'fromDate', 'toDate'], 'safe'],
         ];
     }
@@ -55,7 +56,6 @@ class ConfigurationLogSearch extends ConfigurationLog {
 
         $query->andFilterWhere([
             'module_id' => $this->module_id,
-            'created_by' => $this->created_by,
         ]);
 
         $query->andFilterWhere(['between', 'created_time', $this->fromDate, $this->toDate]);

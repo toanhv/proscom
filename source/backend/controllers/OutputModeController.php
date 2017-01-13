@@ -121,9 +121,9 @@ class OutputModeController extends AppController {
             $heaterResisPumptem = Socket::alldec2bin($values['heater_resis']['tem'], 8);
             $model->heater_resister = $values['heater_resis']['mode'] . $heaterResisPumptem . $heaterResisPumptime . BACKUP;
             //3way - Van ba ngả
-            $model->three_way_valve = BACKUP . BACKUP;
+            $model->three_way_valve = $values['three_way']['mode'] . BACKUP;
             //blakflow - Van một chiều
-            $model->backflow_valve = BACKUP . BACKUP;
+            $model->backflow_valve = $values['backflow']['mode'] . BACKUP;
 
             if ($model->save(false)) {
                 if ($model->toClient()) {

@@ -30,10 +30,10 @@ class AppAsset extends AssetBundle {
         'css/plugins-md.css',
         'css/layout.css',
         'css/themes/darkblue.css',
-        'css/custom.css',
         'css/diagram.css',
         'css/jquery.datetimepicker.css',
         'css/bootstrap-select.css',
+        'css/custom.css',
     ];
     public $js = [
         'plugins/jquery-ui/jquery-ui.min.js',

@@ -13,7 +13,7 @@ $outputMode = $model->outputModes;
     <div class="clearfix"></div>
     <div class="diagram">
         <div class="container-all">
-            <div class="control-main">
+            <div class="control-main item-small-view">
                 <form id="update-output-mode" method="post" action="/output-mode/update?id=<?php echo $model->id ?>">
                     <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
                     <div class="item">
@@ -176,44 +176,17 @@ $outputMode = $model->outputModes;
                             </div>
                         </div>
                     </div>
-
+                    <!--Heat pump-->
                     <div class="item">
                         <h3>Heat pump</h3>
                         <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $outputMode->getHeatPumpMode() ?>">
-                        <input type="hidden" id="heat_pump_time" name="heat_pump[time]" value="<?php echo $outputMode->getHeatPumpTime() ?>">
                         <div class="row-control item-10">
-                            <select class="selectpicker select-master" data-width="70">
-                                <option value="1">Auto</option>
-                                <option value="2">Manual</option>
+                            <select class="selectpicker" data-width="70">
+                                <option>Auto</option>
+                                <option>Manual</option>
                             </select>
 
-                            <div class="control-01"> 
-                                <!--SELECT 01-->
-                                <select class="selectpicker select-sub-1" data-width="80">
-                                    <option value="11">Master</option>
-                                    <option value="12">Slave</option>
-                                </select>
-
-                                <!--SELECT 02-->
-                                <select class="selectpicker select-sub-2" data-width="80">
-                                    <option value="22">Slave</option>                
-                                    <option value="21">Master</option>
-                                </select>
-                            </div>
-
-                            <div class="control-02"> 
-                                <!--SELECT 01-->
-                                <select class="selectpicker select-sub-1" data-width="80">
-                                    <option value="11">ON</option>
-                                    <option value="12">OFF</option>
-                                </select>
-
-                                <!--SELECT 02-->
-                                <select class="selectpicker select-sub-2" data-width="80">
-                                    <option value="22">OFF</option>                
-                                    <option value="21">ON</option>
-                                </select>
-                            </div>
+                            <button class="btn btn-success" style="width:170px">Under operation coditions</button>
                         </div>
                     </div>
 
@@ -256,33 +229,11 @@ $outputMode = $model->outputModes;
                             </div>                            
                         </div>
                     </div>
-
-                    <!--div class="item">
-                        <h3>Three way - value</h3>
-                        <div class="row-control item-12">
-                            <select class="selectpicker" data-width="70">
-                                <option>Auto</option>
-                                <option>Manual</option>
-                            </select>
-    
-                            <button class="btn btn-success" >Under operation coditions</button>
-                        </div>
-                    </div>
-    
-                    <div class="item">
-                        <h3>Backflow value</h3>
-                        <div class="row-control item-13">
-                            <select class="selectpicker" data-width="70">
-                                <option>Auto</option>
-                                <option>Manual</option>
-                            </select>
-    
-                            <button class="btn btn-success" >Under operation coditions</button>
-                        </div>
-                    </div-->
+                    <input type="hidden" id="three_way_mode" name="three_way[mode]" value="<?php echo $outputMode->get3wayMode() ?>">
+                    <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $outputMode->getBlakflowMode() ?>">
                     <div class="row100" style="text-align:center">
                         <input type="hidden" id="url_back" name="url_back" value="/modules/all-view">
-                        <input type="submit" value="Save and Send" class="btn btn-primary"/>
+                        <input type="submit" value="Send" class="btn btn-primary"/>
                     </div>
                 </form>
             </div>
@@ -383,7 +334,7 @@ $outputMode = $model->outputModes;
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Heater tank pressure</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>Psi
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>B
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Lingh intensity</span>
@@ -395,7 +346,7 @@ $outputMode = $model->outputModes;
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>Psi
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>B
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Pipeline temp 1</span>

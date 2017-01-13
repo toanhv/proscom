@@ -32,7 +32,7 @@ class OperationLogController extends Controller {
     public function actionIndex() {
         $searchModel = new OperationLogSearch();
         $searchModel->module_id = \Yii::$app->session->get('module_id', 0);
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->post());
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
