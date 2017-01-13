@@ -81,8 +81,8 @@ $this->title = Yii::t('backend', 'Sensors Report');
 
             function initData() {
                 var data = new google.visualization.DataTable();
-                data.addColumn('string', 'time');
-                data.addColumn('number', 'value');
+                data.addColumn('string', '');
+                data.addColumn('number', '');
                 return data;
 
             }
