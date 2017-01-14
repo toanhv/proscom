@@ -212,23 +212,27 @@ AppAsset::register($this);
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <div class="page-content">
-                    <!--                    <div class="page-bar">
-                    <?=
-                    Breadcrumbs::widget(['itemTemplate' => "<li>{link}<i class='fa fa-angle-right'></i></i></li>\n", // template for all links
-                        'activeItemTemplate' => "<li>{link}</li>\n", // template for all links
-                        'options' => [
-                            'class' => 'page-breadcrumb'
-                        ],
-                        'homeLink' => [
-                            'label' => Yii::t('backend', 'Home'),
-                            'url' => Yii::$app->homeUrl,
-                            'template' => "<li><i class='fa fa-home'></i>{link}<i class='fa fa-angle-right'></i></li>\n",
-                        ],
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ])
-                    ?>
-                                        </div>-->
-                    <?php // echo Alert::widget() ?>
+                    <?php if (Yii::$app->session->getFlash('success')) { ?>
+                        <div id="w0-success-0" class="alert-success alert fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <?php echo Yii::$app->session->getFlash('success'); ?>
+                            <?php Yii::$app->session->removeAllFlashes(); ?>
+                        </div>
+                    <?php } ?>
+                    <?php if (Yii::$app->session->getFlash('error')) { ?>
+                        <div id="w0-success-0" class="alert-error alert fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <?php echo Yii::$app->session->getFlash('error'); ?>
+                            <?php Yii::$app->session->removeAllFlashes(); ?>
+                        </div>
+                    <?php } ?>
+                    <?php if (Yii::$app->session->getFlash('info')) { ?>
+                        <div id="w0-success-0" class="alert-info alert fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <?php echo Yii::$app->session->getFlash('info'); ?>
+                            <?php Yii::$app->session->removeAllFlashes(); ?>
+                        </div>
+                    <?php } ?>
                     <?= $content ?>
                 </div>
             </div>
