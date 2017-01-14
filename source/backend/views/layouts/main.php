@@ -212,22 +212,22 @@ AppAsset::register($this);
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <div class="page-content">
-                    <?php if (Yii::$app->session->getFlash('success')) { ?>
+                    <?php if (Yii::$app->session->has('success')) { ?>
                         <div id="w0-success-0" class="alert-success alert fade in">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <?php echo Yii::$app->session->getFlash('success'); ?>
                             <?php Yii::$app->session->removeAllFlashes(); ?>
                         </div>
                     <?php } ?>
-                    <?php if (Yii::$app->session->getFlash('error')) { ?>
-                        <div id="w0-success-0" class="alert-error alert fade in">
+                    <?php if (Yii::$app->session->has('error')) { ?>
+                        <div id="w0-error-0" class="alert-error alert fade in">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <?php echo Yii::$app->session->getFlash('error'); ?>
                             <?php Yii::$app->session->removeAllFlashes(); ?>
                         </div>
                     <?php } ?>
-                    <?php if (Yii::$app->session->getFlash('info')) { ?>
-                        <div id="w0-success-0" class="alert-info alert fade in">
+                    <?php if (Yii::$app->session->has('info')) { ?>
+                        <div id="w0-info-0" class="alert-info alert fade in">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <?php echo Yii::$app->session->getFlash('info'); ?>
                             <?php Yii::$app->session->removeAllFlashes(); ?>
