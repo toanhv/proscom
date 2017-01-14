@@ -13,8 +13,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
     public function attributeLabels() {
         return [
             'id' => Yii::t('backend', 'ID'),
-            'name' => Yii::t('backend', 'Customer'),
-            'msisdn' => Yii::t('backend', 'Phone'),
+            'name' => Yii::t('backend', 'Customer Name'),
+            'msisdn' => Yii::t('backend', 'Client request'),
             'country_id' => Yii::t('backend', 'Nation'),
             'privincial_id' => Yii::t('backend', 'Province/City'),
             'distric_id' => Yii::t('backend', 'City/District'),
