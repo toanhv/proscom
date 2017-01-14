@@ -65,4 +65,7 @@
 .page-content-wrapper .page-content {
     padding: 10px 10px;
 }
+.error-hightlight {
+    color: red;
+}
 

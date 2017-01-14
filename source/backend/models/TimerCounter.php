@@ -29,9 +29,9 @@ class TimerCounter extends \common\models\TimerCounterBase {
             'id' => Yii::t('backend', 'ID'),
             'module_id' => Yii::t('backend', 'Module'),
             'counter' => Yii::t('backend', 'Counter'),
-            'timer_1' => Yii::t('backend', 'Confirm Timer (sec)'),
-            'timer_2' => Yii::t('backend', 'Resend Timer (sec)'),
-            'timer_3' => Yii::t('backend', 'Report Timer (sec)'),
+            'timer_1' => Yii::t('backend', 'Confirm Timer'),
+            'timer_2' => Yii::t('backend', 'Resend Timer'),
+            'timer_3' => Yii::t('backend', 'Report Timer'),
             'created_at' => Yii::t('backend', 'Created at'),
         ];
     }

@@ -10,22 +10,21 @@ $idModule = $module->country->code . $module->privincial->code . $module->distri
 $this->title = $idModule . ' - ' . $module->name;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="timer-counter-view">
-
-    <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
-
-    <?=
-    DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'counter',
-            'timer_1',
-            'timer_2',
-            'timer_3',
-        ],
-    ])
-    ?>
-    <p>
-        <?= Html::a(Yii::t('backend', 'Setting'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-    </p>
+<h3 class="text-center"><?php echo $idModule . ' - ' . Html::encode($module->name); ?></h3>
+<div class="diagram">
+    <div class="container-all">  
+        <p><br></p>  
+        <div class="control-main control-main-center input-disable">
+            <?=
+            $this->render('_form', [
+                'model' => $model,
+            ])
+            ?>
+            <div class="row100" style="text-align:center">
+                <p>
+                    <?= Html::a(Yii::t('backend', 'Setting'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                </p>
+            </div>
+        </div>         
+    </div>
 </div>
