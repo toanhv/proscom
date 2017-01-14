@@ -6,9 +6,15 @@ $this->title = 'Overal View';
 
 $outputMode = $model->outputModes;
 ?>
-<a data-confirm="Are you sure you want to SOFT EMERGENCY STOP?" data-method="get" href="/modules/status" class="icon-emergency-fix <?php echo ($model->status == 1) ? '' : 'select-animation' ?>">
-    <img src="/images/btn_emergency.jpg" width="50"/>
-</a>
+<?php if ($model->status == 1) { ?>
+    <a data-confirm="Are you sure you want to SOFT EMERGENCY STOP?" data-method="get" href="/modules/status" class="icon-emergency-fix">
+        <img src="/images/btn_emergency.jpg" width="50"/>
+    </a>
+<?php } else { ?>
+    <a href="javascript:void(0);" class="icon-emergency-fix select-animation">
+        <img src="/images/btn_emergency.jpg" width="50"/>
+    </a>
+<?php } ?>
 <div class="output-mode-view">    
     <div class="info-diagram">
         <h3 class="title">ID: <?php echo $model->getModuleId() . ' - ' . \yii\helpers\Html::encode($model->name); ?></h3>        

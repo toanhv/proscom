@@ -94,7 +94,7 @@ class ModulesController extends AppController {
         $id = \Yii::$app->session->get('module_id', 0);
         $model = $this->findModel($id);
 
-        $model->status = ($model->status == 1) ? 0 : 1;
+        $model->status = 0;
         if ($model->save(false, ['status'])) {
             $model->SoftEmergencyStop();
         }
