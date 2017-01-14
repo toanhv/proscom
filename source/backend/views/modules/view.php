@@ -6,6 +6,9 @@ $this->title = 'Overal View';
 
 $outputMode = $model->outputModes;
 ?>
+<a data-confirm="Are you sure you want to SOFT EMERGENCY STOP?" data-method="get" href="/modules/status" class="icon-emergency-fix <?php echo ($model->status == 1) ? '' : 'select-animation' ?>">
+    <img src="/images/btn_emergency.jpg" width="50"/>
+</a>
 <div class="output-mode-view">    
     <div class="info-diagram">
         <h3 class="title">ID: <?php echo $model->getModuleId() . ' - ' . \yii\helpers\Html::encode($model->name); ?></h3>        
@@ -233,7 +236,7 @@ $outputMode = $model->outputModes;
                     <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $outputMode->getBlakflowMode() ?>">
                     <div class="row100" style="text-align:center">
                         <input type="hidden" id="url_back" name="url_back" value="/modules/all-view">
-                        <input type="submit" value="Send" class="btn btn-primary"/>
+                        <input type="submit" value="SEND" class="btn btn-primary"/>
                     </div>
                 </form>
             </div>

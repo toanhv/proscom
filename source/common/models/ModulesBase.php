@@ -144,6 +144,17 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $data->save(false);
     }
 
+    public function SoftEmergencyStop() {
+        $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
+        $data = new \backend\models\DataClient();
+        $data->module_id = $this->id;
+        $data->ie_name = SOFT_EMERGENCY_STOP_NOTIFY_HEADER;
+        $data->data = SOFT_EMERGENCY_STOP_NOTIFY_HEADER . $id;
+        $data->status = 0;
+        $data->created_at = new Expression('NOW()');
+        return $data->save(false);
+    }
+
     public function checkAlarm() {
         $alarm = $this->alarms;
 

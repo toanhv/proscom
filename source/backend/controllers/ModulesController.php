@@ -90,6 +90,18 @@ class ModulesController extends AppController {
         return $this->redirect(['all-view']);
     }
 
+    public function actionStatus() {
+        $id = \Yii::$app->session->get('module_id', 0);
+        $model = $this->findModel($id);
+
+        $model->status = ($model->status == 1) ? 0 : 1;
+        if ($model->save(false, ['status'])) {
+            $model->SoftEmergencyStop();
+        }
+
+        return $this->redirect(['all-view']);
+    }
+
     /**
      * Creates a new Modules model.
      * If creation is successful, the browser will be redirected to the 'view' page.

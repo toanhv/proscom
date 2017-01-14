@@ -896,12 +896,12 @@
 /*update 01/05*/
 .icon-emergency-fix {
     position:fixed;
-    top:100px;
+    top:46px;
     right:13px;
-    padding:10px;
-    background-color:#01fe03;
+    padding:0px;
+    background-color:#fff;
     z-index:1030;
-    border:1px solid #e6e7e6;
+    border:1px solid #fff;
 }
 
 .icon-emergency-fix img{
