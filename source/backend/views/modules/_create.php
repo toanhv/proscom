@@ -10,7 +10,7 @@ $distric = backend\models\Distric::getAll();
 <div class="item">
     <h3 style="margin-bottom:10px"><?php echo $model->attributeLabels()['name'] ?></h3>       	
     <p>
-        <input type="text" name="<?php echo $model->formName(); ?>[name]" value="<?php echo $model->name; ?>" class="type-text" style="width:96%">
+        <input type="text" name="<?php echo $model->formName(); ?>[name]" value="<?php echo $model->name; ?>" class="type-text" style="width:96%; text-align: left;">
     </p>
     <div class="help-block error-hightlight"><?php echo ($model->getErrors('name')) ? $model->getErrors('name')[0] : ''; ?></div>
 </div>
@@ -82,7 +82,7 @@ $distric = backend\models\Distric::getAll();
 <div class="item">
     <h3 style="margin-bottom:10px"><?php echo $model->attributeLabels()['address'] ?></h3>       	
     <p>
-        <input type="text" name="<?php echo $model->formName(); ?>[address]" value="<?php echo $model->address; ?>" class="type-text" style="width:96%">
+        <input type="text" name="<?php echo $model->formName(); ?>[address]" value="<?php echo $model->address; ?>" class="type-text" style="width:96%; text-align: left;">
     </p>
     <div class="help-block error-hightlight"><?php echo ($model->getErrors('address')) ? $model->getErrors('address')[0] : ''; ?></div>
 </div>
