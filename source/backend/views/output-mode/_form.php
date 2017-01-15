@@ -191,7 +191,7 @@
         <h3>Heat pump</h3>
         <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $model->getHeatPumpMode() ?>">
         <div class="row-control item-10">
-            <select class="selectpicker" data-width="70">
+            <select class="selectpicker" data-width="70" disabled="disabled">
                 <option>Auto</option>
                 <option>Manual</option>
             </select>
@@ -262,7 +262,7 @@
         <h3>Three way - value</h3>
         <input type="hidden" id="three_way_mode" name="three_way[mode]" value="<?php echo $model->get3wayMode() ?>">
         <div class="row-control item-12">
-            <select class="selectpicker" data-width="70">
+            <select class="selectpicker" data-width="70" disabled="disabled">
                 <option>Auto</option>
                 <option>Manual</option>
             </select>
@@ -278,7 +278,7 @@
         <h3>Backflow value</h3>
         <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $model->getBlakflowMode() ?>">
         <div class="row-control item-13">
-            <select class="selectpicker" data-width="70">
+            <select class="selectpicker" data-width="70" disabled="disabled">
                 <option>Auto</option>
                 <option>Manual</option>
             </select>

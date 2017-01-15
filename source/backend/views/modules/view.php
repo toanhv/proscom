@@ -190,7 +190,7 @@ $outputMode = $model->outputModes;
                         <h3>Heat pump</h3>
                         <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $outputMode->getHeatPumpMode() ?>">
                         <div class="row-control item-10">
-                            <select class="selectpicker" data-width="70">
+                            <select class="selectpicker" data-width="70" disabled="disabled">
                                 <option>Auto</option>
                                 <option>Manual</option>
                             </select>
@@ -200,7 +200,7 @@ $outputMode = $model->outputModes;
                     </div>
 
                     <div class="item">
-                        <h3>Heater registor</h3>
+                        <h3>Heater Resistor</h3>
                         <input type="hidden" id="heater_resis_mode" name="heater_resis[mode]" value="<?php echo $outputMode->getHeaterResisMode() ?>">
                         <input type="hidden" id="heater_resis_time" name="heater_resis[time]" value="<?php echo $outputMode->getHeaterResisTime() ?>">
                         <div class="row-control item-11">
@@ -248,7 +248,7 @@ $outputMode = $model->outputModes;
             </div>
 
             <div class="left-content">
-                <div class="c-00"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?></div>
+                <div class="c-00"><?php echo bindec($sensors->cam_bien_dan_thu); ?></div>
                 <div class="c-01">&nbsp;</div>
 
                 <div class="c-02"><p><?php echo bindec($sensors->cam_bien_dan_thu); ?>&deg;C</p></div>    
@@ -330,7 +330,11 @@ $outputMode = $model->outputModes;
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_dan_thu); ?><sup>o</sup>C</span>
                         </div>
                         <div class="info-block-item">
-                            <span class="text-02">Solar tank temp</span>
+                            <span class="text-02">Top of Solar tank</span>
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_nhiet_dinh_bon_solar); ?><sup>o</sup>C</span>
+                        </div>
+                        <div class="info-block-item">
+                            <span class="text-02">Bottom of Solar tank</span>
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_bon_solar); ?><sup>o</sup>C</span>
                         </div>
                         <div class="info-block-item">
@@ -348,11 +352,7 @@ $outputMode = $model->outputModes;
                         <div class="info-block-item">
                             <span class="text-02">Lingh intensity</span>
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?><sup>o</sup>C</span>
-                        </div>
-                        <div class="info-block-item">
-                            <span class="text-02">Top of Solar tank</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_nhiet_dinh_bon_solar); ?><sup>o</sup>C</span>
-                        </div>
+                        </div>                        
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>B
