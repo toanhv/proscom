@@ -305,7 +305,7 @@ $outputMode = $model->outputModes;
                 <div class="c-13">&nbsp;<p><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>Bar</p></div>
                 <div class="icon-13"><img src="/images/04.png"/></div>	
 
-                <div class="c-14">&nbsp;<p><?php echo bindec($sensors->cam_bien_tran); ?>&deg;C</p></div>
+                <div class="c-14">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_1); ?>&deg;C</p></div>
                 <div class="icon-14"><img src="/images/03.png"/></div>    
 
                 <div class="c-15">&nbsp;</div>
@@ -316,7 +316,7 @@ $outputMode = $model->outputModes;
                 <div class="bg-16-green <?php echo $statuses->bom_hoi_duong_ong_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                 <div class="bg-16-red <?php echo $statuses->bom_hoi_duong_ong_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div> 
 
-                <div class="c-17">&nbsp;<p><?php echo bindec($sensors->du_phong); ?>&deg;C</p></div>
+                <div class="c-17">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_1); ?>&deg;C</p></div>
                 <div class="icon-17"><img src="/images/03.png"/></div>    
 
                 <div class="c-18">&nbsp;</div>
@@ -351,7 +351,7 @@ $outputMode = $model->outputModes;
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Lingh intensity</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>LUX</span>
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>Lux</span>
                         </div>                        
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
