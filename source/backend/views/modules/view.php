@@ -248,7 +248,7 @@ $outputMode = $model->outputModes;
             </div>
 
             <div class="left-content">
-                <div class="c-00"><?php echo bindec($sensors->cam_bien_dan_thu); ?></div>
+                <div class="c-00"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?></div>
                 <div class="c-01">&nbsp;</div>
 
                 <div class="c-02"><p><?php echo bindec($sensors->cam_bien_dan_thu); ?>&deg;C</p></div>    
@@ -351,7 +351,7 @@ $outputMode = $model->outputModes;
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Lingh intensity</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?><sup>o</sup>C</span>
+                            <span class="text-01"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>LUX</span>
                         </div>                        
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
