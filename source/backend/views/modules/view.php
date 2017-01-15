@@ -316,7 +316,7 @@ $outputMode = $model->outputModes;
                 <div class="bg-16-green <?php echo $statuses->bom_hoi_duong_ong_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                 <div class="bg-16-red <?php echo $statuses->bom_hoi_duong_ong_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div> 
 
-                <div class="c-17">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_1); ?>&deg;C</p></div>
+                <div class="c-17">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_2); ?>&deg;C</p></div>
                 <div class="icon-17"><img src="/images/03.png"/></div>    
 
                 <div class="c-18">&nbsp;</div>
