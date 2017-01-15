@@ -248,18 +248,24 @@ $outputMode = $model->outputModes;
             </div>
 
             <div class="left-content">
-                <div class="c-00"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?></div>
+                <div class="c-00 text-04" data-toggle="tooltip" data-placement="right" title="Lingh intensity">
+                    <?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>
+                </div>
                 <div class="c-01">&nbsp;</div>
 
-                <div class="c-02"><p><?php echo bindec($sensors->cam_bien_dan_thu); ?>&deg;C</p></div>    
+                <div class="c-02 text-04" data-toggle="tooltip" data-placement="right" title="Solar panels temp">
+                    <p><?php echo bindec($sensors->cam_bien_dan_thu); ?>&deg;C</p>
+                </div>    
                 <div class="icon-02"><img src="/images/03.png"/></div>
 
-                <div class="c-03">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_dinh_bon_solar); ?>&deg;C</p></div>
+                <div class="c-03 text-04" data-toggle="tooltip" data-placement="right" title="Top of Solar tank">
+                    &nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_dinh_bon_solar); ?>&deg;C</p>
+                </div>
                 <div class="icon-03"><img src="/images/01.png"/></div>    
 
                 <div class="c-04">&nbsp;</div>
                 <div class="bg-04">
-                    <div class="ctn">
+                    <div class="ctn text-04" data-toggle="tooltip" data-placement="right" title="Solar tank level">
                         <?php $number = bindec($sensors->cam_bien_muc_nuoc_bon_solar); ?>
                         <?php if ($number == 3) { ?>
                             <span class="row-01"></span>
@@ -274,7 +280,9 @@ $outputMode = $model->outputModes;
                     </div>
                 </div>
 
-                <div class="c-05">&nbsp;<p><?php echo bindec($sensors->cam_bien_bon_solar); ?>&deg;C</p></div>
+                <div class="c-05 text-04" data-toggle="tooltip" data-placement="right" title="Bottom of Solar tank">
+                    &nbsp;<p><?php echo bindec($sensors->cam_bien_bon_solar); ?>&deg;C</p>
+                </div>
                 <div class="icon-05"><img src="/images/01.png"/></div>    
 
                 <div class="c-06">&nbsp;</div>
@@ -285,10 +293,18 @@ $outputMode = $model->outputModes;
                 <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
                 <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>   
 
-                <div class="c-08">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?>&deg;C</p></div>
+                <div class="c-08">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank temp">
+                        <?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?>&deg;C
+                    </p>
+                </div>
                 <div class="icon-08"><img src="/images/03.png"/></div>    
 
-                <div class="c-09">&nbsp;<p><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>Bar</p></div>
+                <div class="c-09">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank pressure">
+                        <?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>Bar
+                    </p>
+                </div>
                 <div class="icon-09"><img src="/images/04.png"/></div>    
 
                 <div class="c-10">&nbsp;</div>
@@ -302,10 +318,18 @@ $outputMode = $model->outputModes;
                 <div class="bg-12-green <?php echo $statuses->bom_tang_ap_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                 <div class="bg-12-red <?php echo $statuses->bom_tang_ap_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>  
 
-                <div class="c-13">&nbsp;<p><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>Bar</p></div>
+                <div class="c-13">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Pipeline pressure">
+                        <?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>Bar
+                    </p>
+                </div>
                 <div class="icon-13"><img src="/images/04.png"/></div>	
 
-                <div class="c-14">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_1); ?>&deg;C</p></div>
+                <div class="c-14">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Pipeline temp 1">
+                        <?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_1); ?>&deg;C
+                    </p>
+                </div>
                 <div class="icon-14"><img src="/images/03.png"/></div>    
 
                 <div class="c-15">&nbsp;</div>
@@ -316,7 +340,11 @@ $outputMode = $model->outputModes;
                 <div class="bg-16-green <?php echo $statuses->bom_hoi_duong_ong_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                 <div class="bg-16-red <?php echo $statuses->bom_hoi_duong_ong_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div> 
 
-                <div class="c-17">&nbsp;<p><?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_2); ?>&deg;C</p></div>
+                <div class="c-17">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Pipeline temp 2">
+                        <?php echo bindec($sensors->cam_bien_nhiet_do_duong_ong_2); ?>&deg;C
+                    </p>
+                </div>
                 <div class="icon-17"><img src="/images/03.png"/></div>    
 
                 <div class="c-18">&nbsp;</div>
