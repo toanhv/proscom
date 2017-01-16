@@ -220,7 +220,7 @@ AppAsset::register($this);
                         </div>
                     <?php } ?>
                     <?php if (Yii::$app->session->has('error')) { ?>
-                        <div id="w0-error-0" class="alert-error alert fade in">
+                        <div id="w0-danger-0" class="alert-danger alert fade in">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <?php echo Yii::$app->session->getFlash('error'); ?>
                             <?php Yii::$app->session->removeAllFlashes(); ?>
