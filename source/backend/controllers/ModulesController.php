@@ -91,15 +91,24 @@ class ModulesController extends AppController {
     }
 
     public function actionStatus() {
+        $form = new \backend\models\ModuleStatusForm();
+
         $id = \Yii::$app->session->get('module_id', 0);
         $model = $this->findModel($id);
 
-        $model->status = 0;
-        if ($model->save(false, ['status'])) {
-            $model->SoftEmergencyStop();
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+            $model->status = 0;
+            if ($model->save(false, ['status'])) {
+                if ($model->SoftEmergencyStop()) {
+                    Yii::$app->session->setFlash('error', 'SOFT EMERGENCY STOP to module success!');
+                    return $this->redirect(['all-view']);
+                }
+            }
         }
-
-        return $this->redirect(['all-view']);
+        return $this->renderAjax('status', [
+                    'model' => $form,
+                    'module' => $model
+        ]);
     }
 
     /**

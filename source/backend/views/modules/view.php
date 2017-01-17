@@ -7,7 +7,7 @@ $this->title = 'Overal View';
 $outputMode = $model->outputModes;
 ?>
 <?php if ($model->status == 1) { ?>
-    <a data-confirm="Are you sure you want to SOFT EMERGENCY STOP?" data-method="get" href="/modules/status" class="icon-emergency-fix">
+    <a id="module-status" href="/modules/status" data-pjax="0" class="icon-emergency-fix">
         <img src="/images/btn_emergency.jpg" width="50"/>
     </a>
 <?php } else { ?>
@@ -399,4 +399,20 @@ $outputMode = $model->outputModes;
         </div>	
     </div>
 </div>
+<?php if ($model->status == 1) { ?>
+    <?=
+    $this->registerJs(
+            "$(document).on('ready pjax:success', function() {  // 'pjax:success' use if you have used pjax
+    $('#module-status').click(function(e){
+       e.preventDefault();      
+       $('#pModal').modal('show').find('.modal-content').load($(this).attr('href'));  
+   });
+});
+");
 
+    yii\bootstrap\Modal::begin([
+        'id' => 'pModal',
+    ]);
+    yii\bootstrap\Modal::end();
+}
+?>
