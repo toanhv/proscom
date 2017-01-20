@@ -23,7 +23,7 @@ $this->title = Yii::t('backend', 'Create {modelClass}', [
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="Send" />
+                    <input type="submit" class="btn btn-primary" value="SEND" />
                 </div>
             </form>
         </div>         

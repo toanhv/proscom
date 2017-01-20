@@ -57,13 +57,13 @@ class Modules extends ModulesBase {
         return [
             [['name', 'country_id', 'privincial_id', 'distric_id', 'customer_code'], 'required'],
             [['msisdn'], 'required', 'message' => 'No client request'],
-            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by'], 'integer'],
+            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'customer_code', 'created_by', 'updated_by'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'address', 'password'], 'string', 'max' => 255],
             [['msisdn'], 'match', 'pattern' => '((?=.*\d))', 'message' => \Yii::t('backend', 'Phone number must be number')],
             [['msisdn'], 'string', 'min' => 15, 'max' => 15],
-            [['customer_code'], 'match', 'pattern' => '((?=.*\d))', 'message' => \Yii::t('backend', 'Customer code must be number')],
-            [['customer_code'], 'string', 'min' => 6, 'max' => 6],
+            //[['customer_code'], 'match', 'pattern' => '((?=.*\d))', 'message' => \Yii::t('backend', 'Customer code must be number')],
+            //[['customer_code'], 'string', 'min' => 6, 'max' => 6],
             [['money'], 'string', 'max' => 160],
             [['data', 'alarm'], 'string', 'max' => 50],
             [['customer_code'], 'unique']

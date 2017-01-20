@@ -18,7 +18,7 @@ $distric = backend\models\Distric::getAll();
 <div class="item">
     <h3 style="margin-bottom:10px"><?php echo $model->attributeLabels()['customer_code'] ?></h3>       	
     <p>
-        <input type="text" name="<?php echo $model->formName(); ?>[customer_code]" value="<?php echo $model->customer_code; ?>" class="type-text" style="width:96%">
+        <input type="text" name="<?php echo $model->formName(); ?>[customer_code]" value="<?php echo bindec($model->customer_code); ?>" class="type-text" style="width:96%">
     </p>
     <div class="help-block error-hightlight"><?php echo ($model->getErrors('customer_code')) ? $model->getErrors('customer_code')[0] : ''; ?></div>
 </div>

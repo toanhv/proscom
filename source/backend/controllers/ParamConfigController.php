@@ -125,6 +125,9 @@ class ParamConfigController extends AppController {
                     $model->OperationLog();
                     $model->configLog();
                     Yii::$app->session->setFlash('success', 'Set Parameter Config success!');
+                    if ($values['url_back']) {
+                        return $this->redirect($values['url_back']);
+                    }
                     return $this->redirect(['/modules/view', 'id' => $model->module_id]);
                 }
             }

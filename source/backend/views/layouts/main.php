@@ -6,8 +6,6 @@ use backend\assets\AppAsset;
 use backend\widgets\LayoutMenu;
 use backend\components\common\MenuHelper;
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>
@@ -49,6 +47,8 @@ AppAsset::register($this);
         <div class="page-header md-shadow-z-1-i navbar <?php echo (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) ? '' : 'navbar-fixed-top' ?>">
             <!-- BEGIN HEADER INNER -->
             <a href="javascript:void(0);" class="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
+            <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
+            <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
             <?php if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) { ?>
                 <div class="header">
                     <div class="header-left">
@@ -56,31 +56,16 @@ AppAsset::register($this);
                     </div>
                     <div class="banner">
                         <div class="banner-image">
-                            <img src="/images/banner.jpg"  alt=""/>
+                            <img src="/images/banner.jpg" alt=""/>
                         </div>
                         <div class="banner-menu">
-                            <div class="content-menu">
-                                <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
-                                <?php $url = ($alarms) && $alarms['tran_be']['status'] ? '?alarm=1' : ''; ?>
-                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['tran_be']['status'] ? 'class="active"' : '' ?>>
-                                    Over tank<?php echo ($alarms) && $alarms['tran_be']['count'] ? '(' . $alarms['tran_be']['count'] . ')' : '' ?>
-                                </a>
-                                <?php $url = ($alarms) && $alarms['lost_conn']['status'] ? '?alarm=2' : ''; ?>
-                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['lost_conn']['status'] ? 'class="active"' : '' ?>>
-                                    Lost connection<?php echo ($alarms) && $alarms['lost_conn']['count'] ? '(' . $alarms['lost_conn']['count'] . ')' : '' ?>
-                                </a>
-                                <?php $url = ($alarms) && $alarms['qua_nhiet']['status'] ? '?alarm=3' : ''; ?>
-                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['qua_nhiet']['status'] ? 'class="active"' : '' ?>>
-                                    Over heat<?php echo ($alarms) && $alarms['qua_nhiet']['count'] ? '(' . $alarms['qua_nhiet']['count'] . ')' : '' ?>
-                                </a>
-                                <?php $url = ($alarms) && $alarms['qua_ap_suat']['status'] ? '?alarm=4' : ''; ?>
-                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['qua_ap_suat']['status'] ? 'class="active"' : '' ?>>
-                                    Over pressure<?php echo ($alarms) && $alarms['qua_ap_suat']['count'] ? '(' . $alarms['qua_ap_suat']['count'] . ')' : '' ?>
-                                </a>
-                                <?php $url = ($alarms) && $alarms['mat_dien']['status'] ? '?alarm=5' : ''; ?>
-                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['mat_dien']['status'] ? 'class="active"' : '' ?>>
-                                    Lost supply<?php echo ($alarms) && $alarms['mat_dien']['count'] ? '(' . $alarms['mat_dien']['count'] . ')' : '' ?>
-                                </a>                                                                
+                            <div class="content-menu">                                
+                                <?php foreach ($alarmConfig as $alarm => $item) { ?>                                
+                                    <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
+                                    <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
+                                        <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                    </a>
+                                <?php } ?>                                                              
                             </div>  
                         </div>
                     </div>
@@ -115,37 +100,14 @@ AppAsset::register($this);
                 </div>
                 <div class="bottom-menu">
                     <ul>
-                        <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
-                        <li>
-                            <?php $url = ($alarms) && $alarms['tran_be']['status'] ? '?alarm=1' : ''; ?>
-                            <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['tran_be']['status'] ? 'class="active"' : '' ?>>
-                                Over tank<?php echo ($alarms) && $alarms['tran_be']['count'] ? '(' . $alarms['tran_be']['count'] . ')' : '' ?>
-                            </a>
-                        </li>
-                        <li>
-                            <?php $url = ($alarms) && $alarms['lost_conn']['status'] ? '?alarm=2' : ''; ?>
-                            <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['lost_conn']['status'] ? 'class="active"' : '' ?>>
-                                Lost connection<?php echo ($alarms) && $alarms['lost_conn']['count'] ? '(' . $alarms['lost_conn']['count'] . ')' : '' ?>
-                            </a>
-                        </li>
-                        <li>
-                            <?php $url = ($alarms) && $alarms['qua_nhiet']['status'] ? '?alarm=3' : ''; ?>
-                            <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['qua_nhiet']['status'] ? 'class="active"' : '' ?>>
-                                Over heat<?php echo ($alarms) && $alarms['qua_nhiet']['count'] ? '(' . $alarms['qua_nhiet']['count'] . ')' : '' ?>
-                            </a>
-                        </li>
-                        <li>
-                            <?php $url = ($alarms) && $alarms['qua_ap_suat']['status'] ? '?alarm=4' : ''; ?>
-                            <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['qua_ap_suat']['status'] ? 'class="active"' : '' ?>>
-                                Over pressure<?php echo ($alarms) && $alarms['qua_ap_suat']['count'] ? '(' . $alarms['qua_ap_suat']['count'] . ')' : '' ?>
-                            </a>
-                        </li>
-                        <li>
-                            <?php $url = ($alarms) && $alarms['mat_dien']['status'] ? '?alarm=5' : ''; ?>
-                            <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms['mat_dien']['status'] ? 'class="active"' : '' ?>>
-                                Lost supply<?php echo ($alarms) && $alarms['mat_dien']['count'] ? '(' . $alarms['mat_dien']['count'] . ')' : '' ?>
-                            </a>           
-                        </li>
+                        <?php foreach ($alarmConfig as $alarm => $item) { ?>     
+                            <li>
+                                <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
+                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
+                                    <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             <?php } ?>
@@ -169,8 +131,7 @@ AppAsset::register($this);
                     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                     <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true"
-                        data-slide-speed="200">
+                    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                         <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
                         <!--                    <li class="sidebar-toggler-wrapper">-->
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
@@ -188,7 +149,8 @@ AppAsset::register($this);
                                         'items' => $menu['children'],
                                         'visible' => $menu['is_active'],
                                         'icon' => $menu['icon'],
-                                        'parent' => $menu['parent']];
+                                        'parent' => $menu['parent']
+                                    ];
                                 return [
                                     'label' => $menu['name'],
                                     'items' => $menu['children'],
@@ -198,7 +160,6 @@ AppAsset::register($this);
                                 ];
                             };
                             $items = MenuHelper::getAssignedMenu(Yii::$app->user->id, null, $callback);
-                            //var_dump($items); die;
                             echo LayoutMenu::widget([
                                 'items' => $items,
                             ]);

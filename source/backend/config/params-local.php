@@ -25,4 +25,26 @@ return [
     'page_sizes' => [2 => 2, 5 => 5, 10 => 10, 15 => 15, 20 => 20, 25 => 25, 50 => 50],
     'default_password' => '123456',
     'mode_range' => [1, 33],
+    'module-alarm' => [
+        1 => [
+            'key' => 'tran_be',
+            'value' => 'Over tank',
+        ],
+        2 => [
+            'key' => 'lost_conn',
+            'value' => 'Lost connection',
+        ],
+        3 => [
+            'key' => 'qua_nhiet',
+            'value' => 'Over heat',
+        ],
+        4 => [
+            'key' => 'qua_ap_suat',
+            'value' => 'Over pressure',
+        ],
+        5 => [
+            'key' => 'mat_dien',
+            'value' => 'Lost supply',
+        ]
+    ],
 ];

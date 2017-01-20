@@ -21,7 +21,10 @@ $this->title = $idModule . ' - ' . $module->name;
             ])
             ?>   
             <div class="row100" style="text-align:center">
-                <input type="submit" value="Send" class="btn btn-primary"/>
+                <input type="submit" value="SEND" class="btn btn-primary"/>
+                <?php if ($model->getConvectionMode()) { ?>
+                    <input type="hidden" id="url_back" name="url_back" value="/output-mode/view">
+                <?php } ?>
             </div>
         </div>
     </form>

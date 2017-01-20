@@ -43,8 +43,8 @@
     text-transform: uppercase;
     transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
-.btn-primary {
-    min-width: 150px;
+.btn-primary, .btn-danger, .btn-success {
+    min-width: 140px;
     padding: 5px;
     text-transform: uppercase;
 }

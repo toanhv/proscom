@@ -2377,6 +2377,7 @@ Customized Bootstrap Buttons
 .btn.btn-sm {
     font-size: 11px;
     padding: 6px 18px 6px 18px;
+    margin: 3px 0px;
 }
 .btn.btn-xs {
     font-size: 11px;
@@ -6811,6 +6812,8 @@ AngularJS Basic Animations
 .btn.default {
     color: #333333;
     background-color: #E5E5E5;
+    margin: 3px 0px;
+    padding: 6px 14px;
 }
 .btn.default:hover, .btn.default:focus, .btn.default:active, .btn.default.active {
     color: #333333;

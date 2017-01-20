@@ -36,7 +36,6 @@ $listUsers = backend\models\User::getAllUser();
             'code',
             'name',
             [
-                'label' => 'Tỉnh/Thành phố',
                 'attribute' => 'provincial_id',
                 'content' => function ($data) {
                     return Html::encode($data->provincial->name);
@@ -44,7 +43,6 @@ $listUsers = backend\models\User::getAllUser();
                 'filter' => $provincial
             ],
             [
-                'label' => 'Người tạo',
                 'attribute' => 'created_by',
                 'content' => function ($data) {
                     return Html::encode($data->createdBy->username);

@@ -22,7 +22,10 @@ $this->title = 'Param config';
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="Send" />
+                    <input type="submit" class="btn btn-primary" value="SEND" />
+                    <?php if ($model->getConvectionTemp()) { ?>
+                        <input type="hidden" id="url_back" name="url_back" value="/param-config/view">
+                    <?php } ?>
                 </div>
             </form>
         </div>         

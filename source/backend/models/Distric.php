@@ -6,6 +6,7 @@ use common\models\DistricBase;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
+use Yii;
 
 class Distric extends DistricBase {
 
@@ -37,6 +38,22 @@ class Distric extends DistricBase {
             [['code'], 'string', 'min' => 3, 'max' => 3],
             [['code'], 'match', 'pattern' => '((?=.*\d))'],
             [['code'], 'unique']
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels() {
+        return [
+            'id' => Yii::t('backend', 'ID'),
+            'name' => Yii::t('backend', 'Name'),
+            'code' => Yii::t('backend', 'Code'),
+            'provincial_id' => Yii::t('backend', 'Province/City'),
+            'updated_by' => Yii::t('backend', 'Updated By'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
+            'created_by' => Yii::t('backend', 'Created By'),
+            'created_at' => Yii::t('backend', 'Created At'),
         ];
     }
 

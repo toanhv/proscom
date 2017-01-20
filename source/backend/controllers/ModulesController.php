@@ -122,35 +122,37 @@ class ModulesController extends AppController {
 
         $clients = \backend\models\Imsi::getClientRequest();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if ($model->toClient()) {
-                //timer counter
-                $timerCounter = new \backend\models\TimerCounter();
-                $timerCounter->module_id = $model->id;
-                $timerCounter->counter = 0;
-                $timerCounter->timer_1 = 0;
-                $timerCounter->timer_2 = 0;
-                $timerCounter->timer_3 = 0;
-                $timerCounter->created_at = new \yii\db\Expression('now()');
-                $timerCounter->save(false);
-                //load mode
-                $loadMode = new \backend\models\OutputMode();
-                $loadMode->module_id = $model->id;
-                $loadMode->save(false);
-                //Param config
-                $paramConfig = new \backend\models\ParamConfig();
-                $paramConfig->module_id = $model->id;
-                $paramConfig->save(false);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->customer_code = \common\socket\Socket::alldec2bin($model->customer_code, 6);
+            if ($model->save()) {
+                if ($model->toClient()) {
+                    //timer counter
+                    $timerCounter = new \backend\models\TimerCounter();
+                    $timerCounter->module_id = $model->id;
+                    $timerCounter->counter = 0;
+                    $timerCounter->timer_1 = 0;
+                    $timerCounter->timer_2 = 0;
+                    $timerCounter->timer_3 = 0;
+                    $timerCounter->created_at = new \yii\db\Expression('now()');
+                    $timerCounter->save(false);
+                    //load mode
+                    $loadMode = new \backend\models\OutputMode();
+                    $loadMode->module_id = $model->id;
+                    $loadMode->save(false);
+                    //Param config
+                    $paramConfig = new \backend\models\ParamConfig();
+                    $paramConfig->module_id = $model->id;
+                    $paramConfig->save(false);
 
-                Yii::$app->session->setFlash('success', 'Set ID to module ' . $model->getModuleId() . ' success!');
-                sleep(TIME_OUT_REFRESH);
-                return $this->goHome();
-            } else {
-                Yii::$app->session->setFlash('error', 'Not found imsi ' . $model->msisdn);
-                $this->findModel($model->id)->delete();
+                    Yii::$app->session->setFlash('success', 'Set ID to module ' . $model->getModuleId() . ' success!');
+                    sleep(TIME_OUT_REFRESH);
+                    return $this->goHome();
+                } else {
+                    Yii::$app->session->setFlash('error', 'Not found imsi ' . $model->msisdn);
+                    $this->findModel($model->id)->delete();
+                }
+                return $this->redirect(['index']);
             }
-
-            return $this->redirect(['index']);
         }
         return $this->render('create', [
                     'model' => $model,

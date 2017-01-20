@@ -66,6 +66,13 @@ class ModulesSearch extends Modules {
             $query->orFilterWhere(['customer_code' => $this->customer_code]);
         }
 
+        $role = \Yii::$app->authManager->getAssignment('module', Yii::$app->user->getId());
+        if ($role && $role->roleName == 'module') {
+            $query->andFilterWhere([
+                'created_by' => Yii::$app->user->getId(),
+            ]);
+        }
+
         return $dataProvider;
     }
 

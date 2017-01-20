@@ -33,10 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'provincial.name:html:Provincial',
-            'updatedBy.username:html:Cập nhật',
+            'provincial.name:html:Province/City',
+            'updatedBy.username:html:Updated By',
             'updated_at',
-            'createdBy.username:html:Tạo bởi',
+            'createdBy.username:html:Created By',
             'created_at',
         ],
     ])

@@ -19,7 +19,7 @@ $this->title = $idModule . ' - ' . $module->name;
             <h3 class="text-center"><?php echo Html::encode($this->title); ?></h3>
             <p align="center">Choose your system</p>
             <div class="row-check-account">
-                <input type="hidden" value="" name="mode_id" id="mode_id">
+                <input type="hidden" value="<?php echo $module->mode_id; ?>" name="mode_id" id="mode_id">
                 <p align="center">
                     <?php foreach ($modes as $mode): ?>
                         <a href="javascript:void(0)" id="mode_<?php echo $mode->id ?>" onclick="chooseMode('<?php echo $mode->id ?>')" class="btn-check <?php if ($module->mode_id == $mode->id) echo 'chosen'; ?>">
@@ -28,8 +28,7 @@ $this->title = $idModule . ' - ' . $module->name;
                     <?php endforeach; ?>
                 </p>
                 <p align="center">
-                    <!--<a href="/mode/create" class="btn-link">Create</a>-->
-                    <a href="javascript:void(0)" onclick="$('#form-choose-mode').submit()" class="btn-link">Send</a>
+                    <a href="javascript:void(0)" onclick="$('#form-choose-mode').submit()" class="btn btn-primary">SEND</a>
                 </p>
             </div>
         </div>
