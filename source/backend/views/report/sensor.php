@@ -62,7 +62,7 @@ $this->title = 'Sensor Report';
                     'datasets' => [
                         [
                             'label' => $value['title'],
-                            'borderWidth' => 2,
+                            'borderWidth' => 1,
                             'tension' => 0,
                             'capBezierPoints' => true,
                             'fill' => false,
