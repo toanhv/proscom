@@ -27,9 +27,9 @@ $this->title = $idModule . ' - ' . $module->name;
                         </a>
                     <?php endforeach; ?>
                 </p>
-                <p align="center">
-                    <a href="javascript:void(0)" onclick="$('#form-choose-mode').submit()" class="btn btn-primary" data-confirm="Are you sure you want to send?">SEND</a>
-                </p>
+                <div class="row100" style="text-align:center">
+                    <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
+                </div>
             </div>
         </div>
     </form>
