@@ -29,6 +29,9 @@ $this->title = $idModule . ' - ' . $module->name;
                 </p>
                 <div class="row100" style="text-align:center">
                     <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
+                    <?php if ($module->getConvectionTemp()) { ?>
+                        <input type="hidden" id="url_back" name="url_back" value="/mode/view">
+                    <?php } ?>
                 </div>
             </div>
         </div>

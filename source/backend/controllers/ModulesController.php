@@ -196,6 +196,9 @@ class ModulesController extends AppController {
                         $model->configLog();
                         \Yii::$app->session->set('module_id', $model->id);
                         Yii::$app->session->setFlash('success', 'Set System Mode success!');
+                        if ($values['url_back']) {
+                            return $this->redirect($values['url_back']);
+                        }
                         return $this->redirect('/output-mode/update');
                     } else {
                         Yii::$app->session->setFlash('success', 'Set System Mode fail!');
