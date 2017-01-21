@@ -70,10 +70,8 @@ $this->title = 'Home';
             <div class="col-md-4">
                 <a href="<?php echo $url; ?>" title="<?php echo \yii\helpers\Html::encode($val->name); ?>">
                     <img class="img-responsive" src="<?php echo $img; ?>" alt="<?php echo \yii\helpers\Html::encode($val->name); ?>" />
-                    <div style="text-align: center; position: relative;">
-                        <p class="">ID: <?php echo \yii\helpers\Html::encode($val->getModuleId()); ?></p>
-                        <p class=""><?php echo \yii\helpers\Html::encode($val->name); ?></p>
-                    </div>
+                    <p class="">ID: <?php echo \yii\helpers\Html::encode($val->getModuleId()); ?></p>
+                    <p class=""><?php echo \yii\helpers\Html::encode($val->name); ?></p>
                 </a>
             </div>
             <?php
