@@ -49,7 +49,7 @@ $this->title = 'Sensor Report';
 
         foreach ($sensorChart as $chart => $value) {
             $borderColor = $value['color'];
-            echo '<h4 style="color: ' . $borderColor . ';">' . $value['title'] . '</h4>';
+            echo '<h4 style="color: ' . $borderColor . ';font-weight: bold;">' . $value['title'] . '</h4>';
             echo '<div class="sensor-report" style="border-color: ' . $borderColor . ';">';
             echo ChartJs::widget([
                 'type' => 'line',
