@@ -28,7 +28,13 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
     </div>
     <div class="form-actions" style="text-align: center">
-        <?= Html::submitButton('SOFT EMERGENCY STOP', ['class' => 'btn btn-danger uppercase', 'name' => 'STOP-button']) ?>
+        <?=
+        Html::submitButton('SOFT EMERGENCY STOP', [
+            'class' => 'btn btn-danger uppercase',
+            'name' => 'STOP-button',
+            'data-confirm' => "Are you sure you want to send?"
+        ])
+        ?>
     </div>
 </div>
 <?php ActiveForm::end(); ?>

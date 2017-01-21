@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ?>
             <div class="row100" style="text-align:center">
                 <p>
-                    <?= Html::a(Yii::t('backend', 'Setting'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                    <?= Html::a(Yii::t('backend', 'SETTING'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
                 </p>
             </div>
         </div>         

@@ -21,7 +21,7 @@ $this->title = $idModule . ' - ' . $model->module->name;
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="Send" />
+                    <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
                 </div>
             </form>
         </div>         

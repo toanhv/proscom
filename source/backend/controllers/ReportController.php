@@ -10,7 +10,7 @@ use backend\models\Modules;
 class ReportController extends AppController {
 
     public function actionIndex() {
-        $sensors = array();
+        $sensors = null;
         $from = date('Y-m-d', strtotime('-1 day'));
         $to = date('Y-m-d');
         $module_id = \Yii::$app->session->get('module_id', 0);
@@ -23,21 +23,14 @@ class ReportController extends AppController {
 
         if (Yii::$app->request->isPost) {
             $values = Yii::$app->request->post();
-            //$module_id = $values['module_id'];
             $from = $values['from'];
             $to = $values['to'];
             if ($values['export']) {
                 $this->exportCsv($module_id, $from, $to);
             }
             $sensors = Sensor::getReport($from, $to, $module_id);
-            // var_dump($from);
-            // var_dump($to);
-            // var_dump($module_id);
-            // die;
-            // $alarms = Alarm::getReport($from,$to,$module_id);
-            // var_dump($sensors);die;
         }
-        return $this->render('index.php', [
+        return $this->render('sensor.php', [
                     'sensors' => $sensors,
                     'from' => $from,
                     'to' => $to,

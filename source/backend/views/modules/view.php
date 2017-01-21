@@ -242,7 +242,7 @@ $outputMode = $model->outputModes;
                     <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $outputMode->getBlakflowMode() ?>">
                     <div class="row100" style="text-align:center">
                         <input type="hidden" id="url_back" name="url_back" value="/modules/all-view">
-                        <input type="submit" value="SEND" class="btn btn-primary" data-confirm="Are you sure you want send?"/>
+                        <input type="submit" value="SEND" class="btn btn-primary" data-confirm="Are you sure you want to send?"/>
                     </div>
                 </form>
             </div>
