@@ -1,0 +1,102 @@
+toanhv/toanhv@2016
+
+Mysql: 'username' => 'root',
+'password' => scenvila@2015
+
+/etc/nginx/conf.d
+
+IP: 124.158.7.164
+
+http://applus.repositoryhosting.com/git/applus/powercms.git
+
+Login URL: http://applus.repositoryhosting.com/login
+Username: toanhv
+Password: jksxyrep
+
+git clone http://applus.repositoryhosting.com/git/applus/box360.git
+
+git config --global credential.helper "cache --timeout=360000"
+
+git pull: get code
+git checkout: revert code
+git status: check status
+
+an ninh: http://applus.repositoryhosting.com/git/applus/an24h.git
+
+[4:02:05 PM] Trung Nguyen Ba: server: anninh
+[4:02:07 PM] Trung Nguyen Ba: u/p: antv/nR6h9lLj
+
+
+====================iBox360============================
+
+git url: http://applus.repositoryhosting.com/git/applus/frontibox.git
+
+[10:30:03 PM] Trung Nguyen Ba: box360 / %Y@k97Zl
+[10:30:14 PM] hoangtoanit (Mr): pass root ma cau?
+[10:31:04 PM] Trung Nguyen Ba: root / Ag@3n1q0
+
+
+==========================mobifone==========================
+[11:05:27 PM] Trung Nguyen Ba: account SSH :
+[11:05:55 PM] Trung Nguyen Ba: host : 113.187.15.36
+[11:05:58 PM] Trung Nguyen Ba: port : 443
+[11:06:14 PM] Trung Nguyen Ba: u/p : toanhv / beOY5iKN
+
+[11:12:17 PM] Trung Nguyen Ba: giao tiep thong qua webservice api
+[11:12:34 PM] Trung Nguyen Ba: dia chi sv app la : 10.54.135.187
+
+mysql : u/p : root / Scentvilla@123$%^
+
+http://masterweb.box360.vn/
+u/p : root / Jing@media459
+
+http://masterapp.box360.vn/
+root / Hts@1809
+
+http://myadmasterapp.box360.vn
+remote/Scentvilla-app@media
+============================================================
+
+==================end iBox360==========================
+
+[11:17:52 AM] Ðinh Th? Hùng: hi anh toàn
+[11:18:07 AM] Ðinh Th? Hùng: cái ph?n giám sát
+[11:18:15 AM] Ðinh Th? Hùng: b?ng nagios
+[11:18:23 AM | Ðã s?a 11:18:29 AM] Ðinh Th? Hùng: a t?o 2 trang trên cms
+[11:18:33 AM] Ðinh Th? Hùng: nhúng iframe vào anh nhé
+[11:18:42 AM] Ðinh Th? Hùng: 1 trang là giám sát hosting
+[11:18:49 AM] Ðinh Th? Hùng: 1 trang là giám sát service
+[11:18:58 AM] Ðinh Th? Hùng: các iframe l?n lu?t là
+[11:19:07 AM] Ðinh Th? Hùng: http://10.54.139.187/nagios/cgi-bin//status.cgi?hostgroup=all&style=hostdetail
+http://113.187.15.36/nagios/cgi-bin//status.cgi?hostgroup=all&style=hostdetail
+
+http://10.54.139.187/nagios/cgi-bin//status.cgi?host=all
+http://113.187.15.36/nagios/cgi-bin//status.cgi?host=all
+
+api:
+
+http://10.54.135.187:8080/services/apiVas?wsdl
+user/pass=Box360Vasgate/Box360@123456
+
+
+[6:33:19 PM] Trung Nguyen Ba: ===
+[6:33:23 PM] Trung Nguyen Ba: ssh acount server hts
+[6:33:27 PM] Trung Nguyen Ba: ip : 103.24.244.80
+[6:33:34 PM] Trung Nguyen Ba: u/p : toanhv / beOY5iKN
+[6:33:45 PM] Trung Nguyen Ba: code to dang de o /data/projects/box360
+
+mysql: root / Ag@3n1q0
+
+GRANT ALL PRIVILEGES ON proscom.* TO 'proscom'@'%' IDENTIFIED BY 'proscom@123312##';
+CREATE USER 'proscom'@'%' IDENTIFIED BY 'proscom@123';
+
+server CDN moi
+124.158.12.89
+22
+toanhv / beOY5iKN
+
+mysql u/p : box360 / yr12aIAl
+
+mysql -uroot -paUbcf@H7
+
+pass wifi: ChauChaU@123
