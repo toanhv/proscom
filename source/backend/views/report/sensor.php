@@ -41,7 +41,7 @@ $this->title = 'Sensor Report';
         foreach ($sensorItem as $sensorName) {
             foreach ($sensors as $item) {
                 $sensorChart[$sensorName]['title'] = $item->attributeLabels()[$sensorName];
-                $sensorChart[$sensorName]['color'] = "rgba(" . rand(0, 255) . "," . rand(0, 255) . "," . rand(0, 255) . "," . rand(0, 255) . ")";
+                $sensorChart[$sensorName]['color'] = "rgb('red', 'green', 'blue')";
                 $sensorChart[$sensorName]['labels'][] = $item->created_at;
                 $sensorChart[$sensorName]['data'][] = bindec($item->$sensorName);
             }
