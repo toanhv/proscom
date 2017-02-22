@@ -100,3 +100,5 @@ mysql u/p : box360 / yr12aIAl
 mysql -uroot -paUbcf@H7
 
 pass wifi: ChauChaU@123
+
+test
