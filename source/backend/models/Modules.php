@@ -64,7 +64,7 @@ class Modules extends ModulesBase {
             [['msisdn'], 'string', 'min' => 15, 'max' => 15],
             //[['customer_code'], 'match', 'pattern' => '((?=.*\d))', 'message' => \Yii::t('backend', 'Customer code must be number')],
             //[['customer_code'], 'string', 'min' => 6, 'max' => 6],
-            [['customer_code'], 'integer', 'min' => 0, 'max' => 63],
+            [['customer_code'], 'integer', 'min' => 0, 'max' => 999999],
             [['money'], 'string', 'max' => 160],
             [['data', 'alarm'], 'string', 'max' => 50],
             [['customer_code'], 'unique']

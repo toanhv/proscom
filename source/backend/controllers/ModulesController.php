@@ -137,7 +137,10 @@ class ModulesController extends AppController {
         $clients = \backend\models\Imsi::getClientRequest();
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->customer_code = \common\socket\Socket::alldec2bin($model->customer_code, 6);
+            //$model->customer_code = \common\socket\Socket::alldec2bin($model->customer_code, 6);
+            while (strlen($model->customer_code) < 6) {
+                $model->customer_code = '0' . $model->customer_code;
+            }
             if ($model->save()) {
                 if ($model->toClient()) {
                     //timer counter
