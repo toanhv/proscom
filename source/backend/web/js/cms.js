@@ -5,17 +5,27 @@
  */
 $(document).ready(function () {
     $('.icon-refresh-fix').click(function () {
+        var refresh = 1;
+        var count = 0;
         var url = window.location.href;
+        var extend = '';
         if (url.indexOf('?') > 0 && url.indexOf('reload') < 0) {
-            url += '&reload=true';
+            extend = '&reload=true';
         }
         if (url.indexOf('?') < 0 && url.indexOf('reload') < 0) {
-            url += '?reload=true';
+            extend = '?reload=true';
         }
         $(this).addClass('animation-spin');
-        window.location.href = url;
-        setTimeout(function () {
-            $(this).removeClass('animation-spin')
+        //window.location.href = url;
+        setInterval(function () {
+            console.log("auto refresh data");
+            if (refresh == 1) {
+                refresh = 0;
+                window.location.href = url + extend;
+            } else {
+                window.location.href = url;
+            }
+            count++;
         }, 10000);
     });
 
@@ -30,12 +40,12 @@ $(document).ready(function () {
 
     $('#report_from').datetimepicker({
         format: 'Y-m-d H:i:s',
-        step: 5,
+        step: 1,
     });
 
     $('#report_to').datetimepicker({
         format: 'Y-m-d H:i:s',
-        step: 5,
+        step: 1,
     });
 });
 

@@ -10,7 +10,7 @@ class Alarm extends \common\models\AlarmBase {
         $alarms = Alarm::find()->where([
                     '>=', 'created_at', $from
                 ])->andWhere([
-                    '<=', 'created_at', $to
+                    '<=', 'created_at', date('Y-m-d 23:59:59', strtotime($to))
                 ])->andWhere([
                     'module_id' => $moduleId
                 ])->all();

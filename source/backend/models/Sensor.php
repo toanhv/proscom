@@ -33,7 +33,7 @@ class Sensor extends \common\models\SensorBase {
         $sensors = Sensor::find()->where([
                     '>=', 'created_at', $from
                 ])->andWhere([
-                    '<=', 'created_at', $to
+                    '<=', 'created_at', date('Y-m-d 23:59:59', strtotime($to))
                 ])->andWhere([
                     'module_id' => intval($moduleId)
                 ])->all();
