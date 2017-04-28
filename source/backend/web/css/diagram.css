@@ -845,7 +845,7 @@
     /*right:50px;*/
     right:13px;
     border-radius:50%;
-    background-color:#fff;
+    background-color:transparent;
     z-index:1030;
 }
 
@@ -899,9 +899,8 @@
     top:46px;
     right:13px;
     padding:0px;
-    background-color:#fff;
+    background-color:transparent;
     z-index:1030;
-    border:1px solid #fff;
 }
 
 .icon-emergency-fix img{
