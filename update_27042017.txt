@@ -15,3 +15,5 @@
 8.    Cần tương thích theo dạng full view với các kích thước màn hình, ví dụ ở điện thoại thì cũng phải view được 100% như ở PC.
 
 9.    Khi thao tác check thì phải đợi 1 chút rồi ấn F5 thì web mới cập nhật giá trị. Cần có thao tác F5 tự động ngay khi Server nhận được các bản tin report đường lên.
+
+10. Bổ sung thư viện ảnh cho module
