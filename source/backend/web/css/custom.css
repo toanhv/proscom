@@ -68,4 +68,18 @@
 .error-hightlight {
     color: red;
 }
+.left-content-mobule {
+    /*background:url(../images/bg.jpg) no-repeat 0 0;*/
+    background-color:#fff;
+    height:510px;
+    position:relative;
+    display:inline-block;
+    /*border:1px solid #f8a21e;*/
+    width:585px;
+}
+
+.left-content-mobule p{
+    margin:0px 0;
+    font-weight:bold;
+}
 
