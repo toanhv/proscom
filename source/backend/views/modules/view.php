@@ -247,7 +247,7 @@ $outputMode = $model->outputModes;
                 </form>
             </div>
 
-            <div class="left-content">
+            <div class="left-content" style="background:url('<?php echo $model->getImgUrl(); ?>') no-repeat 0 0;">
                 <div class="c-00 text-04" data-toggle="tooltip" data-placement="right" title="Lingh intensity">
                     <?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>
                 </div>

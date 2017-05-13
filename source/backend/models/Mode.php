@@ -58,17 +58,6 @@ class Mode extends ModeBase {
             $filePath = '/uploads/mode/' . md5(time()) . '.' . $this->image_path->extension;
             $this->image_path->saveAs(\Yii::getAlias('@webroot') . $filePath);
 
-            try {
-                $height = 480;
-                $width = 640;
-                if (is_file(\Yii::getAlias('@webroot') . $filePath)) {
-                    \yii\imagine\Image::thumbnail(\Yii::getAlias('@webroot') . $filePath, $width, $height)
-                            ->save(\Yii::getAlias('@webroot') . $filePath, ['quality' => 100]);
-                }
-            } catch (\yii\base\Exception $e) {
-                \Yii::error($e->getMessage());
-            }
-
             return $filePath;
         }
         return '';

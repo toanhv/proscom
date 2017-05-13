@@ -65,7 +65,7 @@
 
 /***************Left content *********************/
 .left-content {
-    background:url(../images/bg.jpg) no-repeat 0 0;
+    /*background:url(../images/bg.jpg) no-repeat 0 0;*/
     background-color:#fff;
     height:510px;
     position:relative;

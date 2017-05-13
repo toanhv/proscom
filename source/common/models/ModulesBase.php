@@ -7,6 +7,10 @@ use yii\db\Expression;
 
 class ModulesBase extends \common\models\db\ModulesDB {
 
+    public function getImgUrl() {
+        return $this->mode->image_path;
+    }
+
     /**
      * @inheritdoc
      */
