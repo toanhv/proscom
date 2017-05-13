@@ -247,7 +247,7 @@ $outputMode = $model->outputModes;
                 </form>
             </div>
 
-            <div class="left-content" style="background:url('<?php echo $model->getImgUrl(); ?>') no-repeat 0 0;">
+            <div class="left-content-mobule" style="background:url(/images/systemmode_2.jpg) no-repeat 0 0;">
                 <div class="c-00 text-04" data-toggle="tooltip" data-placement="right" title="Lingh intensity">
                     <?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>
                 </div>
@@ -285,44 +285,34 @@ $outputMode = $model->outputModes;
                 </div>
                 <div class="icon-05"><img src="/images/01.png"/></div>    
 
-                <?php if (!in_array($model->mode->mode, [2])) { ?>
-                    <div class="c-06">&nbsp;</div>
-                    <div class="bg-06-green <?php echo $statuses->bom_doi_luu_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
-                    <div class="bg-06-red <?php echo $statuses->bom_doi_luu_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
-                <?php } ?>
+                <div class="c-06">&nbsp;</div>
+                <div class="bg-06-green <?php echo $statuses->bom_doi_luu_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
+                <div class="bg-06-red <?php echo $statuses->bom_doi_luu_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>    
 
-                <?php if (!in_array($model->mode->mode, [3, 7, 8, 9])) { ?>
-                    <div class="c-07">&nbsp;</div>
-                    <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
-                    <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>  
-                <?php } ?>
+                <div class="c-07">&nbsp;</div>
+                <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
+                <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>   
 
-                <?php if (!in_array($model->mode->mode, [9])) { ?>
-                    <div class="c-08">&nbsp;
-                        <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank temp">
-                            <?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?>&deg;C
-                        </p>
-                    </div>
-                    <div class="icon-08"><img src="/images/03.png"/></div>    
+                <div class="c-08">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank temp">
+                        <?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?>&deg;C
+                    </p>
+                </div>
+                <div class="icon-08"><img src="/images/03.png"/></div>    
 
-                    <div class="c-09">&nbsp;
-                        <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank pressure">
-                            <?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>Bar
-                        </p>
-                    </div>
-                    <div class="icon-09"><img src="/images/04.png"/></div>   
-                <?php } ?>
+                <div class="c-09">&nbsp;
+                    <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank pressure">
+                        <?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>Bar
+                    </p>
+                </div>
+                <div class="icon-09"><img src="/images/04.png"/></div>    
 
-                <?php if (!in_array($model->mode->mode, [6, 8, 9])) { ?>
-                    <div class="c-10">&nbsp;</div>
-                    <div class="bg-10-red <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
-                    <div class="bg-10-green <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
-                <?php } ?>
+                <div class="c-10">&nbsp;</div>
+                <div class="bg-10-red <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
+                <div class="bg-10-green <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
 
-                <?php if (!in_array($model->mode->mode, [5, 7, 9])) { ?>
-                    <div class="c-11">&nbsp;</div> 
-                    <div class="bg-11 <?php echo $statuses->bom_nhiet_bon_gia_nhiet == '00' ? 'bg-green' : 'bg-red' ?>"></div>  
-                <?php } ?>
+                <div class="c-11">&nbsp;</div> 
+                <div class="bg-11 <?php echo $statuses->bom_nhiet_bon_gia_nhiet == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
 
                 <div class="c-12">&nbsp;</div>
                 <div class="bg-12-green <?php echo $statuses->bom_tang_ap_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
@@ -342,11 +332,9 @@ $outputMode = $model->outputModes;
                 </div>
                 <div class="icon-14"><img src="/images/03.png"/></div>    
 
-                <?php if (!in_array($model->mode->mode, [4])) { ?>
-                    <div class="c-15">&nbsp;</div>
-                    <div class="bg-15-green <?php echo $statuses->bom_cap_nuoc_lanh_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
-                    <div class="bg-15-red <?php echo $statuses->bom_cap_nuoc_lanh_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div> 
-                <?php } ?>
+                <div class="c-15">&nbsp;</div>
+                <div class="bg-15-green <?php echo $statuses->bom_cap_nuoc_lanh_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
+                <div class="bg-15-red <?php echo $statuses->bom_cap_nuoc_lanh_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div> 
 
                 <div class="c-16">&nbsp;</div>
                 <div class="bg-16-green <?php echo $statuses->bom_hoi_duong_ong_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
