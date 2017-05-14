@@ -4,6 +4,8 @@ use yii\helpers\Html;
 
 $this->title = 'Overal View';
 
+$mode = $model->mode->mode;
+
 $outputMode = $model->outputModes;
 ?>
 <?php if ($model->status == 1) { ?>
@@ -184,20 +186,7 @@ $outputMode = $model->outputModes;
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <!--Heat pump-->
-                    <div class="item">
-                        <h3>Heat pump</h3>
-                        <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $outputMode->getHeatPumpMode() ?>">
-                        <div class="row-control item-10">
-                            <select class="selectpicker" data-width="70" disabled="disabled">
-                                <option>Auto</option>
-                                <option>Manual</option>
-                            </select>
-
-                            <button class="btn btn-success" style="width:170px" disabled="disabled">Under operation coditions</button>
-                        </div>
-                    </div>
+                    </div>                    
 
                     <div class="item">
                         <h3>Heater Resistor</h3>
@@ -238,8 +227,23 @@ $outputMode = $model->outputModes;
                             </div>                            
                         </div>
                     </div>
-                    <input type="hidden" id="three_way_mode" name="three_way[mode]" value="<?php echo $outputMode->get3wayMode() ?>">
-                    <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $outputMode->getBlakflowMode() ?>">
+
+                    <!--Heat pump-->
+                    <div class="item">
+                        <h3>Heat pump|Three value|Back flow</h3>
+                        <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $outputMode->getHeatPumpMode() ?>"/>
+                        <input type="hidden" id="three_way_mode" name="three_way[mode]" value="<?php echo $outputMode->get3wayMode() ?>"/>
+                        <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $outputMode->getBlakflowMode() ?>"/>
+                        <div class="row-control item-10">
+                            <select class="selectpicker" data-width="70" disabled="disabled">
+                                <option>Auto</option>
+                                <option>Manual</option>
+                            </select>
+
+                            <button class="btn btn-success" style="width:170px" disabled="disabled">Under operation coditions</button>
+                        </div>
+                    </div>
+
                     <div class="row100" style="text-align:center">
                         <input type="hidden" id="url_back" name="url_back" value="/modules/all-view">
                         <input type="submit" value="SEND" class="btn btn-primary" data-confirm="Are you sure you want to send?"/>
@@ -252,6 +256,10 @@ $outputMode = $model->outputModes;
                     <?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>
                 </div>
                 <div class="c-01">&nbsp;</div>
+
+                <div class="c-02 text-04" style="left: 480px;" data-toggle="tooltip" data-placement="right" title="Environment Temp">
+                    <p><?php echo bindec($sensors->du_phong); ?>&deg;C</p>
+                </div>
 
                 <div class="c-02 text-04" data-toggle="tooltip" data-placement="right" title="Solar panels temp">
                     <p><?php echo bindec($sensors->cam_bien_dan_thu); ?>&deg;C</p>
@@ -285,19 +293,19 @@ $outputMode = $model->outputModes;
                 </div>
                 <div class="icon-05"><img src="/images/01.png"/></div>    
 
-                <?php if (!in_array($model->mode->mode, [2])) { ?>
+                <?php if (!in_array($mode, [2])) { ?>
                     <div class="c-06">&nbsp;</div>
                     <div class="bg-06-green <?php echo $statuses->bom_doi_luu_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                     <div class="bg-06-red <?php echo $statuses->bom_doi_luu_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
                 <?php } ?>
 
-                <?php if (!in_array($model->mode->mode, [3, 7, 8, 9])) { ?>
+                <?php if (!in_array($mode, [3, 7, 8, 9])) { ?>
                     <div class="c-07">&nbsp;</div>
                     <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
                     <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>  
                 <?php } ?>
 
-                <?php if (!in_array($model->mode->mode, [9])) { ?>
+                <?php if (!in_array($mode, [9])) { ?>
                     <div class="c-08">&nbsp;
                         <p class="text-04" data-toggle="tooltip" data-placement="right" title="Heater tank temp">
                             <?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?>&deg;C
@@ -313,13 +321,13 @@ $outputMode = $model->outputModes;
                     <div class="icon-09"><img src="/images/04.png"/></div>   
                 <?php } ?>
 
-                <?php if (!in_array($model->mode->mode, [6, 8, 9])) { ?>
+                <?php if (!in_array($mode, [6, 8, 9])) { ?>
                     <div class="c-10">&nbsp;</div>
                     <div class="bg-10-red <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                     <div class="bg-10-green <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
                 <?php } ?>
 
-                <?php if (!in_array($model->mode->mode, [5, 7, 9])) { ?>
+                <?php if (!in_array($mode, [5, 7, 9])) { ?>
                     <div class="c-11">&nbsp;</div> 
                     <div class="bg-11 <?php echo $statuses->bom_nhiet_bon_gia_nhiet == '00' ? 'bg-green' : 'bg-red' ?>"></div>  
                 <?php } ?>
@@ -342,7 +350,7 @@ $outputMode = $model->outputModes;
                 </div>
                 <div class="icon-14"><img src="/images/03.png"/></div>    
 
-                <?php if (!in_array($model->mode->mode, [4])) { ?>
+                <?php if (!in_array($mode, [4])) { ?>
                     <div class="c-15">&nbsp;</div>
                     <div class="bg-15-green <?php echo $statuses->bom_cap_nuoc_lanh_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
                     <div class="bg-15-red <?php echo $statuses->bom_cap_nuoc_lanh_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div> 
@@ -370,6 +378,10 @@ $outputMode = $model->outputModes;
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_buc_xa_dan_thu); ?>Lux</span>
                         </div>  
                         <div class="info-block-item">
+                            <span class="text-02">Environment Temp</span>
+                            <span class="text-01"><?php echo bindec($sensors->du_phong); ?><sup>o</sup>C</span>
+                        </div>  
+                        <div class="info-block-item">
                             <span class="text-02">Solar panels temp</span>
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_dan_thu); ?><sup>o</sup>C</span>
                         </div>
@@ -385,14 +397,16 @@ $outputMode = $model->outputModes;
                             <span class="text-02">Solar tank level</span>
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_muc_nuoc_bon_solar); ?>
                         </div>
-                        <div class="info-block-item">
-                            <span class="text-02">Heater tank temp</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?><sup>o</sup>C</span>
-                        </div>
-                        <div class="info-block-item">
-                            <span class="text-02">Heater tank pressure</span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>B
-                        </div>                                              
+                        <?php if (!in_array($mode, [9])) { ?>
+                            <div class="info-block-item">
+                                <span class="text-02">Heater tank temp</span>
+                                <span class="text-01"><?php echo bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet); ?><sup>o</sup>C</span>
+                            </div>
+                            <div class="info-block-item">
+                                <span class="text-02">Heater tank pressure</span>
+                                <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>B
+                            </div>  
+                        <?php } ?>
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
                             <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>B
