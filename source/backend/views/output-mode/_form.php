@@ -1,8 +1,11 @@
+<?php
+$mode = $model->module->mode->mode;
+?>
 <div class="control-main control-main-full">
     <div class="item">
         <h3>Convection pump</h3>
         <input type="hidden" id="convection_pump_mode" name="convection_pump[mode]" value="<?php echo $model->getConvectionMode() ?>">
-        <div class="row-control item-6">
+        <div class="row-control item-6 <?php echo (in_array($mode, Yii::$app->params['module_hide']['Convection_pump'])) ? 'all-disable' : '' ?>">
             <select class="selectpicker select-master" data-width="70">
                 <option value="1">Auto</option>
                 <option value="2">Manual</option>
@@ -49,7 +52,7 @@
     <div class="item">
         <h3>Cold water supply pump</h3>
         <input type="hidden" id="cwsp_pump_mode" name="cwsp_pump[mode]" value="<?php echo $model->getCwspMode() ?>">
-        <div class="row-control item-7">
+        <div class="row-control item-7 <?php echo (in_array($mode, Yii::$app->params['module_hide']['Cold_water_supply_pump'])) ? 'all-disable' : '' ?>">
             <select class="selectpicker select-master" data-width="70">
                 <option value="1">Auto</option>
                 <option value="2">Manual</option>
@@ -206,7 +209,7 @@
     <div class="item">
         <h3>Heater registor</h3>
         <input type="hidden" id="heater_resis_mode" name="heater_resis[mode]" value="<?php echo $model->getHeaterResisMode() ?>">
-        <div class="row-control item-11">
+        <div class="row-control item-11 <?php echo (in_array($mode, Yii::$app->params['module_hide']['Heater_Resistor'])) ? 'all-disable' : '' ?>">
             <select class="selectpicker select-master" data-width="70">
                 <option value="1">Auto</option>
                 <option value="2">Manual</option>

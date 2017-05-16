@@ -1,11 +1,14 @@
-<div class="item" data-toggle="tooltip" class="text-04" data-placement="right" title="Water temperature difference between Solar panels and Solar tank"> 
+<?php
+$mode = $model->module->mode->mode;
+?>
+<div class="item <?php echo (in_array($mode, Yii::$app->params['module_hide']['Convection_pump'])) ? 'all-disable' : '' ?>" data-toggle="tooltip" class="text-04" data-placement="right" title="Water temperature difference between Solar panels and Solar tank"> 
     <h3 style="margin-bottom:10px">Convection pump</h3>       	
     <p>
         Range to turn on the pump <input type="text" name="convection_pump" value="<?php echo $model->getConvectionTemp(); ?>" class="type-text" style="width:30px"><sup>o</sup>C
     </p>
 </div>
 
-<div class="item" data-toggle="tooltip" class="text-04" data-placement="right" title="Pump ON when water level lower than M2 and OFF when water level upper than M1"> 
+<div class="item <?php echo (in_array($mode, Yii::$app->params['module_hide']['Cold_water_supply_pump'])) ? 'all-disable' : '' ?>" data-toggle="tooltip" class="text-04" data-placement="right" title="Pump ON when water level lower than M2 and OFF when water level upper than M1"> 
     <h3 style="margin-bottom:10px">Cold water supply Pump</h3>       	
     <p>
         Water level M1 <input type="text" name="cold_water_supply_pump_lv1" value="<?php echo $model->getCwsplv1(); ?>" class="type-text" style="width:30px">
@@ -46,7 +49,7 @@
     </p>
 </div>
 
-<div class="item" data-toggle="tooltip" class="text-04" data-placement="right" title="When the Heat Pump turn on a time, if temperature in Heater tank lower than T1, R1 turn on, if R1 turn on a time, temperature in Heater tanl lower than T2, R2 turn on"> 
+<div class="item <?php echo (in_array($mode, Yii::$app->params['module_hide']['Heater_Resistor'])) ? 'all-disable' : '' ?>" data-toggle="tooltip" class="text-04" data-placement="right" title="When the Heat Pump turn on a time, if temperature in Heater tank lower than T1, R1 turn on, if R1 turn on a time, temperature in Heater tanl lower than T2, R2 turn on"> 
     <h3 style="margin-bottom:10px">Heat Resistor</h3>       	
     <p>
         Temperature to turn on Resistor <input type="text" name="heater_resis_t1" value="<?php echo $model->getHeaterResisT1(); ?>" class="type-text" style="width:30px"><sup>o</sup>C
@@ -56,7 +59,7 @@
     </p>
 </div>
 
-<div class="item" data-toggle="tooltip" class="text-04" data-placement="right" title="Valve change direction when time out of Begin time and End time, and the temperature between Heater tank and Solar tank upper than range">        	
+<div class="item <?php echo (in_array($mode, Yii::$app->params['module_hide']['Three_way_Valve'])) ? 'all-disable' : '' ?>" data-toggle="tooltip" class="text-04" data-placement="right" title="Valve change direction when time out of Begin time and End time, and the temperature between Heater tank and Solar tank upper than range">        	
     <h3 style="margin-bottom:10px">Three way Valve</h3>       	
     <p>
         Begin ilde time (hh:mm) 

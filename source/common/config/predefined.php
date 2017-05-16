@@ -70,5 +70,3 @@ define('BACKUP', '00000000');
 
 #timeout refresh
 define('TIME_OUT_REFRESH', 10); //in sec
-#select disable
-define('disabled', 'disabled="true"');

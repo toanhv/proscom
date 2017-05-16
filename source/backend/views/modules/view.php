@@ -31,7 +31,7 @@ $outputMode = $model->outputModes;
                         <h3>Convection pump</h3>
                         <input type="hidden" id="convection_pump_mode" name="convection_pump[mode]" value="<?php echo $outputMode->getConvectionMode() ?>">
                         <input type="hidden" id="convection_pump_time" name="convection_pump[time]" value="<?php echo $outputMode->getConvectionTime() ?>">
-                        <div class="row-control item-6">
+                        <div class="row-control item-6 <?php echo (in_array($mode, Yii::$app->params['module_hide']['Convection_pump'])) ? 'all-disable' : '' ?>">
                             <select class="selectpicker select-master" data-width="70">
                                 <option value="1">Auto</option>
                                 <option value="2">Manual</option>
@@ -71,7 +71,7 @@ $outputMode = $model->outputModes;
                         <h3>Cold water supply pump</h3>
                         <input type="hidden" id="cwsp_pump_mode" name="cwsp_pump[mode]" value="<?php echo $outputMode->getCwspMode() ?>">
                         <input type="hidden" id="cwsp_pump_time" name="cwsp_pump[time]" value="<?php echo $outputMode->getCwspTime() ?>">
-                        <div class="row-control item-7">
+                        <div class="row-control item-7 <?php echo (in_array($mode, Yii::$app->params['module_hide']['Cold_water_supply_pump'])) ? 'all-disable' : '' ?>">
                             <select class="selectpicker select-master" data-width="70">
                                 <option value="1">Auto</option>
                                 <option value="2">Manual</option>
@@ -192,7 +192,7 @@ $outputMode = $model->outputModes;
                         <h3>Heater Resistor</h3>
                         <input type="hidden" id="heater_resis_mode" name="heater_resis[mode]" value="<?php echo $outputMode->getHeaterResisMode() ?>">
                         <input type="hidden" id="heater_resis_time" name="heater_resis[time]" value="<?php echo $outputMode->getHeaterResisTime() ?>">
-                        <div class="row-control item-11">
+                        <div class="row-control item-11 <?php echo (in_array($mode, Yii::$app->params['module_hide']['Heater_Resistor'])) ? 'all-disable' : '' ?>">
                             <select class="selectpicker select-master" data-width="70">
                                 <option value="1">Auto</option>
                                 <option value="2">Manual</option>
@@ -399,11 +399,11 @@ $outputMode = $model->outputModes;
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Heater tank temp</span>
-                            <span class="text-01"><?php echo !in_array($mode, [9]) ? bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet) . '<sup>o</sup>C</span>' : '#'; ?>
+                            <span class="text-01"><?php echo in_array($mode, Yii::$app->params['module_hide']['Heater_Resistor']) ? '#' : bindec($sensors->cam_bien_nhiet_do_bon_gia_nhiet) . '<sup>o</sup>C</span>'; ?>
                         </div>
                         <div class="info-block-item">
                             <span class="text-02">Heater tank pressure</span>
-                            <span class="text-01"><?php echo !in_array($mode, [9]) ? bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet) . 'B' : '#'; ?>
+                            <span class="text-01"><?php echo in_array($mode, Yii::$app->params['module_hide']['Heater_Resistor']) ? '#' : bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet) . 'B'; ?>
                         </div>  
                         <div class="info-block-item">
                             <span class="text-02">Pipeline pressure</span>
