@@ -6,7 +6,6 @@
 $(document).ready(function () {
     $('.icon-refresh-fix').click(function () {
         var refresh = 1;
-        var count = 0;
         var url = window.location.href;
         var extend = '';
         if (url.indexOf('?') > 0 && url.indexOf('reload') < 0) {
@@ -16,17 +15,12 @@ $(document).ready(function () {
             extend = '?reload=true';
         }
         $(this).addClass('animation-spin');
-        //window.location.href = url;
-        setInterval(function () {
-            console.log("auto refresh data");
-            if (refresh == 1) {
-                refresh = 0;
-                window.location.href = url + extend;
-            } else {
-                window.location.href = url;
-            }
-            count++;
-        }, 10000);
+        if (refresh == 1) {
+            refresh = 0;
+            window.location.href = url + extend;
+        } else {
+            window.location.href = url;
+        }
     });
 
     $("ul.mode-select li").click(function () {
