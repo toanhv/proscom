@@ -208,11 +208,13 @@ class ModulesController extends AppController {
             $model->mode_id = intval($values['mode_id']);
             if ($model->mode_id) {
                 if ($model->save(false, ['mode_id'])) {
-                    if ($model->mode2Client()) {
+                    if ($client = $model->mode2Client()) {
                         $model->OperationLog();
                         $model->configLog();
                         \Yii::$app->session->set('module_id', $model->id);
-                        Yii::$app->session->setFlash('success', 'Set System Mode success!');
+
+                        \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->id);
+
                         if ($values['url_back']) {
                             return $this->redirect($values['url_back']);
                         }

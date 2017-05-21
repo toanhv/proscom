@@ -128,7 +128,8 @@ class Modules extends ModulesBase {
                 . \common\socket\Socket::alldec2bin($this->mode->mode, 8);
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function toClientManager() {
