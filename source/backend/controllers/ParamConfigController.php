@@ -56,8 +56,8 @@ class ParamConfigController extends AppController {
             return $this->goHome();
         }
         if ($module->mode_id && $_GET['reload'] == 'true') {
-            $module->checkParametter();
-            sleep(TIME_OUT_REFRESH);
+            $client = $module->checkParametter();
+            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
             return $this->redirect(['view']);
         }
         return $this->render('view', [
@@ -95,8 +95,8 @@ class ParamConfigController extends AppController {
             return $this->goHome();
         }
         if ($_GET['reload'] == 'true') {
-            $module->checkParametter();
-            sleep(TIME_OUT_REFRESH);
+            $client = $module->checkParametter();
+            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
             return $this->redirect(['update', 'id' => $id]);
         }
 
@@ -126,7 +126,7 @@ class ParamConfigController extends AppController {
                     $model->configLog();
 
                     \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
-                    
+
                     if ($values['url_back']) {
                         return $this->redirect($values['url_back']);
                     }

@@ -101,7 +101,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_SYSTEM_MODE_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function checkSystemStatus() {
@@ -112,7 +113,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_SYSTEM_STATUS_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function checkParametter() {
@@ -123,7 +125,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_PARAMETER_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function checkTimerCounter() {
@@ -134,7 +137,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_TIMER_COUNTER_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function checkOutputMode() {
@@ -145,7 +149,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_OUTPUT_MODE_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function SoftEmergencyStop() {
@@ -156,7 +161,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = SOFT_EMERGENCY_STOP_NOTIFY_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function checkAlarm() {
@@ -235,6 +241,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
                 Yii::$app->session->setFlash('error', 'An error occurred!');
                 break;
         }
+        return $status;
     }
 
 }

@@ -56,8 +56,8 @@ class OutputModeController extends AppController {
             return $this->goHome();
         }
         if ($module->mode_id && $_GET['reload'] == 'true') {
-            $module->checkOutputMode();
-            sleep(TIME_OUT_REFRESH);
+            $client = $module->checkOutputMode();
+            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
             return $this->redirect(['view']);
         }
         return $this->render('view', [
@@ -95,8 +95,8 @@ class OutputModeController extends AppController {
             return $this->goHome();
         }
         if ($module->mode_id && $_GET['reload'] == 'true') {
-            $module->checkOutputMode();
-            sleep(TIME_OUT_REFRESH);
+            $client = $module->checkOutputMode();
+            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
             return $this->redirect(['update', 'id' => $id]);
         }
 
@@ -130,7 +130,7 @@ class OutputModeController extends AppController {
                     $model->OperationLog();
                     $model->configLog();
 
-                    \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);                    
+                    \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
 
                     if ($values['url_back']) {
                         return $this->redirect($values['url_back']);

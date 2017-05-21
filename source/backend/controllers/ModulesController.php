@@ -65,8 +65,8 @@ class ModulesController extends AppController {
 
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {
-            $model->checkSystemStatus();
-            sleep(TIME_OUT_REFRESH);
+            $client = $model->checkSystemStatus();
+            \backend\models\Modules::checkClientStatus($client->status, $client->id, $id);
             return $this->redirect(['view', 'id' => $id]);
         }
 
@@ -112,11 +112,12 @@ class ModulesController extends AppController {
 
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             $model->status = 0;
-            if ($model->save(false, ['status'])) {
-                if ($model->SoftEmergencyStop()) {
-                    Yii::$app->session->setFlash('error', 'SOFT EMERGENCY STOP to module success!');
-                    return $this->redirect(['all-view']);
+            if ($client = $model->SoftEmergencyStop()) {
+                $status = \backend\models\Modules::checkClientStatus($client->status, $client->id, $id);
+                if ($status == 3) {
+                    $model->save(false, ['status']);
                 }
+                return $this->redirect(['all-view']);
             }
         }
         return $this->renderAjax('status', [
