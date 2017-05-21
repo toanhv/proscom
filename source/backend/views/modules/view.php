@@ -257,7 +257,7 @@ $outputMode = $model->outputModes;
                 </div>
                 <div class="c-01">&nbsp;</div>
 
-                <div class="c-02 text-04" style="left: 480px;" data-toggle="tooltip" data-placement="right" title="Environment Temp">
+                <div class="c-02 text-04 environment" data-toggle="tooltip" data-placement="right" title="Environment Temp">
                     <p><?php echo bindec($sensors->du_phong); ?>&deg;C</p>
                 </div>
 

@@ -82,4 +82,10 @@
     margin:0px 0;
     font-weight:bold;
 }
+.environment {
+    left: 480px;
+    background-color: #f7b219 !important; 
+    border-radius: 20px;
+    padding: 7px;
+}
 
