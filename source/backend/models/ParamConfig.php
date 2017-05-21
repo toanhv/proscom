@@ -100,7 +100,9 @@ class ParamConfig extends ParamConfigBase {
                 . $this->backflow_valve;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        
+        return $data;
     }
 
     public function OperationLog() {

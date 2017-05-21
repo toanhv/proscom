@@ -41,6 +41,9 @@ $(document).ready(function () {
         format: 'Y-m-d H:i:s',
         step: 1,
     });
+    $("form").submit(function () {
+        $('#icon-refresh-fix').addClass('animation-spin');
+    });F
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
 });

@@ -121,10 +121,12 @@ class ParamConfigController extends AppController {
                     . Socket::alldec2bin($values['3way_temp']);
             $model->backflow_valve = Socket::alldec2bin($values['backflow_temp']);
             if ($model->save(false)) {
-                if ($model->toClient()) {
+                if ($client = $model->toClient()) {
                     $model->OperationLog();
                     $model->configLog();
-                    Yii::$app->session->setFlash('success', 'Set Parameter Config success!');
+
+                    \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
+                    
                     if ($values['url_back']) {
                         return $this->redirect($values['url_back']);
                     }

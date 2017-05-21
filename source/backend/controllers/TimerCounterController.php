@@ -112,10 +112,12 @@ class TimerCounterController extends AppController {
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if ($model->toClient()) {
+            if ($client = $model->toClient()) {
                 $model->OperationLog();
                 $model->configLog();
-                Yii::$app->session->setFlash('success', 'Set Timer/Counter to module success!');
+
+                \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
+
                 return $this->redirect(['home']);
             }
         } else {

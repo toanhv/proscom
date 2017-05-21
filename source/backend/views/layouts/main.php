@@ -46,7 +46,7 @@ AppAsset::register($this);
         <!-- BEGIN HEADER -->
         <div class="page-header md-shadow-z-1-i navbar <?php echo (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) ? '' : 'navbar-fixed-top' ?>">
             <!-- BEGIN HEADER INNER -->
-            <a href="javascript:void(0);" class="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
+            <a href="javascript:void(0);" class="icon-refresh-fix" id="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
             <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
             <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
             <?php if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) { ?>

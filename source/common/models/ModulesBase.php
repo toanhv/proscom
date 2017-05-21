@@ -201,4 +201,40 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $return;
     }
 
+    public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart) {
+        set_time_limit($timeConfirm * ($counter + 3));
+        sleep(TIME_OUT_REFRESH);
+        $client = DataClientBase::find()->where(['id' => $clientId])->one();
+        $status = $client->status;
+        $endTime = strtotime(date('Y-m-d H:i:s'));
+        if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
+            sleep($timeConfirm);
+            return self::getStatusClient($clientId);
+        }
+
+        return $status;
+    }
+
+    public static function checkClientStatus($status, $clientId, $moduleId) {
+        $timeStart = strtotime(date('Y-m-d H:i:s'));
+        $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
+        $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
+        $counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
+        $status = self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart);
+        switch ($status) {
+            case 1:
+                Yii::$app->session->setFlash('error', 'The client has not responded!');
+                break;
+            case 3:
+                Yii::$app->session->setFlash('success', 'Successfull!');
+                break;
+            case 4:
+                Yii::$app->session->setFlash('error', 'Connection error!');
+                break;
+            default :
+                Yii::$app->session->setFlash('error', 'An error occurred!');
+                break;
+        }
+    }
+
 }
