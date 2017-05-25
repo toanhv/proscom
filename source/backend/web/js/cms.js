@@ -42,7 +42,7 @@ $(document).ready(function () {
         step: 1,
     });
     $("form").submit(function () {
-        $('#icon-refresh-fix').addClass('animation-spin');
+        waitingDialog.show('Connecting to client');
     });
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');

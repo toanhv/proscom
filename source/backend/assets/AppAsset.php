@@ -52,6 +52,7 @@ class AppAsset extends AssetBundle {
         'js/bootstrap-select.js',
         'js/cms.js',
         'js/jquery.datetimepicker.full.min.js',
+        'js/show-popup.js',
         'js/pump.js',
     ];
     public $depends = [
