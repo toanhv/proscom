@@ -21,11 +21,11 @@ $this->title = $idModule . ' - ' . $module->name;
             <div class="row-check-account">
                 <input type="hidden" value="<?php echo $module->mode_id; ?>" name="mode_id" id="mode_id">
                 <p align="center">
-                    <?php foreach ($modes as $mode): ?>
+                    <?php foreach ($modes as $mode) { ?>
                         <a href="javascript:void(0)" id="mode_<?php echo $mode->id ?>" onclick="chooseMode('<?php echo $mode->id ?>')" class="btn-check <?php if ($module->mode_id == $mode->id) echo 'chosen'; ?>">
-                            <?php echo $mode->getUrlImage(300, 220) ?>
+                            <?php echo $mode->getUrlImage(250, 183); ?>
                         </a>
-                    <?php endforeach; ?>
+                    <?php } ?>
                 </p>
                 <div class="row100" style="text-align:center">
                     <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
