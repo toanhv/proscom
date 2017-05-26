@@ -84,7 +84,8 @@
 }
 .environment {
     left: 480px;
-    background-color: #f7c75b !important; 
+    border: 2px solid;
+    border-color: #f7c75b !important; 
     border-radius: 20px;
     padding: 7px;
 }

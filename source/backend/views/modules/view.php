@@ -230,7 +230,7 @@ $outputMode = $model->outputModes;
 
                     <!--Heat pump-->
                     <div class="item">
-                        <h3>Heat pump|Three value|Back flow</h3>
+                        <h5 style="font-weight: bold;">Heat pump|Three value|Back flow</h5>
                         <input type="hidden" id="heat_pump_mode" name="heat_pump[mode]" value="<?php echo $outputMode->getHeatPumpMode() ?>"/>
                         <input type="hidden" id="three_way_mode" name="three_way[mode]" value="<?php echo $outputMode->get3wayMode() ?>"/>
                         <input type="hidden" id="backflow_mode" name="backflow[mode]" value="<?php echo $outputMode->getBlakflowMode() ?>"/>

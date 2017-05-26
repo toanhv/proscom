@@ -14,25 +14,9 @@ $this->title = 'Sensor Report';
                 <h3 class="title"><?php echo $module->getModuleId() . ' - ' . Html::encode($module->name); ?></h3>
                 <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
                 From:
-                <?=
-                yii\jui\DatePicker::widget([
-                    'name' => 'from',
-                    'dateFormat' => 'php:Y-m-d',
-                    'language' => 'vi',
-                    'value' => \yii\helpers\Html::encode($from)
-                ])
-                ?>
-                <!--<input type="text" name="from" id="report_from" value="<?php echo $from ?>">-->
+                <input type="text" name="from" id="report_from" value="<?php echo $from ?>">
                 To:
-                <?=
-                yii\jui\DatePicker::widget([
-                    'name' => 'to',
-                    'dateFormat' => 'php:Y-m-d',
-                    'language' => 'vi',
-                    'value' => \yii\helpers\Html::encode($to)
-                ])
-                ?>
-                <!--<input type="text" name="to" id="report_to" value="<?php echo $to ?>">-->
+                <input type="text" name="to" id="report_to" value="<?php echo $to ?>">
 
                 <button type="submit" name="export" value="0" class="btn-reprt btn-primary">Report</button>
                 <button type="submit" name="export" value="1" class="btn-reprt btn-primary">Excel</button>
@@ -43,6 +27,7 @@ $this->title = 'Sensor Report';
         $sensorChart = [];
         $sensorItem = [
             'cam_bien_buc_xa_dan_thu',
+            'du_phong',
             'cam_bien_dan_thu',
             'cam_bien_nhiet_dinh_bon_solar',
             'cam_bien_bon_solar',

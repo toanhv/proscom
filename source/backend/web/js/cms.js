@@ -41,8 +41,10 @@ $(document).ready(function () {
         format: 'Y-m-d H:i:s',
         step: 1,
     });
-    $("form").submit(function () {
-        waitingDialog.show('Connecting to client');
+    $("form").on('submit', function () {
+        if ($('.btn-primary').attr('data-confirm')) {
+            waitingDialog.show('Connecting to client');
+        }
     });
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
