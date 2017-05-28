@@ -235,6 +235,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
                 Yii::$app->session->setFlash('success', 'Successfull!');
                 break;
             case 4:
+            case 0:
                 Yii::$app->session->setFlash('error', 'Connection error!');
                 break;
             default :
