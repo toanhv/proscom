@@ -22,7 +22,7 @@ $this->title = $idModule . ' - ' . $module->name;
                 <input type="hidden" value="<?php echo $module->mode_id; ?>" name="mode_id" id="mode_id">
                 <p align="center">
                     <?php foreach ($modes as $mode) { ?>
-                        <a href="javascript:void(0)" id="mode_<?php echo $mode->id ?>" onclick="chooseMode('<?php echo $mode->id ?>')" class="btn-check <?php if ($module->mode_id == $mode->id) echo 'chosen'; ?>">
+                        <a data-toggle="tooltip" title="System mode <?php echo $mode->mode; ?>" href="javascript:void(0)" id="mode_<?php echo $mode->id ?>" onclick="chooseMode('<?php echo $mode->id ?>')" class="btn-check <?php if ($module->mode_id == $mode->id) echo 'chosen'; ?>">
                             <?php echo $mode->getUrlImage(250, 183); ?>
                         </a>
                     <?php } ?>
