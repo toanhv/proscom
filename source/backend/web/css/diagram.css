@@ -859,8 +859,8 @@
 
 .container-all {
     /*width:810px;*/
-    width:1040px;
-    margin:0 auto;	
+    /*width:1040px;*/
+    /*margin:0 auto;*/	
 }
 
 @keyframes spinner {

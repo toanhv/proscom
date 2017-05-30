@@ -39,7 +39,8 @@
         "kartik-v/yii2-builder": "@dev",
         "moonlandsoft/yii2-phpexcel": "*",
         "nickcv/yii2-encrypter": "*",
-        "mongosoft/yii2-soap-server": "*"
+        "mongosoft/yii2-soap-server": "*",
+        "skeeks/yii2-mobile-detect": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

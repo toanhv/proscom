@@ -90,3 +90,45 @@
     padding: 7px;
 }
 
+@media (max-width: 768px) {
+    .info-diagram, .diagram, .output-mode-view {
+        overflow-x: auto;
+    }
+    .control-main-full {
+        display: inline-block !important;
+    }
+    .header .header-left {
+        float: left;
+        background: #3e8ba5;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 59px;
+        line-height: 100px;
+    }
+    .header .header-left .logo img {
+        height: 58px;
+        width: 58px;
+    }
+    .header .banner .banner-image {
+        background-color: #756fb0;
+        text-align: right;
+        height: 59px;
+    }
+    .header .header-left .logo {
+        display: inline-block;
+        vertical-align: middle;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        /* background-color: #fff; */
+        border-radius: 50px;
+        line-height: 0;
+    }
+    .bottom-menu, .banner-menu {
+        display: none;
+    }
+}
+
