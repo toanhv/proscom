@@ -90,9 +90,10 @@
     padding: 7px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 440px) {
     .info-diagram, .diagram, .output-mode-view {
         overflow-x: auto;
+        text-align: center;
     }
     .control-main-full {
         display: inline-block !important;
@@ -104,9 +105,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100px;
+        width: 59px;
         height: 59px;
-        line-height: 100px;
+        line-height: 59px;
     }
     .header .header-left .logo img {
         height: 58px;
@@ -120,15 +121,33 @@
     .header .header-left .logo {
         display: inline-block;
         vertical-align: middle;
-        height: 100px;
-        width: 100px;
+        height: 57px;
+        width: 57px;
         overflow: hidden;
-        /* background-color: #fff; */
         border-radius: 50px;
         line-height: 0;
     }
     .bottom-menu, .banner-menu {
         display: none;
     }
+    .diagram {
+        overflow-x: auto;
+    }
+    .grid-view {
+        overflow-x: auto;
+    }
+    .hasDatepicker {
+        width: 100px;
+    }
+    .btn-primary, .btn-danger, .btn-success {
+        min-width: 80px;
+    }
+    button, input, select, textarea {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+.page-header {
+    background: url('../images/banner.jpg') no-repeat 0 0;
 }
 
