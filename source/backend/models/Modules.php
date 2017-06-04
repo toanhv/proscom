@@ -123,7 +123,7 @@ class Modules extends ModulesBase {
     }
 
     public static function setupID($imsi, $counter = 0) {
-        sleep(TIME_OUT_REFRESH + 5);
+        sleep(5);
         $newid = \backend\models\Imsi::find()->where(['imsi' => $imsi])->one();
         $status = $newid->status;
 
@@ -131,7 +131,7 @@ class Modules extends ModulesBase {
             return true;
         }
 
-        if ($counter < 4) {
+        if ($counter < 20) {
             $newid->status = 1;
             $newid->save(false);
             $counter++;
