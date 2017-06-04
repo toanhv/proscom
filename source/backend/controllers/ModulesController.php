@@ -132,6 +132,9 @@ class ModulesController extends AppController {
      * @return mixed
      */
     public function actionCreate() {
+        ini_set('max_execution_time', max_execution_time);
+        ini_set('request_terminate_timeout', max_execution_time);
+        set_time_limit(max_execution_time);
         $model = new Modules();
         $model->customer_code = $model->getMaxCustomerCode();
 
