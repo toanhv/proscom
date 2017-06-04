@@ -103,8 +103,7 @@ class Modules extends ModulesBase {
     }
 
     public function toClient() {
-        set_time_limit(TIME_OUT_REFRESH * 10);
-        ini_set('memory_limit', '-1');
+        ini_set('max_execution_time', max_execution_time);
         $sim = IMSI_HEADER . \common\socket\Socket::dec2bin($this->msisdn) . ID_ASSIGNMENT_DP;
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
 

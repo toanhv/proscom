@@ -209,6 +209,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
 
     public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart) {
         set_time_limit($timeConfirm * ($counter + 3));
+        ini_set('max_execution_time', max_execution_time);
         sleep(TIME_OUT_REFRESH);
         $client = DataClientBase::find()->where(['id' => $clientId])->one();
         $status = $client->status;
@@ -222,6 +223,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function checkClientStatus($status, $clientId, $moduleId) {
+        ini_set('max_execution_time', max_execution_time);
         $timeStart = strtotime(date('Y-m-d H:i:s'));
         $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
         $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;

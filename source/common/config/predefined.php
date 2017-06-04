@@ -70,3 +70,4 @@ define('BACKUP', '00000000');
 
 #timeout refresh
 define('TIME_OUT_REFRESH', 15); //in sec
+define('max_execution_time', 300); //300 seconds = 5 minutes
