@@ -103,6 +103,7 @@ class Modules extends ModulesBase {
     }
 
     public function toClient() {
+        set_time_limit(TIME_OUT_REFRESH * 20);
         $sim = IMSI_HEADER . \common\socket\Socket::dec2bin($this->msisdn) . ID_ASSIGNMENT_DP;
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
 
@@ -120,7 +121,6 @@ class Modules extends ModulesBase {
     }
 
     public static function setupID($imsi, $counter = 0) {
-        set_time_limit(TIME_OUT_REFRESH * 10);
         sleep(TIME_OUT_REFRESH);
         $newid = \backend\models\Imsi::find()->where(['imsi' => $imsi])->one();
         $status = $newid->status;
