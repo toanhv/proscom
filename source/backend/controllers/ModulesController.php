@@ -169,7 +169,7 @@ class ModulesController extends AppController {
                     return $this->goHome();
                 } else {
                     Yii::$app->session->setFlash('error', 'Set ID to module ' . $imsi . ' fail!');
-                    $model->delete();
+                    $this->findModel($model->id)->delete();
                     $newid = new \backend\models\Imsi();
                     $newid->imsi = $imsi;
                     $newid->save(false);
