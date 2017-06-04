@@ -23,7 +23,7 @@ $this->title = Yii::t('backend', 'Create {modelClass}', [
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="SEND" />
+                    <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
                 </div>
             </form>
         </div>         

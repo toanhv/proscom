@@ -112,8 +112,38 @@ class Modules extends ModulesBase {
             $newid->module_id_assignment = ID_ASSIGNMENT_HEADER . $sim . $id;
             $newid->status = 1;
             $newid->updated_by = \Yii::$app->user->getId();
-            return $newid->save(false);
+            if ($newid->save(false)) {
+                return self::setupID($this->msisdn, 0, $sim, $id);
+            }
         }
+        return false;
+    }
+
+    public static function setupID($imsi, $counter, $sim, $id) {
+        set_time_limit(TIME_OUT_REFRESH * 10);
+        sleep(TIME_OUT_REFRESH);
+        $newid = \backend\models\Imsi::find()->where(['imsi' => $imsi])->one();
+        $status = $newid->status;
+
+        if ($status == 3) {
+            return true;
+        }
+
+        if ($status != 3 && $counter < 4) {
+            $module_id = $newid->module_id;
+            $newid->delete();
+            $newid = new \backend\models\Imsi();
+            $newid->imsi = $imsi;
+            $newid->module_id = $module_id;
+            $newid->module_id_assignment = ID_ASSIGNMENT_HEADER . $sim . $id;
+            $newid->status = 1;
+            $newid->updated_by = \Yii::$app->user->getId();
+            $newid->save(false);
+            $counter++;
+            sleep(TIME_OUT_REFRESH);
+            return self::setupID($imsi, $counter, $sim, $id);
+        }
+        $newid->delete();
         return false;
     }
 

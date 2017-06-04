@@ -138,10 +138,10 @@ class ModulesController extends AppController {
         $clients = \backend\models\Imsi::getClientRequest();
 
         if ($model->load(Yii::$app->request->post())) {
-            //$model->customer_code = \common\socket\Socket::alldec2bin($model->customer_code, 6);
             while (strlen($model->customer_code) < 6) {
                 $model->customer_code = '0' . $model->customer_code;
             }
+            $imsi = $model->msisdn;
             if ($model->save()) {
                 if ($model->toClient()) {
                     //timer counter
@@ -162,14 +162,15 @@ class ModulesController extends AppController {
                     $paramConfig->module_id = $model->id;
                     $paramConfig->save(false);
 
-                    Yii::$app->session->setFlash('success', 'Set ID to module ' . $model->getModuleId() . ' success!');
-                    sleep(TIME_OUT_REFRESH);
+                    Yii::$app->session->setFlash('success', 'Set ID to module ' . $imsi . ' success!');
                     return $this->goHome();
                 } else {
-                    Yii::$app->session->setFlash('error', 'Not found imsi ' . $model->msisdn);
+                    Yii::$app->session->setFlash('error', 'Set ID to module ' . $imsi . ' fail!');
                     $this->findModel($model->id)->delete();
+                    $newid = new \backend\models\Imsi();
+                    $newid->imsi = $imsi;
+                    $newid->save(false);
                 }
-                return $this->redirect(['index']);
             }
         }
         return $this->render('create', [
