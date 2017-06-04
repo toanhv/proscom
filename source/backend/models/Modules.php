@@ -103,7 +103,8 @@ class Modules extends ModulesBase {
     }
 
     public function toClient() {
-        set_time_limit(TIME_OUT_REFRESH * 20);
+        set_time_limit(TIME_OUT_REFRESH * 10);
+        ini_set('memory_limit', '-1');
         $sim = IMSI_HEADER . \common\socket\Socket::dec2bin($this->msisdn) . ID_ASSIGNMENT_DP;
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
 
@@ -129,7 +130,7 @@ class Modules extends ModulesBase {
             return true;
         }
 
-        if ($status != 3 && $counter < 4) {
+        if ($counter < 4) {
             $newid->status = 1;
             $newid->save(false);
             $counter++;
