@@ -104,6 +104,8 @@ class Modules extends ModulesBase {
 
     public function toClient() {
         ini_set('max_execution_time', max_execution_time);
+        ini_set('request_terminate_timeout', max_execution_time);
+        set_time_limit(max_execution_time);
         $sim = IMSI_HEADER . \common\socket\Socket::dec2bin($this->msisdn) . ID_ASSIGNMENT_DP;
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
 
