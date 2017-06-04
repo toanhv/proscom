@@ -123,7 +123,7 @@ class Modules extends ModulesBase {
     }
 
     public static function setupID($imsi, $counter = 0) {
-        sleep(TIME_OUT_REFRESH);
+        sleep(TIME_OUT_REFRESH + 5);
         $newid = \backend\models\Imsi::find()->where(['imsi' => $imsi])->one();
         $status = $newid->status;
 
@@ -135,7 +135,6 @@ class Modules extends ModulesBase {
             $newid->status = 1;
             $newid->save(false);
             $counter++;
-            sleep(TIME_OUT_REFRESH);
             return self::setupID($imsi, $counter);
         }
         return false;
