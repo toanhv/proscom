@@ -25,20 +25,6 @@ class ModulesController extends AppController {
     }
 
     /**
-     * Lists all Distric models.
-     * @return mixed
-     */
-    public function actionList() {
-        $searchModel = new ModulesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('list', [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
      * Lists all Modules models.
      * @return mixed
      */
@@ -65,8 +51,8 @@ class ModulesController extends AppController {
 
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {
-            $client = $model->checkSystemStatus();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $id);
+            $model->checkSystemStatus();
+            sleep(TIME_OUT_REFRESH);
             return $this->redirect(['view', 'id' => $id]);
         }
 
@@ -112,18 +98,38 @@ class ModulesController extends AppController {
 
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             $model->status = 0;
-            if ($client = $model->SoftEmergencyStop()) {
-                $status = \backend\models\Modules::checkClientStatus($client->status, $client->id, $id);
-                if ($status == 3) {
-                    $model->save(false, ['status']);
+            if ($model->save(false, ['status'])) {
+                if ($model->SoftEmergencyStop()) {
+                    Yii::$app->session->setFlash('error', 'SOFT EMERGENCY STOP to module success!');
+                    return $this->redirect(['all-view']);
                 }
-                return $this->redirect(['all-view']);
             }
         }
         return $this->renderAjax('status', [
                     'model' => $form,
                     'module' => $model
         ]);
+    }
+
+    public function actionWait() {
+
+
+        return $this->renderAjax('wait', [
+        ]);
+    }
+
+    public function actionTest() {
+        //$this->layout = false;
+
+        return $this->render('test', [
+        ]);
+    }
+
+    public function actionGetStatus() {
+        $this->layout = false;
+
+        echo 1;
+        die;
     }
 
     /**
@@ -138,10 +144,7 @@ class ModulesController extends AppController {
         $clients = \backend\models\Imsi::getClientRequest();
 
         if ($model->load(Yii::$app->request->post())) {
-            while (strlen($model->customer_code) < 6) {
-                $model->customer_code = '0' . $model->customer_code;
-            }
-            $imsi = $model->msisdn;
+            $model->customer_code = \common\socket\Socket::alldec2bin($model->customer_code, 6);
             if ($model->save()) {
                 if ($model->toClient()) {
                     //timer counter
@@ -162,15 +165,14 @@ class ModulesController extends AppController {
                     $paramConfig->module_id = $model->id;
                     $paramConfig->save(false);
 
-                    Yii::$app->session->setFlash('success', 'Set ID to module ' . $imsi . ' success!');
+                    Yii::$app->session->setFlash('success', 'Set ID to module ' . $model->getModuleId() . ' success!');
+                    sleep(TIME_OUT_REFRESH);
                     return $this->goHome();
                 } else {
-                    Yii::$app->session->setFlash('error', 'Set ID to module ' . $imsi . ' fail!');
-                    $model->delete();
-                    $newid = new \backend\models\Imsi();
-                    $newid->imsi = $imsi;
-                    $newid->save(false);
+                    Yii::$app->session->setFlash('error', 'Not found imsi ' . $model->msisdn);
+                    $this->findModel($model->id)->delete();
                 }
+                return $this->redirect(['index']);
             }
         }
         return $this->render('create', [
@@ -210,16 +212,11 @@ class ModulesController extends AppController {
             $model->mode_id = intval($values['mode_id']);
             if ($model->mode_id) {
                 if ($model->save(false, ['mode_id'])) {
-                    if ($client = $model->mode2Client()) {
+                    if ($model->mode2Client()) {
                         $model->OperationLog();
                         $model->configLog();
                         \Yii::$app->session->set('module_id', $model->id);
-
-                        \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->id);
-
-                        if ($values['url_back']) {
-                            return $this->redirect($values['url_back']);
-                        }
+                        Yii::$app->session->setFlash('success', 'Set System Mode success!');
                         return $this->redirect('/output-mode/update');
                     } else {
                         Yii::$app->session->setFlash('success', 'Set System Mode fail!');

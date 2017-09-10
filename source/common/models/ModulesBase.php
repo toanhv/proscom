@@ -7,10 +7,6 @@ use yii\db\Expression;
 
 class ModulesBase extends \common\models\db\ModulesDB {
 
-    public function getImgUrl() {
-        return $this->mode->image_path;
-    }
-
     /**
      * @inheritdoc
      */
@@ -101,8 +97,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_SYSTEM_MODE_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function checkSystemStatus() {
@@ -113,8 +108,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_SYSTEM_STATUS_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function checkParametter() {
@@ -125,8 +119,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_PARAMETER_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function checkTimerCounter() {
@@ -137,8 +130,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_TIMER_COUNTER_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function checkOutputMode() {
@@ -149,8 +141,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = CHECK_OUTPUT_MODE_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function SoftEmergencyStop() {
@@ -161,8 +152,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data->data = SOFT_EMERGENCY_STOP_NOTIFY_HEADER . $id;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function checkAlarm() {
@@ -205,48 +195,6 @@ class ModulesBase extends \common\models\db\ModulesDB {
         Yii::$app->session->set('module_alarm', $module_alarm);
 
         return $return;
-    }
-
-    public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart) {
-        set_time_limit(max_execution_time);
-        ini_set('max_execution_time', max_execution_time);
-        ini_set('request_terminate_timeout', max_execution_time);
-        sleep(TIME_OUT_REFRESH);
-        $client = DataClientBase::find()->where(['id' => $clientId])->one();
-        $status = $client->status;
-        $endTime = strtotime(date('Y-m-d H:i:s'));
-        if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
-            sleep($timeConfirm);
-            return self::getStatusClient($clientId);
-        }
-
-        return $status;
-    }
-
-    public static function checkClientStatus($status, $clientId, $moduleId) {
-        ini_set('max_execution_time', max_execution_time);
-        ini_set('request_terminate_timeout', max_execution_time);
-        $timeStart = strtotime(date('Y-m-d H:i:s'));
-        $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
-        $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
-        $counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
-        $status = self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart);
-        switch ($status) {
-            case 1:
-                Yii::$app->session->setFlash('error', 'The client has not responded!');
-                break;
-            case 3:
-                Yii::$app->session->setFlash('success', 'Successfull!');
-                break;
-            case 4:
-            case 0:
-                Yii::$app->session->setFlash('error', 'Connection error!');
-                break;
-            default :
-                Yii::$app->session->setFlash('error', 'An error occurred!');
-                break;
-        }
-        return $status;
     }
 
 }

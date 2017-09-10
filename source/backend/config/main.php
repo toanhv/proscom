@@ -10,6 +10,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     //'language' => 'vi',
+    //'sourceLanguage' => 'en-US',
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\OutputMode */
-backend\assets\BootstrapAsset::register($this);
+yii\bootstrap\BootstrapPluginAsset::register($this);
 $module = $model->module;
 $idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
 $this->title = $idModule . ' - ' . $module->name;

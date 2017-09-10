@@ -2632,7 +2632,7 @@ ul,li{
 }
 .bottom-menu {
     position: absolute;
-    right: 0px;
+    right: 32px;
     top: 13px;
 }
 .bottom-menu ul li{

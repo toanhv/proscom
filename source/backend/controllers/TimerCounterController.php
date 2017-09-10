@@ -47,8 +47,8 @@ class TimerCounterController extends AppController {
         $module = \backend\models\Modules::findOne($moduleId);
         $model = $this->findModel($module->timerCounters->id);
         if ($_GET['reload'] == 'true') {
-            $client = $module->checkTimerCounter();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
+            $module->checkTimerCounter();
+            sleep(TIME_OUT_REFRESH);
             return $this->redirect(['home']);
         }
 
@@ -106,18 +106,16 @@ class TimerCounterController extends AppController {
 
         $module = $model->module;
         if ($_GET['reload'] == 'true') {
-            $client = $module->checkTimerCounter();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
+            $module->checkTimerCounter();
+            sleep(TIME_OUT_REFRESH);
             return $this->redirect(['update', 'id' => $id]);
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if ($client = $model->toClient()) {
+            if ($model->toClient()) {
                 $model->OperationLog();
                 $model->configLog();
-
-                \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
-
+                Yii::$app->session->setFlash('success', 'Set Timer/Counter to module success!');
                 return $this->redirect(['home']);
             }
         } else {

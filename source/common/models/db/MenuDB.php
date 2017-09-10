@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property string $name_vi
  * @property integer $parent
  * @property string $route
  * @property integer $order
@@ -19,26 +20,24 @@ use Yii;
  * @property MenuDB $parent0
  * @property MenuDB[] $menus
  */
-class MenuDB extends \yii\db\ActiveRecord
-{
+class MenuDB extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'menu';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['name'], 'required'],
+            [['name', 'name_vi'], 'required'],
             [['parent', 'order', 'type'], 'integer'],
             [['data', 'icon'], 'string'],
-            [['name'], 'string', 'max' => 128],
+            [['name', 'name_vi'], 'string', 'max' => 128],
             [['route'], 'string', 'max' => 255]
         ];
     }
@@ -46,11 +45,11 @@ class MenuDB extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('backend', 'ID'),
             'name' => Yii::t('backend', 'Name'),
+            'name_vi' => Yii::t('backend', 'Name VI'),
             'parent' => Yii::t('backend', 'Parent'),
             'route' => Yii::t('backend', 'Route'),
             'order' => Yii::t('backend', 'Order'),
@@ -63,16 +62,15 @@ class MenuDB extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getParent0()
-    {
+    public function getParent0() {
         return $this->hasOne(MenuDB::className(), ['id' => 'parent']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMenus()
-    {
+    public function getMenus() {
         return $this->hasMany(MenuDB::className(), ['parent' => 'id']);
     }
+
 }

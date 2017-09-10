@@ -10,24 +10,22 @@ use backend\models\Country;
 /**
  * CountrySearch represents the model behind the search form about `backend\models\Country`.
  */
-class CountrySearch extends Country
-{
+class CountrySearch extends Country {
+
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['id', 'created_by', 'updated_by'], 'integer'],
-            [['code', 'name', 'created_at', 'updated_at'], 'safe'],
+            [['code', 'name'], 'safe'],
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -39,8 +37,7 @@ class CountrySearch extends Country
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Country::find();
 
         $dataProvider = new ActiveDataProvider([
@@ -65,8 +62,9 @@ class CountrySearch extends Country
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])
-            ->andFilterWhere(['like', 'name', $this->name]);
+                ->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }
+
 }

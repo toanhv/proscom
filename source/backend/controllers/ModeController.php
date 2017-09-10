@@ -71,8 +71,8 @@ class ModeController extends AppController {
         $module = Modules::findOne(['id' => $moduleId]);
 
         if ($module && $module->mode_id && $_GET['reload'] == 'true') {
-            $client = $module->checkSystemMode();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
+            $module->checkSystemMode();
+            sleep(TIME_OUT_REFRESH);
             return $this->redirect(['view']);
         }
 

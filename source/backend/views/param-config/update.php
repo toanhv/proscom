@@ -22,7 +22,7 @@ $this->title = 'Param config';
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
+                    <input type="submit" class="btn btn-primary" value="<?php echo Yii::t('backend', 'SEND'); ?>" data-confirm="<?php echo Yii::t('backend', 'Are you sure you want to send?'); ?>"/>
                     <?php if ($model->getConvectionTemp()) { ?>
                         <input type="hidden" id="url_back" name="url_back" value="/param-config/view">
                     <?php } ?>

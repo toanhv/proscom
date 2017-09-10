@@ -29,12 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="form-actions" style="text-align: center">
         <?=
-        Html::a(Yii::t('backend', 'SOFT EMERGENCY STOP'), ['status'], [
+        Html::submitButton('SOFT EMERGENCY STOP', [
             'class' => 'btn btn-danger uppercase',
-            'data' => [
-                'confirm' => Yii::t('backend', 'Are you sure you want to send?'),
-                'method' => 'post',
-            ],
+            'name' => 'STOP-button',
+            'data-confirm' => "Are you sure you want to send?"
         ])
         ?>
     </div>

@@ -53,6 +53,18 @@ class SiteController extends AppController {
         }
     }
 
+    public function actionLanguage() {
+        if (\Yii::$app->language == 'vi') {
+            $lang = 'en';
+        } else {
+            $lang = 'vi';
+        }
+        \Yii::$app->language = $lang;
+        \Yii::$app->session->set('lang', $lang);
+
+        return $this->redirect(Yii::$app->request->queryParams['ref']);
+    }
+
     public function actionLogout() {
         Yii::$app->user->logout();
 

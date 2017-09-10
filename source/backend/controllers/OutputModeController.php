@@ -56,8 +56,8 @@ class OutputModeController extends AppController {
             return $this->goHome();
         }
         if ($module->mode_id && $_GET['reload'] == 'true') {
-            $client = $module->checkOutputMode();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
+            $module->checkOutputMode();
+            sleep(TIME_OUT_REFRESH);
             return $this->redirect(['view']);
         }
         return $this->render('view', [
@@ -95,8 +95,8 @@ class OutputModeController extends AppController {
             return $this->goHome();
         }
         if ($module->mode_id && $_GET['reload'] == 'true') {
-            $client = $module->checkOutputMode();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $moduleId);
+            $module->checkOutputMode();
+            sleep(TIME_OUT_REFRESH);
             return $this->redirect(['update', 'id' => $id]);
         }
 
@@ -126,12 +126,10 @@ class OutputModeController extends AppController {
             $model->backflow_valve = $values['backflow']['mode'] . BACKUP;
 
             if ($model->save(false)) {
-                if ($client = $model->toClient()) {
+                if ($model->toClient()) {
                     $model->OperationLog();
                     $model->configLog();
-
-                    \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);
-
+                    Yii::$app->session->setFlash('success', 'Set Load Mode to module success!');
                     if ($values['url_back']) {
                         return $this->redirect($values['url_back']);
                     }

@@ -45,8 +45,7 @@ class OutputMode extends OutputModeBase {
                 . $this->backflow_valve;
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        $data->save(false);
-        return $data;
+        return $data->save(false);
     }
 
     public function OperationLog() {

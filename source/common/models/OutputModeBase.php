@@ -10,7 +10,7 @@ use Yii;
 class OutputModeBase extends \common\models\db\OutputModeDB {
 
     public function getConvectionMode() {
-        return ($this->convection_pump) ? substr($this->convection_pump, 0, 8) : AUTO_B1;
+        return substr($this->convection_pump, 0, 8);
     }
 
     public function getConvectionPump() {
@@ -37,7 +37,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function getCwspMode() {
-        return ($this->cold_water_supply_pump) ? substr($this->cold_water_supply_pump, 0, 8) : AUTO_B1;
+        return substr($this->cold_water_supply_pump, 0, 8);
     }
 
     public function getCwspPump() {
@@ -64,7 +64,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function getReturnPumpMode() {
-        return ($this->return_pump) ? substr($this->return_pump, 0, 8) : AUTO_B1;
+        return substr($this->return_pump, 0, 8);
     }
 
     public function getReturnPumpPump() {
@@ -91,7 +91,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function getPressurePumpMode() {
-        return ($this->incresed_pressure_pump) ? substr($this->incresed_pressure_pump, 0, 8) : AUTO_B1;
+        return substr($this->incresed_pressure_pump, 0, 8);
     }
 
     public function getPressurePumpPump() {
@@ -150,7 +150,7 @@ class OutputModeBase extends \common\models\db\OutputModeDB {
     }
 
     public function getHeaterResisMode() {
-        return ($this->heater_resister) ? substr($this->heater_resister, 0, 8) : AUTO_B1;
+        return substr($this->heater_resister, 0, 8);
     }
 
     public function getHeaterResisPump() {

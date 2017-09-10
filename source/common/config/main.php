@@ -27,8 +27,5 @@ return [
                 ],
             ],
         ],
-        'mobileDetect' => [
-            'class' => '\skeeks\yii2\mobiledetect\MobileDetect'
-        ],
     ],
 ];
