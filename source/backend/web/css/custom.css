@@ -146,6 +146,12 @@
         margin-top: 5px;
         margin-bottom: 5px;
     }
+    .flag-banner {
+        top: 39px;
+    }
+    .flag {
+        top: 13px;
+    }
 }
 .page-header {
     background: url('../images/banner.jpg') no-repeat 0 0;
