@@ -90,6 +90,17 @@
     padding: 7px;
 }
 
+.flag {
+    position: absolute;
+    right: 0px;
+    top: 18px;
+}
+.flag-banner {
+    position: absolute;
+    right: 0px;
+    top: 124px;
+}
+
 @media (max-width: 440px) {
     .info-diagram, .diagram, .output-mode-view {
         overflow-x: auto;
@@ -155,14 +166,4 @@
 }
 .page-header {
     background: url('../images/banner.jpg') no-repeat 0 0;
-}
-.flag {
-    position: absolute;
-    right: 0px;
-    top: 18px;
-}
-.flag-banner {
-    position: absolute;
-    right: 0px;
-    top: 124px;
 }
