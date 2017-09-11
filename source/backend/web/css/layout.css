@@ -172,7 +172,7 @@ Page Header
 .page-header.navbar .menu-toggler.responsive-toggler {
     display: none;
     float: left;
-    margin: 11px -203px 0;
+    margin: 11px -179px 0;
 }
 .page-header.navbar .top-menu {
     margin: 0;
@@ -698,7 +698,7 @@ Horizontal Menu
         padding-left: 0px !important;
     }
     .page-header.navbar .page-logo img {
-        margin-left: 84% !important;
+        margin-left: 82% !important;
     }
     .page-header.navbar .menu-toggler.sidebar-toggler {
         display: none !important;
