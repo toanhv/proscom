@@ -19,7 +19,7 @@ $this->title = $idModule . ' - ' . $module->name;
                 </a>
             </p>
             <p align="center">
-                <a href="/mode/index" class="btn btn-primary"><?php echo Yii::t('backend', 'SETTING'); ?></a>
+                <a href="/mode/index" class="btn btn-primary">SETTING</a>
             </p>
         </div>
     </div>

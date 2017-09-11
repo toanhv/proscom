@@ -50,7 +50,9 @@ class TimerCounter extends \common\models\TimerCounterBase {
                 . \common\socket\Socket::alldec2bin($this->counter, 8);
         $data->status = 0;
         $data->created_at = new \yii\db\Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        
+        return $data;
     }
 
     public function OperationLog() {

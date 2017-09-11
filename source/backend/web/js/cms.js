@@ -46,10 +46,6 @@ $(document).ready(function () {
             waitingDialog.show('Connecting to client');
         }
     });
-    $('a#flag-language').click(function () {
-        var ref = window.location.href;
-        window.location.href = '/site/language?ref=' + ref;
-    });
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
 });

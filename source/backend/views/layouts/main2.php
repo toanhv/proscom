@@ -46,7 +46,7 @@ AppAsset::register($this);
         <!-- BEGIN HEADER -->
         <div class="page-header md-shadow-z-1-i navbar <?php echo (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) ? '' : 'navbar-fixed-top' ?>">
             <!-- BEGIN HEADER INNER -->
-            <a href="javascript:void(0);" class="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
+            <a href="javascript:void(0);" class="icon-refresh-fix" id="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
             <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
             <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
             <?php if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) { ?>
@@ -63,15 +63,10 @@ AppAsset::register($this);
                                 <?php foreach ($alarmConfig as $alarm => $item) { ?>                                
                                     <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
                                     <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                        <?php echo Yii::t('backend', $item['value']); ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                        <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
                                     </a>
-                                <?php } ?>  
+                                <?php } ?>                                                              
                             </div>  
-                        </div>
-                        <div class="flag-banner">
-                            <a href="javascript:void(0);" id="flag-language">
-                                <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'vi') ? '/images/en.png' : '/images/vi.png'; ?>"/>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -109,16 +104,11 @@ AppAsset::register($this);
                             <li>
                                 <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
                                 <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                    <?php echo Yii::t('backend', $item['value']); ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                    <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
                                 </a>
                             </li>
                         <?php } ?>
                     </ul>
-                </div>
-                <div class="flag">
-                    <a href="javascript:void(0);" id="flag-language">
-                        <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'vi') ? '/images/en.png' : '/images/vi.png'; ?>"/>
-                    </a>
                 </div>
             <?php } ?>
             <!-- END HEADER INNER -->

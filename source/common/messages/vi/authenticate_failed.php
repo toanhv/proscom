@@ -17,7 +17,5 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'No results found.' => '',
-    'Showing <b>{begin, number}-{end, number}</b> of <b>{totalCount, number}</b> {totalCount, plural, one{item} other{items}}.' => '@@@@',
-    'Total <b>{count, number}</b> {count, plural, one{item} other{items}}.' => '@@@@',
+    'Authenticate failed' => '',
 ];

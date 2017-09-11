@@ -36,6 +36,7 @@ $listUsers = backend\models\User::getAllUser();
             'code',
             'name',
             [
+                'label' => 'Country',
                 'attribute' => 'country_id',
                 'content' => function ($data) {
                     return Html::encode($data->country->name);
@@ -43,6 +44,7 @@ $listUsers = backend\models\User::getAllUser();
                 'filter' => $country
             ],
             [
+                'label' => 'Created by',
                 'attribute' => 'created_by',
                 'content' => function ($data) {
                     return Html::encode($data->createdBy->username);

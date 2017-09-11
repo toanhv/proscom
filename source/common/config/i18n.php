@@ -10,7 +10,7 @@
 
 return [
     'sourcePath' => __DIR__ . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR,
-    'languages' => ['vi', 'en'], //Add languages to the array for the language files to be generated.
+    'languages' => ['vi'], //Add languages to the array for the language files to be generated.
     'translator' => 'Yii::t',
     'sort' => false,
     'removeUnused' => false,

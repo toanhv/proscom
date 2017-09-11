@@ -16,16 +16,11 @@ class AppController extends Controller {
 
     public function beforeAction($action) {
         date_default_timezone_set('Asia/Saigon');
-        if (\Yii::$app->request->getQueryParam('lang')) {
-            Yii::$app->language = \Yii::$app->request->getQueryParam('lang');
-            Yii::$app->session->set('lang', Yii::$app->language);
+        if (Yii::$app->session->has('lang')) {
+            Yii::$app->language = Yii::$app->session->get('lang');
         } else {
-            if (Yii::$app->session->has('lang')) {
-                Yii::$app->language = Yii::$app->session->get('lang');
-            } else {
-                //or you may want to set lang session, this is just a sample
-                Yii::$app->language = 'vi';
-            }
+            //or you may want to set lang session, this is just a sample
+            Yii::$app->language = 'en';
         }
         return parent::beforeAction($action);
     }

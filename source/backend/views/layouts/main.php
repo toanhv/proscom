@@ -44,9 +44,9 @@ AppAsset::register($this);
     <body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
         <?php $this->beginBody() ?>
         <!-- BEGIN HEADER -->
-        <div class="page-header md-shadow-z-1-i navbar <?php echo (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) ? '' : 'navbar-fixed-top' ?>">
+        <div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
             <!-- BEGIN HEADER INNER -->
-            <a href="javascript:void(0);" class="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
+            <a href="javascript:void(0);" class="icon-refresh-fix" id="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
             <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
             <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
             <!-- BEGIN HEADER INNER -->
@@ -82,16 +82,11 @@ AppAsset::register($this);
                         <li>
                             <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
                             <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                <?php echo Yii::t('backend', $item['value']); ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
                             </a>
                         </li>
                     <?php } ?>
                 </ul>
-            </div>
-            <div class="flag">
-                <a href="javascript:void(0);" id="flag-language">
-                    <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'vi') ? '/images/en.png' : '/images/vi.png'; ?>"/>
-                </a>
             </div>
             <!-- END HEADER INNER -->
         </div>

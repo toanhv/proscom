@@ -57,13 +57,14 @@ class Modules extends ModulesBase {
         return [
             [['name', 'country_id', 'privincial_id', 'distric_id', 'customer_code'], 'required'],
             [['msisdn'], 'required', 'message' => 'No client request'],
-            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'customer_code', 'created_by', 'updated_by'], 'integer'],
+            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'address', 'password'], 'string', 'max' => 255],
             [['msisdn'], 'match', 'pattern' => '((?=.*\d))', 'message' => \Yii::t('backend', 'Phone number must be number')],
             [['msisdn'], 'string', 'min' => 15, 'max' => 15],
             //[['customer_code'], 'match', 'pattern' => '((?=.*\d))', 'message' => \Yii::t('backend', 'Customer code must be number')],
             //[['customer_code'], 'string', 'min' => 6, 'max' => 6],
+            [['customer_code'], 'integer', 'min' => 0, 'max' => 999999],
             [['money'], 'string', 'max' => 160],
             [['data', 'alarm'], 'string', 'max' => 50],
             [['customer_code'], 'unique']
@@ -102,6 +103,9 @@ class Modules extends ModulesBase {
     }
 
     public function toClient() {
+        ini_set('max_execution_time', max_execution_time);
+        ini_set('request_terminate_timeout', max_execution_time);
+        set_time_limit(max_execution_time);
         $sim = IMSI_HEADER . \common\socket\Socket::dec2bin($this->msisdn) . ID_ASSIGNMENT_DP;
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
 
@@ -111,7 +115,27 @@ class Modules extends ModulesBase {
             $newid->module_id_assignment = ID_ASSIGNMENT_HEADER . $sim . $id;
             $newid->status = 1;
             $newid->updated_by = \Yii::$app->user->getId();
-            return $newid->save(false);
+            if ($newid->save(false)) {
+                return self::setupID($this->msisdn);
+            }
+        }
+        return false;
+    }
+
+    public static function setupID($imsi, $counter = 0) {
+        sleep(TIME_OUT_REFRESH);
+        $newid = \backend\models\Imsi::find()->where(['imsi' => $imsi])->one();
+        $status = $newid->status;
+
+        if ($status == 3) {
+            return true;
+        }
+
+        if ($counter < 4) {
+            $newid->status = 1;
+            $newid->save(false);
+            $counter++;
+            return self::setupID($imsi, $counter);
         }
         return false;
     }
@@ -127,7 +151,8 @@ class Modules extends ModulesBase {
                 . \common\socket\Socket::alldec2bin($this->mode->mode, 8);
         $data->status = 0;
         $data->created_at = new Expression('NOW()');
-        return $data->save(false);
+        $data->save(false);
+        return $data;
     }
 
     public function toClientManager() {

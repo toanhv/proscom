@@ -5,7 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Modules */
 
-$this->title = Yii::t('backend', 'Create module');
+$this->title = Yii::t('backend', 'Create {modelClass}', [
+            'modelClass' => 'Modules',
+        ]);
 ?>
 <h3 class="text-center"><?php echo Html::encode($this->title); ?></h3>
 <div class="diagram">
@@ -21,7 +23,7 @@ $this->title = Yii::t('backend', 'Create module');
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="<?php echo Yii::t('backend', 'SEND'); ?>" />
+                    <input type="submit" class="btn btn-primary" value="SEND" data-confirm="Are you sure you want to send?"/>
                 </div>
             </form>
         </div>         

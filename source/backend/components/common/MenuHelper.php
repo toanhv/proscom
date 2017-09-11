@@ -198,7 +198,7 @@ class MenuHelper {
                     $item = call_user_func($callback, $menu);
                 } else {
                     $item = [
-                        'label' => (Yii::$app->language == 'vi') ? $menu['name_vi'] : $menu['name'],
+                        'label' => $menu['name'],
                         'url' => static::parseRoute($menu['route']),
                     ];
                     if ($menu['children'] != []) {

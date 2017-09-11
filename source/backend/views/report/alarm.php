@@ -13,13 +13,29 @@ $this->title = 'Alarms Report';
             <div class="params">
                 <h3 class="title"><?php echo $module->getModuleId() . ' - ' . Html::encode($module->name); ?></h3>
                 <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
-                <?php echo Yii::t('backend', 'From date'); ?>:
-                <input type="text" name="from" id="report_from" value="<?php echo $from ?>">
-                <?php echo Yii::t('backend', 'To date'); ?>:
-                <input type="text" name="to" id="report_to" value="<?php echo $to ?>">
+                From:
+                <?=
+                yii\jui\DatePicker::widget([
+                    'name' => 'from',
+                    'dateFormat' => 'php:Y-m-d',
+                    'language' => 'vi',
+                    'value' => \yii\helpers\Html::encode($from)
+                ])
+                ?>
+                <!--<input type="text" name="from" id="report_from" value="<?php echo $from ?>">-->
+                To:
+                <?=
+                yii\jui\DatePicker::widget([
+                    'name' => 'to',
+                    'dateFormat' => 'php:Y-m-d',
+                    'language' => 'vi',
+                    'value' => \yii\helpers\Html::encode($to)
+                ])
+                ?>
+                <!--<input type="text" name="to" id="report_to" value="<?php echo $to ?>">-->
 
-                <button type="submit" name="export" value="0" class="btn-reprt btn-primary"><?php echo Yii::t('backend', 'Report'); ?></button>
-                <button type="submit" name="export" value="1" class="btn-reprt btn-primary"><?php echo Yii::t('backend', 'Excel'); ?></button>
+                <button type="submit" name="export" value="0" class="btn-reprt btn-primary">Report</button>
+                <button type="submit" name="export" value="1" class="btn-reprt btn-primary">Excel</button>
             </div>
         </form>
         <br/>
@@ -47,7 +63,7 @@ $this->title = 'Alarms Report';
                 'labels' => $label,
                 'datasets' => [
                     [
-                        'label' => Yii::t('backend', 'Over heat'),
+                        'label' => 'Over heat',
                         'borderWidth' => 2,
                         'tension' => 0,
                         'capBezierPoints' => true,
@@ -58,7 +74,7 @@ $this->title = 'Alarms Report';
                         'borderColor' => "rgba(66,110,134,1)",
                     ],
                     [
-                        'label' => Yii::t('backend', 'Over pressure'),
+                        'label' => 'Over pressure',
                         'tension' => 0,
                         'capBezierPoints' => true,
                         'fill' => false,
@@ -69,7 +85,7 @@ $this->title = 'Alarms Report';
                         'borderColor' => "rgba(146,25,92,1)",
                     ],
                     [
-                        'label' => Yii::t('backend', 'Over tank'),
+                        'label' => 'Over tank',
                         'tension' => 0,
                         'capBezierPoints' => true,
                         'fill' => false,
@@ -80,7 +96,7 @@ $this->title = 'Alarms Report';
                         'borderColor' => "rgba(53,161,77,1)",
                     ],
                     [
-                        'label' => Yii::t('backend', 'Lost supply'),
+                        'label' => 'Lost supply',
                         'tension' => 0,
                         'capBezierPoints' => true,
                         'fill' => false,

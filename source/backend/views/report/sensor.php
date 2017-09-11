@@ -27,6 +27,7 @@ $this->title = 'Sensor Report';
         $sensorChart = [];
         $sensorItem = [
             'cam_bien_buc_xa_dan_thu',
+            'du_phong',
             'cam_bien_dan_thu',
             'cam_bien_nhiet_dinh_bon_solar',
             'cam_bien_bon_solar',
@@ -49,7 +50,7 @@ $this->title = 'Sensor Report';
 
         foreach ($sensorChart as $chart => $value) {
             $borderColor = $value['color'];
-            echo '<h4 style="color: ' . $borderColor . ';">' . $value['title'] . '</h4>';
+            echo '<h4 style="color: ' . $borderColor . ';font-weight: bold;">' . $value['title'] . '</h4>';
             echo '<div class="sensor-report" style="border-color: ' . $borderColor . ';">';
             echo ChartJs::widget([
                 'type' => 'line',
@@ -62,7 +63,7 @@ $this->title = 'Sensor Report';
                     'datasets' => [
                         [
                             'label' => $value['title'],
-                            'borderWidth' => 2,
+                            'borderWidth' => 1,
                             'tension' => 0,
                             'capBezierPoints' => true,
                             'fill' => false,
