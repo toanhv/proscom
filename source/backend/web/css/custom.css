@@ -23,7 +23,9 @@
 }
 
 .sidebar-toggler-container .sidebar-toggler {
-    float: right; margin-top: 0; margin-right: 0;
+    float: right; 
+    margin-top: 0; 
+    margin-right: 0;
 }
 
 .aws-thead-float > .table-bordered {
@@ -93,12 +95,12 @@
 .flag {
     position: absolute;
     right: 0px;
-    top: 18px;
+    top: 13px;
 }
 .flag-banner {
     position: absolute;
     right: 0px;
-    top: 124px;
+    top: 117px;
 }
 
 @media (max-width: 440px) {
@@ -158,10 +160,17 @@
         margin-bottom: 5px;
     }
     .flag-banner {
-        top: 39px;
+        top: 26px;
     }
     .flag {
-        top: 13px;
+        top: 12px;
+    }
+    .flag img {
+        height: 22px;
+        width: 33px;
+    }
+    .page-header.navbar .page-logo {
+        
     }
 }
 .page-header {
