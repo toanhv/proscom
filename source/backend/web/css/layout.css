@@ -171,8 +171,8 @@ Page Header
 }
 .page-header.navbar .menu-toggler.responsive-toggler {
     display: none;
-    float: right;
-    margin: 11px 6px 0 6px;
+    float: left;
+    margin: 11px -62px 0;
 }
 .page-header.navbar .top-menu {
     margin: 0;
@@ -874,7 +874,7 @@ Page container
 }
 .page-header-fixed .page-container {
     /*margin-top: 130px;*/
-    margin-top: 46px;
+    /*margin-top: 46px;*/
 }
 .page-footer-fixed.page-footer-fixed-mobile .page-container {
     margin-bottom: 20px !important;
@@ -2231,7 +2231,7 @@ Page content
         margin-left: 235px;
         margin-top: 0px;
         min-height: 600px;
-        padding: 25px 20px 10px 20px;
+        padding: 46px 20px 10px 20px;
     }
     .page-content-wrapper .page-content.no-min-height {
         min-height: auto;
@@ -2632,7 +2632,7 @@ ul,li{
 }
 .bottom-menu {
     position: absolute;
-    right: 0px;
+    right:44px;
     top: 13px;
 }
 .bottom-menu ul li{

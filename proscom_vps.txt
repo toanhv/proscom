@@ -1,0 +1,7 @@
+Quý khách vui lòng ssh vào server và mở file : /etc/csf/csf.conf
+
+tìm đến dòng TCP_IN và TCP_OUT để thêm các port cần mở vào.
+
+SAu đó cho restart lại csf: csf -r
+
+cat /usr/local/directadmin/conf/mysql.conf

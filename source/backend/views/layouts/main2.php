@@ -44,73 +44,50 @@ AppAsset::register($this);
     <body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
         <?php $this->beginBody() ?>
         <!-- BEGIN HEADER -->
-        <div class="page-header md-shadow-z-1-i navbar <?php echo (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) ? '' : 'navbar-fixed-top' ?>">
+        <div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
             <!-- BEGIN HEADER INNER -->
             <a href="javascript:void(0);" class="icon-refresh-fix" id="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
             <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
             <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
-            <?php if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) { ?>
-                <div class="header">
-                    <div class="header-left">
-                        <a href="/" class="logo"><img src="/images/logo.png"/></a>
-                    </div>
-                    <div class="banner">
-                        <div class="banner-image">
-                            <img src="/images/banner.jpg" alt=""/>
-                        </div>
-                        <div class="banner-menu">
-                            <div class="content-menu">                                
-                                <?php foreach ($alarmConfig as $alarm => $item) { ?>                                
-                                    <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
-                                    <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                        <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
-                                    </a>
-                                <?php } ?>                                                              
-                            </div>  
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo" style="padding-right: 0;">
+                    <a href="/">
+                        <img src="/images/logo.png" alt="logo" class="logo-default" height="30"/>
+                    </a>
+                    <div class="page-sidebar sidebar-toggler-container">
+                        <div class="sidebar-toggler">
                         </div>
                     </div>
                 </div>
-            <?php } else { ?>
-                <!-- BEGIN HEADER INNER -->
-                <div class="page-header-inner">
-                    <!-- BEGIN LOGO -->
-                    <div class="page-logo" style="padding-right: 0;">
-                        <a href="/">
-                            <img src="/images/logo.png" alt="logo" class="logo-default" height="30"/>
-                        </a>
-                        <div class="page-sidebar sidebar-toggler-container">
-                            <div class="sidebar-toggler">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END LOGO -->
-                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
-                    <!-- END RESPONSIVE MENU TOGGLER -->
-                    <!-- BEGIN TOP NAVIGATION MENU -->
-                    <div class="top-menu">
-                        <ul class="nav navbar-nav pull-right">
-                            <!-- BEGIN USER LOGIN DROPDOWN -->
-                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 
-                            <!-- END USER LOGIN DROPDOWN -->
-                        </ul>
-                    </div>                
-                    <!-- END TOP NAVIGATION MENU -->
-                </div>
-                <div class="bottom-menu">
-                    <ul>
-                        <?php foreach ($alarmConfig as $alarm => $item) { ?>     
-                            <li>
-                                <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
-                                <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                    <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
-                                </a>
-                            </li>
-                        <?php } ?>
+                        <!-- END USER LOGIN DROPDOWN -->
                     </ul>
-                </div>
-            <?php } ?>
+                </div>                
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <div class="bottom-menu">
+                <ul>
+                    <?php foreach ($alarmConfig as $alarm => $item) { ?>     
+                        <li>
+                            <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
+                            <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
+                                <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                            </a>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
             <!-- END HEADER INNER -->
         </div>
         <!-- END HEADER -->

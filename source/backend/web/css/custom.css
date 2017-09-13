@@ -62,9 +62,6 @@
     margin-top: 15px;
     padding: 5px;
 }
-.page-content-wrapper .page-content {
-    padding: 10px 10px;
-}
 .error-hightlight {
     color: red;
 }
@@ -88,6 +85,17 @@
     border-color: #f7c75b !important; 
     border-radius: 20px;
     padding: 7px;
+}
+
+.flag {
+    position: absolute;
+    right: 0px;
+    top: 13px;
+}
+.flag-banner {
+    position: absolute;
+    right: 0px;
+    top: 117px;
 }
 
 @media (max-width: 440px) {
@@ -145,6 +153,22 @@
     button, input, select, textarea {
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+    .flag-banner {
+        top: 26px;
+}
+    .flag {
+        top: 12px;
+    }
+    .flag img {
+        height: 22px;
+        width: 33px;
+    }
+    .page-header.navbar .page-logo {
+        
+    }
+    .page-logo {
+        display: none;
     }
 }
 .page-header {
