@@ -28,6 +28,8 @@ foreach ($menuIcons as $icon) {
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => 128]) ?>
 
+    <?= $form->field($model, 'name_vi')->textInput(['maxlength' => 128])->label(Yii::t('backend', 'Name VI')); ?>
+
     <?= $form->field($model, 'parent_name')->textInput(['id' => 'parent_name']) ?>
 
     <?= $form->field($model, 'route')->textInput(['id' => 'route']) ?>
