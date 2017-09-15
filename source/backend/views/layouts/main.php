@@ -126,7 +126,7 @@ AppAsset::register($this);
                             $callback = function ($menu) {
                                 if ($menu['route'])
                                     return [
-                                        'label' => $menu['name'],
+                                        'label' => (\Yii::$app->language == 'vi') ? $menu['name_vi'] : $menu['name'],
                                         'url' => [$menu['route']],
                                         'items' => $menu['children'],
                                         'visible' => $menu['is_active'],
@@ -134,7 +134,7 @@ AppAsset::register($this);
                                         'parent' => $menu['parent']
                                     ];
                                 return [
-                                    'label' => $menu['name'],
+                                    'label' => (\Yii::$app->language == 'vi') ? $menu['name_vi'] : $menu['name'],
                                     'items' => $menu['children'],
                                     'visible' => $menu['is_active'],
                                     'icon' => $menu['icon'],
