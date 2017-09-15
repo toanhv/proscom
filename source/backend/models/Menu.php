@@ -13,7 +13,7 @@ class Menu extends \common\models\MenuBase {
      */
     public function rules() {
         return [
-            [['name'], 'required'],
+            [['name', 'name_vi'], 'required'],
             [['parent_name'], 'filterParent'],
             [['parent_name'], 'in',
                 'range' => static::find()->select(['name'])->column(),
