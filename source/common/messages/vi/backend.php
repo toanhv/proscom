@@ -29,7 +29,7 @@ return [
     'Data' => '',
     'Email' => '',
     'Environment Temp' => 'Nhiệt độ môi trường',
-    'Find module' => '',
+    'Find module' => 'Tìm kiếm',
     'Heat pump|Three value|Back flow' => '',
     'ID' => '',
     'Icon' => '',
