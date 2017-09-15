@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property string $name_vi
  * @property integer $parent
  * @property string $route
  * @property integer $order
@@ -38,7 +39,7 @@ class MenuDB extends \yii\db\ActiveRecord
             [['name'], 'required'],
             [['parent', 'order', 'type'], 'integer'],
             [['data', 'icon'], 'string'],
-            [['name'], 'string', 'max' => 128],
+            [['name', 'name_vi'], 'string', 'max' => 128],
             [['route'], 'string', 'max' => 255]
         ];
     }
@@ -51,6 +52,7 @@ class MenuDB extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('backend', 'ID'),
             'name' => Yii::t('backend', 'Name'),
+            'name_vi' => Yii::t('backend', 'Name Vi'),
             'parent' => Yii::t('backend', 'Parent'),
             'route' => Yii::t('backend', 'Route'),
             'order' => Yii::t('backend', 'Order'),
