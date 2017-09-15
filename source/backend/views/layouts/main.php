@@ -90,7 +90,7 @@ AppAsset::register($this);
             </div>
             <div class="flag">
                 <a href="javascript:void(0);" id="flag-language">
-                    <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'vi') ? '/images/en.png' : '/images/vi.png'; ?>"/>
+                    <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'en') ? '/images/en.png' : '/images/vi.png'; ?>"/>
                 </a>
             </div>
             <!-- END HEADER INNER -->
