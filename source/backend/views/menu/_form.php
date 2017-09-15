@@ -52,6 +52,7 @@ SCRIPT;
         <?=
         Select2::widget([
             'name' => 'Menu[icon]',
+            'value' => $model->icon,
             'data' => $dataIcon,
             'options' => ['placeholder' => 'Chọn icon menu ...'],
             'pluginOptions' => [
