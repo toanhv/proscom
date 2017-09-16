@@ -9,6 +9,10 @@ use yii\widgets\ActiveForm;
 
 $this->title = 'Home';
 ?>
+<div style="margin-top: -25px; position: relative;">
+    <i class="fa fa-th-large" style="font-size:24px; color: #1caf9a;"></i>&nbsp;&nbsp;
+    <i class="fa fa-align-justify" style="font-size:24px"></i>
+</div>
 <div class="page-bar">
     <?php $form = ActiveForm::begin(); ?>
     <ul class="page-breadcrumb">
@@ -19,7 +23,7 @@ $this->title = 'Home';
     </ul>   
     <?php ActiveForm::end(); ?>
 </div>
-<div class="row modules">
+<div id="module-icon" class="row modules">
     <?php
     $data = $dataProvider->getModels();
     if (!empty($data)) {
@@ -77,5 +81,63 @@ $this->title = 'Home';
             <?php
         }
     }
+    ?>
+</div>
+<div id="module-list" class="distric-index" style="display: none;">
+    <?=
+    yii\grid\GridView::widget([
+        'dataProvider' => $dataProvider,
+        //'filterModel' => $searchModel,
+        'columns' => [
+            [
+                'label' => 'ID',
+                'content' => function ($data) {
+                    return '<a href="/modules/view?id=' . $data->id . '"><b>' . $data->getModuleId() . '</b><br><b>' . \yii\helpers\Html::encode($data->name) . '</b></a>';
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Lingh intensity'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->cam_bien_buc_xa_dan_thu);
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Environment Temp'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->du_phong);
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Solar panels temp'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->cam_bien_dan_thu);
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Top of Solar tank'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->cam_bien_nhiet_dinh_bon_solar);
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Bottom of Solar tank'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->cam_bien_bon_solar);
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Heater tank temp'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->cam_bien_nhiet_do_bon_gia_nhiet);
+                }
+            ],
+            [
+                'label' => Yii::t('backend', 'Heater tank pressure'),
+                'content' => function ($data) {
+                    return bindec($data->sensors->cam_bien_ap_suat_bon_gia_nhiet);
+                }
+            ],
+        ],
+    ]);
     ?>
 </div>

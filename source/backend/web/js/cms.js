@@ -50,6 +50,14 @@ $(document).ready(function () {
         var ref = window.location.href;
         window.location.href = '/site/language?ref=' + ref;
     });
+    $('.fa-th-large').click(function () {
+        $('div#module-list').hide();
+        $('div#module-icon').show();
+    });
+    $('.fa-align-justify').click(function () {
+        $('div#module-list').show();
+        $('div#module-icon').hide();
+    });
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
 });
