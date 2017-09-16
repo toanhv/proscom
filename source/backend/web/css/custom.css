@@ -167,6 +167,7 @@
     .flag img {
         height: 22px;
         width: 33px;
+        margin-right: 5px;
     }
     .page-header.navbar .page-logo > .logo-image, .page-header.navbar .page-logo > a img {
         display: none;
