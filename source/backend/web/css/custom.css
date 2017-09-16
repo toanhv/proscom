@@ -172,9 +172,12 @@
     background: url('../images/banner.jpg') no-repeat 0 0;
 }
 .distric-index {
-    top: 20px;
+    margin-top: 25px;
 }
 .distric-index .summary {
     display: none;
+}
+.table-striped tr th {
+    font-weight: bold;
 }
 

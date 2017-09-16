@@ -15,12 +15,12 @@ $this->title = Yii::t('backend', 'Module list');
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             [
                 'label' => 'ID',
                 'content' => function ($data) {
-                    return $data->getModuleId() . '<br>' . \yii\helpers\Html::encode($data->name);
+                    return '<b>' . $data->getModuleId() . '</b><br><b>' . \yii\helpers\Html::encode($data->name) . '</b>';
                 }
             ],
             [
