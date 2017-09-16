@@ -16,7 +16,6 @@ $this->title = Yii::t('backend', 'Module list');
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'layout' => false,
         'columns' => [
             [
                 'label' => 'ID',
