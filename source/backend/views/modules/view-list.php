@@ -26,43 +26,43 @@ $this->title = Yii::t('backend', 'Module list');
             [
                 'label' => Yii::t('backend', 'Lingh intensity'),
                 'content' => function ($data) {
-                    return $data->sensors->cam_bien_buc_xa_dan_thu;
+                    return bindec($data->sensors->cam_bien_buc_xa_dan_thu);
                 }
             ],
             [
                 'label' => Yii::t('backend', 'Environment Temp'),
                 'content' => function ($data) {
-                    return $data->sensors->du_phong;
+                    return bindec($data->sensors->du_phong);
                 }
             ],
             [
                 'label' => Yii::t('backend', 'Solar panels temp'),
                 'content' => function ($data) {
-                    return $data->sensors->cam_bien_dan_thu;
+                    return bindec($data->sensors->cam_bien_dan_thu);
                 }
             ],
             [
                 'label' => Yii::t('backend', 'Top of Solar tank'),
                 'content' => function ($data) {
-                    return $data->sensors->cam_bien_nhiet_dinh_bon_solar;
+                    return bindec($data->sensors->cam_bien_nhiet_dinh_bon_solar);
                 }
             ],
             [
                 'label' => Yii::t('backend', 'Bottom of Solar tank'),
                 'content' => function ($data) {
-                    return $data->sensors->cam_bien_bon_solar;
+                    return bindec($data->sensors->cam_bien_bon_solar);
                 }
             ],
             [
                 'label' => Yii::t('backend', 'Heater tank temp'),
                 'content' => function ($data) {
-                    return $data->sensors->cam_bien_nhiet_do_bon_gia_nhiet;
+                    return bindec($data->sensors->cam_bien_nhiet_do_bon_gia_nhiet);
                 }
             ],
             [
                 'label' => Yii::t('backend', 'Heater tank pressure'),
                 'content' => function ($data) {
-                    return $data->sensors->cam_bien_ap_suat_bon_gia_nhiet;
+                    return bindec($data->sensors->cam_bien_ap_suat_bon_gia_nhiet);
                 }
             ],
         ],
