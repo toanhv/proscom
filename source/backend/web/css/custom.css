@@ -197,4 +197,10 @@
 .table-striped tr th {
     font-weight: bold;
 }
+#module-list .table-striped > thead > tr {
+    background-color: #1caf9a !important;
+}
+#module-list .table-striped > thead > tr > th {
+    color: #fff;
+}
 

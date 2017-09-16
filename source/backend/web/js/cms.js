@@ -58,9 +58,25 @@ $(document).ready(function () {
         $('div#module-list').show();
         $('div#module-icon').hide();
     });
+
+    $('#module-list .table-striped > tbody > tr:nth-of-type(2n+1)').css('background-color', genColor());
+    $('#module-list .table-striped > tbody > tr:nth-of-type(2n+2)').css('background-color', genColor());
+
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
 });
+
+function genColor() {
+    return 'rgba(' + getRandomInt(100, 255) + "," + getRandomInt(100, 255) + "," + getRandomInt(100, 255) + "," + getRandomInt(100, 255) + ')';
+}
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function setImageUrl(path, url) {
     $('#image_path').val(path);
