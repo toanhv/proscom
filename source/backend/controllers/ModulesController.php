@@ -39,6 +39,20 @@ class ModulesController extends AppController {
     }
 
     /**
+     * Lists all Distric models.
+     * @return mixed
+     */
+    public function actionViewList() {
+        $searchModel = new ModulesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('view-list', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Lists all Modules models.
      * @return mixed
      */
