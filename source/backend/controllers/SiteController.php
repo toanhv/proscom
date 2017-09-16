@@ -32,7 +32,12 @@ class SiteController extends AppController {
     public function actionIndex() {
         $this->layout = 'main';
         if (!Yii::$app->user->isGuest) {
+            $searchModel = new \backend\models\ModulesSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
             return $this->render('index', [
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
             ]);
         }
         $this->redirect('login');
@@ -61,7 +66,7 @@ class SiteController extends AppController {
         }
         \Yii::$app->language = $lang;
         \Yii::$app->session->set('lang', $lang);
-        
+
         return $this->redirect(Yii::$app->request->queryParams['ref']);
     }
 
