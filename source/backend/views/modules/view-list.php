@@ -20,7 +20,7 @@ $this->title = Yii::t('backend', 'Module list');
             [
                 'label' => 'ID',
                 'content' => function ($data) {
-                    return '<b>' . $data->getModuleId() . '</b><br><b>' . \yii\helpers\Html::encode($data->name) . '</b>';
+                    return '<a href=""><b>' . $data->getModuleId() . '</b><br><b>' . \yii\helpers\Html::encode($data->name) . '</b></a>';
                 }
             ],
             [
