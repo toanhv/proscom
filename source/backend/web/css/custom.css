@@ -181,6 +181,9 @@
     .right-info {
         width: 250px;
     }
+    .icon-emergency-fix {
+        margin-top: 5px;
+    }
 }
 .page-header {
     background: url('../images/banner.jpg') no-repeat 0 0;
