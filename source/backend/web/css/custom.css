@@ -97,6 +97,10 @@
     right: 0px;
     top: 117px;
 }
+.module-view {
+    margin-top: -25px; 
+    position: relative;
+}
 
 @media (max-width: 440px) {
     .info-diagram, .diagram, .output-mode-view {
@@ -166,6 +170,9 @@
     }
     .page-header.navbar .page-logo > .logo-image, .page-header.navbar .page-logo > a img {
         display: none;
+    }
+    .module-view {
+        margin-top: -9px;
     }
 }
 .page-header {

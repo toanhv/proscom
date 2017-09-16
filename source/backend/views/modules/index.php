@@ -9,9 +9,9 @@ use yii\widgets\ActiveForm;
 
 $this->title = 'Home';
 ?>
-<div style="margin-top: -25px; position: relative;">
-    <i class="fa fa-th-large" style="font-size:24px; color: #1caf9a;"></i>&nbsp;&nbsp;
-    <i class="fa fa-align-justify" style="font-size:24px"></i>
+<div class="module-view">
+    <i class="fa fa-th-large" style="font-size:24px; color: #1caf9a; cursor: pointer;"></i>&nbsp;&nbsp;
+    <i class="fa fa-align-justify" style="font-size:24px; cursor: pointer;"></i>
 </div>
 <div class="page-bar">
     <?php $form = ActiveForm::begin(); ?>
