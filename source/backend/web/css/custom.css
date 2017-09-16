@@ -171,4 +171,7 @@
 .page-header {
     background: url('../images/banner.jpg') no-repeat 0 0;
 }
+.distric-index > .summary {
+    display: none;
+}
 
