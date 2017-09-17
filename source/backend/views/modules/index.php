@@ -16,11 +16,8 @@ $this->title = 'Home';
 <div class="page-bar">
     <?php $form = ActiveForm::begin(); ?>
     <ul class="page-breadcrumb">
-        <li class="show_web">
-            <i class="fa fa-search"></i><a href="javascript:void(0);"><?php echo Yii::t('backend', 'Find module'); ?>&nbsp;</a>
-        </li>
         <li>
-            <input id="modulessearch-name" name="ModulesSearch[name]" value="<?php echo Html::encode($searchModel->name); ?>" type="text">
+            <input id="modulessearch-name" name="ModulesSearch[name]" value="<?php echo Html::encode($searchModel->name); ?>" type="text" placeholder="<?php echo Yii::t('backend', 'Find module'); ?>">
         </li>
     </ul>   
     <?php ActiveForm::end(); ?>
