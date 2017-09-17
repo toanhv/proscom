@@ -185,6 +185,9 @@
     .icon-emergency-fix {
         margin-top: 5px;
     }
+    .show_web {
+        display: none;
+    }
 }
 .page-header {
     background: url('../images/banner.jpg') no-repeat 0 0;
