@@ -216,5 +216,6 @@
 }
 .text-shadow:hover {
     color: white;
+    font-size: 18px;
 }
 
