@@ -102,6 +102,9 @@
     position: relative;
     float: right;
 }
+.table thead tr th {
+    font-size: 11px;
+}
 
 @media (max-width: 440px) {
     .info-diagram, .diagram, .output-mode-view {

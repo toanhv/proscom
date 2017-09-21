@@ -22,7 +22,7 @@ $this->title = 'Home';
     </ul>   
     <?php ActiveForm::end(); ?>
 </div>
-<div id="module-icon" class="row modules">
+<div id="module-icon" class="row modules" style="display: none;">
     <?php
     $data = $dataProvider->getModels();
     if (!empty($data)) {
@@ -82,7 +82,7 @@ $this->title = 'Home';
     }
     ?>
 </div>
-<div id="module-list" class="distric-index" style="display: none;">
+<div id="module-list" class="distric-index">
     <?=
     yii\grid\GridView::widget([
         'dataProvider' => $dataProvider,
