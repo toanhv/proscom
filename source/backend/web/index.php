@@ -1,6 +1,6 @@
 <?php
 defined('YII_DEBUG') or define('YII_DEBUG', false);
-defined('YII_ENV') or define('YII_ENV', 'prod');
+defined('YII_ENV') or define('YII_ENV', 'dev');
 
 define('_APP_PATH_', dirname(__FILE__));
 date_default_timezone_set('Asia/Saigon');

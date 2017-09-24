@@ -58,13 +58,17 @@ class UserController extends AppController {
     public function actionCreate() {
         $model = new User();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                        'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post()[$model->formName()];
+            if ($model->save()) {
+                \Yii::$app->authManager->revokeAll($model->id);
+                \Yii::$app->authManager->assign(\backend\models\User::getOneRole($post['role']), $model->id);
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+        return $this->render('create', [
+                    'model' => $model,
+        ]);
     }
 
     /**
@@ -76,13 +80,22 @@ class UserController extends AppController {
     public function actionUpdate($id) {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                        'model' => $model,
-            ]);
+        $role = \Yii::$app->authManager->getRolesByUser($id);
+        if ($role) {
+            $model->role = $role->name;
         }
+
+        if ($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post()[$model->formName()];
+            if ($model->save()) {
+                \Yii::$app->authManager->revokeAll($model->id);
+                \Yii::$app->authManager->assign(\backend\models\User::getOneRole($post['role']), $model->id);
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        }
+        return $this->render('update', [
+                    'model' => $model,
+        ]);
     }
 
     /**

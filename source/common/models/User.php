@@ -5,36 +5,15 @@ namespace common\models;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
-use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-/**
- * User model
- *
- * @property integer $id
- * @property string $username
- * @property string $password_hash
- * @property string $password_reset_token
- * @property string $email
- * @property string $auth_key
- * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
- * @property string $password write-only password
- */
-class User extends ActiveRecord implements IdentityInterface {
+class User extends \common\models\db\UserDB implements IdentityInterface {
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 1;
 
     public $re_password;
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName() {
-        return '{{%user}}';
-    }
+    public $role;
 
     /**
      * @inheritdoc
@@ -52,7 +31,7 @@ class User extends ActiveRecord implements IdentityInterface {
         return [
             [['username', 'password_hash', 'email'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['username', 'password_hash', 'password_reset_token', 'email', 'role'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -76,6 +55,7 @@ class User extends ActiveRecord implements IdentityInterface {
             're_password' => Yii::t('backend', 'Retype password'),
             'password_reset_token' => Yii::t('backend', 'Password Reset Token'),
             'email' => Yii::t('backend', 'Email'),
+            'role' => Yii::t('backend', 'Role'),
             'status' => Yii::t('backend', 'Status'),
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),

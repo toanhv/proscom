@@ -31,6 +31,7 @@ return [
     'Environment Temp' => 'Môi trường',
     'Find module' => 'Tìm kiếm',
     'Heat pump|Three value|Back flow' => '',
+    'Role' => 'Nhóm quyền',
     'ID' => '',
     'Icon' => '',
     'Ie Name' => '',

@@ -21,6 +21,7 @@ return [
     'Actived' => '',
     'Address' => '',
     'Alarm' => '',
+    'Role' => '',
     'Alarms Report' => '',
     'Are you sure you want to delete this item?' => '',
     'Are you sure you want to send?' => '',

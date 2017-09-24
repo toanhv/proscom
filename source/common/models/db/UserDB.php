@@ -16,25 +16,20 @@ use Yii;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
- *
- * @property VideoDB[] $videos
- * @property VideoCategoryDB[] $videoCategories
  */
-class UserDB extends \yii\db\ActiveRecord
-{
+class UserDB extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'user';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
@@ -49,8 +44,7 @@ class UserDB extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('backend', 'ID'),
             'username' => Yii::t('backend', 'Username'),
@@ -64,19 +58,4 @@ class UserDB extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVideos()
-    {
-        return $this->hasMany(VideoDB::className(), ['updated_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVideoCategories()
-    {
-        return $this->hasMany(VideoCategoryDB::className(), ['updated_by' => 'id']);
-    }
 }

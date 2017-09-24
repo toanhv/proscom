@@ -20,6 +20,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => 255]) ?>
 
+    <?= $form->field($model, 'role')->dropDownList(backend\models\User::getRoles()) ?>
+
     <?= $form->field($model, 'status')->checkbox() ?>
 
     <div class="form-group">
