@@ -92,7 +92,8 @@ Page Header
     float: left;
 }
 .page-header.navbar .page-logo .logo-default {
-    margin: 8px 0 0 0;
+    margin: -5px -20px 0 0;
+    height: 50px;
 }
 .page-header.navbar .page-logo .logo-mini {
     display: none;
@@ -172,7 +173,7 @@ Page Header
 .page-header.navbar .menu-toggler.responsive-toggler {
     display: none;
     float: left;
-    margin: 11px -62px 0;
+    margin: 11px -94px 0;
 }
 .page-header.navbar .top-menu {
     margin: 0;

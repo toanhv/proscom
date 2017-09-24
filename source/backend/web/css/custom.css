@@ -4,10 +4,9 @@
 }
 
 .sidebar-toggler-container {
-    width: 30px !important;
     border-radius: 4px;
-    /*margin: 10px 0 0 92px;*/
-    margin: 10px 0 0 153px;
+    margin: 7px 0 0 153px;
+    width: 61px;
 }
 
 .page-sidebar-closed .sidebar-toggler-container {
@@ -104,6 +103,14 @@
 }
 .table thead tr th {
     font-size: 11px;
+}
+
+.logo-login {
+    text-align: center;
+}
+
+.logo-login img {
+    height: 150px;
 }
 
 @media (max-width: 440px) {

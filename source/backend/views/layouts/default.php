@@ -53,7 +53,7 @@ DefaultAsset::register($this);
             <?= $content ?>
         </div>
         <div class="copyright">
-            2016 © proscom. Admin Dashboard Template.
+            2016 © Megasun. Admin Dashboard Template.
         </div>
         <?php $this->endBody() ?>
     </body>

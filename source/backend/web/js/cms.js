@@ -59,8 +59,8 @@ $(document).ready(function () {
         $('div#module-icon').hide();
     });
 
-    $('#module-list .table-striped > tbody > tr:nth-of-type(2n+1)').css('background-color', genColor());
-    $('#module-list .table-striped > tbody > tr:nth-of-type(2n+2)').css('background-color', genColor());
+    //$('#module-list .table-striped > tbody > tr:nth-of-type(2n+1)').css('background-color', genColor());
+    //$('#module-list .table-striped > tbody > tr:nth-of-type(2n+2)').css('background-color', genColor());
 
     //disable all select/input
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');

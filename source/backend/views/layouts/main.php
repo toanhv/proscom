@@ -54,7 +54,7 @@ AppAsset::register($this);
                 <!-- BEGIN LOGO -->
                 <div class="page-logo" style="padding-right: 0;">
                     <a href="/">
-                        <img src="/images/logo.png" alt="logo" class="logo-default" height="30"/>
+                        <img src="/images/logo.png" alt="logo" class="logo-default"/>
                     </a>
                     <div class="page-sidebar sidebar-toggler-container">
                         <div class="sidebar-toggler">
@@ -186,7 +186,7 @@ AppAsset::register($this);
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
             <div class="page-footer-inner">
-                2016 &copy; Suppertheme by proscom.
+                2016 &copy; Suppertheme by Megasun.
             </div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>

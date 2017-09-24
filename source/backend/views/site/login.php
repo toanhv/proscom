@@ -10,9 +10,12 @@ use yii\bootstrap\ActiveForm;
 $this->title = Yii::t('backend', 'Login to manager');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
+<div class="logo-login">
+    <img src="/images/logo.png" alt="logo"/>
+</div>
 <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-<h3 class="form-title"><?= Html::encode($this->title) ?></h3>
+<h3 class="form-title">SMART MANAGEMENT</h3>
+<h4 class="form-title-1">FOR SOLAR WATER HEATING SYSTEM</h4>
 <!--    <div class="alert alert-danger display-hide">-->
 <!--        <button class="close" data-close="alert"></button>-->
 <!--			<span>-->
