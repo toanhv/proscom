@@ -112,6 +112,7 @@
 
 .logo-login img {
     height: 150px;
+    margin-left: -60px;
 }
 
 @media (max-width: 440px) {
@@ -195,6 +196,16 @@
     }
     .icon-emergency-fix {
         margin-top: 5px;
+    }
+    .logo-login img {
+        height: 100px;
+        margin-left: -41px;
+    }
+    .login .content .form-title {
+        font-size: 19px;
+    }
+    .login .content .form-title-1 {
+        font-size: 11px;
     }
 }
 .page-header {
