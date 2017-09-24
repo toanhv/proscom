@@ -207,6 +207,9 @@
     .login .content .form-title-1 {
         font-size: 11px;
     }
+    .page-header.navbar .menu-toggler.responsive-toggler {
+        margin: 11px -136px 0;
+    }
 }
 .page-header {
     background: url('../images/banner.jpg') no-repeat 0 0;
