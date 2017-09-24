@@ -4,9 +4,10 @@
 }
 
 .sidebar-toggler-container {
+    width: 30px !important;
     border-radius: 4px;
-    margin: 7px 0 0 153px;
-    width: 61px;
+    margin: 10px 0 0 92px;
+    /*margin: 10px 0 0 153px;*/
 }
 
 .page-sidebar-closed .sidebar-toggler-container {
