@@ -14,7 +14,7 @@
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterface, Twig_SourceContextLoaderInterface
+class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterface
 {
     private $hasSourceCache = array();
     protected $loaders = array();
@@ -47,8 +47,6 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
      */
     public function getSource($name)
     {
-        @trigger_error(sprintf('Calling "getSource" on "%s" is deprecated since 1.27. Use getSourceContext() instead.', get_class($this)), E_USER_DEPRECATED);
-
         $exceptions = array();
         foreach ($this->loaders as $loader) {
             if ($loader instanceof Twig_ExistsLoaderInterface && !$loader->exists($name)) {
@@ -57,31 +55,6 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
 
             try {
                 return $loader->getSource($name);
-            } catch (Twig_Error_Loader $e) {
-                $exceptions[] = $e->getMessage();
-            }
-        }
-
-        throw new Twig_Error_Loader(sprintf('Template "%s" is not defined%s.', $name, $exceptions ? ' ('.implode(', ', $exceptions).')' : ''));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSourceContext($name)
-    {
-        $exceptions = array();
-        foreach ($this->loaders as $loader) {
-            if ($loader instanceof Twig_ExistsLoaderInterface && !$loader->exists($name)) {
-                continue;
-            }
-
-            try {
-                if ($loader instanceof Twig_SourceContextLoaderInterface) {
-                    return $loader->getSourceContext($name);
-                }
-
-                return new Twig_Source($loader->getSource($name), $name);
             } catch (Twig_Error_Loader $e) {
                 $exceptions[] = $e->getMessage();
             }
@@ -111,11 +84,7 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
             }
 
             try {
-                if ($loader instanceof Twig_SourceContextLoaderInterface) {
-                    $loader->getSourceContext($name);
-                } else {
-                    $loader->getSource($name);
-                }
+                $loader->getSource($name);
 
                 return $this->hasSourceCache[$name] = true;
             } catch (Twig_Error_Loader $e) {

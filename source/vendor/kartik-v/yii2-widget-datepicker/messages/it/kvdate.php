@@ -15,10 +15,8 @@
  * of the guide for details.
  *
  * NOTE: this file must be saved in UTF-8 encoding.
- * 
- * @author Lorenzo Milesi <maxxer@yetopen.it>
  */
 return [
-    'Clear field' => 'Pulisci campo',
-    'Select date' => 'Scegli data',
+    'Clear field' => '',
+    'Select date' => '',
 ];

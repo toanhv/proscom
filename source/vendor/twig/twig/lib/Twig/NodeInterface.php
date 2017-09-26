@@ -25,9 +25,6 @@ interface Twig_NodeInterface extends Countable, IteratorAggregate
      */
     public function compile(Twig_Compiler $compiler);
 
-    /**
-     * @deprecated since 1.27 (to be removed in 2.0)
-     */
     public function getLine();
 
     public function getNodeTag();
