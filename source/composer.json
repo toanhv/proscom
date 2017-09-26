@@ -40,7 +40,7 @@
         "moonlandsoft/yii2-phpexcel": "*",
         "nickcv/yii2-encrypter": "*",
         "mongosoft/yii2-soap-server": "*",
-        "skeeks/yii2-mobile-detect": "*"
+        "skeeks/yii2-mobile-detect": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

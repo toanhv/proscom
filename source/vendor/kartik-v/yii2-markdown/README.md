@@ -96,9 +96,8 @@ echo Markdown::convert($content);
 
 // with custom post processing
 echo Markdown::convert($content, ['custom' => [
-	'<h1>' => '<h1 class="custom-h1">',
-	'<h2>' => '<h2 class="custom-h2">',
-	'<p>' => Html::beginTag('p', $options),
+	'<h1>' => '<h1 class="custom-h1>',
+	'<h2>' => '<h1 class="custom-h2>',
 ]]);
 ```
 

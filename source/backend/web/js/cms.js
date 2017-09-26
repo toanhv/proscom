@@ -59,6 +59,10 @@ $(document).ready(function () {
         $('div#module-icon').hide();
     });
 
+    if ($('#banner-home').html()) {
+        $('.page-container').css('margin', '150px 0 0');
+        //$('.header .header-left').css('background', '#fff none repeat scroll 0 0');
+    }
     //$('#module-list .table-striped > tbody > tr:nth-of-type(2n+1)').css('background-color', genColor());
     //$('#module-list .table-striped > tbody > tr:nth-of-type(2n+2)').css('background-color', genColor());
 

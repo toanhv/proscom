@@ -3,12 +3,10 @@
 /**
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2016
  * @package yii2-date-range
- * @version 1.6.7
+ * @version 1.6.6
  */
 
 namespace kartik\daterange;
-
-use kartik\base\AssetBundle;
 
 /**
  * DateRangePicker bundle for \kartik\daterange\DateRangePicker.
@@ -16,12 +14,9 @@ use kartik\base\AssetBundle;
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class DateRangePickerAsset extends AssetBundle
+class DateRangePickerAsset extends \kartik\base\AssetBundle
 {
-    public $depends = [
-        '\kartik\daterange\MomentAsset',
-        'yii\web\JqueryAsset'
-    ];
+    public $depends = ['\kartik\daterange\MomentAsset'];
 
     /**
      * @inheritdoc
@@ -33,4 +28,5 @@ class DateRangePickerAsset extends AssetBundle
         $this->setupAssets('js', ['js/daterangepicker']);
         parent::init();
     }
+
 }

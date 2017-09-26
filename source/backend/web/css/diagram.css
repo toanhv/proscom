@@ -722,7 +722,7 @@
     float:left;
     width:235px;
     height:150px;
-    background:#3e8ba5;
+    background:#fff;
     text-align:center;
     line-height:150px;
     position:absolute;
@@ -731,19 +731,20 @@
 }
 
 .header .header-left .logo{
-    display:inline-block;
+    /*display:inline-block;*/
     vertical-align:middle;
     height:100px;
-    width:100px;
+    /*width:100px;*/
     overflow:hidden;
     background-color:#fff;
-    border-radius:50px;
+    /*border-radius:50px;*/
     line-height: 0;
 }
 
 .header .header-left .logo img{
-    height:100px;
-    width:100px;
+    height: 100px;
+    margin-bottom: 37px;
+    width: 235px;
 }	
 
 .header .banner{
@@ -758,7 +759,7 @@
 
 .header .banner .banner-image img{
     max-height:150px;
-    width:88%;
+    width:84%;
 }	
 
 .header .banner .banner-menu{

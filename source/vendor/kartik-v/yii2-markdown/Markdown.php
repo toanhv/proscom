@@ -9,7 +9,6 @@
 
 namespace kartik\markdown;
 
-use Yii;
 use kartik\base\Config;
 use \Michelf\MarkdownExtra;
 use \Michelf\SmartyPantsTypographer;

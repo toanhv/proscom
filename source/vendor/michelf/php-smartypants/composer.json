@@ -2,19 +2,19 @@
 	"name": "michelf/php-smartypants",
 	"type": "library",
 	"description": "PHP SmartyPants",
-	"homepage": "https://michelf.ca/projects/php-smartypants/",
+	"homepage": "http://michelf.ca/projects/php-smartypants/",
 	"keywords": ["quotes", "dashes", "spaces", "typography", "typographer"],
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Michel Fortin",
 			"email": "michel.fortin@michelf.ca",
-			"homepage": "https://michelf.ca/",
+			"homepage": "http://michelf.ca/",
 			"role": "Developer"
 		},
 		{
 			"name": "John Gruber",
-			"homepage": "https://daringfireball.net/"
+			"homepage": "http://daringfireball.net/"
 		}
 	],
 	"require": {

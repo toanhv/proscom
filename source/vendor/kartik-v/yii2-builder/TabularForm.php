@@ -295,9 +295,6 @@ class TabularForm extends BaseForm
             }
         }
         $val = $formatter->format($val, $format);
-        $prepend = ArrayHelper::getValue($settings, 'prepend', '');
-        $append = ArrayHelper::getValue($settings, 'append', '');
-        $val = $prepend . "\n" . $val . "\n" . $append;
         Html::addCssClass($options, 'form-control-static');
         return Html::tag('div', $val, $options);
     }

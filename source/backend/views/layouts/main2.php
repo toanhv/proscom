@@ -25,7 +25,7 @@ AppAsset::register($this);
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <?= Html::csrfMetaTags() ?>
-        <title><?= Html::encode($this->title) ?></title>
+        <title><?= Html::encode($this->title); ?> | MEGASUN SMARTX</title>
         <?php $this->head() ?>
         <link rel="shortcut icon" href="favicon.ico"/>
     </head>
@@ -44,9 +44,9 @@ AppAsset::register($this);
     <body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
         <?php $this->beginBody() ?>
         <!-- BEGIN HEADER -->
-        <div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
+        <div class="page-header md-shadow-z-1-i navbar <?php echo (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) ? '' : 'navbar-fixed-top' ?>">
             <!-- BEGIN HEADER INNER -->
-            <a href="javascript:void(0);" class="icon-refresh-fix" id="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
+            <a href="javascript:void(0);" class="icon-refresh-fix"><img src="/images/refresh_icon.jpg" width="48"/></a>
             <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
             <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
             <!-- BEGIN HEADER INNER -->
@@ -54,7 +54,7 @@ AppAsset::register($this);
                 <!-- BEGIN LOGO -->
                 <div class="page-logo" style="padding-right: 0;">
                     <a href="/">
-                        <img src="/images/logo.png" alt="logo" class="logo-default" height="30"/>
+                        <img src="/images/logo.png" alt="logo" class="logo-default"/>
                     </a>
                     <div class="page-sidebar sidebar-toggler-container">
                         <div class="sidebar-toggler">
@@ -82,11 +82,16 @@ AppAsset::register($this);
                         <li>
                             <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
                             <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                <?php echo Yii::t('backend', $item['value']); ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
                             </a>
                         </li>
                     <?php } ?>
                 </ul>
+            </div>
+            <div class="flag">
+                <a href="javascript:void(0);" id="flag-language">
+                    <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'en') ? '/images/en.png' : '/images/vi.png'; ?>"/>
+                </a>
             </div>
             <!-- END HEADER INNER -->
         </div>
@@ -121,7 +126,7 @@ AppAsset::register($this);
                             $callback = function ($menu) {
                                 if ($menu['route'])
                                     return [
-                                        'label' => $menu['name'],
+                                        'label' => (\Yii::$app->language == 'vi') ? $menu['name_vi'] : $menu['name'],
                                         'url' => [$menu['route']],
                                         'items' => $menu['children'],
                                         'visible' => $menu['is_active'],
@@ -129,7 +134,7 @@ AppAsset::register($this);
                                         'parent' => $menu['parent']
                                     ];
                                 return [
-                                    'label' => $menu['name'],
+                                    'label' => (\Yii::$app->language == 'vi') ? $menu['name_vi'] : $menu['name'],
                                     'items' => $menu['children'],
                                     'visible' => $menu['is_active'],
                                     'icon' => $menu['icon'],
@@ -181,7 +186,7 @@ AppAsset::register($this);
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
             <div class="page-footer-inner">
-                2016 &copy; Suppertheme by proscom.
+                2016 &copy; Suppertheme by Megasun.
             </div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>

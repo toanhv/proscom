@@ -1,11 +1,11 @@
 PHP SmartyPants Lib  
-Copyright (c) 2005-2016 Michel Fortin  
-<https://michelf.ca/>  
+Copyright (c) 2005-2013 Michel Fortin  
+<http://michelf.ca/>  
 All rights reserved.
 
 Original SmartyPants  
 Copyright (c) 2003-2004 John Gruber  
-<https://daringfireball.net/>  
+<http://daringfireball.net/>  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

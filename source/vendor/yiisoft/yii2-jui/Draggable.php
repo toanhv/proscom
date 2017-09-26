@@ -31,17 +31,6 @@ use yii\helpers\Html;
 class Draggable extends Widget
 {
     /**
-     * @inheritdoc
-     */
-    protected $clientEventMap = [
-        'create' => 'dragcreate',
-        'drag' => 'drag',
-        'stop' => 'dragstop',
-        'start' => 'dragstart',
-    ];
-
-
-    /**
      * Initializes the widget.
      */
     public function init()

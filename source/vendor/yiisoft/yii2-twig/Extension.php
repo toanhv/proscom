@@ -11,7 +11,6 @@ use yii\base\InvalidCallException;
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
-use yii\web\AssetBundle;
 
 /**
  * Extension provides Yii-specific syntax for Twig templates.
@@ -114,22 +113,15 @@ class Extension extends \Twig_Extension
      *
      * @param array $context context information
      * @param string $bundle asset bundle class fully qualified name
-     * @param boolean $return indicates if AssetBundle should be returned
      *
-     * @return void|AssetBundle
      * @since 2.0.4
      */
-    public function registerAssetBundle($context, $bundle, $return = false)
+    public function registerAssetBundle($context, $bundle)
     {
         $bundle = str_replace('/', '\\', $bundle);
-
-        $bundle = $this->call($bundle, 'register', [
+        $this->call($bundle, 'register', [
             isset($context['this']) ? $context['this'] : null,
         ]);
-
-        if ($return) {
-            return $bundle;
-        }
     }
 
     /**
@@ -180,12 +172,6 @@ class Extension extends \Twig_Extension
         ]);
     }
 
-    /**
-     * Used for 'begin_page', 'end_page', 'begin_body', 'end_body', 'head'
-     *
-     * @param array $context context information
-     * @param string $name
-     */
     public function viewHelper($context, $name = null)
     {
         if ($name !== null && isset($context['this'])) {
@@ -252,7 +238,7 @@ class Extension extends \Twig_Extension
      */
     public function addUses($args)
     {
-        foreach ((array)$args as $key => $value) {
+        foreach ((array) $args as $key => $value) {
             $value = str_replace('/', '\\', $value);
             if (is_int($key)) {
                 // namespace or class import
@@ -305,7 +291,7 @@ class Extension extends \Twig_Extension
      *
      * @param \stdClass $object
      * @param string $property
-     * @param mixed $value
+     * @param mixes $value
      */
     public function setProperty($object, $property, $value)
     {
