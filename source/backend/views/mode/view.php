@@ -10,7 +10,7 @@ $this->title = $idModule . ' - ' . $module->name;
 ?>
 <div class="info-diagram">
     <div class="check-account">
-        <h3 class="text-center"><?php echo Html::encode($this->title); ?></h3>
+        <h3 class="text-center">ID: <?php echo Html::encode($this->title); ?></h3>
         <p align="center">System mode: <?php echo $model->name; ?></p>
         <div class="row-check-account">
             <p align="center">

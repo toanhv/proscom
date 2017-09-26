@@ -11,7 +11,7 @@ $idModule = $module->country->code . $module->privincial->code . $module->distri
 $this->title = $idModule . ' - ' . $module->name;
 ?>
 <div class="diagram">
-    <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
+    <h3 class="text-center">ID: <?= Html::encode($this->title) ?></h3>
     <form id="update-output-mode" method="post" action="/output-mode/update?id=<?php echo $model->id ?>">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
         <div class="container-all">      

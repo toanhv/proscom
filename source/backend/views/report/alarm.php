@@ -11,7 +11,7 @@ $this->title = 'Alarms Report';
     <div class="body-content">
         <form method="post" action="/report/alarm" id="report-sensor-alarm">
             <div class="params">
-                <h3 class="title"><?php echo $module->getModuleId() . ' - ' . Html::encode($module->name); ?></h3>
+                <h3 class="title">ID: <?php echo $module->getModuleId() . ' - ' . Html::encode($module->name); ?></h3>
                 <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
                 From:
                 <?=

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $idModule = $model->module->country->code . $model->module->privincial->code . $model->module->distric->code . $model->module->customer_code;
 $this->title = $idModule . ' - ' . $model->module->name;
 ?>
-<h3 class="text-center"><?php echo Html::encode($this->title); ?></h3>
+<h3 class="text-center">ID: <?php echo Html::encode($this->title); ?></h3>
 <div class="diagram">
     <div class="container-all">  
         <p><br></p>  

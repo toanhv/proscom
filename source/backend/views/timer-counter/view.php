@@ -10,7 +10,7 @@ $idModule = $module->country->code . $module->privincial->code . $module->distri
 $this->title = $idModule . ' - ' . $module->name;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h3 class="text-center"><?php echo $idModule . ' - ' . Html::encode($module->name); ?></h3>
+<h3 class="text-center">ID: <?php echo $idModule . ' - ' . Html::encode($module->name); ?></h3>
 <div class="diagram">
     <div class="container-all">  
         <p><br></p>  

@@ -3,7 +3,7 @@ $this->title = Yii::t('backend', 'Sensors Report');
 ?>
 <form method="post" action="/report/index" id="report-sensor-alarm">    
     <div class="params" style="alignment-adjust: middle">
-        <h3 class="title"><?php echo $module->getModuleId() . ' - ' . \yii\helpers\Html::encode($module->name); ?></h3>
+        <h3 class="title">ID: <?php echo $module->getModuleId() . ' - ' . \yii\helpers\Html::encode($module->name); ?></h3>
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
         From:
         <input type="text" name="from" id="report_from" value="<?php echo $from ?>">

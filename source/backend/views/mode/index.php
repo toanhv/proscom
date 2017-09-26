@@ -16,7 +16,7 @@ $this->title = $idModule . ' - ' . $module->name;
     <form method="post" id="form-choose-mode" action="/modules/mode?id=<?php echo $module->id ?>">
         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
         <div class="check-account">
-            <h3 class="text-center"><?php echo Html::encode($this->title); ?></h3>
+            <h3 class="text-center">ID: <?php echo Html::encode($this->title); ?></h3>
             <p align="center">Choose your system</p>
             <div class="row-check-account">
                 <input type="hidden" value="<?php echo $module->mode_id; ?>" name="mode_id" id="mode_id">

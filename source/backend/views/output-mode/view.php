@@ -11,7 +11,7 @@ $idModule = $module->country->code . $module->privincial->code . $module->distri
 $this->title = $idModule . ' - ' . $module->name;
 ?>
 <div class="diagram">
-    <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
+    <h3 class="text-center">ID: <?= Html::encode($this->title) ?></h3>
     <div class="container-all input-disable">      
         <?=
         $this->render('_form', [

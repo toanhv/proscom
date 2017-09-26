@@ -9,7 +9,7 @@ $module = $model->module;
 $idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
 $this->title = 'Param config';
 ?>
-<h3 class="text-center"><?php echo $idModule . ' - ' . Html::encode($module->name); ?></h3>
+<h3 class="text-center">ID: <?php echo $idModule . ' - ' . Html::encode($module->name); ?></h3>
 <div class="diagram">
     <div class="container-all">  
         <p><br></p>  
