@@ -1,22 +1,31 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2016
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2017
  * @package yii2-date-range
- * @version 1.6.6
+ * @version 1.6.8
  */
 
 namespace kartik\daterange;
 
+use yii\web\View;
+use kartik\base\AssetBundle;
+
 /**
- * MomentAsset bundle for \kartik\daterange\DateRangePicker.
+ * Moment Asset bundle for \kartik\daterange\DateRangePicker.
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class MomentAsset extends \kartik\base\AssetBundle
+class MomentAsset extends AssetBundle
 {
-    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];  
+    /**
+     * @inheritdoc
+     */
+    public $jsOptions = ['position' => View::POS_HEAD];
+    /**
+     * @inheritdoc
+     */
     public $depends = [];
 
     /**
@@ -28,5 +37,4 @@ class MomentAsset extends \kartik\base\AssetBundle
         $this->setupAssets('js', ['js/moment']);
         parent::init();
     }
-
 }

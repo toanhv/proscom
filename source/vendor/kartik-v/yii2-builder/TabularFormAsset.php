@@ -3,8 +3,8 @@
 /**
  * @package   yii2-builder
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
- * @version   1.6.2
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
+ * @version   1.6.3
  */
 
 namespace kartik\builder;
@@ -12,7 +12,7 @@ namespace kartik\builder;
 use kartik\base\AssetBundle;
 
 /**
- * Asset bundle for \kartik\widgets\TabularForm
+ * Asset bundle for the [[TabularForm]] widget.
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since  1.0

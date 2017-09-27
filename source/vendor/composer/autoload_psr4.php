@@ -69,6 +69,7 @@ return array(
     'cinghie\\articles\\' => array($vendorDir . '/cinghie/yii2-articles'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Wingu\\OctopusCore\\Reflection\\' => array($vendorDir . '/wingu/reflection/src'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'PHP2WSDL\\' => array($vendorDir . '/php2wsdl/php2wsdl/src'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

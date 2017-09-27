@@ -105,6 +105,10 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             'Wingu\\OctopusCore\\Reflection\\' => 29,
         ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'P' => 
         array (
             'PHP2WSDL\\' => 9,
@@ -368,6 +372,10 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             0 => __DIR__ . '/..' . '/wingu/reflection/src',
         ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'PHP2WSDL\\' => 
         array (
             0 => __DIR__ . '/..' . '/php2wsdl/php2wsdl/src',
@@ -404,8 +412,8 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             'Michelf' => 
             array (
-                0 => __DIR__ . '/..' . '/michelf/php-smartypants',
-                1 => __DIR__ . '/..' . '/michelf/php-markdown',
+                0 => __DIR__ . '/..' . '/michelf/php-markdown',
+                1 => __DIR__ . '/..' . '/michelf/php-smartypants',
             ),
         ),
         'I' => 

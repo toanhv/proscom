@@ -11,6 +11,7 @@ use yii\base\InvalidCallException;
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
+use yii\web\AssetBundle;
 
 /**
  * Extension provides Yii-specific syntax for Twig templates.
@@ -113,15 +114,22 @@ class Extension extends \Twig_Extension
      *
      * @param array $context context information
      * @param string $bundle asset bundle class fully qualified name
+     * @param bool $return indicates if AssetBundle should be returned
      *
+     * @return void|AssetBundle
      * @since 2.0.4
      */
-    public function registerAssetBundle($context, $bundle)
+    public function registerAssetBundle($context, $bundle, $return = false)
     {
         $bundle = str_replace('/', '\\', $bundle);
-        $this->call($bundle, 'register', [
+
+        $bundle = $this->call($bundle, 'register', [
             isset($context['this']) ? $context['this'] : null,
         ]);
+
+        if ($return) {
+            return $bundle;
+        }
     }
 
     /**
@@ -172,6 +180,12 @@ class Extension extends \Twig_Extension
         ]);
     }
 
+    /**
+     * Used for 'begin_page', 'end_page', 'begin_body', 'end_body', 'head'
+     *
+     * @param array $context context information
+     * @param string $name
+     */
     public function viewHelper($context, $name = null)
     {
         if ($name !== null && isset($context['this'])) {
@@ -238,7 +252,7 @@ class Extension extends \Twig_Extension
      */
     public function addUses($args)
     {
-        foreach ((array) $args as $key => $value) {
+        foreach ((array)$args as $key => $value) {
             $value = str_replace('/', '\\', $value);
             if (is_int($key)) {
                 // namespace or class import
@@ -265,9 +279,12 @@ class Extension extends \Twig_Extension
      */
     public function path($path, $args = [])
     {
-        if ($args !== []) {
+        if (is_array($path)) {
+            $path = array_merge($path, $args);
+        } elseif ($args !== []) {
             $path = array_merge([$path], $args);
         }
+
         return Url::to($path);
     }
 
@@ -280,9 +297,12 @@ class Extension extends \Twig_Extension
      */
     public function url($path, $args = [])
     {
-        if ($args !== []) {
+        if (is_array($path)) {
+            $path = array_merge($path, $args);
+        } elseif ($args !== []) {
             $path = array_merge([$path], $args);
         }
+
         return Url::to($path, true);
     }
 
@@ -291,7 +311,7 @@ class Extension extends \Twig_Extension
      *
      * @param \stdClass $object
      * @param string $property
-     * @param mixes $value
+     * @param mixed $value
      */
     public function setProperty($object, $property, $value)
     {

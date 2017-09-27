@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2016
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2017
  * @package yii2-date-range
- * @version 1.6.6
+ * @version 1.6.8
  */
 
 namespace kartik\daterange;
 
+use kartik\base\InputWidget;
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 use yii\web\JsExpression;
-use kartik\base\InputWidget;
 
 /**
  * An advanced date range picker input for Yii Framework 2 based on bootstrap-daterangepicker plugin.
@@ -26,14 +26,15 @@ class DateRangePicker extends InputWidget
 {
     /**
      * @var string the javascript callback to be passed to the plugin constructor. Note: a default value is set for
-     * this property when you set `hideInput` to false, OR you set `useWithAddon` to `true` or `autoUpdateOnInit` to
-     * `false`. If you set a value here it will override any auto-generated callbacks.
+     * this property when you set [[hideInput]] to false, OR you set [[useWithAddon]] to `true` or [[autoUpdateOnInit]]
+     * to `false`. If you set a value here it will override any auto-generated callbacks.
      */
     public $callback = null;
 
     /**
      * @var boolean whether to auto update the input on initialization. If set to `false`, this will auto set the
-     * plugin's `autoUpdateInput` to `false`. A default `callback` will be auto-generated when this is set to `false`.
+     * `pluginOptions['autoUpdateInput']` to `false`. A default [[callback]] will be auto-generated when this is set to
+     * `false`.
      */
     public $autoUpdateOnInit = false;
 
@@ -69,7 +70,39 @@ class DateRangePicker extends InputWidget
      * are recognized:
      * - `tag`: string, the HTML tag for rendering the container. Defaults to `div`.
      */
-    public $containerOptions = ['class' => 'drp-container input-group'];
+    public $containerOptions = [];
+
+    /**
+     * @var string the attribute name which you can set optionally to track changes to the range start value. One of
+     * the following actions will be taken when this is set:
+     *  - If using with model, an active hidden input will be automatically generated using this as an attribute name
+     *     for the start value of the range.
+     *  - If using without model, a normal hidden input will be automatically generated using this as an input name
+     *     for the start value of the range.
+     */
+    public $startAttribute;
+
+    /**
+     * @var string the attribute name which you can set optionally to track changes to the range end value. One of
+     * the following actions will be taken when this is set:
+     *  - If using with model, an active hidden input will be automatically generated using this as an attribute name
+     *     for the end value of the range.
+     *  - If using without model, a normal hidden input will be automatically generated using this as an input name
+     *     for the end value of the range.
+     */
+    public $endAttribute;
+
+    /**
+     * @var array the HTML attributes for the start input (applicable only if `startAttribute` is set). If using
+     * without a model, you can set a start value here within the `value` property.
+     */
+    public $startInputOptions = [];
+
+    /**
+     * @var array the HTML attributes for the end input (applicable only if `endAttribute` is set).  If using
+     * without a model, you can set an end value here within the `value` property.
+     */
+    public $endInputOptions = [];
 
     /**
      * @var array the template for rendering the container, when hideInput is set to `true`. The special tag `{input}`
@@ -78,17 +111,20 @@ class DateRangePicker extends InputWidget
      * form input during initialization
      */
     public $containerTemplate = <<< HTML
-        <span class="input-group-addon">
-            <i class="glyphicon glyphicon-calendar"></i>
-        </span>
-        <span class="form-control text-right">
-            <span class="pull-left">
-                <span class="range-value">{value}</span>
-            </span>
-            <b class="caret"></b>
-            {input}
-        </span>
+        <div class="form-control kv-drp-dropdown">
+            <i class="glyphicon glyphicon-calendar"></i>&nbsp;
+            <span class="range-value">{value}</span>
+            <span class="pull-right"><b class="caret"></b></span>
+        </div>
+        {input}
 HTML;
+
+    /**
+     * HTML attributes for the `span` element that displays the default value for a preset dropdown. By default for a
+     * preset dropdown, if the value is empty, it will default to "Today". The following special options are supported:
+     * - `tag`: the HTML tag under which the default value markup will be displayed when empty. Defaults to `em`.
+     */
+    public $defaultPresetValueOptions = ['class' => 'text-muted'];
 
     /**
      * @var array the HTML attributes for the form input
@@ -116,70 +152,18 @@ HTML;
     protected $_separator;
 
     /**
-     * Initializes the widget
-     *
-     * @throw InvalidConfigException
+     * @var string the generated input for start attribute when `startAttribute` has been set
      */
-    public function init()
-    {
-        parent::init();
-        $this->_msgCat = 'kvdrp';
-        $this->initI18N(__DIR__);
-        $this->initLocale();
-        if ($this->convertFormat && isset($this->pluginOptions['locale']) && isset($this->pluginOptions['locale']['format'])) {
-            $this->pluginOptions['locale']['format'] = static::convertDateFormat($this->pluginOptions['locale']['format']);
-        }
-        $locale = ArrayHelper::getValue($this->pluginOptions, 'locale', []);
-        $this->_format = ArrayHelper::getValue($locale, 'format', 'YYYY-MM-DD');
-        $this->_separator = ArrayHelper::getValue($locale, 'separator', ' - ');
-        if (!empty($this->value)) {
-            $dates = explode($this->_separator, $this->value);
-            if (count($dates) > 1) {
-                $this->pluginOptions['startDate'] = $dates[0];
-                $this->pluginOptions['endDate'] = $dates[1];
-            }
-        }
-        $value = empty($this->value) ? '' : $this->value;
-        $this->containerTemplate = str_replace('{value}', $value, $this->containerTemplate);
-
-        // Set `autoUpdateInput` to false for certain settings
-        if (!$this->autoUpdateOnInit || $this->hideInput || $this->useWithAddon) {
-            $this->pluginOptions['autoUpdateInput'] = false;
-        }
-
-        $this->initRange();
-        $this->containerOptions['id'] = $this->options['id'] . '-container';
-        $this->registerAssets();
-        echo $this->renderInput();
-    }
+    protected $_startInput = '';
 
     /**
-     * Initialize locale settings
+     * @var string the generated input for end attribute when `endAttribute` has been set
      */
-    protected function initLocale()
-    {
-        $this->setLanguage('');
-        if (empty($this->_langFile)) {
-            return;
-        }
-        $localeSettings = ArrayHelper::getValue($this->pluginOptions, 'locale', []);
-        $localeSettings += [
-            'applyLabel' => Yii::t('kvdrp', 'Apply'),
-            'cancelLabel' => Yii::t('kvdrp', 'Cancel'),
-            'fromLabel' => Yii::t('kvdrp', 'From'),
-            'toLabel' => Yii::t('kvdrp', 'To'),
-            'weekLabel' => Yii::t('kvdrp', 'W'),
-            'customRangeLabel' => Yii::t('kvdrp', 'Custom Range'),
-            'daysOfWeek' => new JsExpression('moment.weekdaysMin()'),
-            'monthNames' => new JsExpression('moment.monthsShort()'),
-            'firstDay' => new JsExpression('moment.localeData()._week.dow')
-        ];
-        $this->pluginOptions['locale'] = $localeSettings;
-    }
+    protected $_endInput = '';
 
     /**
-     * Automatically convert the date format from PHP DateTime to Moment.js DateTime format as required by
-     * the `bootstrap-daterangepicker` plugin.
+     * Automatically convert the date format from PHP DateTime to Moment.js DateTime format as required by the
+     * `bootstrap-daterangepicker` plugin.
      *
      * @see http://php.net/manual/en/function.date.php
      * @see http://momentjs.com/docs/#/parsing/string-format/
@@ -190,7 +174,7 @@ HTML;
      */
     protected static function convertDateFormat($format)
     {
-        return strtr($format, [
+        $conversions = [
             // meridian lowercase remains same
             // 'a' => 'a',
             // meridian uppercase remains same
@@ -233,52 +217,8 @@ HTML;
             'Y' => 'YYYY',
             // unix timestamp
             'U' => 'X',
-        ]);
-    }
-
-    /**
-     * Initializes the pluginOptions range list
-     */
-    protected function initRange()
-    {
-        if (isset($dummyValidation)) {
-            /** @noinspection PhpUnusedLocalVariableInspection */
-            $msg = Yii::t('kvdrp', 'Select Date Range');
-        }
-        if ($this->presetDropdown) {
-            $this->initRangeExpr = true;
-            $this->pluginOptions['ranges'] = [
-                Yii::t('kvdrp', "Today") => ["moment().startOf('day')", "moment()"],
-                Yii::t('kvdrp', "Yesterday") => [
-                    "moment().startOf('day').subtract(1,'days')",
-                    "moment().endOf('day').subtract(1,'days')"
-                ],
-                Yii::t('kvdrp', "Last {n} Days", ['n' => 7]) => [
-                    "moment().startOf('day').subtract(6, 'days')",
-                    "moment()"
-                ],
-                Yii::t('kvdrp', "Last {n} Days", ['n' => 30]) => [
-                    "moment().startOf('day').subtract(29, 'days')",
-                    "moment()"
-                ],
-                Yii::t('kvdrp', "This Month") => ["moment().startOf('month')", "moment().endOf('month')"],
-                Yii::t('kvdrp', "Last Month") => [
-                    "moment().subtract(1, 'month').startOf('month')",
-                    "moment().subtract(1, 'month').endOf('month')"
-                ],
-            ];
-        }
-        if (!$this->initRangeExpr || empty($this->pluginOptions['ranges']) || !is_array($this->pluginOptions['ranges'])) {
-            return;
-        }
-        $range = [];
-        foreach ($this->pluginOptions['ranges'] as $key => $value) {
-            if (!is_array($value) || empty($value[0]) || empty($value[1])) {
-                throw new InvalidConfigException("Invalid settings for pluginOptions['ranges']. Each range value must be a two element array.");
-            }
-            $range[$key] = [static::parseJsExpr($value[0]), static::parseJsExpr($value[1])];
-        }
-        $this->pluginOptions['ranges'] = $range;
+        ];
+        return strtr($format, $conversions);
     }
 
     /**
@@ -291,6 +231,15 @@ HTML;
     protected static function parseJsExpr($value)
     {
         return $value instanceof JsExpression ? $value : new JsExpression($value);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function run()
+    {
+        $this->initSettings();
+        echo $this->renderInput();
     }
 
     /**
@@ -309,12 +258,17 @@ HTML;
             LanguageAsset::register($view)->js[] = $this->_langFile;
         }
         DateRangePickerAsset::register($view);
+        $rangeJs = '';
         if (empty($this->callback)) {
             $val = "start.format('{$this->_format}') + '{$this->_separator}' + end.format('{$this->_format}')";
             if (ArrayHelper::getValue($this->pluginOptions, 'singleDatePicker', false)) {
                 $val = "start.format('{$this->_format}')";
             }
-            $change = "{$input}.val(val);{$input}.trigger('change');";
+            $rangeJs = $this->getRangeJs('start') . $this->getRangeJs('end');
+            $change = $rangeJs . "{$input}.val(val).trigger('change');";
+            if ($this->presetDropdown) {
+                $id = "{$id}.find('.kv-drp-dropdown')";
+            }
             if ($this->hideInput) {
                 $script = "var val={$val};{$id}.find('.range-value').html(val);{$change}";
             } elseif ($this->useWithAddon) {
@@ -328,7 +282,159 @@ HTML;
             }
             $this->callback = "function(start,end,label){{$script}}";
         }
+        $nowFrom = "moment().startOf('day').format('{$this->_format}')";
+        $nowTo = "moment().format('{$this->_format}')";
+        // parse input change correctly when range input value is cleared
+        $js = <<< JS
+{$input}.off('change.kvdrp').on('change.kvdrp', function() {
+    var drp = {$id}.data('{$this->pluginName}'), fm, to;
+    if ($(this).val() || !drp) {
+        return;
+    }
+    fm = {$nowFrom} || '';
+    to = {$nowTo} || '';
+    drp.setStartDate(fm);
+    drp.setEndDate(to);
+    {$rangeJs}
+});
+JS;
+        if ($this->presetDropdown && empty($this->value)) {
+            $tag = ArrayHelper::remove($this->defaultPresetValueOptions, 'tag', 'em');
+            $fmTag = Html::beginTag($tag, $this->defaultPresetValueOptions);
+            $toTag = Html::endTag($tag);
+            $js .= "var val={$nowFrom}+'{$this->_separator}'+{$nowTo};{$id}.find('.range-value').html('{$fmTag}'+val+'{$toTag}');";
+        }
+        $view->registerJs($js);
         $this->registerPlugin($this->pluginName, $id, null, $this->callback);
+    }
+
+    /**
+     * Initializes widget settings
+     *
+     * @throws InvalidConfigException
+     */
+    protected function initSettings()
+    {
+        $this->_msgCat = 'kvdrp';
+        $this->initI18N(__DIR__);
+        $this->initLocale();
+        if ($this->convertFormat && isset($this->pluginOptions['locale']['format'])) {
+            $this->pluginOptions['locale']['format'] = static::convertDateFormat(
+                $this->pluginOptions['locale']['format']
+            );
+        }
+        $locale = ArrayHelper::getValue($this->pluginOptions, 'locale', []);
+        $this->_format = ArrayHelper::getValue($locale, 'format', 'YYYY-MM-DD');
+        $this->_separator = ArrayHelper::getValue($locale, 'separator', ' - ');
+        if (!empty($this->value)) {
+            $dates = explode($this->_separator, $this->value);
+            if (count($dates) > 1) {
+                $this->pluginOptions['startDate'] = $dates[0];
+                $this->pluginOptions['endDate'] = $dates[1];
+                $this->initRangeValue('start', $dates[0]);
+                $this->initRangeValue('end', $dates[1]);
+            }
+        } elseif ($this->startAttribute && $this->endAttribute) {
+            $start = $this->getRangeValue('start');
+            $end = $this->getRangeValue('end');
+            $this->value = $start . $this->_separator . $end;
+            if ($this->hasModel()) {
+                $attr = $this->attribute;
+                $this->model->$attr = $this->value;
+            }
+            $this->pluginOptions['startDate'] = $start;
+            $this->pluginOptions['endDate'] = $end;
+        }
+        $value = empty($this->value) ? '' : $this->value;
+        $this->containerTemplate = str_replace('{value}', $value, $this->containerTemplate);
+
+        // Set `autoUpdateInput` to false for certain settings
+        if (!$this->autoUpdateOnInit || $this->hideInput || $this->useWithAddon) {
+            $this->pluginOptions['autoUpdateInput'] = false;
+        }
+        $this->_startInput = $this->getRangeInput('start');
+        $this->_endInput = $this->getRangeInput('end');
+        if (empty($this->containerOptions['id'])) {
+            $this->containerOptions['id'] = $this->options['id'] . '-container';
+        }
+        if (empty($this->containerOptions['class'])) {
+            $css = $this->useWithAddon && !$this->presetDropdown && !$this->hideInput ? ' input-group' : '';
+            $this->containerOptions['class'] = 'kv-drp-container' . $css;
+        }
+        $this->initRange();
+        $this->registerAssets();
+    }
+
+    /**
+     * Initialize locale settings
+     */
+    protected function initLocale()
+    {
+        $this->setLanguage('');
+        if (empty($this->_langFile)) {
+            return;
+        }
+        $localeSettings = ArrayHelper::getValue($this->pluginOptions, 'locale', []);
+        $localeSettings += [
+            'applyLabel' => Yii::t('kvdrp', 'Apply'),
+            'cancelLabel' => Yii::t('kvdrp', 'Cancel'),
+            'fromLabel' => Yii::t('kvdrp', 'From'),
+            'toLabel' => Yii::t('kvdrp', 'To'),
+            'weekLabel' => Yii::t('kvdrp', 'W'),
+            'customRangeLabel' => Yii::t('kvdrp', 'Custom Range'),
+            'daysOfWeek' => new JsExpression('moment.weekdaysMin()'),
+            'monthNames' => new JsExpression('moment.monthsShort()'),
+            'firstDay' => new JsExpression('moment.localeData()._week.dow'),
+        ];
+        $this->pluginOptions['locale'] = $localeSettings;
+    }
+
+    /**
+     * Initializes the pluginOptions range list
+     */
+    protected function initRange()
+    {
+        if (isset($dummyValidation)) {
+            /** @noinspection PhpUnusedLocalVariableInspection */
+            $msg = Yii::t('kvdrp', 'Select Date Range');
+        }
+        $m = 'moment()';
+        if ($this->presetDropdown) {
+            $this->initRangeExpr = $this->hideInput = true;
+            $this->pluginOptions['opens'] = 'left';
+            $this->pluginOptions['ranges'] = [
+                Yii::t('kvdrp', 'Today') => ["{$m}.startOf('day')", $m],
+                Yii::t('kvdrp', 'Yesterday') => [
+                    "{$m}.startOf('day').subtract(1,'days')",
+                    "{$m}.endOf('day').subtract(1,'days')",
+                ],
+                Yii::t('kvdrp', 'Last {n} Days', ['n' => 7]) => ["{$m}.startOf('day').subtract(6, 'days')", $m],
+                Yii::t('kvdrp', 'Last {n} Days', ['n' => 30]) => ["{$m}.startOf('day').subtract(29, 'days')", $m],
+                Yii::t('kvdrp', 'This Month') => ["{$m}.startOf('month')", "{$m}.endOf('month')"],
+                Yii::t('kvdrp', 'Last Month') => [
+                    "{$m}.subtract(1, 'month').startOf('month')",
+                    "{$m}.subtract(1, 'month').endOf('month')",
+                ],
+            ];
+            if (empty($this->value)) {
+                $this->pluginOptions['startDate'] = new JsExpression("{$m}.startOf('day')");
+                $this->pluginOptions['endDate'] = new JsExpression($m);
+            }
+        }
+        $opts = $this->pluginOptions;
+        if (!$this->initRangeExpr || empty($opts['ranges']) || !is_array($opts['ranges'])) {
+            return;
+        }
+        $range = [];
+        foreach ($opts['ranges'] as $key => $value) {
+            if (!is_array($value) || empty($value[0]) || empty($value[1])) {
+                throw new InvalidConfigException(
+                    "Invalid settings for pluginOptions['ranges']. Each range value must be a two element array."
+                );
+            }
+            $range[$key] = [static::parseJsExpr($value[0]), static::parseJsExpr($value[1])];
+        }
+        $this->pluginOptions['ranges'] = $range;
     }
 
     /**
@@ -338,11 +444,137 @@ HTML;
      */
     protected function renderInput()
     {
+        $append = $this->_startInput . $this->_endInput;
         if (!$this->hideInput) {
-            return $this->getInput('textInput');
+            return $this->getInput('textInput') . $append;
         }
+        $content = str_replace('{input}', $this->getInput('hiddenInput') . $append, $this->containerTemplate);
         $tag = ArrayHelper::remove($this->containerOptions, 'tag', 'div');
-        $content = str_replace('{input}', $this->getInput('hiddenInput'), $this->containerTemplate);
         return Html::tag($tag, $content, $this->containerOptions);
+    }
+
+    /**
+     * Gets input options based on type
+     *
+     * @param string $type whether `start` or `end`
+     *
+     * @return array|mixed
+     */
+    protected function getInputOpts($type = '')
+    {
+        $opts = $type . 'InputOptions';
+        return isset($this->$opts) && is_array($this->$opts) ? $this->$opts : [];
+    }
+
+    /**
+     * Sets input options for a specific type
+     *
+     * @param string $type whether `start` or `end`
+     * @param array  $options the options to set
+     */
+    protected function setInputOpts($type = '', $options = [])
+    {
+        $opts = $type . 'InputOptions';
+        if (property_exists($this, $opts)) {
+            $this->$opts = $options;
+        }
+    }
+
+    /**
+     * Gets the range attribute value based on type
+     *
+     * @param string $type whether `start` or `end`
+     *
+     * @return mixed|string
+     */
+    protected function getRangeAttr($type = '')
+    {
+        $attr = $type . 'Attribute';
+        return $type && isset($this->$attr) ? $this->$attr : '';
+    }
+
+    /**
+     * Generates and returns the client script on date range change, when the start and end attributes are set
+     *
+     * @param string $type whether `start` or `end`
+     *
+     * @return string
+     */
+    protected function getRangeJs($type = '')
+    {
+        $rangeAttr = $this->getRangeAttr($type);
+        if (empty($rangeAttr)) {
+            return '';
+        }
+        $options = $this->getInputOpts($type);
+        $input = "jQuery('#" . $this->options['id'] . "')";
+        return "var v={$input}.val() ? {$type}.format('{$this->_format}') : '';jQuery('#" . $options['id'] .
+            "').val(v).trigger('change');";
+    }
+
+    /**
+     * Generates and returns the hidden input markup when one of start or end attributes are set.
+     *
+     * @param string $type whether `start` or `end`
+     *
+     * @return string
+     */
+    protected function getRangeInput($type = '')
+    {
+        $attr = $this->getRangeAttr($type);
+        if (empty($attr)) {
+            return '';
+        }
+        $options = $this->getInputOpts($type);
+        if (empty($options['id'])) {
+            $options['id'] = $this->options['id'] . '-' . $type;
+        }
+        if ($this->hasModel()) {
+            $this->setInputOpts($type, $options);
+            return Html::activeHiddenInput($this->model, $attr, $options);
+        }
+        $options['type'] = 'hidden';
+        $options['name'] = $attr;
+        $this->setInputOpts($type, $options);
+        return Html::tag('input', '', $options);
+    }
+
+    /**
+     * Initializes the range values when one of start or end attributes are set.
+     *
+     * @param string $type whether `start` or `end`
+     * @param string $value the value to set
+     */
+    protected function initRangeValue($type = '', $value = '')
+    {
+        $attr = $this->getRangeAttr($type);
+        if (empty($attr) || empty($value)) {
+            return;
+        }
+        if ($this->hasModel()) {
+            $this->model->$attr = $value;
+        } else {
+            $options = $this->getInputOpts($type);
+            $options['value'] = $value;
+            $this->setInputOpts($type, $options);
+        }
+    }
+
+    /**
+     * Generates and returns the hidden input markup when one of start or end attributes are set.
+     *
+     * @param string $type whether `start` or `end`
+     *
+     * @return string
+     */
+    protected function getRangeValue($type = '')
+    {
+        $attr = $this->getRangeAttr($type);
+        if (empty($attr)) {
+            return '';
+        }
+        $options = $this->getInputOpts($type);
+        return $this->hasModel() ? Html::getAttributeValue($this->model, $attr) :
+            ArrayHelper::getValue($options, 'value', '');
     }
 }
