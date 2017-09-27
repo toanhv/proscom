@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2017
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2016
  * @package yii2-date-range
- * @version 1.6.8
+ * @version 1.6.7
  */
 
 namespace kartik\daterange;
@@ -19,13 +19,7 @@ use kartik\base\AssetBundle;
  */
 class LanguageAsset extends AssetBundle
 {
-    /**
-     * @inheritdoc
-     */
     public $jsOptions = ['position' => View::POS_HEAD];
-    /**
-     * @inheritdoc
-     */
     public $depends = ['\kartik\daterange\MomentAsset'];
 
     /**

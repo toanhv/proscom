@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2016
  * @package yii2-widgets
  * @subpackage yii2-widget-timepicker
- * @version 1.0.3
+ * @version 1.0.1
  */
 
 namespace kartik\time;
@@ -16,8 +16,7 @@ use kartik\base\InputWidget;
 /**
  * The TimePicker widget  allows you to easily select a time for a text input using your mouse or keyboards arrow keys.
  * Thus widget is a wrapper enhancement over the TimePicker JQuery plugin by rendom forked from the plugin by jdewit.
- * Additional enhancements have been done to this input widget and plugin by Krajee to fix various bugs, and also
- * provide compatibility with Bootstrap 3.
+ * Additional enhancements have been done to this input widget for compatibility with Bootstrap 3.
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
@@ -32,15 +31,15 @@ class TimePicker extends InputWidget
     public $size;
 
     /**
-     * @var string|boolean the addon content
+     * @var string/boolean the addon content
      */
     public $addon = '<i class="glyphicon glyphicon-time"></i>';
 
     /**
-     * @var array HTML attributes for the addon container. The following special options are recognized:
-     * - `asButton`: _boolean_, if the addon is to be displayed as a button.
-     * - `buttonOptions`: _array_, HTML attributes if the addon is to be displayed like a button. If [[asButton]] is
-     *   `true`, this will default to `['class' => 'btn btn-default']`.
+     * @var array HTML attributes for the addon container the following special options are identified
+     * - asButton: boolean if the addon is to be displayed as a button.
+     * - buttonOptions: array HTML attributes if the addon is to be displayed like a button. If [[asButton]] is true,
+     *     this will default to ['class' => 'btn btn-default']
      */
     public $addonOptions = [];
 
@@ -106,7 +105,7 @@ class TimePicker extends InputWidget
     }
 
     /**
-     * Registers the client assets for [[Timepicker]] widget
+     * Registers the needed assets
      */
     public function registerAssets()
     {

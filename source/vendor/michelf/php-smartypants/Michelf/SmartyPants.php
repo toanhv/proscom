@@ -21,7 +21,7 @@ class SmartyPants {
 
 	### Version ###
 
-	const  SMARTYPANTSLIB_VERSION  =  "1.8.1";
+	const  SMARTYPANTSLIB_VERSION  =  "1.7.1";
 
 
 	### Presets
@@ -78,23 +78,6 @@ class SmartyPants {
 	public $do_stupefy   = 0;
 	public $convert_quot = 0; # should we translate &quot; entities into normal quotes?
 
-	# Smart quote characters:
-	# Opening and closing smart double-quotes.
-	public $smart_doublequote_open  = '&#8220;';
-	public $smart_doublequote_close = '&#8221;';
-	public $smart_singlequote_open  = '&#8216;';
-	public $smart_singlequote_close = '&#8217;'; # Also apostrophe.
-
-	# ``Backtick quotes''
-	public $backtick_doublequote_open  = '&#8220;'; // replacement for ``
-	public $backtick_doublequote_close = '&#8221;'; // replacement for ''
-	public $backtick_singlequote_open  = '&#8216;'; // replacement for `
-	public $backtick_singlequote_close = '&#8217;'; // replacement for ' (also apostrophe)
-
-	# Other punctuation
-	public $em_dash = '&#8212;';
-	public $en_dash = '&#8211;';
-	public $ellipsis = '&#8230;';
 
 	### Parser Implementation ###
 
@@ -202,30 +185,6 @@ class SmartyPants {
 	}
 
 
-	function decodeEntitiesInConfiguration() {
-	#
-	#   Utility function that converts entities in configuration variables to
-	#   UTF-8 characters.
-	#
-		$output_config_vars = array(
-			'smart_doublequote_open',
-			'smart_doublequote_close',
-			'smart_singlequote_open',
-			'smart_singlequote_close',
-			'backtick_doublequote_open',
-			'backtick_doublequote_close',
-			'backtick_singlequote_open',
-			'backtick_singlequote_close',
-			'em_dash',
-			'en_dash',
-			'ellipsis',
-		);
-		foreach ($output_config_vars as $var) {
-			$this->$var = html_entity_decode($this->$var);
-		}
-	}
-
-
 	protected function educate($t, $prev_token_last_char) {
 		$t = $this->processEscapes($t);
 
@@ -251,19 +210,19 @@ class SmartyPants {
 			if ($t == "'") {
 				# Special case: single-character ' token
 				if (preg_match('/\S/', $prev_token_last_char)) {
-					$t = $this->smart_singlequote_close;
+					$t = "&#8217;";
 				}
 				else {
-					$t = $this->smart_singlequote_open;
+					$t = "&#8216;";
 				}
 			}
 			else if ($t == '"') {
 				# Special case: single-character " token
 				if (preg_match('/\S/', $prev_token_last_char)) {
-					$t = $this->smart_doublequote_close;
+					$t = "&#8221;";
 				}
 				else {
-					$t = $this->smart_doublequote_open;
+					$t = "&#8220;";
 				}
 			}
 			else {
@@ -287,11 +246,6 @@ class SmartyPants {
 	#   Example input:  "Isn't this fun?"
 	#   Example output: &#8220;Isn&#8217;t this fun?&#8221;
 	#
-		$dq_open  = $this->smart_doublequote_open;
-		$dq_close = $this->smart_doublequote_close;
-		$sq_open  = $this->smart_singlequote_open;
-		$sq_close = $this->smart_singlequote_close;
-	
 		# Make our own "punctuation" character class, because the POSIX-style
 		# [:PUNCT:] is only available in Perl 5.6 or later:
 		$punct_class = "[!\"#\\$\\%'()*+,-.\\/:;<=>?\\@\\[\\\\\]\\^_`{|}~]";
@@ -300,16 +254,17 @@ class SmartyPants {
 		# followed by punctuation at a non-word-break. Close the quotes by brute force:
 		$_ = preg_replace(
 			array("/^'(?=$punct_class\\B)/", "/^\"(?=$punct_class\\B)/"),
-			array($sq_close,                 $dq_close), $_);
+			array('&#8217;',                 '&#8221;'), $_);
+
 
 		# Special case for double sets of quotes, e.g.:
 		#   <p>He said, "'Quoted' words in a larger quote."</p>
 		$_ = preg_replace(
-			array("/\"'(?=\w)/",     "/'\"(?=\w)/"),
-			array($dq_open.$sq_open, $sq_open.$dq_open), $_);
+			array("/\"'(?=\w)/",    "/'\"(?=\w)/"),
+			array('&#8220;&#8216;', '&#8216;&#8220;'), $_);
 
 		# Special case for decade abbreviations (the '80s):
-		$_ = preg_replace("/'(?=\\d{2}s)/", $sq_close, $_);
+		$_ = preg_replace("/'(?=\\d{2}s)/", '&#8217;', $_);
 
 		$close_class = '[^\ \t\r\n\[\{\(\-]';
 		$dec_dashes = '&\#8211;|&\#8212;';
@@ -326,7 +281,7 @@ class SmartyPants {
 			)
 			'                   # the quote
 			(?=\\w)              # followed by a word character
-			}x", '\1'.$sq_open, $_);
+			}x", '\1&#8216;', $_);
 		# Single closing quotes:
 		$_ = preg_replace("{
 			($close_class)?
@@ -336,10 +291,10 @@ class SmartyPants {
 			)               # char or an 's' at a word ending position. This
 							# is a special case to handle something like:
 							# \"<i>Custer</i>'s Last Stand.\"
-			}xi", '\1'.$sq_close, $_);
+			}xi", '\1&#8217;', $_);
 
 		# Any remaining single quotes should be opening ones:
-		$_ = str_replace("'", $sq_open, $_);
+		$_ = str_replace("'", '&#8216;', $_);
 
 
 		# Get most opening double quotes:
@@ -354,7 +309,7 @@ class SmartyPants {
 			)
 			\"                   # the quote
 			(?=\\w)              # followed by a word character
-			}x", '\1'.$dq_open, $_);
+			}x", '\1&#8220;', $_);
 
 		# Double closing quotes:
 		$_ = preg_replace("{
@@ -362,10 +317,10 @@ class SmartyPants {
 			\"
 			(?(1)|(?=\\s))   # If $1 captured, then do nothing;
 							   # if not, then make sure the next char is whitespace.
-			}x", '\1'.$dq_close, $_);
+			}x", '\1&#8221;', $_);
 
 		# Any remaining quotes should be opening ones.
-		$_ = str_replace('"', $dq_open, $_);
+		$_ = str_replace('"', '&#8220;', $_);
 
 		return $_;
 	}
@@ -381,9 +336,8 @@ class SmartyPants {
 	#   Example output: &#8220;Isn't this fun?&#8221;
 	#
 
-		$_ = str_replace(array("``", "''",),
-						 array($this->backtick_doublequote_open,
-							   $this->backtick_doublequote_close), $_);
+		$_ = str_replace(array("``",       "''",),
+						 array('&#8220;', '&#8221;'), $_);
 		return $_;
 	}
 
@@ -399,8 +353,7 @@ class SmartyPants {
 	#
 
 		$_ = str_replace(array("`",       "'",),
-						 array($this->backtick_singlequote_open,
-							   $this->backtick_singlequote_close), $_);
+						 array('&#8216;', '&#8217;'), $_);
 		return $_;
 	}
 
@@ -413,7 +366,7 @@ class SmartyPants {
 	#               an em-dash HTML entity.
 	#
 
-		$_ = str_replace('--', $this->em_dash, $_);
+		$_ = str_replace('--', '&#8212;', $_);
 		return $_;
 	}
 
@@ -427,9 +380,9 @@ class SmartyPants {
 	#               an em-dash HTML entity.
 	#
 
-		#                      em              en
-		$_ = str_replace(array("---",          "--",),
-						 array($this->em_dash, $this->en_dash), $_);
+		#                      em         en
+		$_ = str_replace(array("---",     "--",),
+						 array('&#8212;', '&#8211;'), $_);
 		return $_;
 	}
 
@@ -450,9 +403,9 @@ class SmartyPants {
 	#               Swartz for the idea.)
 	#
 
-		#                      en              em
-		$_ = str_replace(array("---",          "--",),
-						 array($this->en_dash, $this->em_dash), $_);
+		#                      en         em
+		$_ = str_replace(array("---",     "--",),
+						 array('&#8211;', '&#8212;'), $_);
 		return $_;
 	}
 
@@ -468,7 +421,7 @@ class SmartyPants {
 	#   Example output: Huh&#8230;?
 	#
 
-		$_ = str_replace(array("...",     ". . .",), $this->ellipsis, $_);
+		$_ = str_replace(array("...",     ". . .",), '&#8230;', $_);
 		return $_;
 	}
 

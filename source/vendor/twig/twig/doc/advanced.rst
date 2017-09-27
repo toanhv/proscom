@@ -464,7 +464,7 @@ from the token stream (``$this->parser->getStream()``):
   type/value a syntax error is thrown. Otherwise, if the type and value are correct,
   the token is returned and the stream moves to the next token.
 
-* ``look()``: Looks at the next token without consuming it.
+* ``look()``: Looks a the next token without consuming it.
 
 Parsing expressions is done by calling the ``parseExpression()`` like we did for
 the ``set`` tag.
@@ -554,6 +554,8 @@ An extension is a class that implements the following interface::
          *
          * This is where you can load some file that contains filter functions for instance.
          *
+         * @param Twig_Environment $environment The current Twig_Environment instance
+         *
          * @deprecated since 1.23 (to be removed in 2.0), implement Twig_Extension_InitRuntimeInterface instead
          */
         function initRuntime(Twig_Environment $environment);
@@ -561,42 +563,42 @@ An extension is a class that implements the following interface::
         /**
          * Returns the token parser instances to add to the existing list.
          *
-         * @return (Twig_TokenParserInterface|Twig_TokenParserBrokerInterface)[]
+         * @return array An array of Twig_TokenParserInterface or Twig_TokenParserBrokerInterface instances
          */
         function getTokenParsers();
 
         /**
          * Returns the node visitor instances to add to the existing list.
          *
-         * @return Twig_NodeVisitorInterface[]
+         * @return array An array of Twig_NodeVisitorInterface instances
          */
         function getNodeVisitors();
 
         /**
          * Returns a list of filters to add to the existing list.
          *
-         * @return Twig_SimpleFilter[]
+         * @return array An array of filters
          */
         function getFilters();
 
         /**
          * Returns a list of tests to add to the existing list.
          *
-         * @return Twig_SimpleTest[]
+         * @return array An array of tests
          */
         function getTests();
 
         /**
          * Returns a list of functions to add to the existing list.
          *
-         * @return Twig_SimpleFunction[]
+         * @return array An array of functions
          */
         function getFunctions();
 
         /**
          * Returns a list of operators to add to the existing list.
          *
-         * @return array<array> First array of unary operators, second array of binary operators
+         * @return array An array of operators
          */
         function getOperators();
 
@@ -830,15 +832,10 @@ instance on the environment that knows how to instantiate such runtime classes
 
     $twig->addRuntimeLoader(new RuntimeLoader());
 
-.. note::
-
-    As of Twig 1.32, Twig comes with a PSR-11 compatible runtime loader
-    (``Twig_ContainerRuntimeLoader``) that works on PHP 5.3+.
-
 It is now possible to move the runtime logic to a new
 ``Project_Twig_RuntimeExtension`` class and use it directly in the extension::
 
-    class Project_Twig_RuntimeExtension
+    class Project_Twig_RuntimeExtension extends Twig_Extension
     {
         private $rot13Provider;
 

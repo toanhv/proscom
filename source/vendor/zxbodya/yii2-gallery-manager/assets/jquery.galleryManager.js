@@ -304,7 +304,6 @@
       $('.afile', $gallery).attr('multiple', 'true').on('change', function (e) {
         e.preventDefault();
         multiUpload(this.files);
-        $(this).val(null);
       });
     } else {
       $('.afile', $gallery).on('change', function (e) {

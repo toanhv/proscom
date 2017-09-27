@@ -1,12 +1,6 @@
 Codeception Extension for Yii 2
 ===============================
 
-## This package is deprecated
-
-This package is deprecated. All the features were intergrated into Codeception Yii2 module. Refer to [official documentation](http://codeception.com/for/yii).
-
----
-
 This extension provides [Codeception](http://codeception.com/) integration for the [Yii framework 2.0](http://www.yiiframework.com).
 
 It provides classes that help with testing with codeception:
@@ -15,8 +9,6 @@ It provides classes that help with testing with codeception:
 - a base class for codeception page-objects: `yii\codeception\BasePage`.
 
 For license information check the [LICENSE](LICENSE.md)-file.
-
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-codeception/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-codeception)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-codeception/downloads.png)](https://packagist.org/packages/yiisoft/yii2-codeception)

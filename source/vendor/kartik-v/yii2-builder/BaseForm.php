@@ -3,8 +3,8 @@
 /**
  * @package   yii2-builder
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
- * @version   1.6.3
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
+ * @version   1.6.2
  */
 
 namespace kartik\builder;
@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\InputWidget;
 
 /**
- * BaseForm is the base class for all builder widgets.
+ * Base form widget
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
@@ -28,81 +28,25 @@ class BaseForm extends Widget
 {
     use FormTrait;
 
-    /**
-     * Static input (styled using bootstrap style)
-     */
+    // form inputs
     const INPUT_STATIC = 'staticInput';
-    /**
-     * Hidden input
-     */
     const INPUT_HIDDEN = 'hiddenInput';
-    /**
-     * Hidden static input
-     */
     const INPUT_HIDDEN_STATIC = 'hiddenStaticInput';
-    /**
-     * Text input
-     */
     const INPUT_TEXT = 'textInput';
-    /**
-     * Text area
-     */
     const INPUT_TEXTAREA = 'textarea';
-    /**
-     * Password input
-     */
     const INPUT_PASSWORD = 'passwordInput';
-    /**
-     * Dropdown list allowing single select
-     */
     const INPUT_DROPDOWN_LIST = 'dropdownList';
-    /**
-     * List box allowing multiple select
-     */
     const INPUT_LIST_BOX = 'listBox';
-    /**
-     * Checkbox input
-     */
     const INPUT_CHECKBOX = 'checkbox';
-    /**
-     * Radio input
-     */
     const INPUT_RADIO = 'radio';
-    /**
-     * Checkbox inputs as a list allowing multiple selection
-     */
     const INPUT_CHECKBOX_LIST = 'checkboxList';
-    /**
-     * Radio inputs as a list
-     */
     const INPUT_RADIO_LIST = 'radioList';
-    /**
-     * Bootstrap styled checkbox button group
-     */
     const INPUT_CHECKBOX_BUTTON_GROUP = 'checkboxButtonGroup';
-    /**
-     * Bootstrap styled radio button group
-     */
     const INPUT_RADIO_BUTTON_GROUP = 'radioButtonGroup';
-    /**
-     * Krajee styled multiselect input that allows formatted checkbox list and radio list
-     */
     const INPUT_MULTISELECT = 'multiselect';
-    /**
-     * File input
-     */
     const INPUT_FILE = 'fileInput';
-    /**
-     * Other HTML5 input (e.g. color, range, email etc.)
-     */
     const INPUT_HTML5 = 'input';
-    /**
-     * Input widget
-     */
     const INPUT_WIDGET = 'widget';
-    /**
-     * Raw HTML markup
-     */
     const INPUT_RAW = 'raw'; // any free text or html markup
 
     /**
@@ -127,7 +71,7 @@ class BaseForm extends Widget
         self::INPUT_FILE,
         self::INPUT_HTML5,
         self::INPUT_WIDGET,
-        self::INPUT_RAW,
+        self::INPUT_RAW
     ];
 
     /**
@@ -139,7 +83,7 @@ class BaseForm extends Widget
         self::INPUT_TEXTAREA => true,
         self::INPUT_FILE => true,
         self::INPUT_HIDDEN => true,
-        self::INPUT_STATIC => true,
+        self::INPUT_STATIC => true
     ];
 
     /**
@@ -152,24 +96,25 @@ class BaseForm extends Widget
         self::INPUT_RADIO_LIST => true,
         self::INPUT_CHECKBOX_BUTTON_GROUP => true,
         self::INPUT_RADIO_BUTTON_GROUP => true,
-        self::INPUT_MULTISELECT => true,
+        self::INPUT_MULTISELECT => true
     ];
 
     /**
-     * @var ActiveForm the form instance.
+     * @var ActiveForm the form instance
      */
     public $form;
 
     /**
-     * @var string the form name to be provided if not using with model and ActiveForm.
+     * @var string the form name to be provided if not using with model
+     * and ActiveForm
      */
     public $formName;
 
     /**
      * @var array the attribute settings. This is an associative array, which needs to be setup as
      * `$attribute_name => $attribute_settings`, where:
-     * - `attribute_name`: _string_, the name of the attribute
-     * - `attribute_settings`: _array_, the settings for the attribute, where you can set the following:
+     * - `attribute_name`: string, the name of the attribute
+     * - `attribute_settings`: array, the settings for the attribute, where you can set the following:
      *    - 'type': string, the input type for the attribute. Should be one of the INPUT_ constants. Defaults to
      *     `INPUT_TEXT`.
      *    - 'visible': boolean, whether the attribute is visible. One can use this property to control visibility of
@@ -184,16 +129,16 @@ class BaseForm extends Widget
      *     dataProvider, and $widget is the current widget instance.`
      *    - 'staticValue': string|Closure, the value to be displayed for INPUT_STATIC. If not set, the value will be
      *     automatically generated from the `value` setting above OR from the value of the model attribute. If this is
-     *     setup as a [[Closure]], your anonymous function call should be of the type:
-     *     `function ($model, $key, $index, $widget) { }, where `$model` is the current model, `$key` is the key
-     *     associated with the data model, `$index` is the zero based index of the dataProvider, and `$widget` is the
+     *     a Closure, your anonymous function call should be of the type:
+     *      `function ($model, $key, $index, $widget) { }, where $model is the current model, $key is the key
+     *     associated with the data model $index is the zero based index of the dataProvider, and $widget is the
      *     current widget instance.`
      *    - 'format': string|array, applicable only for `INPUT_STATIC` type (and only in tabular forms). This controls
      *     which format should the value of each data model be displayed as (e.g. `"raw"`, `"text"`, `"html"`,
      *     `['date', 'php:Y-m-d']`). Supported formats are determined by [Yii::$app->formatter]. Default format is
      *     "raw".
      *    - 'hiddenStaticOptions': array, HTML attributes for the static control container and applicable only for
-     *     [[INPUT_HIDDEN_STATIC]] type.
+     *     `INPUT_HIDDEN_STATIC` type.
      *    - 'label': string, (optional) the custom attribute label. If this is not set, the model attribute label
      *      will be automatically used. If you set it to false, the `label` will be entirely hidden.
      *    - 'labelSpan': int, the grid span width of the label container, which is especially useful for horizontal
@@ -227,17 +172,29 @@ class BaseForm extends Widget
     public $attributes = [];
 
     /**
-     * @var array the default settings that will be applied for all attributes. The array will be configured similar to
-     * a single attribute setting value in the `$attributes` array. One will typically default markup and styling like
-     * `type`, `container`, `prepend`, `append` etc. The settings at the `$attributes` level will override these default
-     * settings.
+     * @var array the default settings that will be applied for all attributes. The array will be
+     * configured similar to a single attribute setting value in the `$attributes` array. One will typically
+     * default markup and styling like `type`, `container`, `prepend`, `append` etc. The settings
+     * at the `$attributes` level will override these default settings.
      */
     public $attributeDefaults = [];
 
     /**
-     * @var boolean whether all inputs in the form are to be static only
+     * @var bool whether all inputs in the form are to be static only
      */
     public $staticOnly = false;
+
+    /**
+     * Initializes the widget
+     *
+     * @throws InvalidConfigException
+     */
+    public function init()
+    {
+        parent::init();
+        static::prepareAttributes($this->attributes);
+        $this->checkBaseConfig();
+    }
 
     /**
      * Prepares attributes based on visibility setting
@@ -259,12 +216,12 @@ class BaseForm extends Widget
      * Renders active input based on the attribute settings. This includes additional markup like rendering content
      * before and after input, and wrapping input in a container if set.
      *
-     * @param ActiveForm $form the form instance.
-     * @param Model      $model the data model.
-     * @param string     $attribute the name of the attribute.
-     * @param array      $settings the attribute settings.
+     * @param ActiveForm $form the form instance
+     * @param Model      $model
+     * @param string     $attribute the name of the attribute
+     * @param array      $settings the attribute settings
      *
-     * @return string
+     * @return ActiveField
      * @throws InvalidConfigException
      *
      */
@@ -279,13 +236,14 @@ class BaseForm extends Widget
     }
 
     /**
-     * Renders normal form input based on the attribute settings. This includes additional markup like rendering content
-     * before and after input, and wrapping input in a container if set.
+     * Renders normal form input based on the attribute settings.
+     * This includes additional markup like rendering content before
+     * and after input, and wrapping input in a container if set.
      *
-     * @param string $attribute the name of the attribute.
-     * @param array  $settings the attribute settings.
+     * @param string $attribute the name of the attribute
+     * @param array  $settings the attribute settings
      *
-     * @return string the form input markup.
+     * @return string the form input markup
      * @throws InvalidConfigException
      */
     protected static function renderInput($attribute, $settings = [])
@@ -308,14 +266,14 @@ class BaseForm extends Widget
     }
 
     /**
-     * Renders raw active input based on the attribute settings.
+     * Renders raw active input based on the attribute settings
      *
-     * @param ActiveForm $form the form instance.
-     * @param Model      $model the data model.
-     * @param string     $attribute the name of the attribute.
-     * @param array      $settings the attribute settings.
+     * @param ActiveForm $form the form instance
+     * @param Model      $model
+     * @param string     $attribute the name of the attribute
+     * @param array      $settings the attribute settings
      *
-     * @return string the generated active input.
+     * @return ActiveField
      * @throws InvalidConfigException
      *
      */
@@ -325,9 +283,7 @@ class BaseForm extends Widget
         $i = strpos($attribute, ']');
         $attribName = $i > 0 ? substr($attribute, $i + 1) : $attribute;
         if (!in_array($type, static::$_validInputs)) {
-            throw new InvalidConfigException(
-                "Invalid input type '{$type}' configured for the attribute '{$attribName}'.'"
-            );
+            throw new InvalidConfigException("Invalid input type '{$type}' configured for the attribute '{$attribName}'.'");
         }
         $fieldConfig = ArrayHelper::getValue($settings, 'fieldConfig', []);
         $options = ArrayHelper::getValue($settings, 'options', []);
@@ -343,13 +299,11 @@ class BaseForm extends Widget
         if ($type === self::INPUT_HIDDEN_STATIC) {
             $staticOptions = ArrayHelper::getValue($settings, 'hiddenStaticOptions', []);
             return static::getInput($field->staticInput($staticOptions), $label, $hint) .
-                static::getInput($field->hiddenInput($options));
+            static::getInput($field->hiddenInput($options));
         }
         if (isset(static::$_dropdownInputs[$type])) {
             if (!isset($settings['items'])) {
-                throw new InvalidConfigException(
-                    "You must setup the 'items' array for attribute '{$attribName}' since it is a '{$type}'."
-                );
+                throw new InvalidConfigException("You must setup the 'items' array for attribute '{$attribName}' since it is a '{$type}'.");
             }
             return static::getInput($field->$type($settings['items'], $options), $label, $hint);
         }
@@ -367,9 +321,7 @@ class BaseForm extends Widget
         if ($type === self::INPUT_WIDGET) {
             $widgetClass = ArrayHelper::getValue($settings, 'widgetClass', []);
             if (empty($widgetClass) && !$widgetClass instanceof InputWidget) {
-                throw new InvalidConfigException(
-                    "A valid 'widgetClass' for '{$attribute}' must be setup and extend from 'yii\\widgets\\InputWidget'."
-                );
+                throw new InvalidConfigException("A valid 'widgetClass' for '{$attribute}' must be setup and extend from 'yii\\widgets\\InputWidget'.");
             }
             return static::getInput($field->$type($widgetClass, $options), $label, $hint);
         }
@@ -380,14 +332,14 @@ class BaseForm extends Widget
     }
 
     /**
-     * Renders raw form input based on the attribute settings.
+     * Renders raw form input based on the attribute settings
      *
-     * @param string $attribute the name of the attribute.
-     * @param string $id the input identifier.
-     * @param array  $settings the attribute settings.
+     * @param string $attribute the name of the attribute
+     * @param string $id the input identifier
+     * @param array  $settings the attribute settings
      *
-     * @return string the form input markup.
-     * @throws InvalidConfigException
+     * @return string the form input markup
+     * @throws \yii\base\InvalidConfigException
      */
     protected static function renderRawInput($attribute, &$id, $settings = [])
     {
@@ -395,9 +347,7 @@ class BaseForm extends Widget
         $i = strpos($attribute, ']');
         $attribName = $i > 0 ? substr($attribute, $i + 1) : $attribute;
         if (!in_array($type, static::$_validInputs)) {
-            throw new InvalidConfigException(
-                "Invalid input type '{$type}' configured for the attribute '{$attribName}'.'"
-            );
+            throw new InvalidConfigException("Invalid input type '{$type}' configured for the attribute '{$attribName}'.'");
         }
         $value = ArrayHelper::getValue($settings, 'value', null);
         $options = ArrayHelper::getValue($settings, 'options', []);
@@ -430,9 +380,7 @@ class BaseForm extends Widget
         }
         if (isset(static::$_dropdownInputs[$type])) {
             if (!isset($settings['items'])) {
-                throw new InvalidConfigException(
-                    "You must setup the 'items' array for attribute '{$attribName}' since it is a '{$type}'."
-                );
+                throw new InvalidConfigException("You must setup the 'items' array for attribute '{$attribName}' since it is a '{$type}'.");
             }
             $items = ArrayHelper::getValue($settings, 'items', []);
             return Html::$type($attribute, $value, $items, $options);
@@ -450,9 +398,7 @@ class BaseForm extends Widget
         if ($type === self::INPUT_WIDGET) {
             $widgetClass = ArrayHelper::getValue($settings, 'widgetClass', []);
             if (empty($widgetClass) && !$widgetClass instanceof InputWidget) {
-                throw new InvalidConfigException(
-                    "A valid 'widgetClass' for '{$attribute}' must be setup and extend from 'yii\\widgets\\InputWidget'."
-                );
+                throw new InvalidConfigException("A valid 'widgetClass' for '{$attribute}' must be setup and extend from 'yii\\widgets\\InputWidget'.");
             }
             $options['name'] = $attribute;
             $options['value'] = $value;
@@ -465,9 +411,9 @@ class BaseForm extends Widget
     }
 
     /**
-     * Generates the active field input by parsing the label and hint.
+     * Generates the active field input by parsing the label and hint
      *
-     * @param ActiveField $field the active field instance.
+     * @param ActiveField $field
      * @param string      $label the label for the field
      * @param string      $hint the hint for the field
      *
@@ -482,16 +428,5 @@ class BaseForm extends Widget
             $field = $field->hint($hint);
         }
         return $field;
-    }
-
-    /**
-     * @inheritdoc
-     * @throws InvalidConfigException
-     */
-    public function init()
-    {
-        parent::init();
-        static::prepareAttributes($this->attributes);
-        $this->checkBaseConfig();
     }
 }

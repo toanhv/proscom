@@ -33,8 +33,6 @@ use yii\base\InvalidConfigException;
  * ]
  * ```
  *
- * For more details and usage information on View, see the [guide article on views](guide:structure-views).
- *
  * @property \yii\web\AssetManager $assetManager The asset manager. Defaults to the "assetManager" application
  * component.
  *
@@ -103,32 +101,32 @@ class View extends \yii\base\View
      * @var array the registered meta tags.
      * @see registerMetaTag()
      */
-    public $metaTags = [];
+    public $metaTags;
     /**
      * @var array the registered link tags.
      * @see registerLinkTag()
      */
-    public $linkTags = [];
+    public $linkTags;
     /**
      * @var array the registered CSS code blocks.
      * @see registerCss()
      */
-    public $css = [];
+    public $css;
     /**
      * @var array the registered CSS files.
      * @see registerCssFile()
      */
-    public $cssFiles = [];
+    public $cssFiles;
     /**
      * @var array the registered JS code blocks
      * @see registerJs()
      */
-    public $js = [];
+    public $js;
     /**
      * @var array the registered JS files.
      * @see registerJsFile()
      */
-    public $jsFiles = [];
+    public $jsFiles;
 
     private $_assetManager;
 
@@ -165,7 +163,7 @@ class View extends \yii\base\View
 
     /**
      * Marks the ending of an HTML page.
-     * @param bool $ajaxMode whether the view is rendering in AJAX mode.
+     * @param boolean $ajaxMode whether the view is rendering in AJAX mode.
      * If true, the JS scripts registered at [[POS_READY]] and [[POS_LOAD]] positions
      * will be rendered at the end of the view like normal scripts.
      */
@@ -239,12 +237,12 @@ class View extends \yii\base\View
      */
     public function clear()
     {
-        $this->metaTags = [];
-        $this->linkTags = [];
-        $this->css = [];
-        $this->cssFiles = [];
-        $this->js = [];
-        $this->jsFiles = [];
+        $this->metaTags = null;
+        $this->linkTags = null;
+        $this->css = null;
+        $this->cssFiles = null;
+        $this->js = null;
+        $this->jsFiles = null;
         $this->assetBundles = [];
     }
 
@@ -272,7 +270,7 @@ class View extends \yii\base\View
      * Registers the named asset bundle.
      * All dependent asset bundles will be registered.
      * @param string $name the class name of the asset bundle (without the leading backslash)
-     * @param int|null $position if set, this forces a minimum position for javascript files.
+     * @param integer|null $position if set, this forces a minimum position for javascript files.
      * This will adjust depending assets javascript file position or fail if requirement can not be met.
      * If this is null, asset bundles position settings will not be changed.
      * See [[registerJsFile]] for more details on javascript position.
@@ -420,7 +418,7 @@ class View extends \yii\base\View
     /**
      * Registers a JS code block.
      * @param string $js the JS code block to be registered
-     * @param int $position the position at which the JS script tag should be inserted
+     * @param integer $position the position at which the JS script tag should be inserted
      * in a page. The possible values are:
      *
      * - [[POS_HEAD]]: in the head section
@@ -537,7 +535,7 @@ class View extends \yii\base\View
     /**
      * Renders the content to be inserted at the end of the body section.
      * The content is rendered using the registered JS code blocks and files.
-     * @param bool $ajaxMode whether the view is rendering in AJAX mode.
+     * @param boolean $ajaxMode whether the view is rendering in AJAX mode.
      * If true, the JS scripts registered at [[POS_READY]] and [[POS_LOAD]] positions
      * will be rendered at the end of the view like normal scripts.
      * @return string the rendered content

@@ -1,8 +1,8 @@
 /*!
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015
  * @package yii2-widgets
  * @subpackage yii2-widget-datepicker
- * @version 1.4.3
+ * @version 1.4.2
  *
  * Extension to bootstrap datepicker to use noconflict approach
  * so that the plugin does not conflict with other jquery plugins
@@ -10,6 +10,7 @@
  *
  * Built for Yii Framework 2.0
  * Author: Kartik Visweswaran
+ * Year: 2015
  * For more Yii related demos visit http://demos.krajee.com
  */
 var initDPRemove = function () {

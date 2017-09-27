@@ -3,22 +3,21 @@
 /**
  * @package   yii2-datecontrol
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
- * @version   1.9.6
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
+ * @version   1.9.4
  */
 
 namespace kartik\datecontrol;
 
 use Yii;
-use kartik\base\AssetBundle;
 
 /**
- * Asset bundle for the [Krajee PHP Date Formatter](http://plugins.krajee.com/php-date-formatter) extension.
+ * Asset bundle for PHP Date Formatter
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
  */
-class DateFormatterAsset extends AssetBundle
+class DateFormatterAsset extends \kartik\base\AssetBundle
 {
     /**
      * @inheritdoc

@@ -131,6 +131,9 @@ class Twig_Tests_ParserTest extends PHPUnit_Framework_TestCase
         $this->assertNull($parser->getParent());
     }
 
+    // The getVarName() must not depend on the template loaders,
+    // If this test does not throw any exception, that's good.
+    // see https://github.com/symfony/symfony/issues/4218
     public function testGetVarName()
     {
         $twig = new Twig_Environment($this->getMockBuilder('Twig_LoaderInterface')->getMock(), array(
@@ -146,18 +149,14 @@ class Twig_Tests_ParserTest extends PHPUnit_Framework_TestCase
 {% endmacro %}
 EOF
         , 'index')));
-
-        // The getVarName() must not depend on the template loaders,
-        // If this test does not throw any exception, that's good.
-        // see https://github.com/symfony/symfony/issues/4218
-        $this->addToAssertionCount(1);
     }
 
     protected function getParser()
     {
         $parser = new TestParser(new Twig_Environment($this->getMockBuilder('Twig_LoaderInterface')->getMock()));
         $parser->setParent(new Twig_Node());
-        $parser->stream = new Twig_TokenStream(array());
+        $parser->stream = $this->getMockBuilder('Twig_TokenStream')->disableOriginalConstructor()->getMock();
+        $parser->stream->expects($this->any())->method('getSourceContext')->will($this->returnValue(new Twig_Source('', '')));
 
         return $parser;
     }

@@ -32,9 +32,9 @@ class ViewRenderer extends BaseViewRenderer
      */
     public $options = [];
     /**
-     * @var array Global variables.
-     * Keys of the array are names to call in template, values are scalar or objects or names of static classes.
-     * Example: `['html' => '\yii\helpers\Html', 'debug' => YII_DEBUG]`.
+     * @var array Objects or static classes.
+     * Keys of the array are names to call in template, values are objects or names of static classes.
+     * Example: `['html' => '\yii\helpers\Html']`.
      * In the template you can use it like this: `{{ html.a('Login', 'site/login') | raw }}`.
      */
     public $globals = [];
@@ -268,8 +268,8 @@ class ViewRenderer extends BaseViewRenderer
     public function addGlobals($globals)
     {
         foreach ($globals as $name => $value) {
-            if (is_array($value) && isset($value['class'])) {
-                $value = new ViewRendererStaticClassProxy($value['class']);
+            if (!is_object($value)) {
+                $value = new ViewRendererStaticClassProxy($value);
             }
             $this->twig->addGlobal($name, $value);
         }
@@ -300,7 +300,7 @@ class ViewRenderer extends BaseViewRenderer
     public function addExtensions($extensions)
     {
         foreach ($extensions as $extName) {
-            $this->twig->addExtension(is_object($extName) ? $extName : Yii::createObject($extName));
+            $this->twig->addExtension(is_object($extName) ? $extName : new $extName());
         }
     }
 

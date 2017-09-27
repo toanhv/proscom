@@ -1,7 +1,7 @@
 PHP SmartyPants
 ===============
 
-PHP SmartyPants Lib 1.8.1 - 12 Dec 2016
+PHP SmartyPants Lib 1.7.1 - 16 Oct 2016
 
 by Michel Fortin  
 <https://michelf.ca/>
@@ -108,19 +108,19 @@ files prior use instead.)
 With class autoloading in place, putting the 'Michelf' folder in your 
 include path should be enough for this to work:
 
-	use Michelf\SmartyPants;
+	use \Michelf\SmartyPants;
 	$html_output = SmartyPants::defaultTransform($html_input);
 
 SmartyPants Typographer is also available the same way:
 
-	use Michelf\SmartyPantsTypographer;
+	use \Michelf\SmartyPantsTypographer;
 	$html_output = SmartyPantsTypographer::defaultTransform($html_input);
 
 If you are using PHP SmartyPants with another text filter function that 
 generates HTML such as Markdown, you should filter the text *after* the 
 the HTML-generating filter. This is an example with [PHP Markdown][pmd]:
 
-	use Michelf\Markdown, Michelf\SmartyPants;
+	use \Michelf\Markdown, \Michelf\SmartyPants;
 	$my_html = Markdown::defaultTransform($my_text);
 	$my_html = SmartyPants::defaultTransform($my_html);
 
@@ -134,11 +134,11 @@ To learn more about configuration options, see the full list of
 ### Usage Without an Autoloader ###
 
 If you cannot use class autoloading, you can still use include or require to 
-access the parser. To load the Michelf\SmartyPants parser, do it this way:
+access the parser. To load the \Michelf\SmartyPants parser, do it this way:
 
 	require_once 'Michelf/SmartyPants.inc.php';
 	
-Or, if you need the Michelf\SmartyPantsTypographer parser:
+Or, if you need the \Michelf\SmartyPantsTypographer parser:
 
 	require_once 'Michelf/SmartyPantsTypographer.inc.php';
 
@@ -177,32 +177,6 @@ example text to illustrate.
 
 Version History
 ---------------
-
-PHP SmartyPants Lib 1.8.1 (12 Dec 2016)
-
-*	Fixed an issue introduced in 1.8.0 where backtick quotes were broken.
-
-
-PHP SmartyPants Lib 1.8.0 (13 Nov 2016)
-
-*	Can now set replacement characters for all transformations using 
-	configuration variables, including ellipses and dashes.
-
-*	Relocated replacement quotes configuration variables from
-	`SmartyPantsTyppographer` to `SmartyPants`. Also relocated
-	`decodeEntitiesInConfiguration()` to follow the configuration variables.
-
-*	Added conversion of apostrophe and double quote to Hebrew Geresh 
-	and Gershayim when the apostrophe or double quote is surrounded on
-	both sides by a Hebrew character. For instance:
-
-		input:  צה"ל / צ'ארלס
-		output: צה״ל / צ׳ארלס
-
-	You can still put quotes around Hebrew words and they'll become curled 
-	quotation marks (if that is enabled). This new transform only applies 
-	in the middle of a word, and only to words in Hebrew.
-
 
 PHP SmartyPants Lib 1.7.1 (16 Oct 2016)
 

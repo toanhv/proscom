@@ -1,23 +1,6 @@
 Change Log: `yii2-export`
 =========================
 
-## version 1.2.6
-
-**Date:** 05-Aug-2016
-
-- (enh #135): Add Indonesian translations.
-- (enh #137): Add Estonian translations.
-- (enh #138): Add dynagrid selection support.
-- (enh #141): Add grouping option in export column.
-- (enh #149): Add Turkish translations.
-- (enh #150): Created beforeContent and afterContent settings.
-- (bug #151): Correct "undefined offset" when `batchSize` is set.
-- (bug #155): Fix '0' value being wrongly parsed in empty check.
-- (enh #156): Add Lithuanian translations.
-- (enh #159): Fix export to exel columns with comma in headers.
-- Add contribution templates.
-- (enh #161): Implement Krajee Dialog to display confirmation alerts.
-
 ## version 1.2.5
 
 **Date:** 18-Apr-2016

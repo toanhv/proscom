@@ -107,7 +107,7 @@
          *     function (event)
          * where
          *  - event: an Event object.
-         */
+         */        
         afterInit: 'afterInit'
     };
 
@@ -132,9 +132,7 @@
         // the URL for performing AJAX-based validation. If not set, it will use the the form's action
         validationUrl: undefined,
         // whether to scroll to first visible error after validation.
-        scrollToError: true,
-        // offset in pixels that should be added when scrolling to the first error.
-        scrollToErrorOffset: 0
+        scrollToError: true
     };
 
     // NOTE: If you change any of these defaults, make sure you update yii\widgets\ActiveField::getClientOptions() as well
@@ -168,9 +166,7 @@
         // whether the validation is cancelled by beforeValidateAttribute event handler
         cancelled: false,
         // the value of the input
-        value: undefined,
-        // whether to update aria-invalid attribute after validation
-        updateAriaInvalid: true
+        value: undefined
     };
 
 
@@ -306,9 +302,9 @@
                 needAjaxValidation = false,
                 messages = {},
                 deferreds = deferredArray(),
-                submitting = data.submitting && !forceValidate;
+                submitting = data.submitting;
 
-            if (data.submitting) {
+            if (submitting) {
                 var event = $.Event(events.beforeValidate);
                 $form.trigger(event, [messages, deferreds]);
 
@@ -632,12 +628,7 @@
                 if (data.settings.scrollToError) {
                     var top = $form.find($.map(errorAttributes, function(attribute) {
                         return attribute.input;
-                    }).join(',')).first().closest(':visible').offset().top - data.settings.scrollToErrorOffset;
-                    if (top < 0) {
-                        top = 0;
-                    } else if (top > $(document).height()) {
-                        top = $(document).height();
-                    }
+                    }).join(',')).first().closest(':visible').offset().top;
                     var wtop = $(window).scrollTop();
                     if (top < wtop || top > wtop + $(window).height()) {
                         $(window).scrollTop(top);
@@ -647,11 +638,9 @@
             } else {
                 data.validated = true;
                 if (data.submitObject) {
-                    applyButtonOptions($form, data.submitObject);
-                }
-                $form.submit();
-                if (data.submitObject) {
-                    restoreButtonOptions($form);
+                    data.submitObject.trigger("click");
+                } else {
+                    $form.submit();
                 }
             }
         } else {
@@ -709,7 +698,6 @@
             hasError = messages[attribute.id].length > 0;
             var $container = $form.find(attribute.container);
             var $error = $container.find(attribute.error);
-            updateAriaInvalid($form, attribute, hasError);
             if (hasError) {
                 if (attribute.encodeError) {
                     $error.text(messages[attribute.id][0]);
@@ -778,9 +766,4 @@
         }
     };
 
-    var updateAriaInvalid = function ($form, attribute, hasError) {
-        if (attribute.updateAriaInvalid) {
-            $form.find(attribute.input).attr('aria-invalid', hasError ? 'true' : 'false');
-        }
-    }
 })(window.jQuery);

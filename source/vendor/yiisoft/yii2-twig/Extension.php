@@ -114,7 +114,7 @@ class Extension extends \Twig_Extension
      *
      * @param array $context context information
      * @param string $bundle asset bundle class fully qualified name
-     * @param bool $return indicates if AssetBundle should be returned
+     * @param boolean $return indicates if AssetBundle should be returned
      *
      * @return void|AssetBundle
      * @since 2.0.4
@@ -279,12 +279,9 @@ class Extension extends \Twig_Extension
      */
     public function path($path, $args = [])
     {
-        if (is_array($path)) {
-            $path = array_merge($path, $args);
-        } elseif ($args !== []) {
+        if ($args !== []) {
             $path = array_merge([$path], $args);
         }
-
         return Url::to($path);
     }
 
@@ -297,12 +294,9 @@ class Extension extends \Twig_Extension
      */
     public function url($path, $args = [])
     {
-        if (is_array($path)) {
-            $path = array_merge($path, $args);
-        } elseif ($args !== []) {
+        if ($args !== []) {
             $path = array_merge([$path], $args);
         }
-
         return Url::to($path, true);
     }
 

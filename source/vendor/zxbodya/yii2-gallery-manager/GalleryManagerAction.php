@@ -106,7 +106,7 @@ class GalleryManagerAction extends Action
     public function actionAjaxUpload()
     {
 
-        $imageFile = UploadedFile::getInstanceByName('gallery-image');
+        $imageFile = UploadedFile::getInstanceByName('image');
 
         $fileName = $imageFile->tempName;
         $image = $this->behavior->addImage($fileName);

@@ -35,10 +35,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             'xj\\uploadify\\' => 13,
         ),
-        's' => 
-        array (
-            'skeeks\\yii2\\mobiledetect\\' => 25,
-        ),
         'n' => 
         array (
             'nterms\\pagesize\\' => 16,
@@ -48,6 +44,7 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             'moonland\\phpexcel\\' => 18,
             'mongosoft\\soapserver\\' => 21,
+            'mongosoft\\soapclient\\' => 21,
             'mdm\\admin\\' => 10,
         ),
         'k' => 
@@ -59,7 +56,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
             'kartik\\tabs\\' => 12,
             'kartik\\switchinput\\' => 19,
             'kartik\\spinner\\' => 15,
-            'kartik\\sortable\\' => 16,
             'kartik\\sidenav\\' => 15,
             'kartik\\select2\\' => 15,
             'kartik\\rating\\' => 14,
@@ -77,7 +73,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
             'kartik\\form\\' => 12,
             'kartik\\file\\' => 12,
             'kartik\\export\\' => 14,
-            'kartik\\dynagrid\\' => 16,
             'kartik\\detail\\' => 14,
             'kartik\\depdrop\\' => 15,
             'kartik\\datetime\\' => 16,
@@ -104,10 +99,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         'W' => 
         array (
             'Wingu\\OctopusCore\\Reflection\\' => 29,
-        ),
-        'T' => 
-        array (
-            'Twig\\' => 5,
         ),
         'P' => 
         array (
@@ -176,10 +167,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             0 => __DIR__ . '/..' . '/xj/yii2-uploadify-widget',
         ),
-        'skeeks\\yii2\\mobiledetect\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/skeeks/yii2-mobile-detect',
-        ),
         'nterms\\pagesize\\' => 
         array (
             0 => __DIR__ . '/..' . '/nterms/yii2-pagesize-widget',
@@ -195,6 +182,10 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         'mongosoft\\soapserver\\' => 
         array (
             0 => __DIR__ . '/..' . '/mongosoft/yii2-soap-server',
+        ),
+        'mongosoft\\soapclient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mongosoft/yii2-soap-client',
         ),
         'mdm\\admin\\' => 
         array (
@@ -227,10 +218,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         'kartik\\spinner\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
-        ),
-        'kartik\\sortable\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-sortable',
         ),
         'kartik\\sidenav\\' => 
         array (
@@ -300,10 +287,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-export',
         ),
-        'kartik\\dynagrid\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-dynagrid',
-        ),
         'kartik\\detail\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-detail-view',
@@ -372,10 +355,6 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         array (
             0 => __DIR__ . '/..' . '/wingu/reflection/src',
         ),
-        'Twig\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/twig/twig/src',
-        ),
         'PHP2WSDL\\' => 
         array (
             0 => __DIR__ . '/..' . '/php2wsdl/php2wsdl/src',
@@ -436,47 +415,35 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',
             ),
-            'Detection' => 
-            array (
-                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
-            ),
         ),
     );
 
     public static $classMap = array (
-        'CGIF' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
-        'CGIFCOLORTABLE' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
-        'CGIFFILEHEADER' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
-        'CGIFIMAGE' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
-        'CGIFIMAGEHEADER' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
-        'CGIFLZW' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
-        'FPDF_TPL' => __DIR__ . '/..' . '/setasign/fpdi/fpdf_tpl.php',
-        'FPDI' => __DIR__ . '/..' . '/setasign/fpdi/fpdi.php',
-        'FilterASCII85' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCII85.php',
-        'FilterASCIIHexDecode' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCIIHexDecode.php',
-        'FilterLZW' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterLZW.php',
-        'INDIC' => __DIR__ . '/..' . '/mpdf/mpdf/classes/indic.php',
-        'MYANMAR' => __DIR__ . '/..' . '/mpdf/mpdf/classes/myanmar.php',
-        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
-        'OTLdump' => __DIR__ . '/..' . '/mpdf/mpdf/classes/otl_dump.php',
-        'PDFBarcode' => __DIR__ . '/..' . '/mpdf/mpdf/classes/barcode.php',
-        'SEA' => __DIR__ . '/..' . '/mpdf/mpdf/classes/sea.php',
-        'SVG' => __DIR__ . '/..' . '/mpdf/mpdf/classes/svg.php',
-        'TTFontFile' => __DIR__ . '/..' . '/mpdf/mpdf/classes/ttfontsuni.php',
-        'TTFontFile_Analysis' => __DIR__ . '/..' . '/mpdf/mpdf/classes/ttfontsuni_analysis.php',
-        'UCDN' => __DIR__ . '/..' . '/mpdf/mpdf/classes/ucdn.php',
-        'bmp' => __DIR__ . '/..' . '/mpdf/mpdf/classes/bmp.php',
-        'cssmgr' => __DIR__ . '/..' . '/mpdf/mpdf/classes/cssmgr.php',
-        'directw' => __DIR__ . '/..' . '/mpdf/mpdf/classes/directw.php',
-        'fpdi_pdf_parser' => __DIR__ . '/..' . '/setasign/fpdi/fpdi_pdf_parser.php',
-        'grad' => __DIR__ . '/..' . '/mpdf/mpdf/classes/grad.php',
-        'mPDF' => __DIR__ . '/..' . '/mpdf/mpdf/mpdf.php',
-        'meter' => __DIR__ . '/..' . '/mpdf/mpdf/classes/meter.php',
-        'mpdfform' => __DIR__ . '/..' . '/mpdf/mpdf/classes/mpdfform.php',
-        'otl' => __DIR__ . '/..' . '/mpdf/mpdf/classes/otl.php',
-        'pdf_context' => __DIR__ . '/..' . '/setasign/fpdi/pdf_context.php',
-        'tocontents' => __DIR__ . '/..' . '/mpdf/mpdf/classes/tocontents.php',
-        'wmf' => __DIR__ . '/..' . '/mpdf/mpdf/classes/wmf.php',
+        'CGIF' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'CGIFCOLORTABLE' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'CGIFFILEHEADER' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'CGIFIMAGE' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'CGIFIMAGEHEADER' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'CGIFLZW' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'INDIC' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/indic.php',
+        'MYANMAR' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/myanmar.php',
+        'OTLdump' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/otl_dump.php',
+        'PDFBarcode' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/barcode.php',
+        'SEA' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/sea.php',
+        'SVG' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/svg.php',
+        'TTFontFile' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/ttfontsuni.php',
+        'TTFontFile_Analysis' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/ttfontsuni_analysis.php',
+        'UCDN' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/ucdn.php',
+        'bmp' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/bmp.php',
+        'cssmgr' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/cssmgr.php',
+        'directw' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/directw.php',
+        'grad' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/grad.php',
+        'mPDF' => __DIR__ . '/..' . '/kartik-v/mpdf/mpdf.php',
+        'meter' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/meter.php',
+        'mpdfform' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/mpdfform.php',
+        'otl' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/otl.php',
+        'tocontents' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/tocontents.php',
+        'wmf' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/wmf.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,25 +1,23 @@
 /*!
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
- * @version 1.9.6
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
+ * @version 1.9.4
  *
  * Date control validation plugin
  * 
  * Author: Kartik Visweswaran
- *
+ * Copyright: 2015, Kartik Visweswaran, Krajee.com
  * For more JQuery plugins visit http://plugins.krajee.com
  * For more Yii related demos visit http://demos.krajee.com
  */
 (function ($) {
     "use strict";
-    var NAMESPACE = '.datecontrol',
-        isEmpty = function (value, trim) {
+    var isEmpty = function (value, trim) {
             return value === null || value === undefined || value.length === 0 || (trim && $.trim(value) === '');
         },
         DateControl = function (element, options) {
-            var self = this;
-            self.$element = $(element);
-            self.init(options);
-            self.listen();
+            this.$element = $(element);
+            this.init(options);
+            this.listen();
         };
 
     DateControl.prototype = {
@@ -30,21 +28,12 @@
             $.each(options, function (key, value) {
                 self[key] = value;
             });
-            /** @namespace options.idSave */
             self.$idSave = $("#" + options.idSave);
             self.dateFormatter = window.DateFormatter ? new window.DateFormatter(vSettings) : {};
             if (isEmpty(self.dateFormatter)) {
                 throw "No DateFormatter plugin found. Ensure you have 'php-date-formatter.js' loaded.";
             }
             self.isChanged = false;
-        },
-        raise: function (event, params) {
-            var self = this, e = $.Event(event + NAMESPACE), $el = self.$element;
-            if (params !== undefined) {
-                $el.trigger(e, params);
-            } else {
-                $el.trigger(e);
-            }
         },
         validate: function () {
             var self = this, $el = self.$element, $idSave = self.$idSave, vUrl = self.url,
@@ -57,20 +46,18 @@
             self.isChanged = true;
             if (isEmpty($el.val())) {
                 $idSave.val('').trigger('change');
-                self.raise('changesuccess', [$el.val(), $idSave.val()]);
                 self.isChanged = false;
             } else {
                 if (isEmpty(vUrl)) {
                     var vDispDate = vFormatter.parseDate($el.val(), vDispFormat);
-                    if (vDispDate === false || vDispDate === null || String(vDispDate).length === 0) {
+                    if (vDispDate === false) {
                         vDispDate = vFormatter.guessDate($el.val(), vDispFormat);
                         $el.val(vFormatter.formatDate(vDispDate, vDispFormat));
                     }
                     $idSave.val(vFormatter.formatDate(vDispDate, vSaveFormat)).trigger('change');
-                    self.raise('changesuccess', [$el.val(), $idSave.val()]);
                     self.isChanged = false;
                 } else {
-                    vSettings = self.language.substring(0, 2) === 'en' ? [] : self.dateSettings;
+                    vSettings = self.language.substring(0, 2) == 'en' ? [] : self.dateSettings;
                     $.ajax({
                         url: vUrl,
                         type: "post",
@@ -85,39 +72,26 @@
                             saveTimezone: vSaveTimezone,
                             settings: vSettings
                         },
-                        beforeSend: function (jqXHR) {
-                            self.raise('beforechange', [$el.val(), $idSave.val(), jqXHR]);
-                        },
-                        success: function (data, textStatus, jqXHR) {
-                            var ev = 'changeerror';
+                        success: function (data) {
                             if (data.status === "success") {
                                 $idSave.val(data.output).trigger('change');
-                                ev = 'changesuccess';
                             }
-                            self.raise(ev, [$el.val(), $idSave.val(), data, textStatus, jqXHR]);
                         },
                         complete: function () {
                             self.isChanged = false;
-                            self.raise('changecomplete', [$el.val(), $idSave.val()]);
                         },
-                        error: function (jqXHR, textStatus, errorThrown) {
+                        error: function () {
                             self.isChanged = false;
-                            self.raise('changeajaxerror', [$el.val(), $idSave.val(), jqXHR, textStatus, errorThrown]);
                         }
                     });
                 }
             }
         },
         listen: function () {
-            var self = this, $el = self.$element;
+            var self = this, $el = self.$element, $idSave = self.$idSave, src,
+                vDispFormat = self.dispFormat, vFormatter = self.dateFormatter;
             $el.on('change', function () {
                 self.validate();
-            }).on('paste', function () {
-                setTimeout(function () {
-                    $el.val($el.val());
-                    self.validate();
-                    self.raise('afterpaste');
-                }, 100);
             });
         }
     };

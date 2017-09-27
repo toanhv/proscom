@@ -23,7 +23,6 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 	# Options to specify which transformations to make:
 	public $do_comma_quotes      = 0;
 	public $do_guillemets        = 0;
-	public $do_geresh_gershayim  = 0;
 	public $do_space_emdash      = 0;
 	public $do_space_endash      = 0;
 	public $do_space_colon       = 0;
@@ -32,13 +31,13 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 	public $do_space_frenchquote = 0;
 	public $do_space_thousand    = 0;
 	public $do_space_unit        = 0;
-
-	# Quote characters for replacing ASCII approximations
-	public $doublequote_low         = "&#8222;"; // replacement for ,,
-	public $guillemet_leftpointing  = "&#171;"; // replacement for <<
-	public $guillemet_rightpointing = "&#187;"; // replacement for >>
-	public $geresh    = "&#1523;";
-	public $gershayim = "&#1524;";
+	
+	# Smart quote characters:
+	# Opening and closing smart double-quotes.
+	public $smart_doublequote_open  = '&#8220;';
+	public $smart_doublequote_close = '&#8221;';
+	public $smart_singlequote_open  = '&#8216;';
+	public $smart_singlequote_close = '&#8217;'; # Also apostrophe.
 
 	# Space characters for different places:
 	# Space around em-dashes.  "He_—_or she_—_should change that."
@@ -57,7 +56,6 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 	public $space_thousand    = "&#160;";
 	# Space before a unit abreviation. "This 12_kg of matter costs 10_$."
 	public $space_unit        = "&#160;";
-
 	
 	# Expression of a space (breakable or not):
 	public $space = '(?: | |&nbsp;|&#0*160;|&#x0*[aA]0;)';
@@ -106,8 +104,7 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 		if ($attr == "1" || $attr == "2" || $attr == "3") {
 			# Do everything, turn all options on.
 			$this->do_comma_quotes      = 1;
-			$this->do_guillemets        = 1;
-			$this->do_geresh_gershayim  = 1;
+			$this->do_guillemets  = 1;
 			$this->do_space_emdash      = 1;
 			$this->do_space_endash      = 1;
 			$this->do_space_colon       = 1;
@@ -126,7 +123,6 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 			foreach ($chars as $c){
 				if      ($c == "c") { $current =& $this->do_comma_quotes; }
 				else if ($c == "g") { $current =& $this->do_guillemets; }
-				else if ($c == "G") { $current =& $this->do_geresh_gershayim; }
 				else if ($c == ":") { $current =& $this->do_space_colon; }
 				else if ($c == ";") { $current =& $this->do_space_semicolon; }
 				else if ($c == "m") { $current =& $this->do_space_marks; }
@@ -153,30 +149,26 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 
 
 	function decodeEntitiesInConfiguration() {
-		parent::decodeEntitiesInConfiguration();
-		$output_config_vars = array(
-			'doublequote_low',
-			'guillemet_leftpointing',
-			'guillemet_rightpointing',
-			'space_emdash',
-			'space_endash',
-			'space_colon',
-			'space_semicolon',
-			'space_marks',
-			'space_frenchquote',
-			'space_thousand',
-			'space_unit',
-		);
-		foreach ($output_config_vars as $var) {
-			$this->$var = html_entity_decode($this->$var);
-		}
+	#
+	#   Utility function that converts entities in configuration variables to
+	#   UTF-8 characters.
+	#
+		$this->smart_doublequote_open  = html_entity_decode($this->smart_doublequote_open);
+		$this->smart_doublequote_close = html_entity_decode($this->smart_doublequote_close);
+		$this->smart_singlequote_open  = html_entity_decode($this->smart_singlequote_open);
+		$this->smart_singlequote_close = html_entity_decode($this->smart_singlequote_close);
+		$this->space_emdash      = html_entity_decode($this->space_emdash);
+		$this->space_endash      = html_entity_decode($this->space_endash);
+		$this->space_colon       = html_entity_decode($this->space_colon);
+		$this->space_semicolon   = html_entity_decode($this->space_semicolon);
+		$this->space_marks       = html_entity_decode($this->space_marks);
+		$this->space_frenchquote = html_entity_decode($this->space_frenchquote);
+		$this->space_thousand    = html_entity_decode($this->space_thousand);
+		$this->space_unit        = html_entity_decode($this->space_unit);
 	}
 
 
 	function educate($t, $prev_token_last_char) {
-		# must happen before regular smart quotes
-		if ($this->do_geresh_gershayim)  $t = $this->educateGereshGershayim($t);
-
 		$t = parent::educate($t, $prev_token_last_char);
 		
 		if ($this->do_comma_quotes)      $t = $this->educateCommaQuotes($t);
@@ -195,6 +187,99 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 	}
 
 
+	protected function educateQuotes($_) {
+	#
+	#   Parameter:  String.
+	#
+	#   Returns:    The string, with "educated" curly quote HTML entities.
+	#
+	#   Example input:  "Isn't this fun?"
+	#   Example output: &#8220;Isn&#8217;t this fun?&#8221;
+	#
+		$dq_open  = $this->smart_doublequote_open;
+		$dq_close = $this->smart_doublequote_close;
+		$sq_open  = $this->smart_singlequote_open;
+		$sq_close = $this->smart_singlequote_close;
+	
+		# Make our own "punctuation" character class, because the POSIX-style
+		# [:PUNCT:] is only available in Perl 5.6 or later:
+		$punct_class = "[!\"#\\$\\%'()*+,-.\\/:;<=>?\\@\\[\\\\\]\\^_`{|}~]";
+
+		# Special case if the very first character is a quote
+		# followed by punctuation at a non-word-break. Close the quotes by brute force:
+		$_ = preg_replace(
+			array("/^'(?=$punct_class\\B)/", "/^\"(?=$punct_class\\B)/"),
+			array($sq_close,                 $dq_close), $_);
+
+		# Special case for double sets of quotes, e.g.:
+		#   <p>He said, "'Quoted' words in a larger quote."</p>
+		$_ = preg_replace(
+			array("/\"'(?=\w)/",     "/'\"(?=\w)/"),
+			array($dq_open.$sq_open, $sq_open.$dq_open), $_);
+
+		# Special case for decade abbreviations (the '80s):
+		$_ = preg_replace("/'(?=\\d{2}s)/", $sq_close, $_);
+
+		$close_class = '[^\ \t\r\n\[\{\(\-]';
+		$dec_dashes = '&\#8211;|&\#8212;';
+
+		# Get most opening single quotes:
+		$_ = preg_replace("{
+			(
+				\\s          |   # a whitespace char, or
+				&nbsp;      |   # a non-breaking space entity, or
+				--          |   # dashes, or
+				&[mn]dash;  |   # named dash entities
+				$dec_dashes |   # or decimal entities
+				&\\#x201[34];    # or hex
+			)
+			'                   # the quote
+			(?=\\w)              # followed by a word character
+			}x", '\1'.$sq_open, $_);
+		# Single closing quotes:
+		$_ = preg_replace("{
+			($close_class)?
+			'
+			(?(1)|          # If $1 captured, then do nothing;
+			  (?=\\s | s\\b)  # otherwise, positive lookahead for a whitespace
+			)               # char or an 's' at a word ending position. This
+							# is a special case to handle something like:
+							# \"<i>Custer</i>'s Last Stand.\"
+			}xi", '\1'.$sq_close, $_);
+
+		# Any remaining single quotes should be opening ones:
+		$_ = str_replace("'", $sq_open, $_);
+
+
+		# Get most opening double quotes:
+		$_ = preg_replace("{
+			(
+				\\s          |   # a whitespace char, or
+				&nbsp;      |   # a non-breaking space entity, or
+				--          |   # dashes, or
+				&[mn]dash;  |   # named dash entities
+				$dec_dashes |   # or decimal entities
+				&\\#x201[34];    # or hex
+			)
+			\"                   # the quote
+			(?=\\w)              # followed by a word character
+			}x", '\1'.$dq_open, $_);
+
+		# Double closing quotes:
+		$_ = preg_replace("{
+			($close_class)?
+			\"
+			(?(1)|(?=\\s))   # If $1 captured, then do nothing;
+							   # if not, then make sure the next char is whitespace.
+			}x", '\1'.$dq_close, $_);
+
+		# Any remaining quotes should be opening ones.
+		$_ = str_replace('"', $dq_open, $_);
+
+		return $_;
+	}
+
+
 	protected function educateCommaQuotes($_) {
 	#
 	#   Parameter:  String.
@@ -207,7 +292,7 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 	# Note: this is meant to be used alongside with backtick quotes; there is 
 	# no language that use only lower quotations alone mark like in the example.
 	#
-		$_ = str_replace(",,", $this->doublequote_low, $_);
+		$_ = str_replace(",,", '&#8222;', $_);
 		return $_;
 	}
 
@@ -221,26 +306,8 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 	#   Example input:  << Isn't this fun? >>
 	#   Example output: &#8222; Isn't this fun? &#8222;
 	#
-		$_ = preg_replace("/(?:<|&lt;){2}/", $this->guillemet_leftpointing, $_);
-		$_ = preg_replace("/(?:>|&gt;){2}/", $this->guillemet_rightpointing, $_);
-		return $_;
-	}
-
-
-	protected function educateGereshGershayim($_) {
-	#
-	#   Parameter:  String, UTF-8 encoded.
-	#   Returns:    The string, where simple a or double quote surrounded by
-	#               two hebrew characters is replaced into a typographic
-	#               geresh or gershayim punctuation mark.
-	#
-	#   Example input:  צה"ל / צ'ארלס
-	#   Example output: צה״ל / צ׳ארלס
-	#
-		// surrounding code points can be U+0590 to U+05BF and U+05D0 to U+05F2
-		// encoded in UTF-8: D6.90 to D6.BF and D7.90 to D7.B2
-		$_ = preg_replace('/(?<=\xD6[\x90-\xBF]|\xD7[\x90-\xB2])\'(?=\xD6[\x90-\xBF]|\xD7[\x90-\xB2])/', $this->geresh, $_);
-		$_ = preg_replace('/(?<=\xD6[\x90-\xBF]|\xD7[\x90-\xB2])"(?=\xD6[\x90-\xBF]|\xD7[\x90-\xB2])/', $this->gershayim, $_);
+		$_ = preg_replace("/(?:<|&lt;){2}/", '&#171;', $_);
+		$_ = preg_replace("/(?:>|&gt;){2}/", '&#187;', $_);
 		return $_;
 	}
 
@@ -424,7 +491,6 @@ class SmartyPantsTypographer extends \Michelf\SmartyPants {
 		$chr = ( $this->do_space_unit != -1 ? $this->space_unit : '' );
 
 		$_ = preg_replace('/
-			(?!&\#?[0-9a-zA-Z]{0,8}) # Negative lookahead for unterminated entity
 			(?:([0-9])[ ]'.$opt.') # Number followed by space.
 			('.$this->units.')     # Unit.
 			(?![a-zA-Z0-9])  # Negative lookahead for other unit characters.

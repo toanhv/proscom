@@ -66,8 +66,6 @@ use yii\web\Request;
  * sorted by the orders specified by the Sort object. In the view, we show two hyperlinks
  * that can lead to pages with the data sorted by the corresponding attributes.
  *
- * For more details and usage information on Sort, see the [guide article on sorting](guide:output-sorting).
- *
  * @property array $attributeOrders Sort directions indexed by attribute names. Sort direction can be either
  * `SORT_ASC` for ascending order or `SORT_DESC` for descending order. Note that the type of this property
  * differs in getter and setter. See [[getAttributeOrders()]] and [[setAttributeOrders()]] for details.
@@ -80,7 +78,7 @@ use yii\web\Request;
 class Sort extends Object
 {
     /**
-     * @var bool whether the sorting can be applied to multiple attributes simultaneously.
+     * @var boolean whether the sorting can be applied to multiple attributes simultaneously.
      * Defaults to `false`, which means each time the data can only be sorted by one attribute.
      */
     public $enableMultiSort = false;
@@ -109,15 +107,6 @@ class Sort extends Object
      *     'desc' => ['age' => SORT_DESC],
      *     'default' => SORT_ASC,
      *     'label' => Inflector::camel2words('age'),
-     * ]
-     * ```
-     *
-     * Since 2.0.12 particular sort direction can be also specified as direct sort expression, like following:
-     *
-     * ```php
-     * 'name' => [
-     *     'asc' => '[[last_name]] ASC NULLS FIRST', // PostgreSQL specific feature
-     *     'desc' => '[[last_name]] DESC NULLS LAST',
      * ]
      * ```
      *
@@ -213,7 +202,7 @@ class Sort extends Object
 
     /**
      * Returns the columns and their corresponding sort directions.
-     * @param bool $recalculate whether to recalculate the sort directions
+     * @param boolean $recalculate whether to recalculate the sort directions
      * @return array the columns (keys) and their corresponding sort directions (values).
      * This can be passed to [[\yii\db\Query::orderBy()]] to construct a DB query.
      */
@@ -224,12 +213,8 @@ class Sort extends Object
         foreach ($attributeOrders as $attribute => $direction) {
             $definition = $this->attributes[$attribute];
             $columns = $definition[$direction === SORT_ASC ? 'asc' : 'desc'];
-            if (is_array($columns) || $columns instanceof \Traversable) {
-                foreach ($columns as $name => $dir) {
-                    $orders[$name] = $dir;
-                }
-            } else {
-                $orders[] = $columns;
+            foreach ($columns as $name => $dir) {
+                $orders[$name] = $dir;
             }
         }
 
@@ -243,7 +228,7 @@ class Sort extends Object
 
     /**
      * Returns the currently requested sort information.
-     * @param bool $recalculate whether to recalculate the sort directions
+     * @param boolean $recalculate whether to recalculate the sort directions
      * @return array sort directions indexed by attribute names.
      * Sort direction can be either `SORT_ASC` for ascending order or
      * `SORT_DESC` for descending order.
@@ -256,8 +241,8 @@ class Sort extends Object
                 $request = Yii::$app->getRequest();
                 $params = $request instanceof Request ? $request->getQueryParams() : [];
             }
-            if (isset($params[$this->sortParam])) {
-                $attributes = $this->parseSortParam($params[$this->sortParam]);
+            if (isset($params[$this->sortParam]) && is_scalar($params[$this->sortParam])) {
+                $attributes = explode($this->separator, $params[$this->sortParam]);
                 foreach ($attributes as $attribute) {
                     $descending = false;
                     if (strncmp($attribute, '-', 1) === 0) {
@@ -282,38 +267,11 @@ class Sort extends Object
     }
 
     /**
-     * Parses the value of [[sortParam]] into an array of sort attributes.
-     *
-     * The format must be the attribute name only for ascending
-     * or the attribute name prefixed with `-` for descending.
-     *
-     * For example the following return value will result in ascending sort by
-     * `category` and descending sort by `created_at`:
-     *
-     * ```php
-     * [
-     *     'category',
-     *     '-created_at'
-     * ]
-     * ```
-     *
-     * @param string $param the value of the [[sortParam]].
-     * @return array the valid sort attributes.
-     * @since 2.0.12
-     * @see $separator for the attribute name separator.
-     * @see $sortParam
-     */
-    protected function parseSortParam($param)
-    {
-        return is_scalar($param) ? explode($this->separator, $param) : [];
-    }
-
-    /**
      * Sets up the currently sort information.
      * @param array|null $attributeOrders sort directions indexed by attribute names.
      * Sort direction can be either `SORT_ASC` for ascending order or
      * `SORT_DESC` for descending order.
-     * @param bool $validate whether to validate given attribute orders against [[attributes]] and [[enableMultiSort]].
+     * @param boolean $validate whether to validate given attribute orders against [[attributes]] and [[enableMultiSort]].
      * If validation is enabled incorrect entries will be removed.
      * @since 2.0.10
      */
@@ -337,7 +295,7 @@ class Sort extends Object
     /**
      * Returns the sort direction of the specified attribute in the current request.
      * @param string $attribute the attribute name
-     * @return bool|null Sort direction of the attribute. Can be either `SORT_ASC`
+     * @return boolean|null Sort direction of the attribute. Can be either `SORT_ASC`
      * for ascending order or `SORT_DESC` for descending order. Null is returned
      * if the attribute is invalid or does not need to be sorted.
      */
@@ -395,7 +353,7 @@ class Sort extends Object
      * For example, if the current page already sorts the data by the specified attribute in ascending order,
      * then the URL created will lead to a page that sorts the data by the specified attribute in descending order.
      * @param string $attribute the attribute name
-     * @param bool $absolute whether to create an absolute URL. Defaults to `false`.
+     * @param boolean $absolute whether to create an absolute URL. Defaults to `false`.
      * @return string the URL for sorting. False if the attribute is invalid.
      * @throws InvalidConfigException if the attribute is unknown
      * @see attributeOrders
@@ -456,7 +414,7 @@ class Sort extends Object
     /**
      * Returns a value indicating whether the sort definition supports sorting by the named attribute.
      * @param string $name the attribute name
-     * @return bool whether the sort definition supports sorting by the named attribute.
+     * @return boolean whether the sort definition supports sorting by the named attribute.
      */
     public function hasAttribute($name)
     {

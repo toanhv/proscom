@@ -1,7 +1,7 @@
 /*!
  * Timepicker Component for Twitter Bootstrap
  * 
- * Improvements by: Kartik Visweswaran, Krajee.com, 2014 - 2017
+ * Improvements by: Kartik Visweswaran, Krajee.com, 2014 - 2016
  *
  * Copyright 2013 Joris de Wit
  *
@@ -561,7 +561,7 @@
                     this.second = seconds;
                     this.meridian = meridian;
 
-                    this.update(true);
+                    this.update();
 
                 } else if (defaultTime === false) {
                     this.hour = 0;
@@ -688,7 +688,7 @@
             this.meridian = this.meridian === 'AM' ? 'PM' : 'AM';
             this.update();
         },
-        update: function (skipChange) {
+        update: function () {
             this.$element.trigger({
                 'type': 'changeTime.timepicker',
                 'time': {
@@ -700,15 +700,11 @@
                 }
             });
 
-            this.updateElement(skipChange);
+            this.updateElement();
             this.updateWidget();
         },
-        updateElement: function (skipChange) {
-            var $el = this.$element;
-            $el.val(this.getTime());
-            if (!skipChange) {
-                $el.change();
-            }
+        updateElement: function () {
+            this.$element.val(this.getTime()).change();
         },
         updateFromElementVal: function () {
             var val = this.$element.val();

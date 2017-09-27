@@ -1,70 +1,23 @@
 /*!
- * bootstrap-fileinput v4.4.4
+ * bootstrap-fileinput v4.3.5
  * http://plugins.krajee.com/file-input
  *
- * Krajee default styling for bootstrap-fileinput.
- *
  * Author: Kartik Visweswaran
- * Copyright: 2014 - 2017, Kartik Visweswaran, Krajee.com
+ * Copyright: 2014 - 2016, Kartik Visweswaran, Krajee.com
  *
  * Licensed under the BSD 3-Clause
  * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
  */
-.kv-hidden {
-    display: none;
-}
-
-/* exif orientations */
-.rotate-2 {
-    transform: rotateY(180deg);
-}
-
-.rotate-3 {
-    transform: rotate(180deg);
-}
-
-.rotate-4 {
-    transform: rotate(180deg) rotateY(180deg);
-}
-
-.rotate-5 {
-    transform: rotate(270deg) rotateY(180deg);
-}
-
-.rotate-6 {
-    transform: rotate(90deg);
-}
-
-.rotate-7 {
-    transform: rotate(90deg) rotateY(180deg);
-}
-
-.rotate-8 {
-    transform: rotate(270deg);
-}
-
-/* other styles */
-input[type=file].file-loading, .file-loading input[type=file] {
-    width: 0;
-    height: 0;
-}
-
-.file-loading:before {
-    content: " Loading...";
-    display: inline-block;
-    position: relative;
-    padding-left: 20px;
-    line-height: 16px;
-    font-size: 13px;
-    font-variant: small-caps;
-    color: #999;
+.file-loading {
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    font-size: 999px;
+    text-align: right;
+    color: #fff;
     background: transparent url('../img/loading.gif') top left no-repeat;
-}
-
-.file-loading[dir=rtl]:before {
-    background: transparent url('../img/loading.gif') top right no-repeat;
-    padding-left: 0;
-    padding-right: 20px;
+    border: none;
 }
 
 .file-object {
@@ -101,6 +54,10 @@ input[type=file].file-loading, .file-loading input[type=file] {
     height: 25px;
 }
 
+.file-zoom-dialog {
+    text-align: left;
+}
+
 .file-error-message {
     color: #a94442;
     background-color: #f2dede;
@@ -120,7 +77,7 @@ input[type=file].file-loading, .file-loading input[type=file] {
 }
 
 .file-caption-disabled {
-    background-color: #eeeeee;
+    background-color: #EEEEEE;
     cursor: not-allowed;
     opacity: 1;
 }
@@ -128,55 +85,33 @@ input[type=file].file-loading, .file-loading input[type=file] {
 .file-preview {
     border-radius: 5px;
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 5px;
     width: 100%;
     margin-bottom: 5px;
+}
+
+.file-preview-frame {
     position: relative;
-}
-
-.file-preview .btn-xs {
-    padding: 1px 5px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-}
-
-.file-preview .fileinput-remove {
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    line-height: 10px;
-}
-
-.file-preview-image {
-    font: 40px Impact, Charcoal, sans-serif;
-    color: green;
-}
-
-.krajee-default.file-preview-frame {
-    position: relative;
+    display: table;
     margin: 8px;
+    height: 160px;
     border: 1px solid #ddd;
     box-shadow: 1px 1px 5px 0 #a2958a;
     padding: 6px;
     float: left;
     text-align: center;
+    vertical-align: middle;
 }
 
-.krajee-default.file-preview-frame:not(.file-preview-error):hover {
+.file-preview-frame:not(.file-preview-error):hover {
     box-shadow: 3px 3px 5px 0 #333;
 }
 
-.krajee-default.file-preview-frame .kv-file-content {
-    width: 213px;
-    height: 160px;
+.file-preview-image {
+    vertical-align: middle;
 }
 
-.krajee-default.file-preview-frame .file-thumbnail-footer {
-    height: 70px;
-}
-
-.krajee-default .file-preview-text {
+.file-preview-text {
     display: block;
     color: #428bca;
     border: 1px solid #ddd;
@@ -186,105 +121,43 @@ input[type=file].file-loading, .file-loading input[type=file] {
     resize: none;
 }
 
-.krajee-default .file-preview-html {
+.file-preview-html {
     border: 1px solid #ddd;
     padding: 8px;
     overflow: auto;
 }
 
-.krajee-default .file-preview-other:hover {
+.file-zoom-dialog .file-preview-text {
+    font-size: 1.2em;
+}
+
+.file-preview-other {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.file-preview-other:hover {
     opacity: 0.8;
 }
 
-.krajee-default .file-actions, .krajee-default .file-other-error {
+.file-actions, .file-other-error {
     text-align: left;
 }
 
-.krajee-default .file-other-icon {
-    font-size: 6em;
-}
-
-.krajee-default .file-footer-buttons {
-    float: right;
-}
-
-.krajee-default .file-footer-caption {
-    display: block;
-    text-align: center;
-    padding-top: 4px;
-    font-size: 11px;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-.krajee-default .file-preview-error {
-    opacity: 0.65;
-    box-shadow: none;
-}
-
-.krajee-default .file-preview-frame:not(.file-preview-error) .file-footer-caption:hover {
-    color: #000;
-}
-
-.krajee-default .file-drag-handle, .krajee-default .file-upload-indicator {
-    float: left;
-    margin: 5px 0 -5px 0;
-    width: 16px;
-    height: 16px;
-}
-
-.krajee-default .file-thumb-progress {
-    height: 11px;
-}
-
-.krajee-default .file-thumb-progress .progress, .krajee-default .file-thumb-progress .progress-bar {
-    height: 11px;
-    font-size: 9px;
-    line-height: 10px;
-}
-
-.krajee-default .file-thumbnail-footer {
-    position: relative;
-}
-
-.krajee-default .file-thumb-progress {
-    position: absolute;
-    top: 37px;
-    left: 0;
-    right: 0;
-}
-
-.krajee-default .file-caption-info,
-.krajee-default .file-size-info {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 160px;
-    height: 15px;
-    margin: auto;
-}
-
-.krajee-default.kvsortable-ghost {
-    background: #e1edf7;
-    border: 2px solid #a1abff;
-}
-
-.kv-upload-progress .progress,
-.kv-upload-progress .progress-bar {
-    height: 20px;
-    line-height: 20px;
-}
-
-.kv-upload-progress .progress {
-    margin: 10px 0;
-    overflow: hidden;
+.file-other-icon {
+    font-size: 4.8em;
 }
 
 /* noinspection CssOverwrittenProperties */
 .file-zoom-dialog .file-other-icon {
-    font-size: 22em;
-    font-size: 50vmin;
+    font-size: 8em;
+    font-size: 55vmin;
 }
 
 .file-input-new .file-preview, .file-input-new .close, .file-input-new .glyphicon-file,
@@ -312,14 +185,46 @@ input[type=file].file-loading, .file-loading input[type=file] {
     background: transparent url('../img/loading.gif') no-repeat scroll center center content-box !important;
 }
 
-.file-sortable .file-drag-handle {
-    cursor: move;
-    cursor: -webkit-grabbing;
+.file-actions {
+    margin-top: 15px;
+}
+
+.file-footer-buttons {
+    float: right;
+}
+
+.file-upload-indicator {
+    display: inline;
+    cursor: default;
+    opacity: 0.8;
+    width: 60%;
+}
+
+.file-upload-indicator:hover {
+    font-weight: bold;
     opacity: 1;
 }
 
-.file-sortable .file-drag-handle:hover {
-    opacity: 0.7;
+.file-footer-caption {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    text-align: center;
+    padding-top: 4px;
+    font-size: 11px;
+    color: #777;
+    margin: 5px auto;
+}
+
+.file-preview-error {
+    opacity: 0.65;
+    box-shadow: none;
+}
+
+.file-preview-frame:not(.file-preview-error) .file-footer-caption:hover {
+    color: #000;
 }
 
 .file-drop-zone {
@@ -366,35 +271,25 @@ input[type=file].file-loading, .file-loading input[type=file] {
     opacity: 0.65;
 }
 
-.file-zoom-dialog .modal-dialog {
+.file-thumb-progress {
+    height: 10px;
+}
+
+.file-thumb-progress .progress, .file-thumb-progress .progress-bar {
+    height: 10px;
+    font-size: 9px;
+    line-height: 10px;
+}
+
+.file-thumbnail-footer {
     position: relative;
-    width: auto;
 }
 
-.file-zoom-dialog .modal-header {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.file-zoom-dialog .modal-header:before,
-.file-zoom-dialog .modal-header:after {
-    display: none;
-}
-
-@media (min-width: 576px) {
-    .file-zoom-dialog .modal-dialog {
-        max-width: 500px;
-    }
-}
-
-@media (min-width: 992px) {
-    .file-zoom-dialog .modal-lg {
-        max-width: 800px;
-    }
+.file-thumb-progress {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
 }
 
 .file-zoom-fullscreen.modal {
@@ -410,8 +305,6 @@ input[type=file].file-loading, .file-loading input[type=file] {
     margin: 0;
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
     padding: 0;
 }
 
@@ -422,6 +315,10 @@ input[type=file].file-loading, .file-loading input[type=file] {
 
 .file-zoom-fullscreen .modal-body {
     overflow-y: auto;
+}
+
+.file-zoom-dialog .modal-body {
+    position: relative !important;
 }
 
 .file-zoom-dialog .btn-navigate {
@@ -443,29 +340,20 @@ input[type=file].file-loading, .file-loading input[type=file] {
     right: 10px;
 }
 
-.btn-kv {
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    padding: 0;
-    font-size: 0.875rem;
-    border-radius: 0.2rem;
-}
-
-.kv-zoom-actions .btn-kv, .floating-buttons .btn-kv {
-    margin-left: 3px;
-}
-
-.floating-buttons, .floating-buttons .btn-kv {
+.floating-buttons, .floating-buttons .btn {
     z-index: 3000;
 }
 
-.file-zoom-dialog .btn-navigate:not([disabled]):hover {
+.file-zoom-dialog .kv-zoom-actions .btn,
+.floating-buttons .btn {
+    margin-left: 3px;
+}
+
+.file-zoom-dialog .btn-navigate:not([disabled]):hover,
+.file-zoom-dialog .btn-navigate:not([disabled]):focus {
     outline: none;
     box-shadow: none;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .file-zoom-dialog .btn-navigate[disabled] {
@@ -480,87 +368,33 @@ input[type=file].file-loading, .file-loading input[type=file] {
     right: 1px;
 }
 
+.file-drag-handle {
+    display: inline;
+    margin-right: 2px;
+    font-size: 16px;
+    cursor: move;
+    cursor: -webkit-grabbing;
+}
+
+.file-drag-handle:hover {
+    opacity: 0.7;
+}
+
 .file-zoom-content {
     height: 480px;
     text-align: center;
-}
-
-.file-zoom-content .file-preview-image,
-.file-zoom-content .file-preview-video {
-    max-height: 100%
-}
-
-.file-zoom-content > .file-object.type-image {
-    width: auto;
-    height: auto;
-    min-height: inherit;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.file-zoom-content > .file-object.type-video,
-.file-zoom-content > .file-object.type-flash {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.file-zoom-content > .file-object.type-audio {
-    width: auto;
-    height: 30px;
-}
-
-.file-zoom-content > .file-object.type-pdf,
-.file-zoom-content > .file-object.type-html,
-.file-zoom-content > .file-object.type-text,
-.file-zoom-content > .file-object.type-default {
-    width: 100%;
 }
 
 .file-preview-initial.sortable-chosen {
     background-color: #d9edf7;
 }
 
-.hide-content .kv-file-content {
-    display: none;
+.file-preview-frame.sortable-ghost {
+    background-color: #eee;
 }
 
 /* IE 10 fix */
 .btn-file ::-ms-browse {
-    font-size: 10000px;
     width: 100%;
     height: 100%;
-}
-
-.file-zoom-content .is-portrait-gt4 {
-    margin-top: 60px;
-}
-
-.file-zoom-dialog .kv-zoom-title {
-    font-weight: 300;
-    color: #999;
-    max-width: 50%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-@media screen and (max-width: 767px) {
-    .file-preview-thumbnails {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .file-zoom-dialog .modal-header {
-        flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .krajee-default.file-preview-frame .kv-file-content {
-        width: 160px;
-    }
 }

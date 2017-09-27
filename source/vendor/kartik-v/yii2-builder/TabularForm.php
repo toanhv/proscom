@@ -3,31 +3,26 @@
 /**
  * @package   yii2-builder
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
- * @version   1.6.3
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
+ * @version   1.6.2
  */
-
 namespace kartik\builder;
 
-use Closure;
-use kartik\form\ActiveForm;
-use kartik\grid\GridView;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Model;
-use yii\data\ActiveDataProvider;
-use yii\data\ArrayDataProvider;
 use yii\data\BaseDataProvider;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\i18n\Formatter;
+use kartik\form\ActiveForm;
+use kartik\grid\GridView;
+use \Closure;
 
 /**
- * TabularForm builder widget allows easy way to configure tabular form layouts with ability to implement various input
- * types and input widgets. It works with and is complemented by [[ActiveForm]] and [[GridView]] functionality .
+ * A tabular form builder widget using kartik\form\ActiveForm.
  *
- * Usage example:
- *
+ * Usage:
  * ```
  *   use kartik\form\ActiveForm;
  *   use kartik\builder\TabularForm;
@@ -48,9 +43,8 @@ use yii\i18n\Formatter;
  *   ActiveForm::end();
  * ```
  *
- * Most of each of the properties in the attribute settings array (except `label` & `columnOptions`) can be also setup
- * as a [[Closure]] callback i.e. `function ($model, $key, $index, $widget)`. For example:
- *
+ * Most of each property in the attribute settings array (except `label` & `columnOptions`) can be
+ * also setup as a Closure callback i.e. `function ($model, $key, $index, $widget)`. For example:
  * ```
  * echo TabularForm::widget([
  *       'model' => $model, // your model
@@ -71,23 +65,23 @@ use yii\i18n\Formatter;
 class TabularForm extends BaseForm
 {
     /**
-     * @var ActiveDataProvider|ArrayDataProvider the data provider for the tabular form. This property is required. It
-     * must return a valid list of models for rendering the tabular form inputs.
+     * @var \yii\data\ActiveDataProvider the data provider for the tabular form. This property is required.
+     * It must return an instance of ActiveDataProvider and return a list of models.
      */
     public $dataProvider;
 
     /**
-     * @var boolean highlight current row if checkbox is checked.
+     * @var boolean highlight current row if checkbox is checked
      */
     public $rowHighlight = true;
 
     /**
-     * @var string the separator for the composite keys available as an array.
+     * @var string the separator for the composite keys available as an array
      */
     public $compositeKeySeparator = '_';
 
     /**
-     * @var string the CSS class to apply to a row when the row is selected.
+     * @var string the class when a row is selected
      */
     public $rowSelectedClass = GridView::TYPE_DANGER;
 
@@ -98,27 +92,29 @@ class TabularForm extends BaseForm
     public $gridClass;
 
     /**
-     * @var array the settings for [[GridView]] widget which will display the tabular form content.
+     * @var array the settings for `\kartik\widgets\GridView` widget which will display the tabular form content.
      */
     public $gridSettings = [];
 
     /**
-     * @var array|boolean the settings for the serial column. If set to `false`, the serial column will not be displayed.
+     * @var array|boolean the settings for the serial column.
+     * If set to false will not be displayed.
      */
     public $serialColumn = [];
 
     /**
-     * @var array|boolean the settings for the checkbox column. If set to `false`, the checkbox column will not be
-     * displayed.
+     * @var array|boolean the settings for the checkbox column.
+     * If set to false will not be displayed.
      */
     public $checkboxColumn = [];
 
     /**
-     * @var array the settings for the action column. If set to `false`, the action column will not be displayed.
+     * @var array the settings for the action column.
+     * If set to false will not be displayed.
      */
     public $actionColumn = [
         'updateOptions' => ['style' => 'display:none'],
-        'width' => '60px',
+        'width' => '60px'
     ];
 
     /**
@@ -127,70 +123,16 @@ class TabularForm extends BaseForm
     protected $_columns = [];
 
     /**
-     * Prepends with a back slash if necessary for full namespace validation.
+     * Initializes the widget
      *
-     * @param string $str the input string
-     *
-     * @return string the modified namespace
-     */
-    protected static function slash($str = '')
-    {
-        if (empty($str) || substr($str, 1) == '\\') {
-            return $str;
-        }
-        return '\\' . $str;
-    }
-
-    /**
-     * Checks if a setting is of valid type and throws exception if not.
-     *
-     * @param string $attr the attribute to check
-     * @param array  $settings the attribute settings
-     * @param string $key the model key
-     * @param string $type the attribute input type
-     *
-     * @throws InvalidConfigException
-     */
-    protected static function checkValidSetting($attr, $settings, $key, $type)
-    {
-        if (!isset($settings[$key])) {
-            return;
-        }
-        $validateFunc = "is_{$type}";
-        if (!$validateFunc($settings[$key])) {
-            throw new InvalidConfigException(
-                "You must set the 'settings[\"{$key}\"]' property for  '{$attr}' attribute as a valid {$type} " .
-                '(no Closure method is supported).'
-            );
-        }
-    }
-
-    /**
-     * Checks if model attribute configuration is empty or invalid
-     *
-     * @param array   $models the list of models in the tabular layout
-     * @param integer $index the index for each tabular row
-     * @param string  $attribute the attribute name
-     *
-     * @return boolean
-     */
-    protected static function isEmpty($models, $index, $attribute)
-    {
-        return !isset($models[$index][$attribute]) || $models[$index][$attribute] === '';
-    }
-
-    /**
-     * @inheritdoc
-     * @throws InvalidConfigException
+     * @throws \yii\base\InvalidConfigException
      */
     public function init()
     {
         parent::init();
         $dp = static::slash(BaseDataProvider::className());
         if (empty($this->dataProvider) || !$this->dataProvider instanceof BaseDataProvider) {
-            throw new InvalidConfigException(
-                "The 'dataProvider' property must be set and must be an instance of '{$dp}'."
-            );
+            throw new InvalidConfigException("The 'dataProvider' property must be set and must be an instance of '{$dp}'.");
         }
         $kvGrid = static::slash(GridView::classname());
         if (empty($this->gridClass)) {
@@ -203,7 +145,24 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * @inheritdoc
+     * Prepends with a back slash if necessary for full namespace validation.
+     *
+     * @param string $str the input string
+     *
+     * @return string
+     */
+    protected static function slash($str = '')
+    {
+        if (empty($str) || substr($str, 1) == "\\") {
+            return $str;
+        }
+        return "\\" . $str;
+    }
+
+    /**
+     * Runs the widget
+     *
+     * @return string|void
      */
     public function run()
     {
@@ -212,6 +171,8 @@ class TabularForm extends BaseForm
 
     /**
      * Initializes the widget options
+     *
+     * @return void
      */
     protected function initOptions()
     {
@@ -245,15 +206,15 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Checks if a grid column is set correctly.
+     * Checks if a grid column is set correctly
      *
-     * @param string $type the grid column type (one of 'serial', 'action', 'checkbox').
+     * @param string $type the grid column type (one of 'serial', 'action', 'checkbox')
      *
-     * @return boolean whether the column is set.
+     * @return bool
      */
     protected function isColumnSet($type)
     {
-        $target = '\\kartik\\grid\\' . ucfirst($type) . 'Column';
+        $target = "\\kartik\\grid\\" . ucfirst($type) . "Column";
         $param = $type . 'Column';
         $col = $this->$param;
         if (empty($col)) {
@@ -269,7 +230,9 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Initializes the serial column.
+     * Initializes the serial column
+     *
+     * @return void
      */
     protected function initSerialColumn()
     {
@@ -277,7 +240,9 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Initializes the checkbox column.
+     * Initializes the checkbox column
+     *
+     * @return void
      */
     protected function initCheckboxColumn()
     {
@@ -288,7 +253,9 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Initializes the action column.
+     * Initializes the action column
+     *
+     * @return void
      */
     protected function initActionColumn()
     {
@@ -298,14 +265,14 @@ class TabularForm extends BaseForm
     /**
      * Generates the static input
      *
-     * @param string    $type the static input type.
-     * @param Model     $model the data model.
-     * @param integer   $index the zero based index of the item in dataProvider.
-     * @param array     $settings the attribute settings.
-     * @param string    $attribute the attribute.
-     * @param Formatter $formatter the formatter instance.
+     * @param string    $type the static input type
+     * @param Model     $model
+     * @param int       $index the zero based index of the item in dataProvider
+     * @param array     $settings the attribute settings
+     * @param string    $attribute the attribute
+     * @param Formatter $formatter the formatter instance
      *
-     * @return string the generated static input.
+     * @return string
      */
     protected function getStaticInput($type, $model, $index, $settings, $attribute, $formatter)
     {
@@ -323,7 +290,7 @@ class TabularForm extends BaseForm
                 $val = $settings['value'];
             } elseif ($model instanceof Model) {
                 $val = Html::getAttributeValue($model, $attribute);
-            } elseif (($models = $this->dataProvider->getModels()) && !static::isEmpty($models, $index, $attribute)) {
+            } elseif (($models = $this->dataProvider->getModels()) && !empty($models[$index][$attribute])) {
                 $val = $models[$index][$attribute];
             }
         }
@@ -336,12 +303,36 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Generates a cell value.
+     * Checks if setting is of valid type and throws exception if not.
      *
-     * @param string $attribute the model attribute.
-     * @param mixed  $settings the configuration for the attribute.
+     * @param string $attr the attribute to check
+     * @param array  $settings the attribute settings
+     * @param string $key the model key
+     * @param string $type the attribute input type
      *
-     * @return string the parsed cell value.
+     * @throws InvalidConfigException
+     */
+    protected static function checkValidSetting($attr, $settings, $key, $type)
+    {
+        if (!isset($settings[$key])) {
+            return;
+        }
+        $validateFunc = "is_{$type}";
+        if (!$validateFunc($settings[$key])) {
+            throw new InvalidConfigException(
+                "You must set the 'settings[\"{$key}\"]' property for  '{$attr}' attribute as a valid {$type} ".
+                "(no Closure method is supported)."
+            );
+        }
+    }
+
+    /**
+     * Generates a callable grid cell value
+     *
+     * @param string $attribute
+     * @param mixed  $settings
+     *
+     * @return callable
      */
     protected function getCellValue($attribute, $settings)
     {
@@ -363,17 +354,17 @@ class TabularForm extends BaseForm
             $i = empty($key) ? $index : (is_array($key) ? implode($this->compositeKeySeparator, $key) : $key);
             $options = ArrayHelper::getValue($settings, 'options', []);
             if ($model instanceof Model) {
-                if ($type === self::INPUT_HIDDEN || $type === self::INPUT_HIDDEN_STATIC) {
-                    return ($type === self::INPUT_HIDDEN ? '' : $staticInput) .
-                        Html::activeHiddenInput($model, "[{$i}]{$attribute}", $options);
+                if ($type === self::INPUT_HIDDEN_STATIC) {
+                    return $staticInput . Html::activeHiddenInput($model, "[{$i}]{$attribute}", $options);
                 }
                 return static::renderActiveInput($this->form, $model, "[{$i}]{$attribute}", $settings);
+
             } else {
                 $models = $this->dataProvider->getModels();
-                $settings['value'] = static::isEmpty($models, $index, $attribute) ? null : $models[$index][$attribute];
-                if ($type === self::INPUT_HIDDEN || $type === self::INPUT_HIDDEN_STATIC) {
-                    return ($type === self::INPUT_HIDDEN ? '' : $staticInput) .
-                        Html::hiddenInput("{$this->formName}[{$i}][{$attribute}]", $settings['value'], $options);
+                $settings['value'] = empty($models[$index][$attribute]) ? null : $models[$index][$attribute];
+                if ($type === self::INPUT_HIDDEN_STATIC) {
+                    return $staticInput .
+                    Html::hiddenInput("{$this->formName}[{$i}][{$attribute}]", $settings['value'], $options);
                 }
                 return static::renderInput("{$this->formName}[{$i}][{$attribute}]", $settings);
             }
@@ -381,9 +372,11 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Initializes the data columns.
+     * Initializes the data columns
      *
-     * @throws InvalidConfigException
+     * @throws \yii\base\InvalidConfigException
+     *
+     * @return void
      */
     protected function initDataColumns()
     {
@@ -414,7 +407,7 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Render the grid content.
+     * Render the grid content
      *
      * @return string the rendered gridview
      */
@@ -437,7 +430,7 @@ class TabularForm extends BaseForm
             'columns' => $this->_columns,
             'export' => false,
             'toggleData' => false,
-            'rowOptions' => $rowOptions,
+            'rowOptions' => $rowOptions
         ];
         $settings = ArrayHelper::merge(
             ['striped' => false, 'bordered' => false, 'hover' => true],
@@ -449,7 +442,9 @@ class TabularForm extends BaseForm
     }
 
     /**
-     * Registers the [[TabularForm]] widget assets.
+     * Registers widget assets
+     *
+     * @return void
      */
     protected function registerAssets()
     {

@@ -3,8 +3,8 @@
 /*
  * This file is part of Twig.
  *
- * (c) Fabien Potencier
- * (c) Armin Ronacher
+ * (c) 2009 Fabien Potencier
+ * (c) 2009 Armin Ronacher
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,8 +12,6 @@
 
 /**
  * Represents a token stream.
- *
- * @final
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -26,6 +24,8 @@ class Twig_TokenStream
     private $source;
 
     /**
+     * Constructor.
+     *
      * @param array       $tokens An array of tokens
      * @param string|null $name   The name of the template which tokens are associated with
      * @param string|null $source The source code associated with the tokens
@@ -47,6 +47,11 @@ class Twig_TokenStream
         $this->filename = $this->source->getName();
     }
 
+    /**
+     * Returns a string representation of the token stream.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return implode("\n", $this->tokens);
@@ -65,7 +70,7 @@ class Twig_TokenStream
     public function next()
     {
         if (!isset($this->tokens[++$this->current])) {
-            throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current - 1]->getLine(), $this->source);
+            throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current - 1]->getLine(), $this->source->getName());
         }
 
         return $this->tokens[$this->current - 1];
@@ -98,7 +103,7 @@ class Twig_TokenStream
                 Twig_Token::typeToEnglish($token->getType()), $token->getValue(),
                 Twig_Token::typeToEnglish($type), $value ? sprintf(' with value "%s"', $value) : ''),
                 $line,
-                $this->source
+                $this->source->getName()
             );
         }
         $this->next();
@@ -116,7 +121,7 @@ class Twig_TokenStream
     public function look($number = 1)
     {
         if (!isset($this->tokens[$this->current + $number])) {
-            throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current + $number - 1]->getLine(), $this->source);
+            throw new Twig_Error_Syntax('Unexpected end of template.', $this->tokens[$this->current + $number - 1]->getLine(), $this->source->getName());
         }
 
         return $this->tokens[$this->current + $number];
@@ -143,6 +148,8 @@ class Twig_TokenStream
     }
 
     /**
+     * Gets the current token.
+     *
      * @return Twig_Token
      */
     public function getCurrent()
@@ -192,5 +199,3 @@ class Twig_TokenStream
         return $this->source;
     }
 }
-
-class_alias('Twig_TokenStream', 'Twig\TokenStream', false);

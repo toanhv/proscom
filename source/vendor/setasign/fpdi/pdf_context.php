@@ -3,9 +3,9 @@
  * This file is part of FPDI
  *
  * @package   FPDI
- * @copyright Copyright (c) 2017 Setasign - Jan Slabon (https://www.setasign.com)
+ * @copyright Copyright (c) 2015 Setasign - Jan Slabon (http://www.setasign.com)
  * @license   http://opensource.org/licenses/mit-license The MIT License
- * @version   1.6.2
+ * @version   1.6.1
  */
 
 /**
@@ -67,14 +67,7 @@ class pdf_context
     public function getPos()
     {
         if ($this->_mode == 0) {
-            if (feof($this->file)) {
-                $stat = fstat($this->file);
-                fseek($this->file, $stat['size']);
-            }
-
-            $pos = ftell($this->file);
-
-            return $pos;
+            return ftell($this->file);
         } else {
             return 0;
         }
@@ -92,7 +85,7 @@ class pdf_context
     {
         if ($this->_mode == 0) {
             if (!is_null($pos)) {
-                fseek($this->file, $pos);
+                fseek ($this->file, $pos);
             }
 
             $this->buffer = $l > 0 ? fread($this->file, $l) : '';

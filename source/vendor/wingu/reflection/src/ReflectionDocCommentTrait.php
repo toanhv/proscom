@@ -17,14 +17,13 @@ trait ReflectionDocCommentTrait
 
     /**
      * Get the document of the method.
-     * 
-     * @param string $trimLinePattern Pattern for trim() function applied to each line. Usefull to leave spaces or tabs. The default is the same as calling trim() without the argument.
+     *
      * @return \Wingu\OctopusCore\Reflection\ReflectionDocComment
      */
-    public function getReflectionDocComment($trimLinePattern = " \t\n\r\0\x0B")
+    public function getReflectionDocComment()
     {
         if ($this->reflectionDocComment === null) {
-            $this->reflectionDocComment = new ReflectionDocComment((string)$this->getDocComment(), $trimLinePattern);
+            $this->reflectionDocComment = new ReflectionDocComment((string)$this->getDocComment());
         }
 
         return $this->reflectionDocComment;

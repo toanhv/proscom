@@ -18,8 +18,6 @@ use yii\web\JsExpression;
 /**
  * ActiveField represents a form input field within an [[ActiveForm]].
  *
- * For more details and usage information on ActiveField, see the [guide article on forms](guide:input-forms).
- *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
@@ -97,33 +95,33 @@ class ActiveField extends Component
      */
     public $hintOptions = ['class' => 'hint-block'];
     /**
-     * @var bool whether to enable client-side data validation.
+     * @var boolean whether to enable client-side data validation.
      * If not set, it will take the value of [[ActiveForm::enableClientValidation]].
      */
     public $enableClientValidation;
     /**
-     * @var bool whether to enable AJAX-based data validation.
+     * @var boolean whether to enable AJAX-based data validation.
      * If not set, it will take the value of [[ActiveForm::enableAjaxValidation]].
      */
     public $enableAjaxValidation;
     /**
-     * @var bool whether to perform validation when the value of the input field is changed.
+     * @var boolean whether to perform validation when the value of the input field is changed.
      * If not set, it will take the value of [[ActiveForm::validateOnChange]].
      */
     public $validateOnChange;
     /**
-     * @var bool whether to perform validation when the input field loses focus.
+     * @var boolean whether to perform validation when the input field loses focus.
      * If not set, it will take the value of [[ActiveForm::validateOnBlur]].
      */
     public $validateOnBlur;
     /**
-     * @var bool whether to perform validation while the user is typing in the input field.
+     * @var boolean whether to perform validation while the user is typing in the input field.
      * If not set, it will take the value of [[ActiveForm::validateOnType]].
      * @see validationDelay
      */
     public $validateOnType;
     /**
-     * @var int number of milliseconds that the validation should be delayed when the user types in the field
+     * @var integer number of milliseconds that the validation should be delayed when the user types in the field
      * and [[validateOnType]] is set `true`.
      * If not set, it will take the value of [[ActiveForm::validationDelay]].
      */
@@ -147,11 +145,6 @@ class ActiveField extends Component
      * it is maintained by various methods of this class.
      */
     public $parts = [];
-    /**
-     * @var bool adds aria HTML attributes `aria-required` and `aria-invalid` for inputs
-     * @since 2.0.11
-     */
-    public $addAriaAttributes = true;
 
     /**
      * @var string this property holds a custom input id if it was set using [[inputOptions]] or in one of the
@@ -363,7 +356,6 @@ class ActiveField extends Component
     public function input($type, $options = [])
     {
         $options = array_merge($this->inputOptions, $options);
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeInput($type, $this->model, $this->attribute, $options);
 
@@ -379,7 +371,7 @@ class ActiveField extends Component
      *
      * The following special options are recognized:
      *
-     * - `maxlength`: int|bool, when `maxlength` is set `true` and the model attribute is validated
+     * - `maxlength`: integer|boolean, when `maxlength` is set `true` and the model attribute is validated
      *   by a string validator, the `maxlength` option will take the value of [[\yii\validators\StringValidator::max]].
      *   This is available since version 2.0.3.
      *
@@ -390,7 +382,6 @@ class ActiveField extends Component
     public function textInput($options = [])
     {
         $options = array_merge($this->inputOptions, $options);
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
 
@@ -436,7 +427,6 @@ class ActiveField extends Component
     public function passwordInput($options = [])
     {
         $options = array_merge($this->inputOptions, $options);
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activePasswordInput($this->model, $this->attribute, $options);
 
@@ -464,7 +454,6 @@ class ActiveField extends Component
         if (!isset($this->form->options['enctype'])) {
             $this->form->options['enctype'] = 'multipart/form-data';
         }
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeFileInput($this->model, $this->attribute, $options);
 
@@ -484,7 +473,6 @@ class ActiveField extends Component
     public function textarea($options = [])
     {
         $options = array_merge($this->inputOptions, $options);
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeTextarea($this->model, $this->attribute, $options);
 
@@ -511,7 +499,7 @@ class ActiveField extends Component
      *
      * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
      *
-     * @param bool $enclosedByLabel whether to enclose the radio within the label.
+     * @param boolean $enclosedByLabel whether to enclose the radio within the label.
      * If `true`, the method will still use [[template]] to layout the radio button and the error message
      * except that the radio is enclosed by the label tag.
      * @return $this the field object itself.
@@ -532,7 +520,6 @@ class ActiveField extends Component
             $options['label'] = null;
             $this->parts['{input}'] = Html::activeRadio($this->model, $this->attribute, $options);
         }
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
 
         return $this;
@@ -558,7 +545,7 @@ class ActiveField extends Component
      *
      * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
      *
-     * @param bool $enclosedByLabel whether to enclose the checkbox within the label.
+     * @param boolean $enclosedByLabel whether to enclose the checkbox within the label.
      * If `true`, the method will still use [[template]] to layout the checkbox and the error message
      * except that the checkbox is enclosed by the label tag.
      * @return $this the field object itself.
@@ -579,7 +566,6 @@ class ActiveField extends Component
             $options['label'] = null;
             $this->parts['{input}'] = Html::activeCheckbox($this->model, $this->attribute, $options);
         }
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
 
         return $this;
@@ -607,7 +593,6 @@ class ActiveField extends Component
     public function dropDownList($items, $options = [])
     {
         $options = array_merge($this->inputOptions, $options);
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeDropDownList($this->model, $this->attribute, $items, $options);
 
@@ -636,7 +621,6 @@ class ActiveField extends Component
     public function listBox($items, $options = [])
     {
         $options = array_merge($this->inputOptions, $options);
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeListBox($this->model, $this->attribute, $items, $options);
 
@@ -656,7 +640,6 @@ class ActiveField extends Component
      */
     public function checkboxList($items, $options = [])
     {
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->_skipLabelFor = true;
         $this->parts['{input}'] = Html::activeCheckboxList($this->model, $this->attribute, $items, $options);
@@ -676,7 +659,6 @@ class ActiveField extends Component
      */
     public function radioList($items, $options = [])
     {
-        $this->addAriaAttributes($options);
         $this->adjustLabelFor($options);
         $this->_skipLabelFor = true;
         $this->parts['{input}'] = Html::activeRadioList($this->model, $this->attribute, $items, $options);
@@ -714,14 +696,9 @@ class ActiveField extends Component
         $config['model'] = $this->model;
         $config['attribute'] = $this->attribute;
         $config['view'] = $this->form->getView();
-        if (is_subclass_of($class, 'yii\widgets\InputWidget')) {
-            $config['field'] = $this;
-            if (isset($config['options'])) {
-                $this->addAriaAttributes($config['options']);
-                $this->adjustLabelFor($config['options']);
-            }
+        if (isset($config['options']) && isset(class_parents($class)['yii\widgets\InputWidget'])) {
+            $this->adjustLabelFor($config['options']);
         }
-
         $this->parts['{input}'] = $class::widget($config);
 
         return $this;
@@ -753,10 +730,10 @@ class ActiveField extends Component
             return [];
         }
 
-        $clientValidation = $this->isClientValidationEnabled();
-        $ajaxValidation = $this->isAjaxValidationEnabled();
+        $enableClientValidation = $this->enableClientValidation || $this->enableClientValidation === null && $this->form->enableClientValidation;
+        $enableAjaxValidation = $this->enableAjaxValidation || $this->enableAjaxValidation === null && $this->form->enableAjaxValidation;
 
-        if ($clientValidation) {
+        if ($enableClientValidation) {
             $validators = [];
             foreach ($this->model->getActiveValidators($attribute) as $validator) {
                 /* @var $validator \yii\validators\Validator */
@@ -770,7 +747,7 @@ class ActiveField extends Component
             }
         }
 
-        if (!$ajaxValidation && (!$clientValidation || empty($validators))) {
+        if (!$enableAjaxValidation && (!$enableClientValidation || empty($validators))) {
             return [];
         }
 
@@ -791,7 +768,7 @@ class ActiveField extends Component
         }
 
         $options['encodeError'] = !isset($this->errorOptions['encode']) || $this->errorOptions['encode'];
-        if ($ajaxValidation) {
+        if ($enableAjaxValidation) {
             $options['enableAjaxValidation'] = true;
         }
         foreach (['validateOnChange', 'validateOnBlur', 'validateOnType', 'validationDelay'] as $name) {
@@ -802,10 +779,6 @@ class ActiveField extends Component
             $options['validate'] = new JsExpression("function (attribute, value, messages, deferred, \$form) {" . implode('', $validators) . '}');
         }
 
-        if ($this->addAriaAttributes === false) {
-            $options['updateAriaInvalid'] = false;
-        }
-
         // only get the options that are different from the default ones (set in yii.activeForm.js)
         return array_diff_assoc($options, [
             'validateOnChange' => true,
@@ -814,28 +787,7 @@ class ActiveField extends Component
             'validationDelay' => 500,
             'encodeError' => true,
             'error' => '.help-block',
-            'updateAriaInvalid' => true,
         ]);
-    }
-
-    /**
-     * Checks if client validation enabled for the field
-     * @return bool
-     * @since 2.0.11
-     */
-    protected function isClientValidationEnabled()
-    {
-        return $this->enableClientValidation || $this->enableClientValidation === null && $this->form->enableClientValidation;
-    }
-
-    /**
-     * Checks if ajax validation enabled for the field
-     * @return bool
-     * @since 2.0.11
-     */
-    protected function isAjaxValidationEnabled()
-    {
-        return $this->enableAjaxValidation || $this->enableAjaxValidation === null && $this->form->enableAjaxValidation;
     }
 
     /**
@@ -846,24 +798,5 @@ class ActiveField extends Component
     protected function getInputId()
     {
         return $this->_inputId ?: Html::getInputId($this->model, $this->attribute);
-    }
-
-    /**
-     * Adds aria attributes to the input options
-     * @param $options array input options
-     * @since 2.0.11
-     */
-    protected function addAriaAttributes(&$options)
-    {
-        if ($this->addAriaAttributes) {
-            if (!isset($options['aria-required']) && $this->model->isAttributeRequired($this->attribute)) {
-                $options['aria-required'] =  'true';
-            }
-            if (!isset($options['aria-invalid'])) {
-                if ($this->model->hasErrors($this->attribute)) {
-                    $options['aria-invalid'] = 'true';
-                }
-            }
-        }
     }
 }
