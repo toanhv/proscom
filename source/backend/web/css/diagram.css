@@ -795,6 +795,7 @@
 
 .header .banner .banner-menu .content-menu{
     float:right;
+    margin-right: 44px;
 }
 
 .header .banner .banner-menu .active{

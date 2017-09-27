@@ -67,7 +67,12 @@ AppAsset::register($this);
                                         <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
                                     </a>
                                 <?php } ?>                                                              
-                            </div>  
+                            </div> 
+                            <div class="flag-banner">
+                                <a href="javascript:void(0);" id="flag-language">
+                                    <img height="33px" width="44px" style="overflow: hidden;" src="<?php echo (\Yii::$app->language == 'en') ? '/images/en.png' : '/images/vi.png'; ?>"/>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

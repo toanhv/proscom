@@ -95,7 +95,16 @@
 .flag-banner {
     position: absolute;
     right: 0px;
-    top: 117px;
+    top: 0px;
+}
+.header .banner .flag-banner a{
+    border-left:1px solid #595586;
+    display:inline-block;
+    padding:0px;
+    text-decoration:none;
+    color:#fff;
+    background:#1caf9a;
+    float:left;
 }
 .module-view {
     margin-top: 13px; 
@@ -244,4 +253,5 @@
 .text-shadow:hover {
     color: white;
 }
+
 
