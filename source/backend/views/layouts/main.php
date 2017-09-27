@@ -64,7 +64,7 @@ AppAsset::register($this);
                                 <?php foreach ($alarmConfig as $alarm => $item) { ?>                                
                                     <?php $url = ($alarms) && $alarms[$item['key']]['status'] ? '?alarm=' . $alarm : ''; ?>
                                     <a href="/modules/index<?php echo $url; ?>" <?php echo ($alarms) && $alarms[$item['key']]['status'] ? 'class="active"' : '' ?>>
-                                        <?php echo $item['value']; ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
+                                        <?php echo Yii::t('backend', $item['value']); ?><?php echo ($alarms) && $alarms[$item['key']]['count'] ? '(' . $alarms[$item['key']]['count'] . ')' : '' ?>
                                     </a>
                                 <?php } ?>                                                              
                             </div> 
