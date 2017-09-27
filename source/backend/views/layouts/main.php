@@ -50,8 +50,7 @@ AppAsset::register($this);
             <?php $alarms = \Yii::$app->session->get('module_alarm', null); ?>
             <?php $alarmConfig = Yii::$app->params['module-alarm']; ?>
             <!-- BEGIN HEADER INNER -->
-            <?php //if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index']) && !Yii::$app->mobileDetect->isMobile()) { ?>
-			<?php if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index'])) { ?>
+            <?php if (in_array($_SERVER['REQUEST_URI'], ['/', '/?reload=true', '/modules/index']) && !Yii::$app->mobileDetect->isMobile()) { ?>
                 <div class="header" id="banner-home">
                     <div class="header-left">
                         <a href="/" class="logo"><img src="/images/logo.png"/></a>
