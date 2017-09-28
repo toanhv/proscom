@@ -2230,7 +2230,8 @@ Page content
     }
     .page-content-wrapper .page-content {
         margin-left: 235px;
-        margin-top: 0px;
+        /*margin-top: 0px;*/
+        margin-top: -35px;
         min-height: 600px;
         padding: 46px 20px 10px 20px;
     }
