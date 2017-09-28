@@ -243,6 +243,7 @@
 #module-list .table-striped > tbody > tr > td {
     text-align: center;
     alignment-adjust: middle;
+    vertical-align: middle;
 }
 .text-shadow {
     color: white;
