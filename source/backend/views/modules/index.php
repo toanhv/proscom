@@ -91,8 +91,8 @@ $this->title = 'Home';
             [
                 'label' => 'ID',
                 'content' => function ($data) {
-                    //return '<a class="text-shadow" href="/modules/view?id=' . $data->id . '"><b>' . $data->getModuleId() . '</b><br><b>' . \yii\helpers\Html::encode($data->name) . '</b></a>';
-                    return '<a class="text-shadow" href="/modules/view?id=' . $data->id . '">' . \yii\helpers\Html::encode($data->name) . '</a>';
+                    return '<a class="text-shadow" href="/modules/view?id=' . $data->id . '"><b>' . $data->getModuleId() . '</b><br><b>' . \yii\helpers\Html::encode($data->name) . '</b></a>';
+                    //return '<a class="text-shadow" href="/modules/view?id=' . $data->id . '">' . \yii\helpers\Html::encode($data->name) . '</a>';
                 }
             ],
             [
