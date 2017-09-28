@@ -234,10 +234,13 @@
 }
 #module-list .table-striped > thead > tr {
     background-color: #1caf9a !important;
+    text-align: center;
+    vertical-align: middle;
 }
 #module-list .table-striped > thead > tr > th {
     text-align: center;
     alignment-adjust: middle;
+    vertical-align: middle;
     color: #fff;
 }
 #module-list .table-striped > tbody > tr > td {
