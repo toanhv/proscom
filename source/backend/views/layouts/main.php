@@ -41,8 +41,7 @@ AppAsset::register($this);
     <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
     <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
     <!--<body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo fix-banner">-->
-    <!--body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo"-->
-    <body class="page-md page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
+    <body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
         <?php $this->beginBody() ?>
         <!-- BEGIN HEADER -->
         <div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
