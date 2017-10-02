@@ -421,6 +421,24 @@ $outputMode = $model->outputModes;
                 </div>
             </div>
         </div>	
+    </div>  
+    <div class="buttom-content">
+        <p style="width: 220px;">
+            <span>Lượng nước đã làm nóng</span>
+            <span>292 m3</span>
+        </p>
+        <p style="width: 195px;">
+            <span>Lượng điện tiêu thụ</span>
+            <span>1221 Kwh</span>
+        </p>
+        <p style="width: 150px;">
+            <span>Số tiền tiết kiệm</span>
+            <span>33 triệu</span>
+        </p>
+        <p style="width: 220px;">
+            <span>Lượng khí thải CO2 giảm</span>
+            <span>7,35 tấn</span>
+        </p>      
     </div>
 </div>
 <?php if ($model->status == 1) { ?>
