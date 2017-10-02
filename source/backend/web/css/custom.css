@@ -257,5 +257,21 @@
 .text-shadow:hover {
     color: white;
 }
-
+.buttom-content {
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 100px;
+}
+.buttom-content p {
+    display: block;
+    float: left;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #364150;    
+}
 
