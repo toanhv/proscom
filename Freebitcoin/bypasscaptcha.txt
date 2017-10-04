@@ -1,0 +1,50 @@
+SET !LOOP -9999999
+SET !EXTRACT_TEST_POPUP NO
+SET !ERRORIGNORE NO
+SET !TIMEOUT_PAGE 100
+SET !TIMEOUT_STEP 100
+TAB CLOSEALLOTHERS
+
+'-----------------BITCOIN------------------
+'Sua apikey 9KW.EU XEM VIDEO Ð? BI?T CÁCH L?Y APIKEY
+'https://www.youtube.com/watch?v=Ph4daZhs084&t=87s
+
+SET apikey VK67FE3FS2CLDZJD14
+
+'Sua Thu muc chua captcha
+SET shit F:\freebitco.png
+SET priority 2
+SET Wait_9kw 350
+
+TAB T=1
+URL GOTO=https://freebitco.in
+
+WAIT SECONDS=1
+
+'Sua Thu muc Luu captcha
+ONDOWNLOAD FOLDER=F:\ FILE=freebitco.png WAIT=YES
+TAG POS=1 TYPE=IMG ATTR=SRC:https://captchas.freebitco.in/cgi-bin/captcha_generator?client=freebitcoin&random=* CONTENT=EVENT:SAVE_ELEMENT_SCREENSHOT
+
+TAB OPEN
+TAB T=2
+URL GOTO=http://www.9kw.eu/grafik/form.html
+TAG POS=1 TYPE=INPUT ATTR=NAME:apikey CONTENT={{apikey}}
+TAG POS=1 TYPE=INPUT ATTR=NAME:prio CONTENT={{priority}}
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/index.cgi ATTR=NAME:selfsolve CONTENT=NO
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/index.cgi ATTR=NAME:confirm CONTENT=NO
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/index.cgi ATTR=NAME:case-sensitive CONTENT=NO
+TAG POS=1 TYPE=INPUT ATTR=NAME:source CONTENT=imacros
+TAG POS=1 TYPE=INPUT ATTR=NAME:file-upload-01 CONTENT={{shit}}
+TAG POS=1 TYPE=INPUT ATTR=TYPE:submit
+TAG POS=1 TYPE=INPUT ATTR=NAME:captchaid EXTRACT=TXT
+SET captcha_ID {{!EXTRACT}}
+SET !EXTRACT NULL
+SET !TIMEOUT_STEP {{Wait_9kw}}
+TAG POS=1 TYPE=INPUT ATTR=NAME:result EXTRACT=TXT
+
+TAB CLOSE
+TAG POS=1 TYPE=INPUT:TEXT ATTR=* CONTENT={{!EXTRACT}}
+WAIT SECONDS=2
+TAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:free_play_form_button
+
+WAIT SECONDS=3660
