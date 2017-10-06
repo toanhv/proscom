@@ -9,7 +9,7 @@ TAB CLOSEALLOTHERS
 'Sua apikey 9KW.EU XEM VIDEO Ð? BI?T CÁCH L?Y APIKEY
 'https://www.youtube.com/watch?v=Ph4daZhs084&t=87s
 
-SET apikey VK67FE3FS2CLDZJD14
+SET apikey VBNT242AD53PI0W13T
 
 'Sua Thu muc chua captcha
 SET img EVAL("var randomNumber=Math.floor(Math.random()*10 + Math.floor(Math.random()*15+ 10)); randomNumber;")
@@ -18,14 +18,14 @@ SET shit C:\freebitcoin\freebitcoin{{img}}.png
 SET priority 2
 SET Wait_9kw 350
 
-TAB T=1
-URL GOTO=https://freebitco.in
-REFRESH
-WAIT SECONDS=2
-REFRESH
-WAIT SECONDS=3
-REFRESH
-WAIT SECONDS=5
+'TAB T=1
+'URL GOTO=https://freebitco.in
+'REFRESH
+'WAIT SECONDS=2
+'REFRESH
+'WAIT SECONDS=3
+'REFRESH
+'WAIT SECONDS=5
 
 'Sua Thu muc Luu captcha
 
@@ -83,4 +83,4 @@ SET timeout EVAL("var s=\"{{!EXTRACT}}\"; if(s.match(\"aptcha\")){timer = 20;} e
 
 WAIT SECONDS={{timeout}}
 
-REFRESH
+'REFRESH

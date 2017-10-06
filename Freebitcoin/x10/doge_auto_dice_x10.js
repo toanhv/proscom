@@ -6,12 +6,12 @@ bconfig = {
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
-var countLose = 26;
+var countLose = 20;
 var countWin = 4;
 $('#double_your_doge_min').click();
 var startStake = $('#double_your_doge_stake').val();
 var	stake = 5;
-var interest = 5; // 10%
+var interest = 10; // 10%
 var confirmStop = false;
 var xConfirm = 90;
 
