@@ -1,6 +1,7 @@
 bconfig = {
 	maxBet: 0.00300000,
-	wait: 1000
+	wait: 500,
+	maxRound: 3000
 };
 
 var balance = parseFloat($('#balance')['text']());
@@ -10,14 +11,14 @@ var countLose = 3;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 20;
-var interest = 1000; // %
+var interest = 500;
 var numberRoll = 0;
 var confirmStop = false;
-var xConfirm = 20;
+var xConfirm = 15;
 
 var hilo = 'hi';
 
-var stopBefore = 3;
+var stopBefore = 15;
 var winCount = 0;
 var loseCount = 0;
 var anlo = 0;
@@ -64,7 +65,7 @@ function getRandomWait() {
 function getNumberRoll() {
 	numberRoll = Number($('#multiplier_first_digit').text() + $('#multiplier_second_digit').text() + $('#multiplier_third_digit').text() + $('#multiplier_fourth_digit').text() + $('#multiplier_fifth_digit').text());
 	console.log('Roll number ' + numberRoll);
-	if ((hilo == 'hi' && parseFloat(numberRoll) > 5250) || (hilo == 'lo' && parseFloat(numberRoll) < 4750)) {
+	if ((hilo == 'hi' && parseFloat(numberRoll) < 4750) || (hilo == 'lo' && parseFloat(numberRoll) > 5250)) {
 		return 1;
 	} else {
 		return 0;
@@ -74,7 +75,7 @@ function getNumberRoll() {
 function bet() {
 	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
 		x = parseFloat($('#double_your_btc_stake').val())/10;
-		$('#double_your_btc_min').click(x);
+		$('#double_your_btc_stake').val(Number(x).toFixed(8));
 	}
 	
 	$('.win-dupbo').val(loseCount);
@@ -100,6 +101,10 @@ rollDice = function() {
 	stake = $('.xbefore').val();
 	maxBet = $('.maxloser').val();
 	
+	if (counter > bconfig.maxRound && (parseFloat($('#balance')['text']()) - balance > 0)) {
+		throw new Error('Wait for next round');
+	}
+	
 	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	
@@ -109,7 +114,7 @@ rollDice = function() {
 				if (x > startStake) {
 					x = x * 2;
 				} else {
-					x = stake * startStake;
+					x = stake * startStake;					
 				}	
 				if (x > xHight) {
 					xHight = x;
@@ -117,16 +122,13 @@ rollDice = function() {
 				if (loseCount > $('.check-lose').val()) {
 					$('.check-lose').val(loseCount);
 				}
-				if (s > maxBet) {
+				if (x > maxBet) {
 					x = x/10;
 				}
-				
 				$('#double_your_btc_stake').val(Number(x).toFixed(8));			
-			}		
+			}	
 			thualo++;
-			numberRoll = Number($('#multiplier_first_digit').text() + $('#multiplier_second_digit').text() + $('#multiplier_third_digit').text() + $('#multiplier_fourth_digit').text() + $('#multiplier_fifth_digit').text());
-			console.log('Roll number ' + numberRoll);
-			if ((hilo == 'hi' && parseFloat(numberRoll) > 5250) || (hilo == 'lo' && parseFloat(numberRoll) < 4750)) {
+			if (getNumberRoll() == 1) {
 				loseCount++;
 			}
 			winCount = 0;
@@ -137,7 +139,7 @@ rollDice = function() {
 	if ($('#double_your_btc_bet_win').html() != '') {
 		if($('#double_your_btc_bet_win').html().indexOf('win') != -1) {
 			if(stopBeforeRedirect()) {
-				return;
+				throw new Error('Stop game');
 			}
 			
 			$('#double_your_btc_stake').val(startStake);
