@@ -1,3 +1,22 @@
+// ==UserScript==
+// @name  Auto Dice
+// @namespace   ...
+// @description Claim Free
+// ==OpenUserJS==
+// @author hoangtoanit
+// @collaborator hoangtoanit
+// ==/OpenUserJS==
+// @include     https://freebitco.in/*
+// @run-at      document-end
+// @grant       GM_addStyle
+// @grant       GM_getResourceURL
+// @grant		GM_xmlhttpRequest
+// @grant       unsafeWindow
+// @version     0.0.1
+// @icon        https://freebitco.in/favicon.ico
+// @credit      ...
+// ==/UserScript==
+
 bconfig = {
 	maxBet: 0.00300000,
 	wait: 500,
@@ -11,7 +30,7 @@ var countLose = 3;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 20;
-var interest = 500;
+var interest = 0.00000500;
 var numberRoll = 0;
 var confirmStop = false;
 var xConfirm = 15;
@@ -34,8 +53,7 @@ setParam = function() {
 	$('.maxheight').val(countLose);
 	$('.xbefore').val(stake);
 	$('.maxloser').val(bconfig.maxBet['toFixed'](8));	
-	interest = balance * interest/100; 
-}
+};
 
 function stopBeforeRedirect() {
 	var minutes = parseInt($('title').text());
@@ -280,6 +298,10 @@ $('#double_your_btc_payout_multiplier').val(payout);
 stop = function() {
 	document['location'] = '/';
 };
+
+setTimeout(function() {
+    console.log("Start game");
+}, 30000);
 
 setParam();
 
