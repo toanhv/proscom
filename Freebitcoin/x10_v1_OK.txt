@@ -58,7 +58,7 @@ var startbalance = 0,
                 }
 
                 function _0xe70dx14() {
-                    var _0xe70dxf = 300 + 10 * parseInt($('.win-dupbo')['val']());
+                    var _0xe70dxf = 200 + 10 * parseInt($('.win-dupbo')['val']());
                     console['log']('\u0110ang \u0111\u1EE3i ' + _0xe70dxf + 'ms tr\u01B0\u1EDBc khi \u0111\u1EB7t c\u01B0\u1EE3c ti\u1EBFp theo.');
                     return _0xe70dxf
                 }
@@ -202,7 +202,7 @@ var startbalance = 0,
                 });
                 $('.check-start')['css']({
                     position: 'fixed',
-                    top: '230px',
+                    top: '173px',
                     left: 0,
                     width: '165px',
                     background: '#ddd'

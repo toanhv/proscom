@@ -6,15 +6,15 @@ bconfig = {
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
-var countLose = 26;
+var countLose = 20;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 10;
-var interest = 10; // 10%
+var	stake = 6;
+var interest = 10; // %
 var confirmStop = true;
 var xConfirm = 90;
 
-var hilo = 'lo';
+var hilo = 'hi';
 
 var stopBefore = 3;
 var winCount = 0;

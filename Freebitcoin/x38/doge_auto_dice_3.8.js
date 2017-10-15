@@ -10,8 +10,8 @@ var countLose = 7;
 $('#double_your_doge_min').click();
 var startStake = $('#double_your_doge_stake').val();
 var	stake = 5;
-var interest = 10; // %
-var confirmStop = true;
+var interest = 5; // %
+var confirmStop = false;
 var xConfirm = 30;
 
 var hilo = 'lo';
