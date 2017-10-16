@@ -9,7 +9,7 @@ TAB CLOSEALLOTHERS
 SET apikey VBNT242AD53PI0W13T
 
 TAG POS=1 TYPE=span ATTR=class:countdown_amount EXTRACT=TXT
-SET leftTime EVAL("var s=\"{{!EXTRACT}}\"; if(parseInt(s) > 0){leftTime= parseInt(s) * 61;} else {leftTime= 2;} leftTime;")
+SET leftTime EVAL("var s=\"{{!EXTRACT}}\"; if(parseInt(s) > 0){leftTime= (parseInt(s) * 60) + 60;} else {leftTime= 1;} leftTime;")
 WAIT seconds={{leftTime}}
 
 'And priority (prio 1-20)
@@ -17,6 +17,7 @@ SET prio 1
 
 TAB T=1
 URL GOTO=https://freebitco.in/
+REFRESH
 
 ' Step 2: Save the captcha key and show the field for the answer
 URL GOTO=javascript:(function(){var<SP>x<SP>=<SP>document.getElementById("g-recaptcha-response");x.style.display<SP>=<SP>"";})();
@@ -100,4 +101,6 @@ TAG POS=1 TYPE=P ATTR=ID:free_play_error EXTRACT=TXT
 SET timeout EVAL("var s=\"{{!EXTRACT}}\"; if(s.match(\"aptcha\") || s.match(\"ncorrect\")){timer = 20;} else timer = 3600; timer;")
 
 WAIT seconds={{timeout}}
+
+
 
