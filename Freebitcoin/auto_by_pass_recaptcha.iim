@@ -8,6 +8,10 @@ TAB CLOSEALLOTHERS
 'SET apikey your_apikey
 SET apikey VBNT242AD53PI0W13T
 
+TAG POS=1 TYPE=span ATTR=class:countdown_amount EXTRACT=TXT
+SET leftTime EVAL("var s=\"{{!EXTRACT}}\"; if(parseInt(s) > 0){leftTime= parseInt(s) * 61;} else {leftTime= 2;} leftTime;")
+WAIT seconds={{leftTime}}
+
 'And priority (prio 1-20)
 SET prio 1
 
