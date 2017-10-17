@@ -75,7 +75,7 @@ TAG POS=30 TYPE=BUTTON ATTR=TXT:REDEEM
 WAIT SECONDS=1
 TAG POS=31 TYPE=BUTTON ATTR=TXT:REDEEM
 
-WAIT SECONDS=1
+WAIT SECONDS=5
 TAG POS=1 TYPE=DIV ATTR=TXT:FREE<SP>BTC<SP>BONUS
 WAIT SECONDS=1
 TAG POS=19 TYPE=BUTTON ATTR=TXT:REDEEM
@@ -98,9 +98,6 @@ TAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:free_play_form_button
 WAIT seconds=20
 
 TAG POS=1 TYPE=P ATTR=ID:free_play_error EXTRACT=TXT
-SET timeout EVAL("var s=\"{{!EXTRACT}}\"; if(s.match(\"aptcha\") || s.match(\"ncorrect\")){timer = 20;} else timer = 3600; timer;")
+SET timeout EVAL("var s=\"{{!EXTRACT}}\"; if(s.match(\"aptcha\") || s.match(\"ncorrect\") || s.match(\"ession\")){timer = 20;} else timer = 3600; timer;")
 
 WAIT seconds={{timeout}}
-
-
-
