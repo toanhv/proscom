@@ -1,12 +1,13 @@
 bconfig = {
 	maxBet: 0.00300000,
-	wait: 500
+	wait: 400
 };
 
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
 var countLose = 20;
+var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 6;
@@ -14,7 +15,7 @@ var interest = 10; // %
 var confirmStop = true;
 var xConfirm = 90;
 
-var hilo = 'hi';
+var hilo = 'lo';
 
 var stopBefore = 3;
 var winCount = 0;
@@ -137,18 +138,15 @@ rollDice = function() {
 			if(stopBeforeRedirect()) {
 				return;
 			}
-			if (counter > 20000 && (parseFloat($('#balance')['text']()) - balance) > 0) {
-				return;
-			}
 			if (loseCount > 65) {
 				loseStop ++;
 			}
 			
 			$('#double_your_btc_stake').val(startStake);
 			
-			if (loseCount > 70) {
+			if (loseCount > 80) {
 				$('.xbefore').val(6);
-				$('.maxheight').val(35);
+				$('.maxheight').val(29);
 				xConfirm += 5;
 			}
 			if (loseCount > xConfirm) {
@@ -158,6 +156,9 @@ rollDice = function() {
 			anlo++;
 			winCount ++;
 			loseCount = 0;
+			
+			hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';
+			
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
@@ -292,4 +293,5 @@ setParam();
 
 $('#double_your_btc_min').click();
 $('#double_your_btc_bet_' + hilo + '_button').click();
+
 rollDice();
