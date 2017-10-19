@@ -10,10 +10,10 @@ var countLose = 25;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 6;
+var	stake = 2;
 var interest = 10; // %
 var confirmStop = true;
-var xConfirm = 90;
+var xConfirm = 80;
 
 var hilo = 'lo';
 
@@ -63,16 +63,11 @@ function getRandomWait() {
 
 function bet() {
 	if (confirmStop == true) {
-		if (loseCount > xConfirm) {
+		if ((loseCount >= xConfirm) && (loseCount - xConfirm) % 3 == 0) {
 			if(!confirm('Tài khoản đang đi vào chuỗi '+ loseCount +', bạn có muốn tiếp tục?')) {
 				throw new Error('Game over!');
 			}
 		}
-	}
-
-	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
-		x = 0;
-		$('#double_your_btc_min').click();
 	}
 	
 	$('.win-dupbo').val(loseCount);
@@ -90,6 +85,8 @@ function bet() {
 	
 	$('#double_your_btc_bet_lose').unbind();
 	$('#double_your_btc_bet_win').unbind();
+	
+	hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';
 	
 	$('#double_your_btc_bet_' + hilo + '_button').click();
 }
@@ -113,7 +110,9 @@ rollDice = function() {
 		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose) {
 				if (x > startStake) {
-					x = x * 1.12;
+					if((loseCount - countLose) % 5 == 0) {
+						x = x * 2;
+					}					
 				} else {
 					x = stake * startStake;
 				}	
@@ -145,7 +144,7 @@ rollDice = function() {
 			$('#double_your_btc_stake').val(startStake);
 			
 			if (loseCount > 80) {
-				$('.xbefore').val(6);
+				$('.xbefore').val(5);
 				$('.maxheight').val(29);
 				xConfirm += 5;
 			}
@@ -155,10 +154,7 @@ rollDice = function() {
 			x = 0;
 			anlo++;
 			winCount ++;
-			loseCount = 0;
-			
-			hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';
-			
+			loseCount = 0;			
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');

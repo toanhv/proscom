@@ -1,23 +1,24 @@
+setTimeout(console.log('Start game!'), 600000);
 bconfig = {
-	maxBet: 0.00300000,
+	maxBet: 0.00000200,
 	wait: 400
 };
 
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
-var countLose = 25;
+var countLose = 28;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 6;
 var interest = 10; // %
-var confirmStop = true;
+var confirmStop = false;
 var xConfirm = 90;
 
 var hilo = 'lo';
 
-var stopBefore = 3;
+var stopBefore = 10;
 var winCount = 0;
 var loseCount = 0;
 var anlo = 0;
@@ -61,20 +62,7 @@ function getRandomWait() {
 	return wait;
 }
 
-function bet() {
-	if (confirmStop == true) {
-		if (loseCount > xConfirm) {
-			if(!confirm('Tài khoản đang đi vào chuỗi '+ loseCount +', bạn có muốn tiếp tục?')) {
-				throw new Error('Game over!');
-			}
-		}
-	}
-
-	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
-		x = 0;
-		$('#double_your_btc_min').click();
-	}
-	
+function bet() {	
 	$('.win-dupbo').val(loseCount);
 	$('.win-next').val(winCount);
 	$('.wuynh-lo').val(counter);	
@@ -102,13 +90,6 @@ rollDice = function() {
 	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	
-	if (loseStop >= 3) {
-		if (!confirm('Bạn đã ăn ' + loseStop + ' chuỗi > 65, chơi tiếp dễ vào chuỗi lớn, bạn có muốn tiếp tục?')) {
-			return;
-		}
-		loseStop = 0;
-	}
-	
 	if ($('#double_your_btc_bet_lose').html() != '') {
 		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose) {
@@ -123,7 +104,9 @@ rollDice = function() {
 				if (loseCount > $('.check-lose').val()) {
 					$('.check-lose').val(loseCount);
 				}
-				
+				if(x > Number(bconfig.maxBet)) {
+					x = 0.00000030;
+				}
 				$('#double_your_btc_stake').val(Number(x).toFixed(8));			
 			}		
 			thualo++;
@@ -138,20 +121,6 @@ rollDice = function() {
 			if(stopBeforeRedirect()) {
 				return;
 			}
-			if (loseCount > 65) {
-				loseStop ++;
-			}
-			
-			$('#double_your_btc_stake').val(startStake);
-			
-			if (loseCount > 80) {
-				$('.xbefore').val(6);
-				$('.maxheight').val(29);
-				xConfirm += 5;
-			}
-			if (loseCount > xConfirm) {
-				throw new Error('Stop game');
-			}
 			x = 0;
 			anlo++;
 			winCount ++;
@@ -159,6 +128,7 @@ rollDice = function() {
 			
 			hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';
 			
+			$('#double_your_btc_stake').val(startStake);
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
