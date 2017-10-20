@@ -36,12 +36,12 @@ function try_roll(){
         else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >=12)
 			RedeemRPProduct('free_points_1');
     }
-    if(z==null && parseInt(myRP[0].innerText.replace(/,/g, '')) >= 3200){
+    if(z==null && parseInt(myRP[0].innerText.replace(/,/g, '')) >= 4400){
 		setTimeout(function(){
             RedeemRPProduct('fp_bonus_1000');
         }, 2000); 
     }
-	if(z==null && parseInt(myRP[0].innerText.replace(/,/g, '')) >= 1600){
+	if(z==null && parseInt(myRP[0].innerText.replace(/,/g, '')) >= 2800){
 		setTimeout(function(){
             RedeemRPProduct('fp_bonus_500');
         }, 2000); 
