@@ -27,13 +27,13 @@ function try_roll(){
         y = document.getElementById("bonus_container_free_points"),
         z = document.getElementById("bonus_container_fp_bonus");   
     if(y == null){
-        if(parseInt(myRP[0].innerText.replace(/,/g, '')) >=1200)
+        if(parseInt(myRP[0].innerText.replace(/,/g, '')) >= 1200)
 			RedeemRPProduct('free_points_100');
-        else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >=600)
+        else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >= 600)
 			RedeemRPProduct('free_points_50');
-        else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >=120)
+        else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >= 120)
 			RedeemRPProduct('free_points_10');
-        else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >=12)
+        else if(parseInt(myRP[0].innerText.replace(/,/g, '')) >= 12)
 			RedeemRPProduct('free_points_1');
     }
     if(z==null && parseInt(myRP[0].innerText.replace(/,/g, '')) >= 4400){
