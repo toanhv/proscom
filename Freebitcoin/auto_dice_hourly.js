@@ -20,7 +20,7 @@ setTimeout(console.log('Start game!'), 60000);
 bconfig = {
 	maxBet: 0.00000100,
 	resetBet: 0.00000050,
-	interest: 0.00001000,
+	interest: 0.00000500,
 	wait: 400
 };
 
