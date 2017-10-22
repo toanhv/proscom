@@ -19,8 +19,8 @@
 setTimeout(console.log('Start game!'), 60000);
 bconfig = {
 	maxBet: 0.00000100,
-	resetBet: 0.00000030,
-	interest: 0.00000500,
+	resetBet: 0.00000050,
+	interest: 0.00001000,
 	wait: 400
 };
 
@@ -31,14 +31,14 @@ var countLose = 25;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 2;
+var	stake = 3;
 var interest = 0.00000500;
 var confirmStop = false;
 var xConfirm = 80;
 
 var hilo = 'lo';
 
-var stopBefore = 10;
+var stopBefore = 5;
 var winCount = 0;
 var loseCount = 0;
 var anlo = 0;
@@ -119,9 +119,13 @@ rollDice = function() {
 		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose) {
 				if (x > startStake) {
-					if((loseCount - countLose) % 5 == 0) {
-						x = x * 2;
-					}					
+					if (x < 0.00000040) {
+						if((loseCount - countLose) % 5 == 0) {
+							x = x * 2;
+						}	
+					} else {
+						x = Number(x) + 0.00000002;
+					}
 				} else {
 					x = stake * startStake;
 				}	
@@ -149,13 +153,12 @@ rollDice = function() {
 			if(stopBeforeRedirect()) {
 				return;
 			}
-			
-			$('#double_your_btc_stake').val(startStake);
-			
 			x = 0;
 			anlo++;
 			winCount ++;
-			loseCount = 0;			
+			loseCount = 0;	
+			$('#double_your_btc_min').click();
+			$('#double_your_btc_stake').val(startStake);
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
@@ -278,7 +281,7 @@ $('.maxloser')['css']({
     width: '167px'
 });
 
-
+$('#double_your_btc_min').click();
 $('#double_your_btc_stake').val(startStake);
 $('#double_your_btc_payout_multiplier').val(payout);
 
@@ -288,7 +291,6 @@ stop = function() {
 
 setParam();
 
-$('#double_your_btc_min').click();
 $('#double_your_btc_bet_' + hilo + '_button').click();
 
 rollDice();

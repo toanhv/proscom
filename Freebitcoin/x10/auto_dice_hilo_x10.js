@@ -11,7 +11,7 @@ var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 2;
-var interest = 10; // %
+var interest = 5; // %
 var confirmStop = true;
 var xConfirm = 80;
 
@@ -140,9 +140,6 @@ rollDice = function() {
 			if (loseCount > 65) {
 				loseStop ++;
 			}
-			
-			$('#double_your_btc_stake').val(startStake);
-			
 			if (loseCount > 80) {
 				$('.xbefore').val(5);
 				$('.maxheight').val(29);
@@ -154,7 +151,9 @@ rollDice = function() {
 			x = 0;
 			anlo++;
 			winCount ++;
-			loseCount = 0;			
+			loseCount = 0;	
+			$('#double_your_btc_min').click();
+			$('#double_your_btc_stake').val(startStake);
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
