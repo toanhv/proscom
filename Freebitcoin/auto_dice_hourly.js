@@ -17,6 +17,7 @@
 // @credit      ...
 // ==/UserScript==
 setTimeout(console.log('Start game!'), 60000);
+$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
 bconfig = {
 	maxBet: 0.00000210,
 	resetBet: 0.00000100,

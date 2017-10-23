@@ -2,7 +2,7 @@ bconfig = {
 	maxBet: 0.00300000,
 	wait: 400
 };
-
+$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;

@@ -3,6 +3,8 @@ bconfig = {
 	wait: 400
 };
 
+$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
+
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
@@ -11,7 +13,7 @@ var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 6;
-var interest = 10; // %
+var interest = 10; //%
 var confirmStop = true;
 var xConfirm = 90;
 
@@ -141,9 +143,6 @@ rollDice = function() {
 			if (loseCount > 65) {
 				loseStop ++;
 			}
-			
-			$('#double_your_btc_stake').val(startStake);
-			
 			if (loseCount > 80) {
 				$('.xbefore').val(6);
 				$('.maxheight').val(29);
@@ -156,9 +155,9 @@ rollDice = function() {
 			anlo++;
 			winCount ++;
 			loseCount = 0;
-			
-			hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';
-			
+			$('#double_your_btc_min').click();
+			$('#double_your_btc_stake').val(startStake);
+			hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';			
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
