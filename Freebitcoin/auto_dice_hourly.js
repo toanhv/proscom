@@ -18,9 +18,9 @@
 // ==/UserScript==
 setTimeout(console.log('Start game!'), 60000);
 bconfig = {
-	maxBet: 0.00000100,
-	resetBet: 0.00000050,
-	interest: 0.00000500,
+	maxBet: 0.00000210,
+	resetBet: 0.00000100,
+	interest: 0.00005000,
 	wait: 400
 };
 
@@ -124,7 +124,7 @@ rollDice = function() {
 							x = x * 2;
 						}	
 					} else {
-						x = Number(x) + 0.00000002;
+						x = Number(x) + 0.00000003;
 					}
 				} else {
 					x = stake * startStake;
