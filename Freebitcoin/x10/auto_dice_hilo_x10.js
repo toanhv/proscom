@@ -30,6 +30,8 @@ var counter = 0;
 var loseStop = 0;
 
 setParam = function() {	
+	$('.play_jackpot:checked').removeAttr('checked');
+	$('.jackpot_input_margin:checked').removeAttr('checked');
 	$('.maxheight').val(countLose);
 	$('.xbefore').val(stake);
 	$('.maxloser').val(bconfig.maxBet['toFixed'](8));	
@@ -69,7 +71,8 @@ function bet() {
 			}
 		}
 	}
-	
+	$('.play_jackpot:checked').removeAttr('checked');
+	$('.jackpot_input_margin:checked').removeAttr('checked');
 	$('.win-dupbo').val(loseCount);
 	$('.win-next').val(winCount);
 	$('.wuynh-lo').val(counter);	

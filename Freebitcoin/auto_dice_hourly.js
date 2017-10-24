@@ -17,7 +17,8 @@
 // @credit      ...
 // ==/UserScript==
 setTimeout(console.log('Start game!'), 60000);
-$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
+$('.play_jackpot:checked').removeAttr('checked');
+$('.jackpot_input_margin:checked').removeAttr('checked');
 bconfig = {
 	maxBet: 0.00000210,
 	resetBet: 0.00000100,
@@ -83,7 +84,9 @@ function getRandomWait() {
 	return wait;
 }
 
-function bet() {	
+function bet() {
+	$('.play_jackpot:checked').removeAttr('checked');
+	$('.jackpot_input_margin:checked').removeAttr('checked');
 	$('.win-dupbo').val(loseCount);
 	$('.win-next').val(winCount);
 	$('.wuynh-lo').val(counter);	
