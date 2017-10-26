@@ -47,7 +47,7 @@ function try_roll(){
             x.click();
         }, 3000);    
 		setTimeout(function(){
-            GenerateMainDepositAddress();
+            //GenerateMainDepositAddress();
         }, 5000); 
     }
 }

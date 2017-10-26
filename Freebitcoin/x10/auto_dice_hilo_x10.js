@@ -2,15 +2,16 @@ bconfig = {
 	maxBet: 0.00300000,
 	wait: 400
 };
-$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
+$('.play_jackpot:checked').removeAttr('checked');
+$('.jackpot_input_margin:checked').removeAttr('checked');
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
-var countLose = 25;
+var countLose = 20;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 2;
+var	stake = 3;
 var interest = 5; // %
 var confirmStop = true;
 var xConfirm = 80;
