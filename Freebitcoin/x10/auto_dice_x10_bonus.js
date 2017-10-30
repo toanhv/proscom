@@ -1,30 +1,9 @@
-// ==UserScript==
-// @name  Auto Dice
-// @namespace   ...
-// @description Claim Free
-// ==OpenUserJS==
-// @author hoangtoanit
-// @collaborator hoangtoanit
-// ==/OpenUserJS==
-// @include     https://freebitco.in/*
-// @run-at      document-end
-// @grant       GM_addStyle
-// @grant       GM_getResourceURL
-// @grant		GM_xmlhttpRequest
-// @grant       unsafeWindow
-// @version     0.0.1
-// @icon        https://freebitco.in/favicon.ico
-// @credit      ...
-// ==/UserScript==
-setTimeout(console.log('Start game!'), 60000);
-$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
 bconfig = {
-	maxBet: 0.00000400,
-	resetBet: 0.00000100,
-	interest: 0.00000500,
+	maxBet: 0.00300000,
 	wait: 400
 };
-
+$('.play_jackpot:checked').removeAttr('checked');
+$('.jackpot_input_margin:checked').removeAttr('checked');
 var balance = parseFloat($('#bonus_account_balance')['text']());
 
 var payout = 10;
@@ -32,14 +11,14 @@ var countLose = 25;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 2;
-var interest = 0.00000500;
-var confirmStop = false;
+var	stake = 3;
+var interest = 30; // %
+var confirmStop = true;
 var xConfirm = 80;
 
 var hilo = 'lo';
 
-var stopBefore = 5;
+var stopBefore = 3;
 var winCount = 0;
 var loseCount = 0;
 var anlo = 0;
@@ -57,7 +36,7 @@ setParam = function() {
 	$('.maxheight').val(countLose);
 	$('.xbefore').val(stake);
 	$('.maxloser').val(bconfig.maxBet['toFixed'](8));	
-	interest = bconfig.interest;
+	interest = balance * interest/100; 
 }
 
 function stopBeforeRedirect() {
@@ -85,7 +64,14 @@ function getRandomWait() {
 	return wait;
 }
 
-function bet() {	
+function bet() {
+	if (confirmStop == true) {
+		if ((loseCount >= xConfirm) && (loseCount - xConfirm) % 3 == 0) {
+			if(!confirm('Tài khoản đang đi vào chuỗi '+ loseCount +', bạn có muốn tiếp tục?')) {
+				throw new Error('Game over!');
+			}
+		}
+	}
 	$('.play_jackpot:checked').removeAttr('checked');
 	$('.jackpot_input_margin:checked').removeAttr('checked');
 	$('.win-dupbo').val(loseCount);
@@ -96,8 +82,9 @@ function bet() {
 	$('.an-lo').val(anlo);
 	$('.thua-lo').val(thualo);
 	
-	if(parseFloat($('#bonus_account_wager').text()) <= 0 || parseFloat($('#bonus_account_balance')['text']()) <= 0) {
-		throw new Error('Stop Game!');
+	if (parseFloat($('#bonus_account_balance')['text']()) - balance >= interest) {
+		alert('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8));
+		throw new Error('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8));
 	}
 	
 	$('#double_your_btc_bet_lose').unbind();
@@ -116,6 +103,13 @@ rollDice = function() {
 	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	
+	if (loseStop >= 3) {
+		if (!confirm('Bạn đã ăn ' + loseStop + ' chuỗi > 65, chơi tiếp dễ vào chuỗi lớn, bạn có muốn tiếp tục?')) {
+			return;
+		}
+		loseStop = 0;
+	}
+	
 	if ($('#double_your_btc_bet_lose').html() != '') {
 		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose) {
@@ -132,9 +126,6 @@ rollDice = function() {
 				if (loseCount > $('.check-lose').val()) {
 					$('.check-lose').val(loseCount);
 				}
-				if(x > bconfig.maxBet) {
-					x = bconfig.resetBet;
-				}
 				
 				$('#double_your_btc_stake').val(Number(x).toFixed(8));			
 			}		
@@ -150,13 +141,23 @@ rollDice = function() {
 			if(stopBeforeRedirect()) {
 				return;
 			}
-			
-			$('#double_your_btc_stake').val(startStake);
-			
+			if (loseCount > 65) {
+				loseStop ++;
+			}
+			if (loseCount > 80) {
+				$('.xbefore').val(5);
+				$('.maxheight').val(29);
+				xConfirm += 5;
+			}
+			if (loseCount > xConfirm) {
+				throw new Error('Stop game');
+			}
 			x = 0;
 			anlo++;
 			winCount ++;
-			loseCount = 0;			
+			loseCount = 0;	
+			$('#double_your_btc_min').click();
+			$('#double_your_btc_stake').val(startStake);
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
@@ -293,4 +294,3 @@ $('#double_your_btc_min').click();
 $('#double_your_btc_bet_' + hilo + '_button').click();
 
 rollDice();
-

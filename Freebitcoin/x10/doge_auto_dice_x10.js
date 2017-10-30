@@ -10,8 +10,8 @@ var countLose = 20;
 var countWin = 4;
 $('#double_your_doge_min').click();
 var startStake = $('#double_your_doge_stake').val();
-var	stake = 5;
-var interest = 10; // 10%
+var	stake = 2;
+var interest = 30; //%
 var confirmStop = false;
 var xConfirm = 90;
 
@@ -113,10 +113,12 @@ rollDice = function() {
 		if($('#double_your_doge_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose) {
 				if (x > startStake) {
-					x = x * 1.12;
+					if((loseCount - countLose) % 5 == 0) {
+						x = x * 2;
+					}					
 				} else {
 					x = stake * startStake;
-				}	
+				}		
 				if (x > xHight) {
 					xHight = x;
 				}
