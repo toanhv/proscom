@@ -1,17 +1,17 @@
 bconfig = {
 	maxBet: 300,
-	wait: 500
+	wait: 400
 };
 
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
-var countLose = 20;
+var countLose = 25;
 var countWin = 4;
 $('#double_your_doge_min').click();
 var startStake = $('#double_your_doge_stake').val();
-var	stake = 2;
-var interest = 30; //%
+var	stake = 3;
+var interest = 20; //%
 var confirmStop = false;
 var xConfirm = 90;
 
@@ -91,6 +91,10 @@ function bet() {
 	$('#double_your_doge_bet_lose').unbind();
 	$('#double_your_doge_bet_win').unbind();
 	
+	hilo = (1 == Math['floor'](2 * Math['random']() + 1)) ? 'lo' : 'hi';
+	$('.play_jackpot:checked').removeAttr('checked');
+	$('.jackpot_input_margin:checked').removeAttr('checked');
+	
 	$('#double_your_doge_bet_' + hilo + '_button').click();
 }
 
@@ -103,7 +107,7 @@ rollDice = function() {
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	
 	if (loseStop >= 3) {
-		if (!confirm('Bạn đã ăn ' + loseStop + ' chuỗi > 60, chơi tiếp dễ vào chuỗi lớn, bạn có muốn tiếp tục?')) {
+		if (!confirm('Bạn đã ăn ' + loseStop + ' chuỗi > 65, chơi tiếp dễ vào chuỗi lớn, bạn có muốn tiếp tục?')) {
 			return;
 		}
 		loseStop = 0;
@@ -143,14 +147,14 @@ rollDice = function() {
 			if (counter > 20000 && (parseFloat($('#balance')['text']()) - balance) > 0) {
 				return;
 			}
-			if (loseCount > 60) {
+			if (loseCount > 65) {
 				loseStop ++;
 			}
 			
 			$('#double_your_doge_stake').val(startStake);
 			
 			if (loseCount > 80) {
-				$('.maxheight').val(35);
+				$('.maxheight').val(30);
 				xConfirm += 5;
 			}
 			if (loseCount > xConfirm) {
