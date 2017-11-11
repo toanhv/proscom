@@ -1,23 +1,25 @@
 <div class="info-diagram">
     <div class="check-account">
-<!--        <form id="manager-form" method="post" action="/modules/accountmanager?id=<?php echo $model->id ?>">
+        <form id="manager-form" method="post" action="/modules/accountmanager?id=<?php echo $model->id ?>">
             <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
             <input type="hidden" name="check" value="1">
             <input type="hidden" id="module-id" value="<?php echo $model->id ?>">
             <h3 class="title">ID: <?php echo $model->getModuleId() . ' - ' . \yii\helpers\Html::encode($model->name); ?></h3>
             <div class="row-check-account">
-                <button class="link"  onclick="$('#manager-form').submit()">Check <br>Account</button>
+                <!--<button class="link"  onclick="$('#manager-form').submit()">Check <br>Account</button>-->
+                <button class="link" onclick="javascript:void(0);">Balance</button>
                 <div class="content">
                     <div class="text-02">Money: <strong id="money-info"><?php echo number_format($model->money) ?></strong> VND</div>
                 </div>
             </div>
             <div class="row-check-account">
-                <button class="link" onclick="$('#manager-form').submit()" class="link">Check <br>Data</button>
+                <!--<button class="link" onclick="$('#manager-form').submit()" class="link">Check <br>Data</button>-->
+                <button class="link" onclick="javascript:void(0);" class="link">Data</button>
                 <div class="content">
                     <div class="text-02">Data: <strong id="data-info"><?php echo number_format($model->data) ?></strong> KB</div>
                 </div>
             </div>
-        </form>-->
+        </form>
         <form action="/modules/accountmanager?id=<?php echo $model->id ?>" id="pay_card_form" method="post">
             <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
             <input type="hidden" name="pay" value="1">
