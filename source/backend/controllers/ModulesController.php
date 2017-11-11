@@ -294,16 +294,12 @@ class ModulesController extends AppController {
             }
             if ($values['pay']) {
                 if ($values['card_info']) {
-                    if (is_numeric($values['card_info'])) {
-                        try {
-                            //$model->toClientPay(trim($values['card_info']));
-                            $model->toSim(trim($values['card_info']));
-                            $alert = "Send to module success!";
-                        } catch (Exception $e) {
-                            $alert = "An error occurred";
-                        }
-                    } else {
-                        $alert = "Card code invalid!";
+                    try {
+                        //$model->toClientPay(trim($values['card_info']));
+                        $model->toSim(trim($values['card_info']));
+                        $alert = "Send to module success!";
+                    } catch (Exception $e) {
+                        $alert = "An error occurred";
                     }
                 } else {
                     $alert = "You must enter card code!";
