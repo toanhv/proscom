@@ -233,7 +233,6 @@ class Modules extends ModulesBase {
     }
 
     public function toSim($syntax) {
-        echo $syntax;die;
         $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
         $data = new \backend\models\DataClient();
         $data->module_id = $this->id;
