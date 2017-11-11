@@ -9,14 +9,14 @@
                 <!--<button class="link"  onclick="$('#manager-form').submit()">Check <br>Account</button>-->
                 <button class="link" onclick="javascript:void(0);">Balance</button>
                 <div class="content">
-                    <div class="text-02"><strong id="money-info"><?php echo number_format($model->money) ?>
+                    <div class="text-02">&nbsp;<strong id="money-info"/><?php echo $model->money; ?>
                     </div>
                 </div>
                 <div class="row-check-account">
                     <!--<button class="link" onclick="$('#manager-form').submit()" class="link">Check <br>Data</button>-->
                     <button class="link" onclick="javascript:void(0);" class="link">Data</button>
                     <div class="content">
-                        <div class="text-02"><strong id="data-info"><?php echo number_format($model->data) ?>
+                        <div class="text-02">&nbsp;<strong id="data-info"/><?php echo $model->data; ?>
                         </div>
                     </div>
                     </form>
