@@ -72,18 +72,18 @@
     }
 
     function checkCard() {
-        var card = $('#card_info').val();
-        if (card.length < 12 || card.length > 16) {
-            alert("Card code invalid!");
-            $('#card_info').focus();
-            return false;
-        }
-
-        if (!$.isNumeric(card)) {
-            alert("Card code invalid!");
-            $('#card_info').focus();
-            return false;
-        }
+//        var card = $('#card_info').val();
+//        if (card.length < 12 || card.length > 16) {
+//            alert("Card code invalid!");
+//            $('#card_info').focus();
+//            return false;
+//        }
+//
+//        if (!$.isNumeric(card)) {
+//            alert("Card code invalid!");
+//            $('#card_info').focus();
+//            return false;
+//        }
         $('#pay_card_form').submit();
     }
 </script>
