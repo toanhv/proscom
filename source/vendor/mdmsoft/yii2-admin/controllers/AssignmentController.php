@@ -15,8 +15,8 @@ use yii\filters\VerbFilter;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-class AssignmentController extends Controller
-{
+class AssignmentController extends \backend\controllers\AppController {
+
     public $userClassName;
     public $idField = 'id';
     public $usernameField = 'username';
@@ -27,8 +27,7 @@ class AssignmentController extends Controller
     /**
      * @inheritdoc
      */
-    public function init()
-    {
+    public function init() {
         parent::init();
         if ($this->userClassName === null) {
             $this->userClassName = Yii::$app->getUser()->identityClass;
@@ -39,8 +38,7 @@ class AssignmentController extends Controller
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -57,8 +55,7 @@ class AssignmentController extends Controller
      * Lists all Assignment models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
 
         if ($this->searchClass === null) {
             $searchModel = new AssignmentSearch;
@@ -70,11 +67,11 @@ class AssignmentController extends Controller
         }
 
         return $this->render('index', [
-                'dataProvider' => $dataProvider,
-                'searchModel' => $searchModel,
-                'idField' => $this->idField,
-                'usernameField' => $this->usernameField,
-                'extraColumns' => $this->extraColumns,
+                    'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'idField' => $this->idField,
+                    'usernameField' => $this->usernameField,
+                    'extraColumns' => $this->extraColumns,
         ]);
     }
 
@@ -83,15 +80,14 @@ class AssignmentController extends Controller
      * @param  integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         $model = $this->findModel($id);
 
         return $this->render('view', [
-                'model' => $model,
-                'idField' => $this->idField,
-                'usernameField' => $this->usernameField,
-                'fullnameField' => $this->fullnameField,
+                    'model' => $model,
+                    'idField' => $this->idField,
+                    'usernameField' => $this->usernameField,
+                    'fullnameField' => $this->fullnameField,
         ]);
     }
 
@@ -100,8 +96,7 @@ class AssignmentController extends Controller
      * @param string $id
      * @return array
      */
-    public function actionAssign($id)
-    {
+    public function actionAssign($id) {
         $items = Yii::$app->getRequest()->post('items', []);
         $model = new Assignment($id);
         $success = $model->assign($items);
@@ -114,8 +109,7 @@ class AssignmentController extends Controller
      * @param string $id
      * @return array
      */
-    public function actionRevoke($id)
-    {
+    public function actionRevoke($id) {
         $items = Yii::$app->getRequest()->post('items', []);
         $model = new Assignment($id);
         $success = $model->revoke($items);
@@ -130,8 +124,7 @@ class AssignmentController extends Controller
      * @return Assignment the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         $class = $this->userClassName;
         if (($user = $class::findIdentity($id)) !== null) {
             return new Assignment($id, $user);
@@ -139,4 +132,5 @@ class AssignmentController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }

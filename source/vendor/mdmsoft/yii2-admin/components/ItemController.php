@@ -20,14 +20,12 @@ use yii\rbac\Item;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-class ItemController extends Controller
-{
+class ItemController extends \backend\controllers\AppController {
 
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -44,14 +42,13 @@ class ItemController extends Controller
      * Lists all AuthItem models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $searchModel = new AuthItemSearch(['type' => $this->type]);
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
-            'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
         ]);
     }
 
@@ -60,8 +57,7 @@ class ItemController extends Controller
      * @param  string $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         $model = $this->findModel($id);
 
         return $this->render('view', ['model' => $model]);
@@ -72,8 +68,7 @@ class ItemController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new AuthItem(null);
         $model->type = $this->type;
         if ($model->load(Yii::$app->getRequest()->post()) && $model->save()) {
@@ -89,8 +84,7 @@ class ItemController extends Controller
      * @param  string $id
      * @return mixed
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->getRequest()->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->name]);
@@ -105,8 +99,7 @@ class ItemController extends Controller
      * @param  string $id
      * @return mixed
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $model = $this->findModel($id);
         Yii::$app->getAuthManager()->remove($model->item);
         Helper::invalidate();
@@ -119,8 +112,7 @@ class ItemController extends Controller
      * @param string $id
      * @return array
      */
-    public function actionAssign($id)
-    {
+    public function actionAssign($id) {
         $items = Yii::$app->getRequest()->post('items', []);
         $model = $this->findModel($id);
         $success = $model->addChildren($items);
@@ -134,8 +126,7 @@ class ItemController extends Controller
      * @param string $id
      * @return array
      */
-    public function actionRemove($id)
-    {
+    public function actionRemove($id) {
         $items = Yii::$app->getRequest()->post('items', []);
         $model = $this->findModel($id);
         $success = $model->removeChildren($items);
@@ -147,8 +138,7 @@ class ItemController extends Controller
     /**
      * @inheritdoc
      */
-    public function getViewPath()
-    {
+    public function getViewPath() {
         return $this->module->getViewPath() . DIRECTORY_SEPARATOR . 'item';
     }
 
@@ -156,8 +146,7 @@ class ItemController extends Controller
      * Label use in view
      * @throws NotSupportedException
      */
-    public function labels()
-    {
+    public function labels() {
         throw new NotSupportedException(get_class($this) . ' does not support labels().');
     }
 
@@ -165,8 +154,7 @@ class ItemController extends Controller
      * Type of Auth Item.
      * @return integer
      */
-    public function getType()
-    {
+    public function getType() {
         
     }
 
@@ -177,8 +165,7 @@ class ItemController extends Controller
      * @return AuthItem the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         $auth = Yii::$app->getAuthManager();
         $item = $this->type === Item::TYPE_ROLE ? $auth->getRole($id) : $auth->getPermission($id);
         if ($item) {
@@ -187,4 +174,5 @@ class ItemController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }

@@ -11,13 +11,12 @@ use yii\rbac\Item;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-class RoleController extends ItemController
-{
+class RoleController extends ItemController {
+
     /**
      * @inheritdoc
      */
-    public function labels()
-    {
+    public function labels() {
         return[
             'Item' => 'Role',
             'Items' => 'Roles',
@@ -27,8 +26,8 @@ class RoleController extends ItemController
     /**
      * @inheritdoc
      */
-    public function getType()
-    {
+    public function getType() {
         return Item::TYPE_ROLE;
     }
+
 }

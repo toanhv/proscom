@@ -5,14 +5,13 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Imsi;
 use backend\models\ImsiSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * ImsiController implements the CRUD actions for Imsi model.
  */
-class ImsiController extends Controller {
+class ImsiController extends AppController {
 
     public function behaviors() {
         return [

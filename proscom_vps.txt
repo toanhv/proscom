@@ -7,3 +7,5 @@ SAu đó cho restart lại csf: csf -r
 cat /usr/local/directadmin/conf/mysql.conf
 
 GRANT ALL PRIVILEGES ON proscom.* TO 'da_admin'@'%' IDENTIFIED BY 'OGE5ZTNl';
+
+root/MegaSun@123##
