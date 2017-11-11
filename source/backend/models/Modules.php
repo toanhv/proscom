@@ -232,4 +232,20 @@ class Modules extends ModulesBase {
         $log->save(false);
     }
 
+    public function toSim($syntax) {
+        $id = ID_HEADER . \common\socket\Socket::dec2bin($this->getModuleId());
+        $data = new \backend\models\DataClient();
+        $data->module_id = $this->id;
+        $data->ie_name = CHECK_ACCOUNT_HEADER;
+        $data->data = CHECK_ACCOUNT_HEADER
+                . $id
+                . CHECK_MONEY_DATA_HEADER
+                . '&&'
+                . $syntax
+                . '%%';
+        $data->status = 0;
+        $data->created_at = new Expression('NOW()');
+        $data->save(false);
+    }
+
 }

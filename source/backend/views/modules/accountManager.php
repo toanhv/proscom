@@ -1,6 +1,6 @@
 <div class="info-diagram">
     <div class="check-account">
-        <form id="manager-form" method="post" action="/modules/accountmanager?id=<?php echo $model->id ?>">
+<!--        <form id="manager-form" method="post" action="/modules/accountmanager?id=<?php echo $model->id ?>">
             <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
             <input type="hidden" name="check" value="1">
             <input type="hidden" id="module-id" value="<?php echo $model->id ?>">
@@ -17,12 +17,12 @@
                     <div class="text-02">Data: <strong id="data-info"><?php echo number_format($model->data) ?></strong> KB</div>
                 </div>
             </div>
-        </form>
+        </form>-->
         <form action="/modules/accountmanager?id=<?php echo $model->id ?>" id="pay_card_form" method="post">
             <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
             <input type="hidden" name="pay" value="1">
             <div class="row-check-account">
-                <button class="link" onclick="return checkCard()">Change <br>Account</button>
+                <button class="link" onclick="return checkCard()">SIM <br>Balance</button>
                 <div class="content">
                     <div class="text-02">
                         <input type="text" id="card_info" name="card_info" placeholder="Enter your code" class="text-field">

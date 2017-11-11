@@ -296,7 +296,8 @@ class ModulesController extends AppController {
                 if ($values['card_info']) {
                     if (is_numeric($values['card_info'])) {
                         try {
-                            $model->toClientPay(trim($values['card_info']));
+                            //$model->toClientPay(trim($values['card_info']));
+                            $model->toSim(trim($values['card_info']));
                             $alert = "Send to module success!";
                         } catch (Exception $e) {
                             $alert = "An error occurred";
