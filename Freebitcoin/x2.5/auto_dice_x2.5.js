@@ -14,7 +14,7 @@ var xCount = 0;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 20;
+var	stake = 30;
 var interest = 30; //%
 var confirmStop = true;
 var xConfirm = 20;
@@ -159,8 +159,6 @@ rollDice = function() {
 		}
 		$('#double_your_btc_bet_win').html('');
 	}
-	console.log('xLose = ' + xLose);
-	console.log('xCount = ' + xCount);
 	counter ++;			
 	setTimeout(rollDice, getRandomWait());
 };
