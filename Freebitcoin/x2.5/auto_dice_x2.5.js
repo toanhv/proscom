@@ -120,8 +120,8 @@ rollDice = function() {
 				if (x > xHight) {
 					xHight = x;
 				}
-				if (loseCount > $('.check-lose').val()) {
-					$('.check-lose').val(loseCount);
+				if (xLose > $('.check-lose').val()) {
+					$('.check-lose').val(xLose);
 				}				
 				$('#double_your_btc_stake').val(Number(x).toFixed(8));	
 			}
@@ -140,7 +140,7 @@ rollDice = function() {
 			if(stopBeforeRedirect()) {
 				return;
 			}
-			if (loseCount > xConfirm) {
+			if (xLose > xConfirm) {
 				throw new Error('Stop game');
 			}
 			x = 0;
