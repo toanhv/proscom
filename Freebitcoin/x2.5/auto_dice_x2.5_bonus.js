@@ -1,23 +1,23 @@
 bconfig = {
-	maxBet: 0.00050000,
+	maxBet: 0.00004000,
 	wait: 400
 };
 
 $('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
 
-var balance = parseFloat($('#balance')['text']());
+var balance = parseFloat($('#bonus_account_balance')['text']());
 
 var payout = 2.5;
-var countLose = 3;
+var countLose = 4;
 var xLose = 0;
 var xCount = 0;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 30;
-var interest = 30; //%
+var	stake = 50;
+var interest = 50; //%
 var confirmStop = false;
-var xConfirm = 20;
+var xConfirm = 30;
 
 var hilo = 'hi';
 
@@ -55,7 +55,7 @@ function deexponentize(number) {
 	return number * 1000000;
 }
 function iHaveEnoughMoni() {
-	var balance = deexponentize(parseFloat($('#balance').text()));
+	var balance = deexponentize(parseFloat($('#bonus_account_balance').text()));
 	var current = deexponentize($('#double_your_btc_stake').val());
 	return ((balance*2)/100) * (current*2) > stopPercentage/100;
 }
@@ -75,6 +75,14 @@ function bet() {
 			}
 		}
 	}
+	
+	if (parseFloat($('#bonus_account_balance')['text']()) < 0.00000001) {
+		throw new Error('bonus_account_balance is zero!');
+	}
+	
+	if (parseFloat($('#bonus_account_wager')['text']()) < 0.00000001) {
+		throw new Error('bonus_account_wager is zero!');
+	}
 
 	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
 		x = stake * startStake * 2;
@@ -85,14 +93,14 @@ function bet() {
 	$('.win-dupbo').val(loseCount);
 	$('.win-next').val(winCount);
 	$('.wuynh-lo').val(counter);	
-	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
+	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	$('.an-lo').val(anlo);
 	$('.thua-lo').val(thualo);
 	
-	if (parseFloat($('#balance')['text']()) - balance >= interest) {
-		alert('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8));
-		throw new Error('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8));
+	if (parseFloat($('#bonus_account_balance')['text']()) - balance >= interest) {
+		alert('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8));
+		throw new Error('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8));
 	}
 	
 	$('#double_your_btc_bet_lose').unbind();
@@ -106,7 +114,7 @@ rollDice = function() {
 	stake = $('.xbefore').val();
 	maxBet = $('.maxloser').val();
 	
-	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
+	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	
 	if ($('#double_your_btc_bet_lose').html() != '') {
