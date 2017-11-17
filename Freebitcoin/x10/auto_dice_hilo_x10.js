@@ -7,16 +7,16 @@ $('.jackpot_input_margin:checked').removeAttr('checked');
 var balance = parseFloat($('#balance')['text']());
 
 var payout = 10;
-var countLose = 20;
+var countLose = 25;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 3;
+var	stake = 5;
 var interest = 5; // %
 var confirmStop = true;
 var xConfirm = 80;
 
-var hilo = 'lo';
+var hilo = 'hi';
 
 var stopBefore = 3;
 var winCount = 0;
@@ -85,6 +85,12 @@ function bet() {
 	if (parseFloat($('#balance')['text']()) - balance >= interest) {
 		alert('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8));
 		throw new Error('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8));
+	}
+	
+	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
+		x = stake * startStake * 2;
+		$('#double_your_btc_min').click();
+		$('#double_your_btc_stake').val(Number(x).toFixed(8));	
 	}
 	
 	$('#double_your_btc_bet_lose').unbind();

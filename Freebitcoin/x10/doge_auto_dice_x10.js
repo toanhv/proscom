@@ -10,10 +10,10 @@ var countLose = 25;
 var countWin = 4;
 $('#double_your_doge_min').click();
 var startStake = $('#double_your_doge_stake').val();
-var	stake = 3;
-var interest = 20; //%
-var confirmStop = false;
-var xConfirm = 90;
+var	stake = 5;
+var interest = 10; //%
+var confirmStop = true;
+var xConfirm = 80;
 
 var hilo = 'lo';
 
@@ -63,7 +63,7 @@ function getRandomWait() {
 
 function bet() {
 	if (confirmStop == true) {
-		if (loseCount > xConfirm) {
+		if ((loseCount >= xConfirm) && (loseCount - xConfirm) % 3 == 0) {
 			if(!confirm('Tài khoản đang đi vào chuỗi '+ loseCount +', bạn có muốn tiếp tục?')) {
 				throw new Error('Game over!');
 			}
@@ -71,8 +71,9 @@ function bet() {
 	}
 
 	if (parseFloat($('#double_your_doge_stake').val()) > maxBet) {
-		x = 0;
+		x = stake * startStake;
 		$('#double_your_doge_min').click();
+		$('#double_your_doge_stake').val(Number(x).toFixed(8));	
 	}
 	
 	$('.win-dupbo').val(loseCount);
@@ -151,6 +152,8 @@ rollDice = function() {
 				loseStop ++;
 			}
 			
+			$('#double_your_doge_min').click();
+			startStake = $('#double_your_doge_stake').val();
 			$('#double_your_doge_stake').val(startStake);
 			
 			if (loseCount > 80) {
