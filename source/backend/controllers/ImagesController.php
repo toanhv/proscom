@@ -5,7 +5,6 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Images;
 use backend\models\ImageSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -13,7 +12,7 @@ use yii\web\UploadedFile;
 /**
  * ImagesController implements the CRUD actions for Images model.
  */
-class ImagesController extends Controller {
+class ImagesController extends AppController {
 
     public function behaviors() {
         return [

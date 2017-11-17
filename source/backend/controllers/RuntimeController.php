@@ -5,7 +5,6 @@ namespace backend\controllers;
 use Yii;
 use backend\models\RuntimeStatistics;
 use backend\models\RuntimeStatisticsSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 

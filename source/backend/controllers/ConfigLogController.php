@@ -5,14 +5,13 @@ namespace backend\controllers;
 use Yii;
 use backend\models\ConfigurationLog;
 use backend\models\ConfigurationLogSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * ConfigLogController implements the CRUD actions for ConfigurationLog model.
  */
-class ConfigLogController extends Controller {
+class ConfigLogController extends AppController {
 
     public function behaviors() {
         return [

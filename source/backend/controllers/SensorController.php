@@ -5,7 +5,6 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Sensor;
 use backend\models\SensorSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 

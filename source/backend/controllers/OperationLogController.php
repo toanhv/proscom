@@ -5,14 +5,13 @@ namespace backend\controllers;
 use Yii;
 use backend\models\OperationLog;
 use backend\models\OperationLogSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * OperationLogController implements the CRUD actions for OperationLog model.
  */
-class OperationLogController extends Controller {
+class OperationLogController extends AppController {
 
     public function behaviors() {
         return [
