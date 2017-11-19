@@ -1,5 +1,5 @@
 bconfig = {
-	maxBet: 0.00500000,
+	maxBet: 30000,
 	wait: 400
 };
 
@@ -13,10 +13,10 @@ var countLose = 4;
 var xLose = 0;
 var xCount = 0;
 var countWin = 4;
-$('#double_your_btc_min').click();
-var startStake = 0.00000002;//$('#double_your_btc_stake').val();
-var	stake = 25;
-var interest = 20; //%
+$('#double_your_doge_min').click();
+var startStake = $('#double_your_doge_stake').val();
+var	stake = 50;
+var interest = 10; //%
 var confirmStop = false;
 var xConfirm = 20;
 
@@ -57,7 +57,7 @@ function deexponentize(number) {
 }
 function iHaveEnoughMoni() {
 	var balance = deexponentize(parseFloat($('#balance').text()));
-	var current = deexponentize($('#double_your_btc_stake').val());
+	var current = deexponentize($('#double_your_doge_stake').val());
 	return ((balance*2)/100) * (current*2) > stopPercentage/100;
 }
 
@@ -78,17 +78,17 @@ function bet() {
 		}
 	}
 
-	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
+	if (parseFloat($('#double_your_doge_stake').val()) > maxBet) {
 		x = stake * startStake * 2;
-		$('#double_your_btc_min').click();
-		$('#double_your_btc_stake').val(Number(x).toFixed(8));	
+		$('#double_your_doge_min').click();
+		$('#double_your_doge_stake').val(Number(x).toFixed(8));	
 	}
 	
 	$('.win-dupbo').val(loseCount);
 	$('.win-next').val(winCount);
 	$('.wuynh-lo').val(counter);	
-	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
-	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
+	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> Doge');
+	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' Doge');
 	$('.an-lo').val(anlo);
 	$('.thua-lo').val(thualo);
 	
@@ -97,10 +97,10 @@ function bet() {
 		throw new Error('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8));
 	}
 	
-	$('#double_your_btc_bet_lose').unbind();
-	$('#double_your_btc_bet_win').unbind();
+	$('#double_your_doge_bet_lose').unbind();
+	$('#double_your_doge_bet_win').unbind();
 	
-	$('#double_your_btc_bet_' + hilo + '_button').click();
+	$('#double_your_doge_bet_' + hilo + '_button').click();
 }
 
 rollDice = function() {
@@ -111,11 +111,11 @@ rollDice = function() {
 	$('.check-start').html('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + Number(parseFloat($('#balance')['text']()) - balance)['toFixed'](8) + '</span> BTC');
 	$('.max-bet').html('C\u01B0\u1EE3c cao nh\u1EA5t: ' + Number(xHight)['toFixed'](8) + ' BTC');
 	
-	if ($('#double_your_btc_bet_lose').html() != '') {
-		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
+	if ($('#double_your_doge_bet_lose').html() != '') {
+		if($('#double_your_doge_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose && xLose > (Number(countLose) + 2)) {
 				if (x > startStake) {
-					if (Number(x) > 0.00005000) {
+					if (Number(x) > 50) {
 						x = x * 1.6;
 					} else {
 						x = x * 2;
@@ -129,7 +129,7 @@ rollDice = function() {
 				if (xLose > $('.check-lose').val()) {
 					$('.check-lose').val(xLose);
 				}				
-				$('#double_your_btc_stake').val(Number(x).toFixed(8));	
+				$('#double_your_doge_stake').val(Number(x).toFixed(8));	
 			}
 			if (xLose > 0) {
 				xLose++;
@@ -139,10 +139,10 @@ rollDice = function() {
 			winCount = 0;
 			bet();
 		}
-		$('#double_your_btc_bet_lose').html('');
+		$('#double_your_doge_bet_lose').html('');
 	} 
-	if ($('#double_your_btc_bet_win').html() != '') {
-		if($('#double_your_btc_bet_win').html().indexOf('win') != -1) {
+	if ($('#double_your_doge_bet_win').html() != '') {
+		if($('#double_your_doge_bet_win').html().indexOf('win') != -1) {
 			if(stopBeforeRedirect()) {
 				return;
 			}
@@ -159,13 +159,13 @@ rollDice = function() {
 				xLose = 0;
 			}
 			
-			$('#double_your_btc_min').click();
-			$('#double_your_btc_stake').val(Number(startStake).toFixed(8));	
+			$('#double_your_doge_min').click();
+			$('#double_your_doge_stake').val(Number(startStake).toFixed(8));	
 			bet();
 		}
-		$('#double_your_btc_bet_win').html('');
+		$('#double_your_doge_bet_win').html('');
 	}
-	if($('#double_your_btc_error').html().indexOf('timed out') != -1) {
+	if($('#double_your_doge_error').html().indexOf('timed out') != -1) {
 		bet();
 	}
 	counter ++;			
@@ -286,8 +286,8 @@ $('.maxloser')['css']({
 });
 
 
-$('#double_your_btc_stake').val(startStake);
-$('#double_your_btc_payout_multiplier').val(payout);
+$('#double_your_doge_stake').val(startStake);
+$('#double_your_doge_payout_multiplier').val(payout);
 
 stop = function() {
 	document['location'] = '/';
@@ -295,6 +295,6 @@ stop = function() {
 
 setParam();
 
-$('#double_your_btc_bet_' + hilo + '_button').click();
+$('#double_your_doge_bet_' + hilo + '_button').click();
 
 rollDice();
