@@ -1,9 +1,10 @@
 bconfig = {
-	maxBet: 0.00004000,
+	maxBet: 0.00504000,
 	wait: 400
 };
 
-$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
+$('.play_jackpot:checked').removeAttr('checked');
+$('.jackpot_input_margin:checked').removeAttr('checked');
 
 var balance = parseFloat($('#bonus_account_balance')['text']());
 
@@ -13,9 +14,9 @@ var xLose = 0;
 var xCount = 0;
 var countWin = 4;
 $('#double_your_btc_min').click();
-var startStake = $('#double_your_btc_stake').val();
+var startStake = 0.00000002;//$('#double_your_btc_stake').val();
 var	stake = 50;
-var interest = 50; //%
+var interest = 30; //%
 var confirmStop = false;
 var xConfirm = 30;
 
@@ -67,7 +68,8 @@ function getRandomWait() {
 }
 
 function bet() {
-	$('.play_jackpot jackpot_input_margin:checked').removeAttr('checked');
+	$('.jackpot_input_margin:checked').removeAttr('checked');
+	$('.play_jackpot:checked').removeAttr('checked');
 	if (confirmStop == true) {
 		if ((xLose >= xConfirm) && (xLose - xConfirm) % 3 == 0) {
 			if(!confirm('Tài khoản đang đi vào chuỗi '+ xLose +', bạn có muốn tiếp tục?')) {
@@ -121,7 +123,11 @@ rollDice = function() {
 		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
 			if (loseCount >= countLose && xLose > (Number(countLose) + 2)) {
 				if (x > startStake) {
-					x = x * 2;
+					if (Number(x) > 0.00005000) {
+						x = x * 1.6;
+					} else {
+						x = x * 2;
+					}	
 				} else {
 					x = stake * startStake;
 				}	
@@ -166,6 +172,9 @@ rollDice = function() {
 			bet();
 		}
 		$('#double_your_btc_bet_win').html('');
+	}
+	if($('#double_your_btc_error').html().indexOf('timed out') != -1) {
+		bet();
 	}
 	counter ++;			
 	setTimeout(rollDice, getRandomWait());

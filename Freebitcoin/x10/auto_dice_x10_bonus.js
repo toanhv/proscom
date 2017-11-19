@@ -177,6 +177,10 @@ rollDice = function() {
 		$('#double_your_btc_bet_win').html('');
 	}
 	
+	if($('#double_your_btc_error').html().indexOf('timed out') != -1) {
+		bet();
+	}
+	
 	counter ++;			
 	setTimeout(rollDice, getRandomWait());
 };

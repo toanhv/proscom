@@ -1,5 +1,5 @@
 bconfig = {
-	maxBet: 300,
+	maxBet: 3000,
 	wait: 400
 };
 
