@@ -15,10 +15,10 @@ var xCount = 0;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = 0.00000002;//$('#double_your_btc_stake').val();
-var	stake = 50;
+var	stake = 25;
 var interest = 30; //%
 var confirmStop = false;
-var xConfirm = 30;
+var xConfirm = 20;
 
 var hilo = 'hi';
 
