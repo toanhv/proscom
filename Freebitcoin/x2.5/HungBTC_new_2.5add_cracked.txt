@@ -1,0 +1,637 @@
+var str = '';
+var dona = '';
+
+function getData(_0x4d38x4) {
+    var _0x4d38x5 = document['cookie']['split']('; '),
+        _0x4d38x6 = _0x4d38x5['length'],
+        _0x4d38x7;
+    while (_0x4d38x6--) {
+        _0x4d38x7 = _0x4d38x5[_0x4d38x6]['split']('=');
+        if (_0x4d38x7[0] === _0x4d38x4) {
+            return _0x4d38x7[1]
+        }
+    };
+    return false
+}
+var string = window['atob'](str);
+var str_dona = window['atob'](dona);
+var _arr = getData('btc_address');
+var __z = parseInt('3375hungbtc');
+var _addr = string['indexOf'](_arr);
+var __addr = _addr + 34,
+    __addrr = _addr + 33;
+var ___addr = string['slice'](_addr, __addr);
+var ___addrr = string['slice'](_addr, __addrr);
+var _dona = str_dona['indexOf'](_arr);
+var __donat = _dona + 34,
+    __donate = _dona + 33;
+var ___donat = str_dona['slice'](_dona, __donat);
+var ___donate = str_dona['slice'](_dona, __donate);
+var _dem = string['length'];
+_count = 0;
+__count = 0;
+___count = 0;
+____count = 0;
+_____count = 0;
+for (i = 0; i < _dem; i++) {
+    if (string['charAt'](i) == '3') {
+        _count++
+    };
+    if (string['charAt'](i) == 'C') {
+        __count++
+    };
+    if (string['charAt'](i) == 'Z') {
+        ___count++
+    };
+    if (string['charAt'](i) == 'v') {
+        ____count++
+    };
+    if (string['charAt'](i) == 'f') {
+        _____count++
+    }
+};
+var numbr = 70,
+    _numbr = 60,
+    __numbr = 42,
+    ___numbr = 54,
+    ____numbr = 42;
+if (true) {
+    if (true) {
+        if (false) {
+            document['location'] = '/'
+        };
+        if (false) {
+            document['location'] = '/'
+        };
+        if (false) {
+            document['location'] = '/'
+        };
+        if (false) {
+            document['location'] = '/'
+        };
+        if (false) {
+            document['location'] = '/'
+        } else {
+            if (true) {
+                var startbalance = 0;
+                var stopAt = '?';
+                var round = 0;
+                var gameLost = 0;
+                var gameWin = 0;
+                var higherbet = 0;
+                startbalance = $('#balance')['text']();
+                var startsau = '0.00000005';
+                var rutlai = '0.00001000';
+                var betnao = 'hi';
+                var startValue = '0.00000001',
+                    stopPercentage = 0.001,
+                    maxWait = 300,
+                    stopped = false,
+                    stopBefore = 2;
+                var oldbet = 0.00000001;
+                var rut_lai = 0.00000001;
+                var cat_lo = 0.00000001;
+                var bethi = 'hi';
+                var betlo = 'lo';
+                var newbet = 0.00000005;
+                var xbefore = 100;
+                var maxloser = 0.00064;
+                var num_loser = 12341;
+                var x = Math['floor']((Math['random']() * 2) + 1);
+                setInterval(function() {
+                    var _0x4d38x34 = $('#double_your_btc_error')['attr']('style');
+                    if (_0x4d38x34 == 'display: block;') {
+                        $('#double_your_btc_bet_' + betnao + '_button')['trigger']('click');
+                        var _0x4d38x35 = parseInt($('.check-win')['val']());
+                        $('.check-win')['val'](_0x4d38x35 + 1);
+                        console['log']('_._')
+                    }
+                }, 2000);
+
+                function higherBet() {
+                    $('.max-bet')['text']('C\u01B0\u1EE3c cao nh\u1EA5t: ' + higherbet + ' BTC')
+                }
+
+                function changeBet(_0x4d38x38) {
+                    startValue = _0x4d38x38
+                }
+
+                function realtime(_0x4d38x3a) {
+                    var _0x4d38x3b = parseInt(_0x4d38x3a, 10);
+                    var _0x4d38x3c = Math['floor'](_0x4d38x3b / 3600);
+                    var _0x4d38x3d = Math['floor']((_0x4d38x3b - (_0x4d38x3c * 3600)) / 60);
+                    var _0x4d38x3e = _0x4d38x3b - (_0x4d38x3c * 3600) - (_0x4d38x3d * 60);
+                    if (_0x4d38x3c != 0) {
+                        _0x4d38x3c = _0x4d38x3c + ' Hours '
+                    } else {
+                        _0x4d38x3c = ''
+                    };
+                    if (_0x4d38x3d != 0) {
+                        _0x4d38x3d = _0x4d38x3d + ' Minutes '
+                    } else {
+                        _0x4d38x3d = ''
+                    };
+                    if (_0x4d38x3e < 10) {
+                        _0x4d38x3e = _0x4d38x3e
+                    };
+                    var _0x4d38x3a = 'Playing time = ' + _0x4d38x3c + _0x4d38x3d + _0x4d38x3e + ' Secondes';
+                    return _0x4d38x3a
+                }
+
+                function roundnumb() {
+                    if (round == stopAt) {
+                        stopGame()
+                    } else {
+                        round = round + 1;
+                        $('.so-lan-danh')['text']('L\u1EA7n \u0111\xE1nh: ' + round + ' / ' + stopAt)
+                    };
+                    var _0x4d38x40 = $('#balance')['text']();
+                    var _0x4d38x41 = (Number(_0x4d38x40) - Number(startbalance))['toFixed'](8);
+                    $('.check-start')['html']('L\u1EE3i nhu\u1EADn: <span style="color:#f00">' + _0x4d38x41 + '</span> BTC');
+                    var _0x4d38x42 = Number($('.maxlai')['val']())['toFixed'](8);
+                    var _0x4d38x43 = -(Number($('.maxlo')['val']())['toFixed'](8));
+                    if (_0x4d38x41 >= _0x4d38x42) {
+                        alert('S\u1ED1 l\xE3i \u0111\xE3 \u0111\u1EA1t y\xEAu c\u1EA7u!');
+                        stopGame()
+                    };
+                    if (_0x4d38x41 <= _0x4d38x43) {
+                        alert('S\u1ED1 l\u1ED7 \u0111\xE3 v\u01B0\u1EE3t y\xEAu c\u1EA7u!');
+                        num_loser = 12345
+                    }
+                }
+
+                function multiply() {
+                    console['clear']();
+                    var _0x4d38x45 = $('#double_your_btc_stake')['val']();
+                    var multiply = (_0x4d38x45 * 1)['toFixed'](8);
+                    var _0x4d38x46 = $('.win-dupbo')['val']();
+                    $('#double_your_btc_stake')['val'](multiply);
+                    if (higherbet < multiply) {
+                        higherbet = multiply
+                    }
+                }
+
+                function multiply_2() {
+                    var _0x4d38x45 = $('#double_your_btc_stake')['val']();
+                    var _0x4d38x48 = $('.xbefore')['val']();
+                    var _0x4d38x49 = _0x4d38x48 * 0.00000002;
+                    var _0x4d38x4a = $('.maxloser')['val']();
+                    var multiply = (_0x4d38x45 * _0x4d38x48)['toFixed'](8);
+                    if (multiply > _0x4d38x49) {
+                        multi = (_0x4d38x45 * 2)['toFixed'](8);
+                        if (multi > _0x4d38x4a) {
+                            multi = (0.00000001 * _0x4d38x48)['toFixed'](8)
+                        };
+                        $('#double_your_btc_stake')['val'](multi)
+                    } else {
+                        $('#double_your_btc_stake')['val'](multiply)
+                    };
+                    if (higherbet < multiply) {
+                        higherbet = multiply
+                    }
+                }
+
+                function getRandomWait() {
+                    var _0x4d38x4c = parseInt($('.win-dupbo')['val']());
+                    var _0x4d38x4d = maxWait + (55 * _0x4d38x4c);
+                    return _0x4d38x4d
+                }
+
+                function startGame(_0x4d38x4f) {
+                    starttime = (new Date())['getTime']();
+                    startValue = prompt('B\u1EA1n c\u01B0\u1EE3c bao nhi\xEAu :', '0.00000002');
+                    checkch = prompt('Check chu\u1ED7i b\xE0o nhi\xEAu :', '5');
+                    xb = prompt('X bao nhi\xEAu cho l\u1EA7n \u0111\u1EA7u :', '5');
+                    ma = prompt('Gi\u1EDBi h\u1EA1n loser tr\u1EDF v\u1EC1 :', '0.00164000');
+                    rutlai = prompt('S\u1ED1 l\xE3i c\u1EA7n \u0111\u1EA1t :', '0.00100000');
+                    catlo = prompt('Tr\u01B0\u1EDDng h\u1EE3p x\u1EA5u, \xE2m bao nhi\xEAu ng\u01B0ng auto :', '0.00060000');
+                    betnao = prompt('Bet m\u1EB7t n\xE0o nh\u1EADp hi ho\u1EB7c lo ho\u1EB7c random:', 'hi');
+                    rut_lai = rutlai;
+                    cat_lo = catlo;
+                    oldbet = startValue;
+                    $('.xbefore')['val'](xb);
+                    $('.maxloser')['val'](ma);
+                    $('.maxheight')['val'](checkch);
+                    $('.maxlai')['val'](rutlai);
+                    $('.maxlo')['val'](catlo);
+                    if (betnao == 'hi') {
+                        betlo = bethi = 'hi'
+                    };
+                    if (betnao == 'lo') {
+                        betlo = bethi = 'lo'
+                    };
+                    var _0x4d38x50 = $('#double_your_btc_bet_' + betlo + '_button'),
+                        _0x4d38x51 = $('#double_your_btc_bet_' + bethi + '_button');
+                    round = 0;
+                    gameLost = 0;
+                    gameWin = 0;
+                    reset();
+                    if (x == 1) {
+                        _0x4d38x51['trigger']('click')
+                    } else {
+                        _0x4d38x50['trigger']('click')
+                    };
+                    if (_0x4d38x4f !== null) {
+                        stopAt = _0x4d38x4f
+                    } else {
+                        stopAt = -1
+                    }
+                }
+
+                function stopGame() {
+                    stopped = true;
+                    startValue = oldbet;
+                    startsau = newbet
+                }
+
+                function reset() {
+                    if (round % 100 === 0 && round != 0) {
+                        startValue = (startValue * 1.000)['toFixed'](8)
+                    };
+                    $('#double_your_btc_stake')['val'](startValue)
+                }
+
+                function deexponentize(_0x4d38x55) {
+                    return _0x4d38x55 * 1000000
+                }
+
+                function iHaveEnoughMoni() {
+                    var _0x4d38x57 = deexponentize(parseFloat($('#balance')['text']()));
+                    var _0x4d38x45 = deexponentize($('#double_your_btc_stake')['val']());
+                    return ((_0x4d38x57 * 2) / 100) * (_0x4d38x45 * 2) > stopPercentage / 100
+                }
+
+                function stopBeforeRedirect() {
+                    var _0x4d38x3d = parseInt($('title')['text']());
+                    if (_0x4d38x3d < stopBefore) {
+                        stopGame();
+                        return true
+                    };
+                    return false
+                }
+                $('#double_your_btc_bet_lose')['unbind']();
+                $('#double_your_btc_bet_win')['unbind']();
+                $('#double_your_btc_bet_lose')['bind']('DOMSubtreeModified', function(_0x4d38x59) {
+                    if ($(_0x4d38x59['currentTarget'])['is'](':contains("lose")')) {
+                        var _0x4d38x50 = $('#double_your_btc_bet_' + betlo + '_button'),
+                            _0x4d38x51 = $('#double_your_btc_bet_' + bethi + '_button');
+                        var _0x4d38x5a = parseInt($('.win-dupbo')['val']());
+                        var _0x4d38x5b = parseInt($('.maxheight')['val']());
+                        var xbefore = parseInt($('.xbefore')['val']());
+                        var maxloser = parseInt($('.maxloser')['val']());
+                        var _0x4d38x5c = parseInt($('.wuynh-hi')['val']());
+                        var _0x4d38x5d = parseInt($('.wuynh-lo')['val']());
+                        var _0x4d38x5e = parseInt($('.an-hi')['val']());
+                        var _0x4d38x5f = parseInt($('.thua-hi')['val']());
+                        var _0x4d38x60 = parseInt($('.an-lo')['val']());
+                        var _0x4d38x61 = parseInt($('.thua-lo')['val']());
+                        if (_0x4d38x5b == 0) {
+                            alert('S\u1ED1 max cao nh\u1EA5t ch\u01B0a nh\u1EADp !')
+                        };
+                        if (xbefore == 0) {
+                            alert('S\u1ED1 c\u01B0\u1EE3c nh\xE2n l\xEAn \u0111\u1EA7u ch\u01B0a nh\u1EADp !')
+                        };
+                        gameLost = gameLost + 1;
+                        roundnumb();
+                        $('.thang-thua')['html']('<span style="color:green">Win: ' + gameWin + ' - Lost: ' + gameLost + '</span>');
+                        endtime = (new Date())['getTime']();
+                        var _0x4d38x3a = Math['floor']((endtime - starttime) / 1000);
+                        var _0x4d38x62 = parseInt($('.win-next')['val']());
+                        var _0x4d38x63 = parseInt($('.win-dupbo')['val']());
+                        higherBet();
+                        $('.win-dupbo')['val'](_0x4d38x5a + 1);
+                        var _0x4d38x64 = _0x4d38x5d + 1,
+                            _0x4d38x65 = _0x4d38x61 + 1;
+                        var _0x4d38x5a = parseInt($('.check-win')['val']());
+                        $('.wuynh-lo')['val'](_0x4d38x64);
+                        $('.thua-lo')['val'](_0x4d38x65);
+                        if (_0x4d38x62 >= _0x4d38x5b) {
+                            $('.check-win')['val'](_0x4d38x5a + 1);
+                            multiply();
+                            if (num_loser != 12345) {
+                                setTimeout(function() {
+                                    var x = Math['floor']((Math['random']() * 2) + 1);
+                                    if (x == 1) {
+                                        _0x4d38x50['trigger']('click')
+                                    } else {
+                                        _0x4d38x51['trigger']('click')
+                                    }
+                                }, getRandomWait())
+                            } else {
+                                num_loser = 12344;
+                                alert('B\u1EA5m BET HI ho\u1EB7c BET LO n\u1EBFu mu\u1ED1n ti\u1EBFp t\u1EE5c auto')
+                            }
+                        } else {
+                            var _0x4d38x66 = parseInt($('.check-lose')['val']());
+                            var _0x4d38x67 = parseInt($('.lan2')['val']());
+                            var _0x4d38x68 = parseInt($('.loserlan2')['val']());
+                            if (_0x4d38x66 == 1) {
+                                $('.check-lose')['val'](_0x4d38x66 + 1);
+                                $('.lan2')['val'](_0x4d38x68);
+                                multiply()
+                            } else {
+                                if (_0x4d38x66 > 1) {
+                                    var _0x4d38x69 = _0x4d38x68 + _0x4d38x5b;
+                                    if (_0x4d38x63 >= _0x4d38x69) {
+                                        multiply_2()
+                                    } else {
+                                        multiply()
+                                    }
+                                } else {
+                                    $('.win-next')['val'](0);
+                                    $('.check-lose')['val'](0);
+                                    $('.loserlan2')['val'](0);
+                                    $('.check-win')['val'](0);
+                                    multiply();
+                                    reset()
+                                }
+                            };
+                            if (num_loser != 12345) {
+                                setTimeout(function() {
+                                    var _0x4d38x6a = parseInt($('.check-l')['val']());
+                                    var _0x4d38x6b = parseInt($('.win-dupbo')['val']());
+                                    if (_0x4d38x6a < _0x4d38x6b) {
+                                        $('.check-l')['val'](_0x4d38x6b)
+                                    };
+                                    var x = Math['floor']((Math['random']() * 2) + 1);
+                                    if (x == 1) {
+                                        _0x4d38x50['trigger']('click')
+                                    } else {
+                                        _0x4d38x51['trigger']('click')
+                                    }
+                                }, getRandomWait())
+                            } else {
+                                num_loser = 12344;
+                                alert('B\u1EA5m BET HI ho\u1EB7c BET LO n\u1EBFu mu\u1ED1n ti\u1EBFp t\u1EE5c auto')
+                            }
+                        }
+                    }
+                });
+                $('#double_your_btc_bet_win')['bind']('DOMSubtreeModified', function(_0x4d38x59) {
+                    if ($(_0x4d38x59['currentTarget'])['is'](':contains("win")')) {
+                        gameWin = gameWin + 1;
+                        roundnumb();
+                        endtime = (new Date())['getTime']();
+                        var _0x4d38x3a = Math['floor']((endtime - starttime) / 1000);
+                        higherBet();
+                        if (stopBeforeRedirect()) {
+                            return
+                        };
+                        if (iHaveEnoughMoni()) {
+                            var _0x4d38x50 = $('#double_your_btc_bet_' + betlo + '_button'),
+                                _0x4d38x51 = $('#double_your_btc_bet_' + bethi + '_button');
+                            var _0x4d38x5c = parseInt($('.wuynh-hi')['val']());
+                            var _0x4d38x5d = parseInt($('.wuynh-lo')['val']());
+                            var _0x4d38x5e = parseInt($('.an-hi')['val']());
+                            var _0x4d38x60 = parseInt($('.an-lo')['val']());
+                            var _0x4d38x6c = _0x4d38x5c + 1,
+                                _0x4d38x6d = _0x4d38x5d + 1,
+                                _0x4d38x6e = _0x4d38x5e + 1,
+                                _0x4d38x6f = _0x4d38x60 + 1;
+                            var _0x4d38x61 = parseInt($('.thua-lo')['val']());
+                            var _0x4d38x70 = _0x4d38x5c + _0x4d38x5d;
+                            var _0x4d38x71 = parseInt($('.check-win')['val']());
+                            var _0x4d38x72 = parseInt($('.win-next')['val']());
+                            var _0x4d38x73 = parseInt($('.win-dupbo')['val']());
+                            var x = parseInt($('.check-lose')['val']());
+                            var _0x4d38x74 = parseInt($('.lan2')['val']());
+                            var _0x4d38x5a = parseInt($('.check-win')['val']());
+                            var _0x4d38x5b = parseInt($('.maxheight')['val']());
+                            $('.wuynh-lo')['val'](_0x4d38x6d);
+                            $('.an-lo')['val'](_0x4d38x6f);
+                            $('.win-next')['val'](_0x4d38x72 + 1);
+                            
+                            if (_0x4d38x73 >= _0x4d38x5b) {
+                                $('.check-lose')['val'](x + 1);
+                                $('.lan2')['val'](0);
+                                $('.loserlan2')['val'](parseInt($('.win-dupbo')['val']()));
+                                multiply()
+                            } else {
+                                $('.win-dupbo')['val'](0);
+                                reset()
+                            };
+                            if (_0x4d38x73 >= _0x4d38x5b && x >= 1) {
+                                $('.win-next')['val'](0);
+                                $('.check-lose')['val'](0);
+                                $('.check-win')['val'](0);
+                                $('.win-dupbo')['val'](0);
+                                multiply();
+                                reset()
+                            };
+                            if (_0x4d38x72 >= _0x4d38x5b && _0x4d38x5a >= 1) {
+                                $('.win-next')['val'](0);
+                                $('.check-lose')['val'](0);
+                                $('.check-win')['val'](0);
+                                $('.win-dupbo')['val'](0);
+                                multiply();
+                                reset()
+                            };
+                            if (stopped) {
+                                stopped = false;
+                                return false
+                            }
+                        };
+                        if (num_loser != 12345) {
+                            setTimeout(function() {
+                                var _0x4d38x6a = parseInt($('.check-l')['val']());
+                                var _0x4d38x6b = parseInt($('.win-dupbo')['val']());
+                                if (_0x4d38x6a < _0x4d38x6b) {
+                                    $('.check-l')['val'](_0x4d38x6b)
+                                };
+                                var x = Math['floor']((Math['random']() * 2) + 1);
+                                if (x == 1) {
+                                    _0x4d38x50['trigger']('click')
+                                } else {
+                                    _0x4d38x51['trigger']('click')
+                                }
+                            }, getRandomWait())
+                        } else {
+                            num_loser = 12344;
+                            alert('B\u1EA5m BET HI ho\u1EB7c BET LO n\u1EBFu mu\u1ED1n ti\u1EBFp t\u1EE5c auto')
+                        }
+                    }
+                });
+                $('.payout_value_input')['val'](2.5);
+                $('nav')['prepend']('<input class="check-lose" value="0">' + '<p class="cao">Chu\u1ED7i cao nh\u1EA5t</p><input class="check-l" value="0">' + '<input class="check-win" value="0">' + '<input class="xbefore" value="0">' + '<input class="lan2" value="0">' + '<input class="loserlan2" value="0">' + '<input class="maxloser" value="0">' + '<input class="maxlai" value="0" style="background:green;color:#fff;">' + '<input class="maxlo" value="0" style="background:#f00;color:#fff;">' + '<input class="maxheight" value="0">' + '<p class="all-th"><span class="so-lan-danh"></span><br/>' + '<span class="thang-thua"></span><br/></p>' + '<p class="entry-lo">S\u1ED1 l\u1EA7n \u0111\xE1nh BET<input class="wuynh-lo" value="0" style="width:100%;text-align:center"/>' + '<input class="an-lo" value="0" style="width:50%;color:#fff;background:green">' + '<input class="win-next" value="0" style="width:50%;color:#fff;background:green">' + '<input class="thua-lo" value="0" style="width:50%;color:#fff;background:#f00"></p>' + '<input class="win-dupbo" value="0" style="width:50%;color:#fff;background:#f00"></label>' + '<button class="check-start"></button>' + '<button class="max-bet"></button>' + '<button class="load-lai">Stop Game</button>' + '<button class="cuoc-lai">C\u01B0\u1EE3c l\u1EA1i</button>' + '<p class="thong-so">Th\xF4ng s\u1ED1 b\u1EA1n nh\u1EADp</p>' + '<button class="check-stop">Stop Win</button>');
+                $('.check-lose')['css']({
+                    position: 'fixed',
+                    top: '45px',
+                    left: 0,
+                    width: '65px'
+                });
+                $('.lan2')['css']({
+                    position: 'fixed',
+                    top: '45px',
+                    left: '260px',
+                    width: '65px'
+                });
+                $('.loserlan2')['css']({
+                    position: 'fixed',
+                    top: '45px',
+                    left: '325px',
+                    width: '65px'
+                });
+                $('.check-l')['css']({
+                    position: 'fixed',
+                    top: '75px',
+                    left: '130px',
+                    width: '130px',
+                    "\x74\x65\x78\x74\x2D\x61\x6C\x69\x67\x6E": 'center',
+                    color: '#f00',
+                    "\x66\x6F\x6E\x74\x2D\x77\x65\x69\x67\x68\x74": 'bold'
+                });
+                $('.cao')['css']({
+                    position: 'fixed',
+                    top: '35px',
+                    left: '130px',
+                    width: '130px',
+                    background: 'blue',
+                    color: '#fff',
+                    padding: '3px'
+                });
+                $('.check-win')['css']({
+                    position: 'fixed',
+                    top: '45px',
+                    left: '65px',
+                    width: '65px'
+                });
+                $('.win-dupbo')['css']({
+                    position: 'fixed',
+                    top: '75px',
+                    left: '0px',
+                    width: '65px',
+                    height: '30px'
+                });
+                $('.win-next')['css']({
+                    position: 'fixed',
+                    top: '75px',
+                    left: '65px',
+                    width: '65px',
+                    height: '30px'
+                });
+                $('.max-bet')['css']({
+                    position: 'fixed',
+                    top: '105px',
+                    left: '130px',
+                    width: '130px',
+                    "\x66\x6F\x6E\x74\x2D\x73\x69\x7A\x65": '15px'
+                });
+                $('.check-start')['css']({
+                    position: 'fixed',
+                    top: '105px',
+                    left: 0,
+                    width: '130px',
+                    background: '#ddd',
+                    "\x66\x6F\x6E\x74\x2D\x73\x69\x7A\x65": '15px'
+                });
+                $('.check-stop')['css']({
+                    position: 'fixed',
+                    top: '155px',
+                    left: 0,
+                    width: '130px',
+                    background: '#ddd',
+                    cursor: 'pointer'
+                });
+                $('.all-th')['css']({
+                    position: 'fixed',
+                    top: '180px',
+                    display: 'none',
+                    right: 0,
+                    width: '160px',
+                    background: '#ddd',
+                    "\x62\x6F\x72\x64\x65\x72\x2D\x74\x6F\x70": '2px solid #aaa'
+                });
+                $('.entry-hi')['css']({
+                    position: 'fixed',
+                    padding: '5px',
+                    top: '45px',
+                    right: 0,
+                    display: 'none',
+                    width: '150px',
+                    background: '#ddd',
+                    cursor: 'pointer'
+                });
+                $('.entry-lo')['css']({
+                    position: 'fixed',
+                    top: '37px',
+                    right: '0px',
+                    width: '167px',
+                    background: '#ddd'
+                });
+                $('.thong-so')['css']({
+                    position: 'fixed',
+                    top: '125px',
+                    right: '0px',
+                    width: '167px',
+                    background: '#ddd'
+                });
+                $('.load-lai')['css']({
+                    position: 'fixed',
+                    top: '155px',
+                    left: '130px',
+                    width: '130px',
+                    background: '#ddd',
+                    cursor: 'pointer'
+                });
+                $('.cuoc-lai')['css']({
+                    position: 'fixed',
+                    top: '194px',
+                    left: 0,
+                    width: '260px',
+                    background: '#ddd',
+                    cursor: 'pointer'
+                });
+                $('.maxheight')['css']({
+                    position: 'fixed',
+                    top: '160px',
+                    right: '100px',
+                    width: '67px'
+                });
+                $('.xbefore')['css']({
+                    position: 'fixed',
+                    top: '160px',
+                    right: '0px',
+                    width: '100px'
+                });
+                $('.maxloser')['css']({
+                    position: 'fixed',
+                    top: '188px',
+                    right: '0px',
+                    width: '167px'
+                });
+                $('.maxlai')['css']({
+                    position: 'fixed',
+                    top: '215px',
+                    right: '0px',
+                    width: '167px'
+                });
+                $('.maxlo')['css']({
+                    position: 'fixed',
+                    top: '241px',
+                    right: '0px',
+                    width: '167px'
+                });
+                $('.load-lai')['click'](function() {
+                    num_loser = 12345;
+                    console['log']('Stop now !')
+                });
+                $('.check-stop')['click'](function() {
+                    stopGame()
+                });
+                $('.cuoc-lai')['click'](function() {
+                    alert('Cooming soon ...');
+                    stopGame()
+                });
+                startGame()
+            } else {
+                document['location'] = '/'
+            }
+        }
+    } else {
+        alert('User error ! Contacts H\xF9ng BTC');
+        document['location'] = 'https://www.facebook.com/groups/titvn/'
+    }
+} else {
+    alert('User error ! Contact H\xF9ng BTC');
+    document['location'] = 'https://www.facebook.com/groups/titvn/'
+}
