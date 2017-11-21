@@ -14,11 +14,11 @@
                 </div>
                 <div class="row-check-account">
                     <!--<button class="link" onclick="$('#manager-form').submit()" class="link">Check <br>Data</button>-->
-                    <button class="link" onclick="javascript:void(0);" class="link">Data</button>
+<!--                    <button class="link" onclick="javascript:void(0);" class="link">Data</button>
                     <div class="content">
                         <div class="text-02">&nbsp;<strong id="data-info"/><?php echo trim($model->data, '&&'); ?>
                         </div>
-                    </div>
+                    </div>-->
                     </form>
                     <form action="/modules/accountmanager?id=<?php echo $model->id ?>" id="pay_card_form" method="post">
                         <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
