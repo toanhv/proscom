@@ -1,6 +1,6 @@
 bconfig = {
 	maxBet: 0.00300000,
-	wait: 400
+	wait: 300
 };
 $('.play_jackpot:checked').removeAttr('checked');
 $('.jackpot_input_margin:checked').removeAttr('checked');
@@ -11,7 +11,7 @@ var countLose = 25;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
-var	stake = 5;
+var	stake = 3;
 var interest = 20; // %
 var confirmStop = true;
 var xConfirm = 80;
@@ -85,14 +85,6 @@ function bet() {
 	if (parseFloat($('#bonus_account_balance')['text']()) - balance >= interest) {
 		alert('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8));
 		throw new Error('Đã đạt lãi như kỳ vọng: ' + Number(parseFloat($('#bonus_account_balance')['text']()) - balance)['toFixed'](8));
-	}
-	
-	if (parseFloat($('#bonus_account_balance')['text']()) < 0.00000001) {
-		throw new Error('bonus_account_balance is zero!');
-	}
-	
-	if (parseFloat($('#bonus_account_wager')['text']()) < 0.00000001) {
-		throw new Error('bonus_account_wager is zero!');
 	}
 	
 	if (parseFloat($('#double_your_btc_stake').val()) > maxBet) {
