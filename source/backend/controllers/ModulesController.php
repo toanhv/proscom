@@ -318,8 +318,8 @@ class ModulesController extends AppController {
         $model = $this->findModel($id);
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return [
-            'money' => $model->money,
-            'data' => $model->data,
+            'money' => trim($model->money, '&&'),
+            'data' => trim($model->data, '&&'),
         ];
     }
 
