@@ -293,7 +293,7 @@ $('#double_your_btc_stake').val(startStake);
 $('#double_your_btc_payout_multiplier').val(payout);
 
 stop = function() {
-	document['location'] = '/';
+	throw new Error('Game stop!');
 };
 
 setParam();

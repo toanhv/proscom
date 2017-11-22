@@ -1,6 +1,6 @@
 bconfig = {
 	maxBet: 0.00300000,
-	wait: 300
+	wait: 200
 };
 $('.play_jackpot:checked').removeAttr('checked');
 $('.jackpot_input_margin:checked').removeAttr('checked');
@@ -12,7 +12,7 @@ var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = $('#double_your_btc_stake').val();
 var	stake = 3;
-var interest = 20; // %
+var interest = 10; // %
 var confirmStop = true;
 var xConfirm = 80;
 
@@ -295,7 +295,7 @@ $('#double_your_btc_stake').val(startStake);
 $('#double_your_btc_payout_multiplier').val(payout);
 
 stop = function() {
-	document['location'] = '/';
+	throw new Error('Game stop!');
 };
 
 setParam();
