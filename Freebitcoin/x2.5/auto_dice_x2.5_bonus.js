@@ -1,6 +1,6 @@
 bconfig = {
-	maxBet: 0.00004000,
-	wait: 300
+	maxBet: 0.00030000,
+	wait: 200
 };
 
 $('.play_jackpot:checked').removeAttr('checked');

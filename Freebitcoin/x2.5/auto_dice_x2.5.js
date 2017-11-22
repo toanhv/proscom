@@ -1,6 +1,6 @@
 bconfig = {
-	maxBet: 0.00020000,
-	wait: 400
+	maxBet: 0.00030000,
+	wait: 200
 };
 
 $('.play_jackpot:checked').removeAttr('checked');
@@ -15,8 +15,8 @@ var xCount = 0;
 var countWin = 4;
 $('#double_your_btc_min').click();
 var startStake = 0.00000002;//$('#double_your_btc_stake').val();
-var	stake = 25;
-var interest = 30; //%
+var	stake = 30;
+var interest = 20; //%
 var confirmStop = false;
 var xConfirm = 20;
 
@@ -113,13 +113,9 @@ rollDice = function() {
 	
 	if ($('#double_your_btc_bet_lose').html() != '') {
 		if($('#double_your_btc_bet_lose').html().indexOf('lose') != -1) {
-			if (loseCount >= countLose && xLose > (Number(countLose) + 3)) {
+			if (loseCount >= countLose && xLose > (Number(countLose) + 4)) {
 				if (x > startStake) {
-					if (Number(x) > 0.00003000) {
-						x = x * 1.8;
-					} else {
-						x = x * 2;
-					}					
+					x = x * 1.8;				
 				} else {
 					x = stake * startStake;
 				}	
@@ -290,7 +286,7 @@ $('#double_your_btc_stake').val(startStake);
 $('#double_your_btc_payout_multiplier').val(payout);
 
 stop = function() {
-	document['location'] = '/';
+	throw new Error('Game stop!');
 };
 
 setParam();
