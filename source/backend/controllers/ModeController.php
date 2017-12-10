@@ -76,7 +76,11 @@ class ModeController extends AppController {
             return $this->redirect(['view']);
         }
 
-        $model = $this->findModel($module->mode_id);
+        if ($module->mode_id) {
+            $model = $this->findModel($module->mode_id);
+        } else {
+            $this->redirect('/mode/index');
+        }
 
         return $this->render('view', [
                     'model' => $model,

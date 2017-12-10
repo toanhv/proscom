@@ -1,0 +1,23 @@
+SET !LOOP -9999999
+SET !EXTRACT_TEST_POPUP NO
+SET !ERRORIGNORE NO
+SET !TIMEOUT_PAGE 350
+SET !TIMEOUT_STEP 350
+TAB CLOSEALLOTHERS
+
+TAB T=1
+URL GOTO=https://wake.unixcoin.com/ico
+TAB CLOSEALLOTHERS
+
+WAIT seconds=10
+
+TAG POS=1 TYPE=span ATTR=id:ico-open-ss EXTRACT=TXT
+SET leftTime EVAL("var s=\"{{!EXTRACT}}\"; if(parseInt(s) > 0){leftTime= parseInt(s)} else {leftTime= 1;} leftTime;")
+WAIT seconds={{leftTime}}
+
+TAG POS=1 TYPE=INPUT ATTR=ID:unx_amount CONTENT=100
+TAG POS=1 TYPE=INPUT ATTR=name:captcha_key2 CONTENT=3962
+
+TAG POS=1 TYPE=button:SUBMIT ATTR=TXT:Buy<SP>UNX
+
+WAIT seconds=10

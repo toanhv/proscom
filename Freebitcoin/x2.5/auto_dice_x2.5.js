@@ -1,6 +1,6 @@
 bconfig = {
-	maxBet: 0.00030000,
-	wait: 200
+	maxBet: 0.00004000,
+	wait: 100
 };
 
 $('.play_jackpot:checked').removeAttr('checked');
@@ -18,7 +18,7 @@ var startStake = 0.00000002;//$('#double_your_btc_stake').val();
 var	stake = 30;
 var interest = 20; //%
 var confirmStop = false;
-var xConfirm = 20;
+var xConfirm = 30;
 
 var hilo = 'hi';
 
