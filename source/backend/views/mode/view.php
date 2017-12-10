@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Modules */
+/* @var $model backend\models\Mode */
 
 $idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
 $this->title = $idModule . ' - ' . $module->name;
