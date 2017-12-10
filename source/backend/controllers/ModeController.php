@@ -79,7 +79,7 @@ class ModeController extends AppController {
         if ($module->mode_id) {
             $model = $this->findModel($module->mode_id);
         } else {
-            $this->redirect('/mode/index');
+            return $this->redirect('/mode/index');
         }
 
         return $this->render('view', [
@@ -158,16 +158,6 @@ class ModeController extends AppController {
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-    }
-
-    /**
-     *   Author      :   quyet@webviet.vn
-     *   Description : Giao diện hiển thị demo theo file ảnh thiết kế
-     *   Date        : 28/08/2016
-     */
-    public function actionDesign() {
-        return $this->render('design', [
-        ]);
     }
 
 }
