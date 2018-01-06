@@ -9,3 +9,14 @@ cat /usr/local/directadmin/conf/mysql.conf
 GRANT ALL PRIVILEGES ON proscom.* TO 'da_admin'@'%' IDENTIFIED BY 'OGE5ZTNl';
 
 root/MegaSun@123##
+
+
+URL Control Panel: https://cloudpanel86150.superdata.vn:4083
+
+Username : duonglinh@proscom.vn
+
+Password : Proscom@2017
+
+https://support.pavietnam.vn
+Mã số khách hàng: PA-291313
+Mật khẩu mới: 5226b91624
