@@ -8,6 +8,7 @@ cat /usr/local/directadmin/conf/mysql.conf
 
 GRANT ALL PRIVILEGES ON proscom.* TO 'da_admin'@'%' IDENTIFIED BY 'OGE5ZTNl';
 
+IP: 45.117.169.229
 root/MegaSun@123##
 
 

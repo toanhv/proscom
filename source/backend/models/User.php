@@ -25,4 +25,13 @@ class User extends \common\models\User {
         return null;
     }
 
+    public static function getAllUser() {
+        $model = static::find()->all();
+        $data = [];
+        foreach ($model as $item) {
+            $data[$item->id] = \yii\helpers\Html::encode($item->username);
+        }
+        return $data;
+    }
+
 }
