@@ -4,9 +4,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=124.158.12.89;dbname=proscom',
-            'username' => 'proscom',
-            'password' => 'proscom@123312##',
+            'dsn' => 'mysql:host=45.117.169.229:3306;dbname=proscom',
+            'username' => 'da_admin',
+            'password' => 'OGE5ZTNl',
             'charset' => 'utf8',
             'enableSchemaCache' => true,
             'schemaCacheDuration' => 3600,

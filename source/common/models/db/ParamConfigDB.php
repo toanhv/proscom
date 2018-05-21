@@ -46,8 +46,7 @@ class ParamConfigDB extends \yii\db\ActiveRecord
             [['module_id'], 'required'],
             [['module_id', 'updated_by', 'created_by'], 'integer'],
             [['updated_at', 'created_at'], 'safe'],
-            [['convection_pump', 'cold_water_supply_pump', 'return_pump', 'incresed_pressure_pump', 'heat_pump', 'heat_resistor', 'three_way_valve', 'backflow_valve', 'reserved'], 'string', 'max' => 255],
-            [['module_id'], 'unique']
+            [['convection_pump', 'cold_water_supply_pump', 'return_pump', 'incresed_pressure_pump', 'heat_pump', 'heat_resistor', 'three_way_valve', 'backflow_valve', 'reserved'], 'string', 'max' => 255]
         ];
     }
 

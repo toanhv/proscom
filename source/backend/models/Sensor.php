@@ -26,6 +26,10 @@ class Sensor extends \common\models\SensorBase {
             'created_at' => Yii::t('backend', 'Created At'),
             'cam_bien_ap_suat_duong_ong' => Yii::t('backend', 'Pipeline pressure'),
             'cam_bien_nhiet_do_duong_ong_1' => Yii::t('backend', 'Pipeline temp 1'),
+            'luong_nuoc_da_lam_nong' => Yii::t('backend', 'Lượng nước đã làm nóng'),
+            'luong_dien_tieu_thu' => Yii::t('backend', 'Lượng điện đã tiêu thụ'),
+            'so_tien_tiet_kiem' => Yii::t('backend', 'Số tiền tiết kiệm được'),
+            'luong_khi_thai_co2_giam' => Yii::t('backend', 'Lượng khí thải CO2 giảm'),
         ];
     }
 

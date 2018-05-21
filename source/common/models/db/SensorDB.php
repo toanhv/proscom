@@ -22,6 +22,10 @@ use Yii;
  * @property string $created_at
  * @property string $cam_bien_ap_suat_duong_ong
  * @property string $cam_bien_nhiet_do_duong_ong_1
+ * @property string $luong_nuoc_da_lam_nong
+ * @property string $luong_dien_tieu_thu
+ * @property string $so_tien_tiet_kiem
+ * @property string $luong_khi_thai_co2_giam
  *
  * @property ModulesDB $module
  */
@@ -44,7 +48,7 @@ class SensorDB extends \yii\db\ActiveRecord
             [['module_id'], 'required'],
             [['module_id'], 'integer'],
             [['created_at'], 'safe'],
-            [['cam_bien_dan_thu', 'cam_bien_bon_solar', 'cam_bien_muc_nuoc_bon_solar', 'cam_bien_nhiet_do_bon_gia_nhiet', 'cam_bien_ap_suat_bon_gia_nhiet', 'cam_bien_buc_xa_dan_thu', 'cam_bien_nhiet_dinh_bon_solar', 'cam_bien_tran', 'cam_bien_nhiet_do_duong_ong_2', 'cam_bien_ap_suat_duong_ong', 'cam_bien_nhiet_do_duong_ong_1'], 'string', 'max' => 50],
+            [['cam_bien_dan_thu', 'cam_bien_bon_solar', 'cam_bien_muc_nuoc_bon_solar', 'cam_bien_nhiet_do_bon_gia_nhiet', 'cam_bien_ap_suat_bon_gia_nhiet', 'cam_bien_buc_xa_dan_thu', 'cam_bien_nhiet_dinh_bon_solar', 'cam_bien_tran', 'cam_bien_nhiet_do_duong_ong_2', 'cam_bien_ap_suat_duong_ong', 'cam_bien_nhiet_do_duong_ong_1', 'luong_nuoc_da_lam_nong', 'luong_dien_tieu_thu', 'so_tien_tiet_kiem', 'luong_khi_thai_co2_giam'], 'string', 'max' => 50],
             [['du_phong'], 'string', 'max' => 200]
         ];
     }
@@ -70,6 +74,10 @@ class SensorDB extends \yii\db\ActiveRecord
             'created_at' => Yii::t('backend', 'Created At'),
             'cam_bien_ap_suat_duong_ong' => Yii::t('backend', 'Cam Bien Ap Suat Duong Ong'),
             'cam_bien_nhiet_do_duong_ong_1' => Yii::t('backend', 'Cam Bien Nhiet Do Duong Ong 1'),
+            'luong_nuoc_da_lam_nong' => Yii::t('backend', 'Luong Nuoc Da Lam Nong'),
+            'luong_dien_tieu_thu' => Yii::t('backend', 'Luong Dien Tieu Thu'),
+            'so_tien_tiet_kiem' => Yii::t('backend', 'So Tien Tiet Kiem'),
+            'luong_khi_thai_co2_giam' => Yii::t('backend', 'Luong Khi Thai Co2 Giam'),
         ];
     }
 

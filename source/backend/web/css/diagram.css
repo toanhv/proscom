@@ -1177,3 +1177,10 @@
     from {background-color: #01fe03;}
     to {background-color: #ed1c24;}
 }
+
+@media (min-width: 1900px) {
+    .header .banner .banner-image img{
+        max-height:150px;
+        width:88%;
+    }
+}

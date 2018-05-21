@@ -5,13 +5,14 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Sensor;
 use backend\models\SensorSearch;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * SensorController implements the CRUD actions for Sensor model.
  */
-class SensorController extends AppController {
+class SensorController extends Controller {
 
     public function behaviors() {
         return [

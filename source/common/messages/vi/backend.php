@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -256,4 +257,8 @@ return [
     'Van Dien Tu Mot Chieu' => 'Van điện tử một chiều',
     'View' => 'Xem',
     'records' => 'Bản ghi',
+    'The water is heated' => 'Lượng nước đã làm nóng',
+    'Power Consumption' => 'Lượng điện đã tiêu thụ',
+    'Money of Saveings' => 'Số tiền tiết kiệm được',
+    'CO2 emissions decrease' => 'Lượng khí thải CO2 giảm'
 ];

@@ -256,4 +256,8 @@ return [
     'Water temperature difference between Solar panels and Solar tank' => '',
     'When temperature in the pipeline lower than this value, Valve open' => '',
     'When the Heat Pump turn on a time, if temperature in Heater tank lower than T1, R1 turn on, if R1 turn on a time, temperature in Heater tanl lower than T2, R2 turn on' => '',
+    'The water is heated' => '',
+    'Power Consumption' => '',
+    'Money of Saveings' => '',
+    'CO2 emissions decrease' => ''
 ];

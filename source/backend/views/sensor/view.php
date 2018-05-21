@@ -31,18 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
     DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'module.name',
-            'cam_bien_dan_thu',
-            'cam_bien_bon_solar',
-            'cam_bien_muc_nuoc_bon_solar',
-            'cam_bien_nhiet_do_bon_gia_nhiet',
-            'cam_bien_ap_suat_bon_gia_nhiet',
-            'cam_bien_ap_suat_duong_ong',
-            'cam_bien_nhiet_do_duong_ong',
-            'cam_bien_nhiet_dinh_bon_solar',
-            'cam_bien_tran',
-            'du_phong',
+            'module.name:html:Module',
+            'luong_nuoc_da_lam_nong',
+            'luong_dien_tieu_thu',
+            'so_tien_tiet_kiem',
+            'luong_khi_thai_co2_giam',
         ],
     ])
     ?>
