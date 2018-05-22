@@ -248,14 +248,4 @@ class Modules extends ModulesBase {
         $data->save(false);
     }
 
-    public static function getAll() {
-        $data = Modules::findAll();
-        $return = [];
-        foreach ($data as $item) {
-            $return[$item->id] = \yii\helpers\Html::encode($item->name);
-        }
-
-        return $return;
-    }
-
 }

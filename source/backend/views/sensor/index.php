@@ -11,17 +11,9 @@ $this->title = Yii::t('backend', 'Sensors');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sensor-index">
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?=
-        Html::a(Yii::t('backend', 'Create {modelClass}', [
-                    'modelClass' => 'Sensor',
-                ]), ['create'], ['class' => 'btn btn-success'])
-        ?>
-    </p>
     <?=
     GridView::widget([
+        'layout' => "{items}",
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
