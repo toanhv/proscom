@@ -107,17 +107,15 @@ class AddParamsController extends Controller {
     protected function findModel() {
         $moduleId = \Yii::$app->session->get('module_id', 0);
         $model = AddParams::find()->where(['module_id' => $moduleId])->one();
-        if (($model = AddParams::findOne($id)) !== null) {
-            return $model;
-        } else {
+        if (!$model) {
             $model = new AddParams();
             $model->module_id = $moduleId;
             $model->luong_nuoc_da_lam_nong = 0;
             $model->luong_dien_tieu_thu = 0;
             $model->so_tien_tiet_kiem = 0;
             $model->luong_khi_thai_co2_giam = 0;
-            return $model;
         }
+        return $model;
     }
 
 }
