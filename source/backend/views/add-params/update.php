@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ParamConfig */
 
-$module = $model->module;
+$module = backend\models\Modules::find($model->module_id)->one();
 $idModule = $module->country->code . $module->privincial->code . $module->distric->code . $module->customer_code;
 $this->title = 'Param config';
 ?>
