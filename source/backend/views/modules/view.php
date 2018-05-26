@@ -9,13 +9,13 @@ $mode = $model->mode->mode;
 $outputMode = $model->outputModes;
 ?>
 <?php if ($model->status == 1) { ?>
-    <a id="module-status" href="/modules/status" data-pjax="0" class="icon-emergency-fix">
+<!--    <a id="module-status" href="/modules/status" data-pjax="0" class="icon-emergency-fix">
         <img src="/images/btn_emergency.jpg" width="50"/>
-    </a>
+    </a>-->
 <?php } else { ?>
-    <a href="javascript:void(0);" class="icon-emergency-fix select-animation">
+<!--    <a href="javascript:void(0);" class="icon-emergency-fix select-animation">
         <img src="/images/btn_emergency.jpg" width="50"/>
-    </a>
+    </a>-->
 <?php } ?>
 <div class="output-mode-view">    
     <div class="info-diagram">
