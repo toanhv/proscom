@@ -9,13 +9,13 @@ $mode = $model->mode->mode;
 $outputMode = $model->outputModes;
 ?>
 <?php if ($model->status == 1) { ?>
-<!--    <a id="module-status" href="/modules/status" data-pjax="0" class="icon-emergency-fix">
-        <img src="/images/btn_emergency.jpg" width="50"/>
-    </a>-->
+    <!--    <a id="module-status" href="/modules/status" data-pjax="0" class="icon-emergency-fix">
+            <img src="/images/btn_emergency.jpg" width="50"/>
+        </a>-->
 <?php } else { ?>
-<!--    <a href="javascript:void(0);" class="icon-emergency-fix select-animation">
-        <img src="/images/btn_emergency.jpg" width="50"/>
-    </a>-->
+    <!--    <a href="javascript:void(0);" class="icon-emergency-fix select-animation">
+            <img src="/images/btn_emergency.jpg" width="50"/>
+        </a>-->
 <?php } ?>
 <div class="output-mode-view">    
     <div class="info-diagram">
@@ -425,19 +425,19 @@ $outputMode = $model->outputModes;
     <div class="buttom-content">
         <p style="width: 220px;">
             <span>Lượng nước đã làm nóng</span>
-            <span>292 m3</span>
+            <span><?php echo number_format($addParams->luong_nuoc_da_lam_nong) ?> m3</span>
         </p>
         <p style="width: 195px;">
             <span>Lượng điện tiêu thụ</span>
-            <span>1221 Kwh</span>
+            <span><?php echo number_format($addParams->luong_dien_tieu_thu) ?> Kwh</span>
         </p>
         <p style="width: 150px;">
             <span>Số tiền tiết kiệm</span>
-            <span>33 triệu</span>
+            <span><?php echo number_format($addParams->so_tien_tiet_kiem) ?> triệu</span>
         </p>
         <p style="width: 220px;">
             <span>Lượng khí thải CO2 giảm</span>
-            <span>7,35 tấn</span>
+            <span><?php echo number_format($addParams->luong_khi_thai_co2_giam) ?> tấn</span>
         </p>      
     </div>
 </div>

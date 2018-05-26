@@ -26,9 +26,11 @@ use Yii;
  * @property string $updated_at
  * @property integer $status
  *
+ * @property AddParamsDB[] $addParams
  * @property AlarmDB[] $alarms
  * @property ConfigurationLogDB[] $configurationLogs
  * @property DataClientDB[] $dataClients
+ * @property ImagesDB[] $images
  * @property ImsiDB[] $imsis
  * @property ModuleStatusDB[] $moduleStatuses
  * @property CountryDB $country
@@ -44,7 +46,7 @@ use Yii;
  * @property SensorDB[] $sensors
  * @property TimerCounterDB[] $timerCounters
  */
-class ModulesDB extends \yii\db\ActiveRecord
+class modulesDB extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -62,12 +64,12 @@ class ModulesDB extends \yii\db\ActiveRecord
         return [
             [['name', 'msisdn', 'country_id', 'privincial_id', 'distric_id', 'customer_code'], 'required'],
             [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by', 'status'], 'integer'],
+            [['money', 'data'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'address', 'password'], 'string', 'max' => 255],
             [['msisdn'], 'string', 'max' => 15],
             [['customer_code'], 'string', 'max' => 100],
-            [['money'], 'string', 'max' => 160],
-            [['data', 'alarm'], 'string', 'max' => 50],
+            [['alarm'], 'string', 'max' => 50],
             [['customer_code'], 'unique']
         ];
     }
@@ -86,8 +88,8 @@ class ModulesDB extends \yii\db\ActiveRecord
             'distric_id' => Yii::t('backend', 'Distric ID'),
             'customer_code' => Yii::t('backend', 'Customer Code'),
             'mode_id' => Yii::t('backend', 'Mode ID'),
-            'money' => Yii::t('backend', 'Money'),
-            'data' => Yii::t('backend', 'Data'),
+            'money' => Yii::t('backend', 'số tiền trong sim'),
+            'data' => Yii::t('backend', 'data 3G còn lại trong sim'),
             'address' => Yii::t('backend', 'Address'),
             'alarm' => Yii::t('backend', 'Alarm'),
             'password' => Yii::t('backend', 'Password'),
@@ -95,8 +97,16 @@ class ModulesDB extends \yii\db\ActiveRecord
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_by' => Yii::t('backend', 'Updated By'),
             'updated_at' => Yii::t('backend', 'Updated At'),
-            'status' => Yii::t('backend', 'Status'),
+            'status' => Yii::t('backend', '1: hoat dong; 0: dung hoat dong'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAddParams()
+    {
+        return $this->hasMany(AddParamsDB::className(), ['module_id' => 'id']);
     }
 
     /**
@@ -121,6 +131,14 @@ class ModulesDB extends \yii\db\ActiveRecord
     public function getDataClients()
     {
         return $this->hasMany(DataClientDB::className(), ['module_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages()
+    {
+        return $this->hasMany(ImagesDB::className(), ['module_id' => 'id']);
     }
 
     /**
