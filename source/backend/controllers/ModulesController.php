@@ -76,7 +76,7 @@ class ModulesController extends AppController {
         $sensors = $model->sensors;
         $statuses = $model->moduleStatuses;
         $alarms = $model->alarms;
-        $addParams = $model->addParams;
+        $addParams = $model->addParams[0];
 
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {

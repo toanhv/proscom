@@ -34,7 +34,8 @@ class AddParamsDB extends \yii\db\ActiveRecord
         return [
             [['module_id'], 'required'],
             [['module_id'], 'integer'],
-            [['luong_nuoc_da_lam_nong', 'luong_dien_tieu_thu', 'so_tien_tiet_kiem', 'luong_khi_thai_co2_giam'], 'string', 'max' => 50]
+            [['luong_nuoc_da_lam_nong', 'luong_dien_tieu_thu', 'so_tien_tiet_kiem', 'luong_khi_thai_co2_giam'], 'string', 'max' => 50],
+            [['module_id'], 'unique']
         ];
     }
 

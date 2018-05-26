@@ -46,7 +46,7 @@ use Yii;
  * @property SensorDB[] $sensors
  * @property TimerCounterDB[] $timerCounters
  */
-class modulesDB extends \yii\db\ActiveRecord
+class ModulesDB extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

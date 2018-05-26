@@ -22,7 +22,7 @@ $this->title = 'Param config';
                 ])
                 ?>
                 <div class="row100" style="text-align:center">
-                    <input type="submit" class="btn btn-primary" value="Update" data-confirm="Are you sure you want to send?"/>
+                    <input type="submit" class="btn btn-primary" value="Update" data-confirm="Are you sure you want to update?"/>
                 </div>
             </form>
         </div>         

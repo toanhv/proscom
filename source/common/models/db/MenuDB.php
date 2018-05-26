@@ -58,7 +58,7 @@ class MenuDB extends \yii\db\ActiveRecord
             'order' => Yii::t('backend', 'Order'),
             'data' => Yii::t('backend', 'Data'),
             'icon' => Yii::t('backend', 'Icon'),
-            'type' => Yii::t('backend', 'Type'),
+            'type' => Yii::t('backend', '0:home; 1: module'),
         ];
     }
 
