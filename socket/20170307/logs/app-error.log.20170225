@@ -1,2 +1,0 @@
-170225.221225 WARN [BoneCPConfig] releaseHelperThreads has been deprecated -- it tends to slow down your application more.
-170225.221225 WARN [BoneCPConfig] statementReleaseHelperThreads has been deprecated -- it tends to slow down your application more.
