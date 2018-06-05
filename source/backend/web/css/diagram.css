@@ -1183,4 +1183,7 @@
         max-height:150px;
         width:88%;
     }
+    .diagram {
+        text-align: center;
+    }
 }

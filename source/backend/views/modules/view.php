@@ -26,7 +26,7 @@ $outputMode = $model->outputModes;
         <div class="container-all">
             <div class="control-main item-small-view">
                 <form id="update-output-mode" method="post" action="/output-mode/update?id=<?php echo $model->id ?>">
-                    <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
+                    <input type="hidden" name="_csrf" value="<?php echo Yii::$app->request->csrfToken ?>">
                     <div class="item">
                         <h3><?php echo Yii::t('backend', 'Convection pump'); ?></h3>
                         <input type="hidden" id="convection_pump_mode" name="convection_pump[mode]" value="<?php echo $outputMode->getConvectionMode() ?>">
@@ -421,25 +421,25 @@ $outputMode = $model->outputModes;
                 </div>
             </div>
         </div>	
-    </div>  
-    <div class="buttom-content">
-        <p style="width: 215px;">
-            <span>Lượng nước đã làm nóng</span>
-            <span><?php echo number_format($addParams->luong_nuoc_da_lam_nong) ?> m3</span>
-        </p>
-        <p style="width: 175px;">
-            <span>Lượng điện tiêu thụ</span>
-            <span><?php echo number_format($addParams->luong_dien_tieu_thu) ?> Kwh</span>
-        </p>
-        <p style="width: 150px;">
-            <span>Số tiền tiết kiệm</span>
-            <span><?php echo number_format($addParams->so_tien_tiet_kiem) ?> triệu</span>
-        </p>
-        <p style="width: 200px;">
-            <span>Lượng khí thải CO2 giảm</span>
-            <span><?php echo number_format($addParams->luong_khi_thai_co2_giam) ?> tấn</span>
-        </p>      
-    </div>
+        <div class="buttom-content">
+            <p style="width: 215px;">
+                <span>Lượng nước đã làm nóng</span>
+                <span><?php echo number_format($addParams->luong_nuoc_da_lam_nong) ?> m3</span>
+            </p>
+            <p style="width: 175px;">
+                <span>Lượng điện tiêu thụ</span>
+                <span><?php echo number_format($addParams->luong_dien_tieu_thu) ?> Kwh</span>
+            </p>
+            <p style="width: 150px;">
+                <span>Số tiền tiết kiệm</span>
+                <span><?php echo number_format($addParams->so_tien_tiet_kiem) ?> triệu</span>
+            </p>
+            <p style="width: 200px;">
+                <span>Lượng khí thải CO2 giảm</span>
+                <span><?php echo number_format($addParams->luong_khi_thai_co2_giam) ?> tấn</span>
+            </p>      
+        </div>
+    </div>      
 </div>
 <?php if ($model->status == 1) { ?>
     <?=
