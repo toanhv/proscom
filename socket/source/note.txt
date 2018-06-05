@@ -1,3 +1,0 @@
-e dùng maven 3, jdk 8
-a set thêm biến JAVA_HOME_8 environment nhé
-java home 8

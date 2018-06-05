@@ -1,5 +1,0 @@
-﻿1.    Tốc độ xử lý cảm giác khá chậm, bấm 1 lệnh thì chờ 1 chút mới xử lý xong, sau đó lại chờ thêm 10-15s nữa bản tin mới về Module. Anh check lại xem tốc độ xử lý của trang web ảnh hưởng thế nào đến độ trễ này nhé.
-
-2.    Khi mất kết nối, Module off, bán tin gửi đi chưa có xác nhận… thì web chưa có phát hiện hay cảnh báo được.
-
-3.    Hiển thị trang web trên các máy tính khác nhau, có một số máy bị các nút Emergency và nút Update che mất nội dung. Ngoài ra hiển thị trên điện thoại cũng chưa được ạ.

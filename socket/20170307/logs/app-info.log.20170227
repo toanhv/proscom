@@ -1,0 +1,1920 @@
+170227.000027 INFO [TaskManager] [monitor] ================================================================
+170227.000027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.000027 INFO [TaskManager] Number of channel connections: 0
+170227.000027 INFO [TaskManager] [monitor] ================================================================
+170227.000327 INFO [TaskManager] [monitor] ================================================================
+170227.000327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.000327 INFO [TaskManager] Number of channel connections: 0
+170227.000327 INFO [TaskManager] [monitor] ================================================================
+170227.000627 INFO [TaskManager] [monitor] ================================================================
+170227.000627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.000627 INFO [TaskManager] Number of channel connections: 0
+170227.000627 INFO [TaskManager] [monitor] ================================================================
+170227.000927 INFO [TaskManager] [monitor] ================================================================
+170227.000927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.000927 INFO [TaskManager] Number of channel connections: 0
+170227.000927 INFO [TaskManager] [monitor] ================================================================
+170227.001227 INFO [TaskManager] [monitor] ================================================================
+170227.001227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.001227 INFO [TaskManager] Number of channel connections: 0
+170227.001227 INFO [TaskManager] [monitor] ================================================================
+170227.001527 INFO [TaskManager] [monitor] ================================================================
+170227.001527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.001527 INFO [TaskManager] Number of channel connections: 0
+170227.001527 INFO [TaskManager] [monitor] ================================================================
+170227.001827 INFO [TaskManager] [monitor] ================================================================
+170227.001827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.001827 INFO [TaskManager] Number of channel connections: 0
+170227.001827 INFO [TaskManager] [monitor] ================================================================
+170227.002127 INFO [TaskManager] [monitor] ================================================================
+170227.002127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.002127 INFO [TaskManager] Number of channel connections: 0
+170227.002127 INFO [TaskManager] [monitor] ================================================================
+170227.002427 INFO [TaskManager] [monitor] ================================================================
+170227.002427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.002427 INFO [TaskManager] Number of channel connections: 0
+170227.002427 INFO [TaskManager] [monitor] ================================================================
+170227.002727 INFO [TaskManager] [monitor] ================================================================
+170227.002727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.002727 INFO [TaskManager] Number of channel connections: 0
+170227.002727 INFO [TaskManager] [monitor] ================================================================
+170227.003027 INFO [TaskManager] [monitor] ================================================================
+170227.003027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.003027 INFO [TaskManager] Number of channel connections: 0
+170227.003027 INFO [TaskManager] [monitor] ================================================================
+170227.003327 INFO [TaskManager] [monitor] ================================================================
+170227.003327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.003327 INFO [TaskManager] Number of channel connections: 0
+170227.003327 INFO [TaskManager] [monitor] ================================================================
+170227.003627 INFO [TaskManager] [monitor] ================================================================
+170227.003627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.003627 INFO [TaskManager] Number of channel connections: 0
+170227.003627 INFO [TaskManager] [monitor] ================================================================
+170227.003927 INFO [TaskManager] [monitor] ================================================================
+170227.003927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.003927 INFO [TaskManager] Number of channel connections: 0
+170227.003927 INFO [TaskManager] [monitor] ================================================================
+170227.004227 INFO [TaskManager] [monitor] ================================================================
+170227.004227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.004227 INFO [TaskManager] Number of channel connections: 0
+170227.004227 INFO [TaskManager] [monitor] ================================================================
+170227.004527 INFO [TaskManager] [monitor] ================================================================
+170227.004527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.004527 INFO [TaskManager] Number of channel connections: 0
+170227.004527 INFO [TaskManager] [monitor] ================================================================
+170227.004827 INFO [TaskManager] [monitor] ================================================================
+170227.004827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.004827 INFO [TaskManager] Number of channel connections: 0
+170227.004827 INFO [TaskManager] [monitor] ================================================================
+170227.005127 INFO [TaskManager] [monitor] ================================================================
+170227.005127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.005127 INFO [TaskManager] Number of channel connections: 0
+170227.005127 INFO [TaskManager] [monitor] ================================================================
+170227.005427 INFO [TaskManager] [monitor] ================================================================
+170227.005427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.005427 INFO [TaskManager] Number of channel connections: 0
+170227.005427 INFO [TaskManager] [monitor] ================================================================
+170227.005727 INFO [TaskManager] [monitor] ================================================================
+170227.005727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.005727 INFO [TaskManager] Number of channel connections: 0
+170227.005727 INFO [TaskManager] [monitor] ================================================================
+170227.010027 INFO [TaskManager] [monitor] ================================================================
+170227.010027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.010027 INFO [TaskManager] Number of channel connections: 0
+170227.010027 INFO [TaskManager] [monitor] ================================================================
+170227.010327 INFO [TaskManager] [monitor] ================================================================
+170227.010327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.010327 INFO [TaskManager] Number of channel connections: 0
+170227.010327 INFO [TaskManager] [monitor] ================================================================
+170227.010627 INFO [TaskManager] [monitor] ================================================================
+170227.010627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.010627 INFO [TaskManager] Number of channel connections: 0
+170227.010627 INFO [TaskManager] [monitor] ================================================================
+170227.010927 INFO [TaskManager] [monitor] ================================================================
+170227.010927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.010927 INFO [TaskManager] Number of channel connections: 0
+170227.010927 INFO [TaskManager] [monitor] ================================================================
+170227.011227 INFO [TaskManager] [monitor] ================================================================
+170227.011227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.011227 INFO [TaskManager] Number of channel connections: 0
+170227.011227 INFO [TaskManager] [monitor] ================================================================
+170227.011527 INFO [TaskManager] [monitor] ================================================================
+170227.011527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.011527 INFO [TaskManager] Number of channel connections: 0
+170227.011527 INFO [TaskManager] [monitor] ================================================================
+170227.011827 INFO [TaskManager] [monitor] ================================================================
+170227.011827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.011827 INFO [TaskManager] Number of channel connections: 0
+170227.011827 INFO [TaskManager] [monitor] ================================================================
+170227.012127 INFO [TaskManager] [monitor] ================================================================
+170227.012127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.012127 INFO [TaskManager] Number of channel connections: 0
+170227.012127 INFO [TaskManager] [monitor] ================================================================
+170227.012427 INFO [TaskManager] [monitor] ================================================================
+170227.012427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.012427 INFO [TaskManager] Number of channel connections: 0
+170227.012427 INFO [TaskManager] [monitor] ================================================================
+170227.012727 INFO [TaskManager] [monitor] ================================================================
+170227.012727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.012727 INFO [TaskManager] Number of channel connections: 0
+170227.012727 INFO [TaskManager] [monitor] ================================================================
+170227.013027 INFO [TaskManager] [monitor] ================================================================
+170227.013027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.013027 INFO [TaskManager] Number of channel connections: 0
+170227.013027 INFO [TaskManager] [monitor] ================================================================
+170227.013327 INFO [TaskManager] [monitor] ================================================================
+170227.013327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.013327 INFO [TaskManager] Number of channel connections: 0
+170227.013327 INFO [TaskManager] [monitor] ================================================================
+170227.013627 INFO [TaskManager] [monitor] ================================================================
+170227.013627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.013627 INFO [TaskManager] Number of channel connections: 0
+170227.013627 INFO [TaskManager] [monitor] ================================================================
+170227.013927 INFO [TaskManager] [monitor] ================================================================
+170227.013927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.013927 INFO [TaskManager] Number of channel connections: 0
+170227.013927 INFO [TaskManager] [monitor] ================================================================
+170227.014227 INFO [TaskManager] [monitor] ================================================================
+170227.014227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.014227 INFO [TaskManager] Number of channel connections: 0
+170227.014227 INFO [TaskManager] [monitor] ================================================================
+170227.014527 INFO [TaskManager] [monitor] ================================================================
+170227.014527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.014527 INFO [TaskManager] Number of channel connections: 0
+170227.014527 INFO [TaskManager] [monitor] ================================================================
+170227.014827 INFO [TaskManager] [monitor] ================================================================
+170227.014827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.014827 INFO [TaskManager] Number of channel connections: 0
+170227.014827 INFO [TaskManager] [monitor] ================================================================
+170227.015127 INFO [TaskManager] [monitor] ================================================================
+170227.015127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.015127 INFO [TaskManager] Number of channel connections: 0
+170227.015127 INFO [TaskManager] [monitor] ================================================================
+170227.015427 INFO [TaskManager] [monitor] ================================================================
+170227.015427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.015427 INFO [TaskManager] Number of channel connections: 0
+170227.015427 INFO [TaskManager] [monitor] ================================================================
+170227.015727 INFO [TaskManager] [monitor] ================================================================
+170227.015727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.015727 INFO [TaskManager] Number of channel connections: 0
+170227.015727 INFO [TaskManager] [monitor] ================================================================
+170227.020027 INFO [TaskManager] [monitor] ================================================================
+170227.020027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.020027 INFO [TaskManager] Number of channel connections: 0
+170227.020027 INFO [TaskManager] [monitor] ================================================================
+170227.020327 INFO [TaskManager] [monitor] ================================================================
+170227.020327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.020327 INFO [TaskManager] Number of channel connections: 0
+170227.020327 INFO [TaskManager] [monitor] ================================================================
+170227.020627 INFO [TaskManager] [monitor] ================================================================
+170227.020627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.020627 INFO [TaskManager] Number of channel connections: 0
+170227.020627 INFO [TaskManager] [monitor] ================================================================
+170227.020927 INFO [TaskManager] [monitor] ================================================================
+170227.020927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.020927 INFO [TaskManager] Number of channel connections: 0
+170227.020927 INFO [TaskManager] [monitor] ================================================================
+170227.021227 INFO [TaskManager] [monitor] ================================================================
+170227.021227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.021227 INFO [TaskManager] Number of channel connections: 0
+170227.021227 INFO [TaskManager] [monitor] ================================================================
+170227.021527 INFO [TaskManager] [monitor] ================================================================
+170227.021527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.021527 INFO [TaskManager] Number of channel connections: 0
+170227.021527 INFO [TaskManager] [monitor] ================================================================
+170227.021827 INFO [TaskManager] [monitor] ================================================================
+170227.021827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.021827 INFO [TaskManager] Number of channel connections: 0
+170227.021827 INFO [TaskManager] [monitor] ================================================================
+170227.022127 INFO [TaskManager] [monitor] ================================================================
+170227.022127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.022127 INFO [TaskManager] Number of channel connections: 0
+170227.022127 INFO [TaskManager] [monitor] ================================================================
+170227.022427 INFO [TaskManager] [monitor] ================================================================
+170227.022427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.022427 INFO [TaskManager] Number of channel connections: 0
+170227.022427 INFO [TaskManager] [monitor] ================================================================
+170227.022727 INFO [TaskManager] [monitor] ================================================================
+170227.022727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.022727 INFO [TaskManager] Number of channel connections: 0
+170227.022727 INFO [TaskManager] [monitor] ================================================================
+170227.023027 INFO [TaskManager] [monitor] ================================================================
+170227.023027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.023027 INFO [TaskManager] Number of channel connections: 0
+170227.023027 INFO [TaskManager] [monitor] ================================================================
+170227.023327 INFO [TaskManager] [monitor] ================================================================
+170227.023327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.023327 INFO [TaskManager] Number of channel connections: 0
+170227.023327 INFO [TaskManager] [monitor] ================================================================
+170227.023627 INFO [TaskManager] [monitor] ================================================================
+170227.023627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.023627 INFO [TaskManager] Number of channel connections: 0
+170227.023627 INFO [TaskManager] [monitor] ================================================================
+170227.023927 INFO [TaskManager] [monitor] ================================================================
+170227.023927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.023927 INFO [TaskManager] Number of channel connections: 0
+170227.023927 INFO [TaskManager] [monitor] ================================================================
+170227.024227 INFO [TaskManager] [monitor] ================================================================
+170227.024227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.024227 INFO [TaskManager] Number of channel connections: 0
+170227.024227 INFO [TaskManager] [monitor] ================================================================
+170227.024527 INFO [TaskManager] [monitor] ================================================================
+170227.024527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.024527 INFO [TaskManager] Number of channel connections: 0
+170227.024527 INFO [TaskManager] [monitor] ================================================================
+170227.024827 INFO [TaskManager] [monitor] ================================================================
+170227.024827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.024827 INFO [TaskManager] Number of channel connections: 0
+170227.024827 INFO [TaskManager] [monitor] ================================================================
+170227.025127 INFO [TaskManager] [monitor] ================================================================
+170227.025127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.025127 INFO [TaskManager] Number of channel connections: 0
+170227.025127 INFO [TaskManager] [monitor] ================================================================
+170227.025427 INFO [TaskManager] [monitor] ================================================================
+170227.025427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.025427 INFO [TaskManager] Number of channel connections: 0
+170227.025427 INFO [TaskManager] [monitor] ================================================================
+170227.025727 INFO [TaskManager] [monitor] ================================================================
+170227.025727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.025727 INFO [TaskManager] Number of channel connections: 0
+170227.025727 INFO [TaskManager] [monitor] ================================================================
+170227.030027 INFO [TaskManager] [monitor] ================================================================
+170227.030027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.030027 INFO [TaskManager] Number of channel connections: 0
+170227.030027 INFO [TaskManager] [monitor] ================================================================
+170227.030327 INFO [TaskManager] [monitor] ================================================================
+170227.030327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.030327 INFO [TaskManager] Number of channel connections: 0
+170227.030327 INFO [TaskManager] [monitor] ================================================================
+170227.030627 INFO [TaskManager] [monitor] ================================================================
+170227.030627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.030627 INFO [TaskManager] Number of channel connections: 0
+170227.030627 INFO [TaskManager] [monitor] ================================================================
+170227.030927 INFO [TaskManager] [monitor] ================================================================
+170227.030927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.030927 INFO [TaskManager] Number of channel connections: 0
+170227.030927 INFO [TaskManager] [monitor] ================================================================
+170227.031227 INFO [TaskManager] [monitor] ================================================================
+170227.031227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.031227 INFO [TaskManager] Number of channel connections: 0
+170227.031227 INFO [TaskManager] [monitor] ================================================================
+170227.031527 INFO [TaskManager] [monitor] ================================================================
+170227.031527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.031527 INFO [TaskManager] Number of channel connections: 0
+170227.031527 INFO [TaskManager] [monitor] ================================================================
+170227.031827 INFO [TaskManager] [monitor] ================================================================
+170227.031827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.031827 INFO [TaskManager] Number of channel connections: 0
+170227.031827 INFO [TaskManager] [monitor] ================================================================
+170227.032127 INFO [TaskManager] [monitor] ================================================================
+170227.032127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.032127 INFO [TaskManager] Number of channel connections: 0
+170227.032127 INFO [TaskManager] [monitor] ================================================================
+170227.032427 INFO [TaskManager] [monitor] ================================================================
+170227.032427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.032427 INFO [TaskManager] Number of channel connections: 0
+170227.032427 INFO [TaskManager] [monitor] ================================================================
+170227.032727 INFO [TaskManager] [monitor] ================================================================
+170227.032727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.032727 INFO [TaskManager] Number of channel connections: 0
+170227.032727 INFO [TaskManager] [monitor] ================================================================
+170227.033027 INFO [TaskManager] [monitor] ================================================================
+170227.033027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.033027 INFO [TaskManager] Number of channel connections: 0
+170227.033027 INFO [TaskManager] [monitor] ================================================================
+170227.033327 INFO [TaskManager] [monitor] ================================================================
+170227.033327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.033327 INFO [TaskManager] Number of channel connections: 0
+170227.033327 INFO [TaskManager] [monitor] ================================================================
+170227.033627 INFO [TaskManager] [monitor] ================================================================
+170227.033627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.033627 INFO [TaskManager] Number of channel connections: 0
+170227.033627 INFO [TaskManager] [monitor] ================================================================
+170227.033927 INFO [TaskManager] [monitor] ================================================================
+170227.033927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.033927 INFO [TaskManager] Number of channel connections: 0
+170227.033927 INFO [TaskManager] [monitor] ================================================================
+170227.034227 INFO [TaskManager] [monitor] ================================================================
+170227.034227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.034227 INFO [TaskManager] Number of channel connections: 0
+170227.034227 INFO [TaskManager] [monitor] ================================================================
+170227.034527 INFO [TaskManager] [monitor] ================================================================
+170227.034527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.034527 INFO [TaskManager] Number of channel connections: 0
+170227.034527 INFO [TaskManager] [monitor] ================================================================
+170227.034827 INFO [TaskManager] [monitor] ================================================================
+170227.034827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.034827 INFO [TaskManager] Number of channel connections: 0
+170227.034827 INFO [TaskManager] [monitor] ================================================================
+170227.035127 INFO [TaskManager] [monitor] ================================================================
+170227.035127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.035127 INFO [TaskManager] Number of channel connections: 0
+170227.035127 INFO [TaskManager] [monitor] ================================================================
+170227.035427 INFO [TaskManager] [monitor] ================================================================
+170227.035427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.035427 INFO [TaskManager] Number of channel connections: 0
+170227.035427 INFO [TaskManager] [monitor] ================================================================
+170227.035727 INFO [TaskManager] [monitor] ================================================================
+170227.035727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.035727 INFO [TaskManager] Number of channel connections: 0
+170227.035727 INFO [TaskManager] [monitor] ================================================================
+170227.040027 INFO [TaskManager] [monitor] ================================================================
+170227.040027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.040027 INFO [TaskManager] Number of channel connections: 0
+170227.040027 INFO [TaskManager] [monitor] ================================================================
+170227.040327 INFO [TaskManager] [monitor] ================================================================
+170227.040327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.040327 INFO [TaskManager] Number of channel connections: 0
+170227.040327 INFO [TaskManager] [monitor] ================================================================
+170227.040627 INFO [TaskManager] [monitor] ================================================================
+170227.040627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.040627 INFO [TaskManager] Number of channel connections: 0
+170227.040627 INFO [TaskManager] [monitor] ================================================================
+170227.040927 INFO [TaskManager] [monitor] ================================================================
+170227.040927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.040927 INFO [TaskManager] Number of channel connections: 0
+170227.040927 INFO [TaskManager] [monitor] ================================================================
+170227.041227 INFO [TaskManager] [monitor] ================================================================
+170227.041227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.041227 INFO [TaskManager] Number of channel connections: 0
+170227.041227 INFO [TaskManager] [monitor] ================================================================
+170227.041527 INFO [TaskManager] [monitor] ================================================================
+170227.041527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.041527 INFO [TaskManager] Number of channel connections: 0
+170227.041527 INFO [TaskManager] [monitor] ================================================================
+170227.041827 INFO [TaskManager] [monitor] ================================================================
+170227.041827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.041827 INFO [TaskManager] Number of channel connections: 0
+170227.041827 INFO [TaskManager] [monitor] ================================================================
+170227.042127 INFO [TaskManager] [monitor] ================================================================
+170227.042127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.042127 INFO [TaskManager] Number of channel connections: 0
+170227.042127 INFO [TaskManager] [monitor] ================================================================
+170227.042427 INFO [TaskManager] [monitor] ================================================================
+170227.042427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.042427 INFO [TaskManager] Number of channel connections: 0
+170227.042427 INFO [TaskManager] [monitor] ================================================================
+170227.042727 INFO [TaskManager] [monitor] ================================================================
+170227.042727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.042727 INFO [TaskManager] Number of channel connections: 0
+170227.042727 INFO [TaskManager] [monitor] ================================================================
+170227.043027 INFO [TaskManager] [monitor] ================================================================
+170227.043027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.043027 INFO [TaskManager] Number of channel connections: 0
+170227.043027 INFO [TaskManager] [monitor] ================================================================
+170227.043327 INFO [TaskManager] [monitor] ================================================================
+170227.043327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.043327 INFO [TaskManager] Number of channel connections: 0
+170227.043327 INFO [TaskManager] [monitor] ================================================================
+170227.043627 INFO [TaskManager] [monitor] ================================================================
+170227.043627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.043627 INFO [TaskManager] Number of channel connections: 0
+170227.043627 INFO [TaskManager] [monitor] ================================================================
+170227.043927 INFO [TaskManager] [monitor] ================================================================
+170227.043927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.043927 INFO [TaskManager] Number of channel connections: 0
+170227.043927 INFO [TaskManager] [monitor] ================================================================
+170227.044227 INFO [TaskManager] [monitor] ================================================================
+170227.044227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.044227 INFO [TaskManager] Number of channel connections: 0
+170227.044227 INFO [TaskManager] [monitor] ================================================================
+170227.044527 INFO [TaskManager] [monitor] ================================================================
+170227.044527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.044527 INFO [TaskManager] Number of channel connections: 0
+170227.044527 INFO [TaskManager] [monitor] ================================================================
+170227.044827 INFO [TaskManager] [monitor] ================================================================
+170227.044827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.044827 INFO [TaskManager] Number of channel connections: 0
+170227.044827 INFO [TaskManager] [monitor] ================================================================
+170227.045127 INFO [TaskManager] [monitor] ================================================================
+170227.045127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.045127 INFO [TaskManager] Number of channel connections: 0
+170227.045127 INFO [TaskManager] [monitor] ================================================================
+170227.045427 INFO [TaskManager] [monitor] ================================================================
+170227.045427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.045427 INFO [TaskManager] Number of channel connections: 0
+170227.045427 INFO [TaskManager] [monitor] ================================================================
+170227.045727 INFO [TaskManager] [monitor] ================================================================
+170227.045727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.045727 INFO [TaskManager] Number of channel connections: 0
+170227.045727 INFO [TaskManager] [monitor] ================================================================
+170227.050027 INFO [TaskManager] [monitor] ================================================================
+170227.050027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.050027 INFO [TaskManager] Number of channel connections: 0
+170227.050027 INFO [TaskManager] [monitor] ================================================================
+170227.050327 INFO [TaskManager] [monitor] ================================================================
+170227.050327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.050327 INFO [TaskManager] Number of channel connections: 0
+170227.050327 INFO [TaskManager] [monitor] ================================================================
+170227.050627 INFO [TaskManager] [monitor] ================================================================
+170227.050627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.050627 INFO [TaskManager] Number of channel connections: 0
+170227.050627 INFO [TaskManager] [monitor] ================================================================
+170227.050927 INFO [TaskManager] [monitor] ================================================================
+170227.050927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.050927 INFO [TaskManager] Number of channel connections: 0
+170227.050927 INFO [TaskManager] [monitor] ================================================================
+170227.051227 INFO [TaskManager] [monitor] ================================================================
+170227.051227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.051227 INFO [TaskManager] Number of channel connections: 0
+170227.051227 INFO [TaskManager] [monitor] ================================================================
+170227.051527 INFO [TaskManager] [monitor] ================================================================
+170227.051527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.051527 INFO [TaskManager] Number of channel connections: 0
+170227.051527 INFO [TaskManager] [monitor] ================================================================
+170227.051827 INFO [TaskManager] [monitor] ================================================================
+170227.051827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.051827 INFO [TaskManager] Number of channel connections: 0
+170227.051827 INFO [TaskManager] [monitor] ================================================================
+170227.052127 INFO [TaskManager] [monitor] ================================================================
+170227.052127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.052127 INFO [TaskManager] Number of channel connections: 0
+170227.052127 INFO [TaskManager] [monitor] ================================================================
+170227.052427 INFO [TaskManager] [monitor] ================================================================
+170227.052427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.052427 INFO [TaskManager] Number of channel connections: 0
+170227.052427 INFO [TaskManager] [monitor] ================================================================
+170227.052727 INFO [TaskManager] [monitor] ================================================================
+170227.052727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.052727 INFO [TaskManager] Number of channel connections: 0
+170227.052727 INFO [TaskManager] [monitor] ================================================================
+170227.053027 INFO [TaskManager] [monitor] ================================================================
+170227.053027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.053027 INFO [TaskManager] Number of channel connections: 0
+170227.053027 INFO [TaskManager] [monitor] ================================================================
+170227.053327 INFO [TaskManager] [monitor] ================================================================
+170227.053327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.053327 INFO [TaskManager] Number of channel connections: 0
+170227.053327 INFO [TaskManager] [monitor] ================================================================
+170227.053627 INFO [TaskManager] [monitor] ================================================================
+170227.053627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.053627 INFO [TaskManager] Number of channel connections: 0
+170227.053627 INFO [TaskManager] [monitor] ================================================================
+170227.053927 INFO [TaskManager] [monitor] ================================================================
+170227.053927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.053927 INFO [TaskManager] Number of channel connections: 0
+170227.053927 INFO [TaskManager] [monitor] ================================================================
+170227.054227 INFO [TaskManager] [monitor] ================================================================
+170227.054227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.054227 INFO [TaskManager] Number of channel connections: 0
+170227.054227 INFO [TaskManager] [monitor] ================================================================
+170227.054527 INFO [TaskManager] [monitor] ================================================================
+170227.054527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.054527 INFO [TaskManager] Number of channel connections: 0
+170227.054527 INFO [TaskManager] [monitor] ================================================================
+170227.054827 INFO [TaskManager] [monitor] ================================================================
+170227.054827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.054827 INFO [TaskManager] Number of channel connections: 0
+170227.054827 INFO [TaskManager] [monitor] ================================================================
+170227.055127 INFO [TaskManager] [monitor] ================================================================
+170227.055127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.055127 INFO [TaskManager] Number of channel connections: 0
+170227.055127 INFO [TaskManager] [monitor] ================================================================
+170227.055427 INFO [TaskManager] [monitor] ================================================================
+170227.055427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.055427 INFO [TaskManager] Number of channel connections: 0
+170227.055427 INFO [TaskManager] [monitor] ================================================================
+170227.055727 INFO [TaskManager] [monitor] ================================================================
+170227.055727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.055727 INFO [TaskManager] Number of channel connections: 0
+170227.055727 INFO [TaskManager] [monitor] ================================================================
+170227.060027 INFO [TaskManager] [monitor] ================================================================
+170227.060027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.060027 INFO [TaskManager] Number of channel connections: 0
+170227.060027 INFO [TaskManager] [monitor] ================================================================
+170227.060327 INFO [TaskManager] [monitor] ================================================================
+170227.060327 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.060327 INFO [TaskManager] Number of channel connections: 0
+170227.060327 INFO [TaskManager] [monitor] ================================================================
+170227.060627 INFO [TaskManager] [monitor] ================================================================
+170227.060627 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.060627 INFO [TaskManager] Number of channel connections: 0
+170227.060627 INFO [TaskManager] [monitor] ================================================================
+170227.060927 INFO [TaskManager] [monitor] ================================================================
+170227.060927 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.060927 INFO [TaskManager] Number of channel connections: 0
+170227.060927 INFO [TaskManager] [monitor] ================================================================
+170227.061227 INFO [TaskManager] [monitor] ================================================================
+170227.061227 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.061227 INFO [TaskManager] Number of channel connections: 0
+170227.061227 INFO [TaskManager] [monitor] ================================================================
+170227.061527 INFO [TaskManager] [monitor] ================================================================
+170227.061527 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.061527 INFO [TaskManager] Number of channel connections: 0
+170227.061527 INFO [TaskManager] [monitor] ================================================================
+170227.061827 INFO [TaskManager] [monitor] ================================================================
+170227.061827 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.061827 INFO [TaskManager] Number of channel connections: 0
+170227.061827 INFO [TaskManager] [monitor] ================================================================
+170227.062127 INFO [TaskManager] [monitor] ================================================================
+170227.062127 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.062127 INFO [TaskManager] Number of channel connections: 0
+170227.062127 INFO [TaskManager] [monitor] ================================================================
+170227.062427 INFO [TaskManager] [monitor] ================================================================
+170227.062427 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.062427 INFO [TaskManager] Number of channel connections: 0
+170227.062427 INFO [TaskManager] [monitor] ================================================================
+170227.062727 INFO [TaskManager] [monitor] ================================================================
+170227.062727 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.062727 INFO [TaskManager] Number of channel connections: 0
+170227.062727 INFO [TaskManager] [monitor] ================================================================
+170227.063027 INFO [TaskManager] [monitor] ================================================================
+170227.063027 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.063027 INFO [TaskManager] Number of channel connections: 0
+170227.063027 INFO [TaskManager] [monitor] ================================================================
+170227.063328 INFO [TaskManager] [monitor] ================================================================
+170227.063328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.063328 INFO [TaskManager] Number of channel connections: 0
+170227.063328 INFO [TaskManager] [monitor] ================================================================
+170227.063628 INFO [TaskManager] [monitor] ================================================================
+170227.063628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.063628 INFO [TaskManager] Number of channel connections: 0
+170227.063628 INFO [TaskManager] [monitor] ================================================================
+170227.063928 INFO [TaskManager] [monitor] ================================================================
+170227.063928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.063928 INFO [TaskManager] Number of channel connections: 0
+170227.063928 INFO [TaskManager] [monitor] ================================================================
+170227.064228 INFO [TaskManager] [monitor] ================================================================
+170227.064228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.064228 INFO [TaskManager] Number of channel connections: 0
+170227.064228 INFO [TaskManager] [monitor] ================================================================
+170227.064528 INFO [TaskManager] [monitor] ================================================================
+170227.064528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.064528 INFO [TaskManager] Number of channel connections: 0
+170227.064528 INFO [TaskManager] [monitor] ================================================================
+170227.064828 INFO [TaskManager] [monitor] ================================================================
+170227.064828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.064828 INFO [TaskManager] Number of channel connections: 0
+170227.064828 INFO [TaskManager] [monitor] ================================================================
+170227.065128 INFO [TaskManager] [monitor] ================================================================
+170227.065128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.065128 INFO [TaskManager] Number of channel connections: 0
+170227.065128 INFO [TaskManager] [monitor] ================================================================
+170227.065428 INFO [TaskManager] [monitor] ================================================================
+170227.065428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.065428 INFO [TaskManager] Number of channel connections: 0
+170227.065428 INFO [TaskManager] [monitor] ================================================================
+170227.065728 INFO [TaskManager] [monitor] ================================================================
+170227.065728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.065728 INFO [TaskManager] Number of channel connections: 0
+170227.065728 INFO [TaskManager] [monitor] ================================================================
+170227.070028 INFO [TaskManager] [monitor] ================================================================
+170227.070028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.070028 INFO [TaskManager] Number of channel connections: 0
+170227.070028 INFO [TaskManager] [monitor] ================================================================
+170227.070328 INFO [TaskManager] [monitor] ================================================================
+170227.070328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.070328 INFO [TaskManager] Number of channel connections: 0
+170227.070328 INFO [TaskManager] [monitor] ================================================================
+170227.070628 INFO [TaskManager] [monitor] ================================================================
+170227.070628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.070628 INFO [TaskManager] Number of channel connections: 0
+170227.070628 INFO [TaskManager] [monitor] ================================================================
+170227.070928 INFO [TaskManager] [monitor] ================================================================
+170227.070928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.070928 INFO [TaskManager] Number of channel connections: 0
+170227.070928 INFO [TaskManager] [monitor] ================================================================
+170227.071228 INFO [TaskManager] [monitor] ================================================================
+170227.071228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.071228 INFO [TaskManager] Number of channel connections: 0
+170227.071228 INFO [TaskManager] [monitor] ================================================================
+170227.071528 INFO [TaskManager] [monitor] ================================================================
+170227.071528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.071528 INFO [TaskManager] Number of channel connections: 0
+170227.071528 INFO [TaskManager] [monitor] ================================================================
+170227.071828 INFO [TaskManager] [monitor] ================================================================
+170227.071828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.071828 INFO [TaskManager] Number of channel connections: 0
+170227.071828 INFO [TaskManager] [monitor] ================================================================
+170227.072128 INFO [TaskManager] [monitor] ================================================================
+170227.072128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.072128 INFO [TaskManager] Number of channel connections: 0
+170227.072128 INFO [TaskManager] [monitor] ================================================================
+170227.072428 INFO [TaskManager] [monitor] ================================================================
+170227.072428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.072428 INFO [TaskManager] Number of channel connections: 0
+170227.072428 INFO [TaskManager] [monitor] ================================================================
+170227.072728 INFO [TaskManager] [monitor] ================================================================
+170227.072728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.072728 INFO [TaskManager] Number of channel connections: 0
+170227.072728 INFO [TaskManager] [monitor] ================================================================
+170227.073028 INFO [TaskManager] [monitor] ================================================================
+170227.073028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.073028 INFO [TaskManager] Number of channel connections: 0
+170227.073028 INFO [TaskManager] [monitor] ================================================================
+170227.073328 INFO [TaskManager] [monitor] ================================================================
+170227.073328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.073328 INFO [TaskManager] Number of channel connections: 0
+170227.073328 INFO [TaskManager] [monitor] ================================================================
+170227.073628 INFO [TaskManager] [monitor] ================================================================
+170227.073628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.073628 INFO [TaskManager] Number of channel connections: 0
+170227.073628 INFO [TaskManager] [monitor] ================================================================
+170227.073928 INFO [TaskManager] [monitor] ================================================================
+170227.073928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.073928 INFO [TaskManager] Number of channel connections: 0
+170227.073928 INFO [TaskManager] [monitor] ================================================================
+170227.074228 INFO [TaskManager] [monitor] ================================================================
+170227.074228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.074228 INFO [TaskManager] Number of channel connections: 0
+170227.074228 INFO [TaskManager] [monitor] ================================================================
+170227.074528 INFO [TaskManager] [monitor] ================================================================
+170227.074528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.074528 INFO [TaskManager] Number of channel connections: 0
+170227.074528 INFO [TaskManager] [monitor] ================================================================
+170227.074828 INFO [TaskManager] [monitor] ================================================================
+170227.074828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.074828 INFO [TaskManager] Number of channel connections: 0
+170227.074828 INFO [TaskManager] [monitor] ================================================================
+170227.075128 INFO [TaskManager] [monitor] ================================================================
+170227.075128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.075128 INFO [TaskManager] Number of channel connections: 0
+170227.075128 INFO [TaskManager] [monitor] ================================================================
+170227.075428 INFO [TaskManager] [monitor] ================================================================
+170227.075428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.075428 INFO [TaskManager] Number of channel connections: 0
+170227.075428 INFO [TaskManager] [monitor] ================================================================
+170227.075728 INFO [TaskManager] [monitor] ================================================================
+170227.075728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.075728 INFO [TaskManager] Number of channel connections: 0
+170227.075728 INFO [TaskManager] [monitor] ================================================================
+170227.080028 INFO [TaskManager] [monitor] ================================================================
+170227.080028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.080028 INFO [TaskManager] Number of channel connections: 0
+170227.080028 INFO [TaskManager] [monitor] ================================================================
+170227.080328 INFO [TaskManager] [monitor] ================================================================
+170227.080328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.080328 INFO [TaskManager] Number of channel connections: 0
+170227.080328 INFO [TaskManager] [monitor] ================================================================
+170227.080628 INFO [TaskManager] [monitor] ================================================================
+170227.080628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.080628 INFO [TaskManager] Number of channel connections: 0
+170227.080628 INFO [TaskManager] [monitor] ================================================================
+170227.080928 INFO [TaskManager] [monitor] ================================================================
+170227.080928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.080928 INFO [TaskManager] Number of channel connections: 0
+170227.080928 INFO [TaskManager] [monitor] ================================================================
+170227.081228 INFO [TaskManager] [monitor] ================================================================
+170227.081228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.081228 INFO [TaskManager] Number of channel connections: 0
+170227.081228 INFO [TaskManager] [monitor] ================================================================
+170227.081528 INFO [TaskManager] [monitor] ================================================================
+170227.081528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.081528 INFO [TaskManager] Number of channel connections: 0
+170227.081528 INFO [TaskManager] [monitor] ================================================================
+170227.081828 INFO [TaskManager] [monitor] ================================================================
+170227.081828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.081828 INFO [TaskManager] Number of channel connections: 0
+170227.081828 INFO [TaskManager] [monitor] ================================================================
+170227.082128 INFO [TaskManager] [monitor] ================================================================
+170227.082128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.082128 INFO [TaskManager] Number of channel connections: 0
+170227.082128 INFO [TaskManager] [monitor] ================================================================
+170227.082428 INFO [TaskManager] [monitor] ================================================================
+170227.082428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.082428 INFO [TaskManager] Number of channel connections: 0
+170227.082428 INFO [TaskManager] [monitor] ================================================================
+170227.082728 INFO [TaskManager] [monitor] ================================================================
+170227.082728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.082728 INFO [TaskManager] Number of channel connections: 0
+170227.082728 INFO [TaskManager] [monitor] ================================================================
+170227.083028 INFO [TaskManager] [monitor] ================================================================
+170227.083028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.083028 INFO [TaskManager] Number of channel connections: 0
+170227.083028 INFO [TaskManager] [monitor] ================================================================
+170227.083328 INFO [TaskManager] [monitor] ================================================================
+170227.083328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.083328 INFO [TaskManager] Number of channel connections: 0
+170227.083328 INFO [TaskManager] [monitor] ================================================================
+170227.083628 INFO [TaskManager] [monitor] ================================================================
+170227.083628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.083628 INFO [TaskManager] Number of channel connections: 0
+170227.083628 INFO [TaskManager] [monitor] ================================================================
+170227.083928 INFO [TaskManager] [monitor] ================================================================
+170227.083928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.083928 INFO [TaskManager] Number of channel connections: 0
+170227.083928 INFO [TaskManager] [monitor] ================================================================
+170227.084228 INFO [TaskManager] [monitor] ================================================================
+170227.084228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.084228 INFO [TaskManager] Number of channel connections: 0
+170227.084228 INFO [TaskManager] [monitor] ================================================================
+170227.084528 INFO [TaskManager] [monitor] ================================================================
+170227.084528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.084528 INFO [TaskManager] Number of channel connections: 0
+170227.084528 INFO [TaskManager] [monitor] ================================================================
+170227.084828 INFO [TaskManager] [monitor] ================================================================
+170227.084828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.084828 INFO [TaskManager] Number of channel connections: 0
+170227.084828 INFO [TaskManager] [monitor] ================================================================
+170227.085128 INFO [TaskManager] [monitor] ================================================================
+170227.085128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.085128 INFO [TaskManager] Number of channel connections: 0
+170227.085128 INFO [TaskManager] [monitor] ================================================================
+170227.085428 INFO [TaskManager] [monitor] ================================================================
+170227.085428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.085428 INFO [TaskManager] Number of channel connections: 0
+170227.085428 INFO [TaskManager] [monitor] ================================================================
+170227.085728 INFO [TaskManager] [monitor] ================================================================
+170227.085728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.085728 INFO [TaskManager] Number of channel connections: 0
+170227.085728 INFO [TaskManager] [monitor] ================================================================
+170227.090028 INFO [TaskManager] [monitor] ================================================================
+170227.090028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.090028 INFO [TaskManager] Number of channel connections: 0
+170227.090028 INFO [TaskManager] [monitor] ================================================================
+170227.090328 INFO [TaskManager] [monitor] ================================================================
+170227.090328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.090328 INFO [TaskManager] Number of channel connections: 0
+170227.090328 INFO [TaskManager] [monitor] ================================================================
+170227.090628 INFO [TaskManager] [monitor] ================================================================
+170227.090628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.090628 INFO [TaskManager] Number of channel connections: 0
+170227.090628 INFO [TaskManager] [monitor] ================================================================
+170227.090928 INFO [TaskManager] [monitor] ================================================================
+170227.090928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.090928 INFO [TaskManager] Number of channel connections: 0
+170227.090928 INFO [TaskManager] [monitor] ================================================================
+170227.091228 INFO [TaskManager] [monitor] ================================================================
+170227.091228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.091228 INFO [TaskManager] Number of channel connections: 0
+170227.091228 INFO [TaskManager] [monitor] ================================================================
+170227.091528 INFO [TaskManager] [monitor] ================================================================
+170227.091528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.091528 INFO [TaskManager] Number of channel connections: 0
+170227.091528 INFO [TaskManager] [monitor] ================================================================
+170227.091828 INFO [TaskManager] [monitor] ================================================================
+170227.091828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.091828 INFO [TaskManager] Number of channel connections: 0
+170227.091828 INFO [TaskManager] [monitor] ================================================================
+170227.092128 INFO [TaskManager] [monitor] ================================================================
+170227.092128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.092128 INFO [TaskManager] Number of channel connections: 0
+170227.092128 INFO [TaskManager] [monitor] ================================================================
+170227.092428 INFO [TaskManager] [monitor] ================================================================
+170227.092428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.092428 INFO [TaskManager] Number of channel connections: 0
+170227.092428 INFO [TaskManager] [monitor] ================================================================
+170227.092728 INFO [TaskManager] [monitor] ================================================================
+170227.092728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.092728 INFO [TaskManager] Number of channel connections: 0
+170227.092728 INFO [TaskManager] [monitor] ================================================================
+170227.093028 INFO [TaskManager] [monitor] ================================================================
+170227.093028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.093028 INFO [TaskManager] Number of channel connections: 0
+170227.093028 INFO [TaskManager] [monitor] ================================================================
+170227.093328 INFO [TaskManager] [monitor] ================================================================
+170227.093328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.093328 INFO [TaskManager] Number of channel connections: 0
+170227.093328 INFO [TaskManager] [monitor] ================================================================
+170227.093628 INFO [TaskManager] [monitor] ================================================================
+170227.093628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.093628 INFO [TaskManager] Number of channel connections: 0
+170227.093628 INFO [TaskManager] [monitor] ================================================================
+170227.093928 INFO [TaskManager] [monitor] ================================================================
+170227.093928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.093928 INFO [TaskManager] Number of channel connections: 0
+170227.093928 INFO [TaskManager] [monitor] ================================================================
+170227.094228 INFO [TaskManager] [monitor] ================================================================
+170227.094228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.094228 INFO [TaskManager] Number of channel connections: 0
+170227.094228 INFO [TaskManager] [monitor] ================================================================
+170227.094528 INFO [TaskManager] [monitor] ================================================================
+170227.094528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.094528 INFO [TaskManager] Number of channel connections: 0
+170227.094528 INFO [TaskManager] [monitor] ================================================================
+170227.094828 INFO [TaskManager] [monitor] ================================================================
+170227.094828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.094828 INFO [TaskManager] Number of channel connections: 0
+170227.094828 INFO [TaskManager] [monitor] ================================================================
+170227.095128 INFO [TaskManager] [monitor] ================================================================
+170227.095128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.095128 INFO [TaskManager] Number of channel connections: 0
+170227.095128 INFO [TaskManager] [monitor] ================================================================
+170227.095428 INFO [TaskManager] [monitor] ================================================================
+170227.095428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.095428 INFO [TaskManager] Number of channel connections: 0
+170227.095428 INFO [TaskManager] [monitor] ================================================================
+170227.095728 INFO [TaskManager] [monitor] ================================================================
+170227.095728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.095728 INFO [TaskManager] Number of channel connections: 0
+170227.095728 INFO [TaskManager] [monitor] ================================================================
+170227.100028 INFO [TaskManager] [monitor] ================================================================
+170227.100028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.100028 INFO [TaskManager] Number of channel connections: 0
+170227.100028 INFO [TaskManager] [monitor] ================================================================
+170227.100328 INFO [TaskManager] [monitor] ================================================================
+170227.100328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.100328 INFO [TaskManager] Number of channel connections: 0
+170227.100328 INFO [TaskManager] [monitor] ================================================================
+170227.100628 INFO [TaskManager] [monitor] ================================================================
+170227.100628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.100628 INFO [TaskManager] Number of channel connections: 0
+170227.100628 INFO [TaskManager] [monitor] ================================================================
+170227.100928 INFO [TaskManager] [monitor] ================================================================
+170227.100928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.100928 INFO [TaskManager] Number of channel connections: 0
+170227.100928 INFO [TaskManager] [monitor] ================================================================
+170227.101228 INFO [TaskManager] [monitor] ================================================================
+170227.101228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.101228 INFO [TaskManager] Number of channel connections: 0
+170227.101228 INFO [TaskManager] [monitor] ================================================================
+170227.101528 INFO [TaskManager] [monitor] ================================================================
+170227.101528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.101528 INFO [TaskManager] Number of channel connections: 0
+170227.101528 INFO [TaskManager] [monitor] ================================================================
+170227.101828 INFO [TaskManager] [monitor] ================================================================
+170227.101828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.101828 INFO [TaskManager] Number of channel connections: 0
+170227.101828 INFO [TaskManager] [monitor] ================================================================
+170227.102128 INFO [TaskManager] [monitor] ================================================================
+170227.102128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.102128 INFO [TaskManager] Number of channel connections: 0
+170227.102128 INFO [TaskManager] [monitor] ================================================================
+170227.102428 INFO [TaskManager] [monitor] ================================================================
+170227.102428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.102428 INFO [TaskManager] Number of channel connections: 0
+170227.102428 INFO [TaskManager] [monitor] ================================================================
+170227.102728 INFO [TaskManager] [monitor] ================================================================
+170227.102728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.102728 INFO [TaskManager] Number of channel connections: 0
+170227.102728 INFO [TaskManager] [monitor] ================================================================
+170227.103028 INFO [TaskManager] [monitor] ================================================================
+170227.103028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.103028 INFO [TaskManager] Number of channel connections: 0
+170227.103028 INFO [TaskManager] [monitor] ================================================================
+170227.103328 INFO [TaskManager] [monitor] ================================================================
+170227.103328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.103328 INFO [TaskManager] Number of channel connections: 0
+170227.103328 INFO [TaskManager] [monitor] ================================================================
+170227.103628 INFO [TaskManager] [monitor] ================================================================
+170227.103628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.103628 INFO [TaskManager] Number of channel connections: 0
+170227.103628 INFO [TaskManager] [monitor] ================================================================
+170227.103928 INFO [TaskManager] [monitor] ================================================================
+170227.103928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.103928 INFO [TaskManager] Number of channel connections: 0
+170227.103928 INFO [TaskManager] [monitor] ================================================================
+170227.104228 INFO [TaskManager] [monitor] ================================================================
+170227.104228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.104228 INFO [TaskManager] Number of channel connections: 0
+170227.104228 INFO [TaskManager] [monitor] ================================================================
+170227.104528 INFO [TaskManager] [monitor] ================================================================
+170227.104528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.104528 INFO [TaskManager] Number of channel connections: 0
+170227.104528 INFO [TaskManager] [monitor] ================================================================
+170227.104828 INFO [TaskManager] [monitor] ================================================================
+170227.104828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.104828 INFO [TaskManager] Number of channel connections: 0
+170227.104828 INFO [TaskManager] [monitor] ================================================================
+170227.105128 INFO [TaskManager] [monitor] ================================================================
+170227.105128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.105128 INFO [TaskManager] Number of channel connections: 0
+170227.105128 INFO [TaskManager] [monitor] ================================================================
+170227.105428 INFO [TaskManager] [monitor] ================================================================
+170227.105428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.105428 INFO [TaskManager] Number of channel connections: 0
+170227.105428 INFO [TaskManager] [monitor] ================================================================
+170227.105728 INFO [TaskManager] [monitor] ================================================================
+170227.105728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.105728 INFO [TaskManager] Number of channel connections: 0
+170227.105728 INFO [TaskManager] [monitor] ================================================================
+170227.110028 INFO [TaskManager] [monitor] ================================================================
+170227.110028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.110028 INFO [TaskManager] Number of channel connections: 0
+170227.110028 INFO [TaskManager] [monitor] ================================================================
+170227.110328 INFO [TaskManager] [monitor] ================================================================
+170227.110328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.110328 INFO [TaskManager] Number of channel connections: 0
+170227.110328 INFO [TaskManager] [monitor] ================================================================
+170227.110628 INFO [TaskManager] [monitor] ================================================================
+170227.110628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.110628 INFO [TaskManager] Number of channel connections: 0
+170227.110628 INFO [TaskManager] [monitor] ================================================================
+170227.110928 INFO [TaskManager] [monitor] ================================================================
+170227.110928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.110928 INFO [TaskManager] Number of channel connections: 0
+170227.110928 INFO [TaskManager] [monitor] ================================================================
+170227.111228 INFO [TaskManager] [monitor] ================================================================
+170227.111228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.111228 INFO [TaskManager] Number of channel connections: 0
+170227.111228 INFO [TaskManager] [monitor] ================================================================
+170227.111528 INFO [TaskManager] [monitor] ================================================================
+170227.111528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.111528 INFO [TaskManager] Number of channel connections: 0
+170227.111528 INFO [TaskManager] [monitor] ================================================================
+170227.111828 INFO [TaskManager] [monitor] ================================================================
+170227.111828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.111828 INFO [TaskManager] Number of channel connections: 0
+170227.111828 INFO [TaskManager] [monitor] ================================================================
+170227.112128 INFO [TaskManager] [monitor] ================================================================
+170227.112128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.112128 INFO [TaskManager] Number of channel connections: 0
+170227.112128 INFO [TaskManager] [monitor] ================================================================
+170227.112428 INFO [TaskManager] [monitor] ================================================================
+170227.112428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.112428 INFO [TaskManager] Number of channel connections: 0
+170227.112428 INFO [TaskManager] [monitor] ================================================================
+170227.112728 INFO [TaskManager] [monitor] ================================================================
+170227.112728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.112728 INFO [TaskManager] Number of channel connections: 0
+170227.112728 INFO [TaskManager] [monitor] ================================================================
+170227.113028 INFO [TaskManager] [monitor] ================================================================
+170227.113028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.113028 INFO [TaskManager] Number of channel connections: 0
+170227.113028 INFO [TaskManager] [monitor] ================================================================
+170227.113328 INFO [TaskManager] [monitor] ================================================================
+170227.113328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.113328 INFO [TaskManager] Number of channel connections: 0
+170227.113328 INFO [TaskManager] [monitor] ================================================================
+170227.113628 INFO [TaskManager] [monitor] ================================================================
+170227.113628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.113628 INFO [TaskManager] Number of channel connections: 0
+170227.113628 INFO [TaskManager] [monitor] ================================================================
+170227.113928 INFO [TaskManager] [monitor] ================================================================
+170227.113928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.113928 INFO [TaskManager] Number of channel connections: 0
+170227.113928 INFO [TaskManager] [monitor] ================================================================
+170227.114228 INFO [TaskManager] [monitor] ================================================================
+170227.114228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.114228 INFO [TaskManager] Number of channel connections: 0
+170227.114228 INFO [TaskManager] [monitor] ================================================================
+170227.114528 INFO [TaskManager] [monitor] ================================================================
+170227.114528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.114528 INFO [TaskManager] Number of channel connections: 0
+170227.114528 INFO [TaskManager] [monitor] ================================================================
+170227.114828 INFO [TaskManager] [monitor] ================================================================
+170227.114828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.114828 INFO [TaskManager] Number of channel connections: 0
+170227.114828 INFO [TaskManager] [monitor] ================================================================
+170227.115128 INFO [TaskManager] [monitor] ================================================================
+170227.115128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.115128 INFO [TaskManager] Number of channel connections: 0
+170227.115128 INFO [TaskManager] [monitor] ================================================================
+170227.115428 INFO [TaskManager] [monitor] ================================================================
+170227.115428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.115428 INFO [TaskManager] Number of channel connections: 0
+170227.115428 INFO [TaskManager] [monitor] ================================================================
+170227.115728 INFO [TaskManager] [monitor] ================================================================
+170227.115728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.115728 INFO [TaskManager] Number of channel connections: 0
+170227.115728 INFO [TaskManager] [monitor] ================================================================
+170227.120028 INFO [TaskManager] [monitor] ================================================================
+170227.120028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.120028 INFO [TaskManager] Number of channel connections: 0
+170227.120028 INFO [TaskManager] [monitor] ================================================================
+170227.120328 INFO [TaskManager] [monitor] ================================================================
+170227.120328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.120328 INFO [TaskManager] Number of channel connections: 0
+170227.120328 INFO [TaskManager] [monitor] ================================================================
+170227.120628 INFO [TaskManager] [monitor] ================================================================
+170227.120628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.120628 INFO [TaskManager] Number of channel connections: 0
+170227.120628 INFO [TaskManager] [monitor] ================================================================
+170227.120928 INFO [TaskManager] [monitor] ================================================================
+170227.120928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.120928 INFO [TaskManager] Number of channel connections: 0
+170227.120928 INFO [TaskManager] [monitor] ================================================================
+170227.121228 INFO [TaskManager] [monitor] ================================================================
+170227.121228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.121228 INFO [TaskManager] Number of channel connections: 0
+170227.121228 INFO [TaskManager] [monitor] ================================================================
+170227.121528 INFO [TaskManager] [monitor] ================================================================
+170227.121528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.121528 INFO [TaskManager] Number of channel connections: 0
+170227.121528 INFO [TaskManager] [monitor] ================================================================
+170227.121828 INFO [TaskManager] [monitor] ================================================================
+170227.121828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.121828 INFO [TaskManager] Number of channel connections: 0
+170227.121828 INFO [TaskManager] [monitor] ================================================================
+170227.122128 INFO [TaskManager] [monitor] ================================================================
+170227.122128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.122128 INFO [TaskManager] Number of channel connections: 0
+170227.122128 INFO [TaskManager] [monitor] ================================================================
+170227.122428 INFO [TaskManager] [monitor] ================================================================
+170227.122428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.122428 INFO [TaskManager] Number of channel connections: 0
+170227.122428 INFO [TaskManager] [monitor] ================================================================
+170227.122728 INFO [TaskManager] [monitor] ================================================================
+170227.122728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.122728 INFO [TaskManager] Number of channel connections: 0
+170227.122728 INFO [TaskManager] [monitor] ================================================================
+170227.123028 INFO [TaskManager] [monitor] ================================================================
+170227.123028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.123028 INFO [TaskManager] Number of channel connections: 0
+170227.123028 INFO [TaskManager] [monitor] ================================================================
+170227.123328 INFO [TaskManager] [monitor] ================================================================
+170227.123328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.123328 INFO [TaskManager] Number of channel connections: 0
+170227.123328 INFO [TaskManager] [monitor] ================================================================
+170227.123628 INFO [TaskManager] [monitor] ================================================================
+170227.123628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.123628 INFO [TaskManager] Number of channel connections: 0
+170227.123628 INFO [TaskManager] [monitor] ================================================================
+170227.123928 INFO [TaskManager] [monitor] ================================================================
+170227.123928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.123928 INFO [TaskManager] Number of channel connections: 0
+170227.123928 INFO [TaskManager] [monitor] ================================================================
+170227.124228 INFO [TaskManager] [monitor] ================================================================
+170227.124228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.124228 INFO [TaskManager] Number of channel connections: 0
+170227.124228 INFO [TaskManager] [monitor] ================================================================
+170227.124528 INFO [TaskManager] [monitor] ================================================================
+170227.124528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.124528 INFO [TaskManager] Number of channel connections: 0
+170227.124528 INFO [TaskManager] [monitor] ================================================================
+170227.124828 INFO [TaskManager] [monitor] ================================================================
+170227.124828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.124828 INFO [TaskManager] Number of channel connections: 0
+170227.124828 INFO [TaskManager] [monitor] ================================================================
+170227.125128 INFO [TaskManager] [monitor] ================================================================
+170227.125128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.125128 INFO [TaskManager] Number of channel connections: 0
+170227.125128 INFO [TaskManager] [monitor] ================================================================
+170227.125428 INFO [TaskManager] [monitor] ================================================================
+170227.125428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.125428 INFO [TaskManager] Number of channel connections: 0
+170227.125428 INFO [TaskManager] [monitor] ================================================================
+170227.125728 INFO [TaskManager] [monitor] ================================================================
+170227.125728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.125728 INFO [TaskManager] Number of channel connections: 0
+170227.125728 INFO [TaskManager] [monitor] ================================================================
+170227.130028 INFO [TaskManager] [monitor] ================================================================
+170227.130028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.130028 INFO [TaskManager] Number of channel connections: 0
+170227.130028 INFO [TaskManager] [monitor] ================================================================
+170227.130328 INFO [TaskManager] [monitor] ================================================================
+170227.130328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.130328 INFO [TaskManager] Number of channel connections: 0
+170227.130328 INFO [TaskManager] [monitor] ================================================================
+170227.130628 INFO [TaskManager] [monitor] ================================================================
+170227.130628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.130628 INFO [TaskManager] Number of channel connections: 0
+170227.130628 INFO [TaskManager] [monitor] ================================================================
+170227.130928 INFO [TaskManager] [monitor] ================================================================
+170227.130928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.130928 INFO [TaskManager] Number of channel connections: 0
+170227.130928 INFO [TaskManager] [monitor] ================================================================
+170227.131228 INFO [TaskManager] [monitor] ================================================================
+170227.131228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.131228 INFO [TaskManager] Number of channel connections: 0
+170227.131228 INFO [TaskManager] [monitor] ================================================================
+170227.131528 INFO [TaskManager] [monitor] ================================================================
+170227.131528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.131528 INFO [TaskManager] Number of channel connections: 0
+170227.131528 INFO [TaskManager] [monitor] ================================================================
+170227.131828 INFO [TaskManager] [monitor] ================================================================
+170227.131828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.131828 INFO [TaskManager] Number of channel connections: 0
+170227.131828 INFO [TaskManager] [monitor] ================================================================
+170227.132128 INFO [TaskManager] [monitor] ================================================================
+170227.132128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.132128 INFO [TaskManager] Number of channel connections: 0
+170227.132128 INFO [TaskManager] [monitor] ================================================================
+170227.132428 INFO [TaskManager] [monitor] ================================================================
+170227.132428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.132428 INFO [TaskManager] Number of channel connections: 0
+170227.132428 INFO [TaskManager] [monitor] ================================================================
+170227.132728 INFO [TaskManager] [monitor] ================================================================
+170227.132728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.132728 INFO [TaskManager] Number of channel connections: 0
+170227.132728 INFO [TaskManager] [monitor] ================================================================
+170227.133028 INFO [TaskManager] [monitor] ================================================================
+170227.133028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.133028 INFO [TaskManager] Number of channel connections: 0
+170227.133028 INFO [TaskManager] [monitor] ================================================================
+170227.133328 INFO [TaskManager] [monitor] ================================================================
+170227.133328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.133328 INFO [TaskManager] Number of channel connections: 0
+170227.133328 INFO [TaskManager] [monitor] ================================================================
+170227.133628 INFO [TaskManager] [monitor] ================================================================
+170227.133628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.133628 INFO [TaskManager] Number of channel connections: 0
+170227.133628 INFO [TaskManager] [monitor] ================================================================
+170227.133928 INFO [TaskManager] [monitor] ================================================================
+170227.133928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.133928 INFO [TaskManager] Number of channel connections: 0
+170227.133928 INFO [TaskManager] [monitor] ================================================================
+170227.134228 INFO [TaskManager] [monitor] ================================================================
+170227.134228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.134228 INFO [TaskManager] Number of channel connections: 0
+170227.134228 INFO [TaskManager] [monitor] ================================================================
+170227.134528 INFO [TaskManager] [monitor] ================================================================
+170227.134528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.134528 INFO [TaskManager] Number of channel connections: 0
+170227.134528 INFO [TaskManager] [monitor] ================================================================
+170227.134828 INFO [TaskManager] [monitor] ================================================================
+170227.134828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.134828 INFO [TaskManager] Number of channel connections: 0
+170227.134828 INFO [TaskManager] [monitor] ================================================================
+170227.135128 INFO [TaskManager] [monitor] ================================================================
+170227.135128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.135128 INFO [TaskManager] Number of channel connections: 0
+170227.135128 INFO [TaskManager] [monitor] ================================================================
+170227.135428 INFO [TaskManager] [monitor] ================================================================
+170227.135428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.135428 INFO [TaskManager] Number of channel connections: 0
+170227.135428 INFO [TaskManager] [monitor] ================================================================
+170227.135728 INFO [TaskManager] [monitor] ================================================================
+170227.135728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.135728 INFO [TaskManager] Number of channel connections: 0
+170227.135728 INFO [TaskManager] [monitor] ================================================================
+170227.140028 INFO [TaskManager] [monitor] ================================================================
+170227.140028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.140028 INFO [TaskManager] Number of channel connections: 0
+170227.140028 INFO [TaskManager] [monitor] ================================================================
+170227.140328 INFO [TaskManager] [monitor] ================================================================
+170227.140328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.140328 INFO [TaskManager] Number of channel connections: 0
+170227.140328 INFO [TaskManager] [monitor] ================================================================
+170227.140628 INFO [TaskManager] [monitor] ================================================================
+170227.140628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.140628 INFO [TaskManager] Number of channel connections: 0
+170227.140628 INFO [TaskManager] [monitor] ================================================================
+170227.140928 INFO [TaskManager] [monitor] ================================================================
+170227.140928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.140928 INFO [TaskManager] Number of channel connections: 0
+170227.140928 INFO [TaskManager] [monitor] ================================================================
+170227.141228 INFO [TaskManager] [monitor] ================================================================
+170227.141228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.141228 INFO [TaskManager] Number of channel connections: 0
+170227.141228 INFO [TaskManager] [monitor] ================================================================
+170227.141528 INFO [TaskManager] [monitor] ================================================================
+170227.141528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.141528 INFO [TaskManager] Number of channel connections: 0
+170227.141528 INFO [TaskManager] [monitor] ================================================================
+170227.141828 INFO [TaskManager] [monitor] ================================================================
+170227.141828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.141828 INFO [TaskManager] Number of channel connections: 0
+170227.141828 INFO [TaskManager] [monitor] ================================================================
+170227.142128 INFO [TaskManager] [monitor] ================================================================
+170227.142128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.142128 INFO [TaskManager] Number of channel connections: 0
+170227.142128 INFO [TaskManager] [monitor] ================================================================
+170227.142428 INFO [TaskManager] [monitor] ================================================================
+170227.142428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.142428 INFO [TaskManager] Number of channel connections: 0
+170227.142428 INFO [TaskManager] [monitor] ================================================================
+170227.142728 INFO [TaskManager] [monitor] ================================================================
+170227.142728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.142728 INFO [TaskManager] Number of channel connections: 0
+170227.142728 INFO [TaskManager] [monitor] ================================================================
+170227.143028 INFO [TaskManager] [monitor] ================================================================
+170227.143028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.143028 INFO [TaskManager] Number of channel connections: 0
+170227.143028 INFO [TaskManager] [monitor] ================================================================
+170227.143328 INFO [TaskManager] [monitor] ================================================================
+170227.143328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.143328 INFO [TaskManager] Number of channel connections: 0
+170227.143328 INFO [TaskManager] [monitor] ================================================================
+170227.143628 INFO [TaskManager] [monitor] ================================================================
+170227.143628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.143628 INFO [TaskManager] Number of channel connections: 0
+170227.143628 INFO [TaskManager] [monitor] ================================================================
+170227.143928 INFO [TaskManager] [monitor] ================================================================
+170227.143928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.143928 INFO [TaskManager] Number of channel connections: 0
+170227.143928 INFO [TaskManager] [monitor] ================================================================
+170227.144228 INFO [TaskManager] [monitor] ================================================================
+170227.144228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.144228 INFO [TaskManager] Number of channel connections: 0
+170227.144228 INFO [TaskManager] [monitor] ================================================================
+170227.144528 INFO [TaskManager] [monitor] ================================================================
+170227.144528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.144528 INFO [TaskManager] Number of channel connections: 0
+170227.144528 INFO [TaskManager] [monitor] ================================================================
+170227.144828 INFO [TaskManager] [monitor] ================================================================
+170227.144828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.144828 INFO [TaskManager] Number of channel connections: 0
+170227.144828 INFO [TaskManager] [monitor] ================================================================
+170227.145128 INFO [TaskManager] [monitor] ================================================================
+170227.145128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.145128 INFO [TaskManager] Number of channel connections: 0
+170227.145128 INFO [TaskManager] [monitor] ================================================================
+170227.145428 INFO [TaskManager] [monitor] ================================================================
+170227.145428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.145428 INFO [TaskManager] Number of channel connections: 0
+170227.145428 INFO [TaskManager] [monitor] ================================================================
+170227.145728 INFO [TaskManager] [monitor] ================================================================
+170227.145728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.145728 INFO [TaskManager] Number of channel connections: 0
+170227.145728 INFO [TaskManager] [monitor] ================================================================
+170227.150028 INFO [TaskManager] [monitor] ================================================================
+170227.150028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.150028 INFO [TaskManager] Number of channel connections: 0
+170227.150028 INFO [TaskManager] [monitor] ================================================================
+170227.150328 INFO [TaskManager] [monitor] ================================================================
+170227.150328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.150328 INFO [TaskManager] Number of channel connections: 0
+170227.150328 INFO [TaskManager] [monitor] ================================================================
+170227.150628 INFO [TaskManager] [monitor] ================================================================
+170227.150628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.150628 INFO [TaskManager] Number of channel connections: 0
+170227.150628 INFO [TaskManager] [monitor] ================================================================
+170227.150928 INFO [TaskManager] [monitor] ================================================================
+170227.150928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.150928 INFO [TaskManager] Number of channel connections: 0
+170227.150928 INFO [TaskManager] [monitor] ================================================================
+170227.151228 INFO [TaskManager] [monitor] ================================================================
+170227.151228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.151228 INFO [TaskManager] Number of channel connections: 0
+170227.151228 INFO [TaskManager] [monitor] ================================================================
+170227.151528 INFO [TaskManager] [monitor] ================================================================
+170227.151528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.151528 INFO [TaskManager] Number of channel connections: 0
+170227.151528 INFO [TaskManager] [monitor] ================================================================
+170227.151828 INFO [TaskManager] [monitor] ================================================================
+170227.151828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.151828 INFO [TaskManager] Number of channel connections: 0
+170227.151828 INFO [TaskManager] [monitor] ================================================================
+170227.152128 INFO [TaskManager] [monitor] ================================================================
+170227.152128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.152128 INFO [TaskManager] Number of channel connections: 0
+170227.152128 INFO [TaskManager] [monitor] ================================================================
+170227.152428 INFO [TaskManager] [monitor] ================================================================
+170227.152428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.152428 INFO [TaskManager] Number of channel connections: 0
+170227.152428 INFO [TaskManager] [monitor] ================================================================
+170227.152728 INFO [TaskManager] [monitor] ================================================================
+170227.152728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.152728 INFO [TaskManager] Number of channel connections: 0
+170227.152728 INFO [TaskManager] [monitor] ================================================================
+170227.153028 INFO [TaskManager] [monitor] ================================================================
+170227.153028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.153028 INFO [TaskManager] Number of channel connections: 0
+170227.153028 INFO [TaskManager] [monitor] ================================================================
+170227.153328 INFO [TaskManager] [monitor] ================================================================
+170227.153328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.153328 INFO [TaskManager] Number of channel connections: 0
+170227.153328 INFO [TaskManager] [monitor] ================================================================
+170227.153628 INFO [TaskManager] [monitor] ================================================================
+170227.153628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.153628 INFO [TaskManager] Number of channel connections: 0
+170227.153628 INFO [TaskManager] [monitor] ================================================================
+170227.153928 INFO [TaskManager] [monitor] ================================================================
+170227.153928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.153928 INFO [TaskManager] Number of channel connections: 0
+170227.153928 INFO [TaskManager] [monitor] ================================================================
+170227.154228 INFO [TaskManager] [monitor] ================================================================
+170227.154228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.154228 INFO [TaskManager] Number of channel connections: 0
+170227.154228 INFO [TaskManager] [monitor] ================================================================
+170227.154528 INFO [TaskManager] [monitor] ================================================================
+170227.154528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.154528 INFO [TaskManager] Number of channel connections: 0
+170227.154528 INFO [TaskManager] [monitor] ================================================================
+170227.154828 INFO [TaskManager] [monitor] ================================================================
+170227.154828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.154828 INFO [TaskManager] Number of channel connections: 0
+170227.154828 INFO [TaskManager] [monitor] ================================================================
+170227.155128 INFO [TaskManager] [monitor] ================================================================
+170227.155128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.155128 INFO [TaskManager] Number of channel connections: 0
+170227.155128 INFO [TaskManager] [monitor] ================================================================
+170227.155428 INFO [TaskManager] [monitor] ================================================================
+170227.155428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.155428 INFO [TaskManager] Number of channel connections: 0
+170227.155428 INFO [TaskManager] [monitor] ================================================================
+170227.155728 INFO [TaskManager] [monitor] ================================================================
+170227.155728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.155728 INFO [TaskManager] Number of channel connections: 0
+170227.155728 INFO [TaskManager] [monitor] ================================================================
+170227.160028 INFO [TaskManager] [monitor] ================================================================
+170227.160028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.160028 INFO [TaskManager] Number of channel connections: 0
+170227.160028 INFO [TaskManager] [monitor] ================================================================
+170227.160328 INFO [TaskManager] [monitor] ================================================================
+170227.160328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.160328 INFO [TaskManager] Number of channel connections: 0
+170227.160328 INFO [TaskManager] [monitor] ================================================================
+170227.160628 INFO [TaskManager] [monitor] ================================================================
+170227.160628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.160628 INFO [TaskManager] Number of channel connections: 0
+170227.160628 INFO [TaskManager] [monitor] ================================================================
+170227.160928 INFO [TaskManager] [monitor] ================================================================
+170227.160928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.160928 INFO [TaskManager] Number of channel connections: 0
+170227.160928 INFO [TaskManager] [monitor] ================================================================
+170227.161228 INFO [TaskManager] [monitor] ================================================================
+170227.161228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.161228 INFO [TaskManager] Number of channel connections: 0
+170227.161228 INFO [TaskManager] [monitor] ================================================================
+170227.161528 INFO [TaskManager] [monitor] ================================================================
+170227.161528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.161528 INFO [TaskManager] Number of channel connections: 0
+170227.161528 INFO [TaskManager] [monitor] ================================================================
+170227.161828 INFO [TaskManager] [monitor] ================================================================
+170227.161828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.161828 INFO [TaskManager] Number of channel connections: 0
+170227.161828 INFO [TaskManager] [monitor] ================================================================
+170227.162128 INFO [TaskManager] [monitor] ================================================================
+170227.162128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.162128 INFO [TaskManager] Number of channel connections: 0
+170227.162128 INFO [TaskManager] [monitor] ================================================================
+170227.162428 INFO [TaskManager] [monitor] ================================================================
+170227.162428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.162428 INFO [TaskManager] Number of channel connections: 0
+170227.162428 INFO [TaskManager] [monitor] ================================================================
+170227.162728 INFO [TaskManager] [monitor] ================================================================
+170227.162728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.162728 INFO [TaskManager] Number of channel connections: 0
+170227.162728 INFO [TaskManager] [monitor] ================================================================
+170227.163028 INFO [TaskManager] [monitor] ================================================================
+170227.163028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.163028 INFO [TaskManager] Number of channel connections: 0
+170227.163028 INFO [TaskManager] [monitor] ================================================================
+170227.163328 INFO [TaskManager] [monitor] ================================================================
+170227.163328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.163328 INFO [TaskManager] Number of channel connections: 0
+170227.163328 INFO [TaskManager] [monitor] ================================================================
+170227.163628 INFO [TaskManager] [monitor] ================================================================
+170227.163628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.163628 INFO [TaskManager] Number of channel connections: 0
+170227.163628 INFO [TaskManager] [monitor] ================================================================
+170227.163928 INFO [TaskManager] [monitor] ================================================================
+170227.163928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.163928 INFO [TaskManager] Number of channel connections: 0
+170227.163928 INFO [TaskManager] [monitor] ================================================================
+170227.164228 INFO [TaskManager] [monitor] ================================================================
+170227.164228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.164228 INFO [TaskManager] Number of channel connections: 0
+170227.164228 INFO [TaskManager] [monitor] ================================================================
+170227.164528 INFO [TaskManager] [monitor] ================================================================
+170227.164528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.164528 INFO [TaskManager] Number of channel connections: 0
+170227.164528 INFO [TaskManager] [monitor] ================================================================
+170227.164828 INFO [TaskManager] [monitor] ================================================================
+170227.164828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.164828 INFO [TaskManager] Number of channel connections: 0
+170227.164828 INFO [TaskManager] [monitor] ================================================================
+170227.165128 INFO [TaskManager] [monitor] ================================================================
+170227.165128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.165128 INFO [TaskManager] Number of channel connections: 0
+170227.165128 INFO [TaskManager] [monitor] ================================================================
+170227.165428 INFO [TaskManager] [monitor] ================================================================
+170227.165428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.165428 INFO [TaskManager] Number of channel connections: 0
+170227.165428 INFO [TaskManager] [monitor] ================================================================
+170227.165728 INFO [TaskManager] [monitor] ================================================================
+170227.165728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.165728 INFO [TaskManager] Number of channel connections: 0
+170227.165728 INFO [TaskManager] [monitor] ================================================================
+170227.170028 INFO [TaskManager] [monitor] ================================================================
+170227.170028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.170028 INFO [TaskManager] Number of channel connections: 0
+170227.170028 INFO [TaskManager] [monitor] ================================================================
+170227.170328 INFO [TaskManager] [monitor] ================================================================
+170227.170328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.170328 INFO [TaskManager] Number of channel connections: 0
+170227.170328 INFO [TaskManager] [monitor] ================================================================
+170227.170628 INFO [TaskManager] [monitor] ================================================================
+170227.170628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.170628 INFO [TaskManager] Number of channel connections: 0
+170227.170628 INFO [TaskManager] [monitor] ================================================================
+170227.170928 INFO [TaskManager] [monitor] ================================================================
+170227.170928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.170928 INFO [TaskManager] Number of channel connections: 0
+170227.170928 INFO [TaskManager] [monitor] ================================================================
+170227.171228 INFO [TaskManager] [monitor] ================================================================
+170227.171228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.171228 INFO [TaskManager] Number of channel connections: 0
+170227.171228 INFO [TaskManager] [monitor] ================================================================
+170227.171528 INFO [TaskManager] [monitor] ================================================================
+170227.171528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.171528 INFO [TaskManager] Number of channel connections: 0
+170227.171528 INFO [TaskManager] [monitor] ================================================================
+170227.171828 INFO [TaskManager] [monitor] ================================================================
+170227.171828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.171828 INFO [TaskManager] Number of channel connections: 0
+170227.171828 INFO [TaskManager] [monitor] ================================================================
+170227.172128 INFO [TaskManager] [monitor] ================================================================
+170227.172128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.172128 INFO [TaskManager] Number of channel connections: 0
+170227.172128 INFO [TaskManager] [monitor] ================================================================
+170227.172428 INFO [TaskManager] [monitor] ================================================================
+170227.172428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.172428 INFO [TaskManager] Number of channel connections: 0
+170227.172428 INFO [TaskManager] [monitor] ================================================================
+170227.172728 INFO [TaskManager] [monitor] ================================================================
+170227.172728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.172728 INFO [TaskManager] Number of channel connections: 0
+170227.172728 INFO [TaskManager] [monitor] ================================================================
+170227.173028 INFO [TaskManager] [monitor] ================================================================
+170227.173028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.173028 INFO [TaskManager] Number of channel connections: 0
+170227.173028 INFO [TaskManager] [monitor] ================================================================
+170227.173328 INFO [TaskManager] [monitor] ================================================================
+170227.173328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.173328 INFO [TaskManager] Number of channel connections: 0
+170227.173328 INFO [TaskManager] [monitor] ================================================================
+170227.173628 INFO [TaskManager] [monitor] ================================================================
+170227.173628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.173628 INFO [TaskManager] Number of channel connections: 0
+170227.173628 INFO [TaskManager] [monitor] ================================================================
+170227.173928 INFO [TaskManager] [monitor] ================================================================
+170227.173928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.173928 INFO [TaskManager] Number of channel connections: 0
+170227.173928 INFO [TaskManager] [monitor] ================================================================
+170227.174228 INFO [TaskManager] [monitor] ================================================================
+170227.174228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.174228 INFO [TaskManager] Number of channel connections: 0
+170227.174228 INFO [TaskManager] [monitor] ================================================================
+170227.174528 INFO [TaskManager] [monitor] ================================================================
+170227.174528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.174528 INFO [TaskManager] Number of channel connections: 0
+170227.174528 INFO [TaskManager] [monitor] ================================================================
+170227.174828 INFO [TaskManager] [monitor] ================================================================
+170227.174828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.174828 INFO [TaskManager] Number of channel connections: 0
+170227.174828 INFO [TaskManager] [monitor] ================================================================
+170227.175128 INFO [TaskManager] [monitor] ================================================================
+170227.175128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.175128 INFO [TaskManager] Number of channel connections: 0
+170227.175128 INFO [TaskManager] [monitor] ================================================================
+170227.175428 INFO [TaskManager] [monitor] ================================================================
+170227.175428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.175428 INFO [TaskManager] Number of channel connections: 0
+170227.175428 INFO [TaskManager] [monitor] ================================================================
+170227.175728 INFO [TaskManager] [monitor] ================================================================
+170227.175728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.175728 INFO [TaskManager] Number of channel connections: 0
+170227.175728 INFO [TaskManager] [monitor] ================================================================
+170227.180028 INFO [TaskManager] [monitor] ================================================================
+170227.180028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.180028 INFO [TaskManager] Number of channel connections: 0
+170227.180028 INFO [TaskManager] [monitor] ================================================================
+170227.180328 INFO [TaskManager] [monitor] ================================================================
+170227.180328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.180328 INFO [TaskManager] Number of channel connections: 0
+170227.180328 INFO [TaskManager] [monitor] ================================================================
+170227.180628 INFO [TaskManager] [monitor] ================================================================
+170227.180628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.180628 INFO [TaskManager] Number of channel connections: 0
+170227.180628 INFO [TaskManager] [monitor] ================================================================
+170227.180928 INFO [TaskManager] [monitor] ================================================================
+170227.180928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.180928 INFO [TaskManager] Number of channel connections: 0
+170227.180928 INFO [TaskManager] [monitor] ================================================================
+170227.181228 INFO [TaskManager] [monitor] ================================================================
+170227.181228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.181228 INFO [TaskManager] Number of channel connections: 0
+170227.181228 INFO [TaskManager] [monitor] ================================================================
+170227.181528 INFO [TaskManager] [monitor] ================================================================
+170227.181528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.181528 INFO [TaskManager] Number of channel connections: 0
+170227.181528 INFO [TaskManager] [monitor] ================================================================
+170227.181828 INFO [TaskManager] [monitor] ================================================================
+170227.181828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.181828 INFO [TaskManager] Number of channel connections: 0
+170227.181828 INFO [TaskManager] [monitor] ================================================================
+170227.182128 INFO [TaskManager] [monitor] ================================================================
+170227.182128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.182128 INFO [TaskManager] Number of channel connections: 0
+170227.182128 INFO [TaskManager] [monitor] ================================================================
+170227.182428 INFO [TaskManager] [monitor] ================================================================
+170227.182428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.182428 INFO [TaskManager] Number of channel connections: 0
+170227.182428 INFO [TaskManager] [monitor] ================================================================
+170227.182728 INFO [TaskManager] [monitor] ================================================================
+170227.182728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.182728 INFO [TaskManager] Number of channel connections: 0
+170227.182728 INFO [TaskManager] [monitor] ================================================================
+170227.183028 INFO [TaskManager] [monitor] ================================================================
+170227.183028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.183028 INFO [TaskManager] Number of channel connections: 0
+170227.183028 INFO [TaskManager] [monitor] ================================================================
+170227.183328 INFO [TaskManager] [monitor] ================================================================
+170227.183328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.183328 INFO [TaskManager] Number of channel connections: 0
+170227.183328 INFO [TaskManager] [monitor] ================================================================
+170227.183628 INFO [TaskManager] [monitor] ================================================================
+170227.183628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.183628 INFO [TaskManager] Number of channel connections: 0
+170227.183628 INFO [TaskManager] [monitor] ================================================================
+170227.183928 INFO [TaskManager] [monitor] ================================================================
+170227.183928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.183928 INFO [TaskManager] Number of channel connections: 0
+170227.183928 INFO [TaskManager] [monitor] ================================================================
+170227.184228 INFO [TaskManager] [monitor] ================================================================
+170227.184228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.184228 INFO [TaskManager] Number of channel connections: 0
+170227.184228 INFO [TaskManager] [monitor] ================================================================
+170227.184528 INFO [TaskManager] [monitor] ================================================================
+170227.184528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.184528 INFO [TaskManager] Number of channel connections: 0
+170227.184528 INFO [TaskManager] [monitor] ================================================================
+170227.184828 INFO [TaskManager] [monitor] ================================================================
+170227.184828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.184828 INFO [TaskManager] Number of channel connections: 0
+170227.184828 INFO [TaskManager] [monitor] ================================================================
+170227.185128 INFO [TaskManager] [monitor] ================================================================
+170227.185128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.185128 INFO [TaskManager] Number of channel connections: 0
+170227.185128 INFO [TaskManager] [monitor] ================================================================
+170227.185428 INFO [TaskManager] [monitor] ================================================================
+170227.185428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.185428 INFO [TaskManager] Number of channel connections: 0
+170227.185428 INFO [TaskManager] [monitor] ================================================================
+170227.185728 INFO [TaskManager] [monitor] ================================================================
+170227.185728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.185728 INFO [TaskManager] Number of channel connections: 0
+170227.185728 INFO [TaskManager] [monitor] ================================================================
+170227.190028 INFO [TaskManager] [monitor] ================================================================
+170227.190028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.190028 INFO [TaskManager] Number of channel connections: 0
+170227.190028 INFO [TaskManager] [monitor] ================================================================
+170227.190328 INFO [TaskManager] [monitor] ================================================================
+170227.190328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.190328 INFO [TaskManager] Number of channel connections: 0
+170227.190328 INFO [TaskManager] [monitor] ================================================================
+170227.190628 INFO [TaskManager] [monitor] ================================================================
+170227.190628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.190628 INFO [TaskManager] Number of channel connections: 0
+170227.190628 INFO [TaskManager] [monitor] ================================================================
+170227.190928 INFO [TaskManager] [monitor] ================================================================
+170227.190928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.190928 INFO [TaskManager] Number of channel connections: 0
+170227.190928 INFO [TaskManager] [monitor] ================================================================
+170227.191228 INFO [TaskManager] [monitor] ================================================================
+170227.191228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.191228 INFO [TaskManager] Number of channel connections: 0
+170227.191228 INFO [TaskManager] [monitor] ================================================================
+170227.191528 INFO [TaskManager] [monitor] ================================================================
+170227.191528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.191528 INFO [TaskManager] Number of channel connections: 0
+170227.191528 INFO [TaskManager] [monitor] ================================================================
+170227.191828 INFO [TaskManager] [monitor] ================================================================
+170227.191828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.191828 INFO [TaskManager] Number of channel connections: 0
+170227.191828 INFO [TaskManager] [monitor] ================================================================
+170227.192128 INFO [TaskManager] [monitor] ================================================================
+170227.192128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.192128 INFO [TaskManager] Number of channel connections: 0
+170227.192128 INFO [TaskManager] [monitor] ================================================================
+170227.192428 INFO [TaskManager] [monitor] ================================================================
+170227.192428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.192428 INFO [TaskManager] Number of channel connections: 0
+170227.192428 INFO [TaskManager] [monitor] ================================================================
+170227.192728 INFO [TaskManager] [monitor] ================================================================
+170227.192728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.192728 INFO [TaskManager] Number of channel connections: 0
+170227.192728 INFO [TaskManager] [monitor] ================================================================
+170227.193028 INFO [TaskManager] [monitor] ================================================================
+170227.193028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.193028 INFO [TaskManager] Number of channel connections: 0
+170227.193028 INFO [TaskManager] [monitor] ================================================================
+170227.193328 INFO [TaskManager] [monitor] ================================================================
+170227.193328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.193328 INFO [TaskManager] Number of channel connections: 0
+170227.193328 INFO [TaskManager] [monitor] ================================================================
+170227.193628 INFO [TaskManager] [monitor] ================================================================
+170227.193628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.193628 INFO [TaskManager] Number of channel connections: 0
+170227.193628 INFO [TaskManager] [monitor] ================================================================
+170227.193928 INFO [TaskManager] [monitor] ================================================================
+170227.193928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.193928 INFO [TaskManager] Number of channel connections: 0
+170227.193928 INFO [TaskManager] [monitor] ================================================================
+170227.194228 INFO [TaskManager] [monitor] ================================================================
+170227.194228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.194228 INFO [TaskManager] Number of channel connections: 0
+170227.194228 INFO [TaskManager] [monitor] ================================================================
+170227.194528 INFO [TaskManager] [monitor] ================================================================
+170227.194528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.194528 INFO [TaskManager] Number of channel connections: 0
+170227.194528 INFO [TaskManager] [monitor] ================================================================
+170227.194828 INFO [TaskManager] [monitor] ================================================================
+170227.194828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.194828 INFO [TaskManager] Number of channel connections: 0
+170227.194828 INFO [TaskManager] [monitor] ================================================================
+170227.195128 INFO [TaskManager] [monitor] ================================================================
+170227.195128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.195128 INFO [TaskManager] Number of channel connections: 0
+170227.195128 INFO [TaskManager] [monitor] ================================================================
+170227.195428 INFO [TaskManager] [monitor] ================================================================
+170227.195428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.195428 INFO [TaskManager] Number of channel connections: 0
+170227.195428 INFO [TaskManager] [monitor] ================================================================
+170227.195728 INFO [TaskManager] [monitor] ================================================================
+170227.195728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.195728 INFO [TaskManager] Number of channel connections: 0
+170227.195728 INFO [TaskManager] [monitor] ================================================================
+170227.200028 INFO [TaskManager] [monitor] ================================================================
+170227.200028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.200028 INFO [TaskManager] Number of channel connections: 0
+170227.200028 INFO [TaskManager] [monitor] ================================================================
+170227.200328 INFO [TaskManager] [monitor] ================================================================
+170227.200328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.200328 INFO [TaskManager] Number of channel connections: 0
+170227.200328 INFO [TaskManager] [monitor] ================================================================
+170227.200628 INFO [TaskManager] [monitor] ================================================================
+170227.200628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.200628 INFO [TaskManager] Number of channel connections: 0
+170227.200628 INFO [TaskManager] [monitor] ================================================================
+170227.200928 INFO [TaskManager] [monitor] ================================================================
+170227.200928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.200928 INFO [TaskManager] Number of channel connections: 0
+170227.200928 INFO [TaskManager] [monitor] ================================================================
+170227.201228 INFO [TaskManager] [monitor] ================================================================
+170227.201228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.201228 INFO [TaskManager] Number of channel connections: 0
+170227.201228 INFO [TaskManager] [monitor] ================================================================
+170227.201528 INFO [TaskManager] [monitor] ================================================================
+170227.201528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.201528 INFO [TaskManager] Number of channel connections: 0
+170227.201528 INFO [TaskManager] [monitor] ================================================================
+170227.201828 INFO [TaskManager] [monitor] ================================================================
+170227.201828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.201828 INFO [TaskManager] Number of channel connections: 0
+170227.201828 INFO [TaskManager] [monitor] ================================================================
+170227.202128 INFO [TaskManager] [monitor] ================================================================
+170227.202128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.202128 INFO [TaskManager] Number of channel connections: 0
+170227.202128 INFO [TaskManager] [monitor] ================================================================
+170227.202428 INFO [TaskManager] [monitor] ================================================================
+170227.202428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.202428 INFO [TaskManager] Number of channel connections: 0
+170227.202428 INFO [TaskManager] [monitor] ================================================================
+170227.202728 INFO [TaskManager] [monitor] ================================================================
+170227.202728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.202728 INFO [TaskManager] Number of channel connections: 0
+170227.202728 INFO [TaskManager] [monitor] ================================================================
+170227.203028 INFO [TaskManager] [monitor] ================================================================
+170227.203028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.203028 INFO [TaskManager] Number of channel connections: 0
+170227.203028 INFO [TaskManager] [monitor] ================================================================
+170227.203328 INFO [TaskManager] [monitor] ================================================================
+170227.203328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.203328 INFO [TaskManager] Number of channel connections: 0
+170227.203328 INFO [TaskManager] [monitor] ================================================================
+170227.203628 INFO [TaskManager] [monitor] ================================================================
+170227.203628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.203628 INFO [TaskManager] Number of channel connections: 0
+170227.203628 INFO [TaskManager] [monitor] ================================================================
+170227.203928 INFO [TaskManager] [monitor] ================================================================
+170227.203928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.203928 INFO [TaskManager] Number of channel connections: 0
+170227.203928 INFO [TaskManager] [monitor] ================================================================
+170227.204228 INFO [TaskManager] [monitor] ================================================================
+170227.204228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.204228 INFO [TaskManager] Number of channel connections: 0
+170227.204228 INFO [TaskManager] [monitor] ================================================================
+170227.204528 INFO [TaskManager] [monitor] ================================================================
+170227.204528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.204528 INFO [TaskManager] Number of channel connections: 0
+170227.204528 INFO [TaskManager] [monitor] ================================================================
+170227.204828 INFO [TaskManager] [monitor] ================================================================
+170227.204828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.204828 INFO [TaskManager] Number of channel connections: 0
+170227.204828 INFO [TaskManager] [monitor] ================================================================
+170227.205128 INFO [TaskManager] [monitor] ================================================================
+170227.205128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.205128 INFO [TaskManager] Number of channel connections: 0
+170227.205128 INFO [TaskManager] [monitor] ================================================================
+170227.205428 INFO [TaskManager] [monitor] ================================================================
+170227.205428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.205428 INFO [TaskManager] Number of channel connections: 0
+170227.205428 INFO [TaskManager] [monitor] ================================================================
+170227.205728 INFO [TaskManager] [monitor] ================================================================
+170227.205728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.205728 INFO [TaskManager] Number of channel connections: 0
+170227.205728 INFO [TaskManager] [monitor] ================================================================
+170227.210028 INFO [TaskManager] [monitor] ================================================================
+170227.210028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.210028 INFO [TaskManager] Number of channel connections: 0
+170227.210028 INFO [TaskManager] [monitor] ================================================================
+170227.210328 INFO [TaskManager] [monitor] ================================================================
+170227.210328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.210328 INFO [TaskManager] Number of channel connections: 0
+170227.210328 INFO [TaskManager] [monitor] ================================================================
+170227.210628 INFO [TaskManager] [monitor] ================================================================
+170227.210628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.210628 INFO [TaskManager] Number of channel connections: 0
+170227.210628 INFO [TaskManager] [monitor] ================================================================
+170227.210928 INFO [TaskManager] [monitor] ================================================================
+170227.210928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.210928 INFO [TaskManager] Number of channel connections: 0
+170227.210928 INFO [TaskManager] [monitor] ================================================================
+170227.211228 INFO [TaskManager] [monitor] ================================================================
+170227.211228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.211228 INFO [TaskManager] Number of channel connections: 0
+170227.211228 INFO [TaskManager] [monitor] ================================================================
+170227.211528 INFO [TaskManager] [monitor] ================================================================
+170227.211528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.211528 INFO [TaskManager] Number of channel connections: 0
+170227.211528 INFO [TaskManager] [monitor] ================================================================
+170227.211828 INFO [TaskManager] [monitor] ================================================================
+170227.211828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.211828 INFO [TaskManager] Number of channel connections: 0
+170227.211828 INFO [TaskManager] [monitor] ================================================================
+170227.212128 INFO [TaskManager] [monitor] ================================================================
+170227.212128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.212128 INFO [TaskManager] Number of channel connections: 0
+170227.212128 INFO [TaskManager] [monitor] ================================================================
+170227.212428 INFO [TaskManager] [monitor] ================================================================
+170227.212428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.212428 INFO [TaskManager] Number of channel connections: 0
+170227.212428 INFO [TaskManager] [monitor] ================================================================
+170227.212728 INFO [TaskManager] [monitor] ================================================================
+170227.212728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.212728 INFO [TaskManager] Number of channel connections: 0
+170227.212728 INFO [TaskManager] [monitor] ================================================================
+170227.213028 INFO [TaskManager] [monitor] ================================================================
+170227.213028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.213028 INFO [TaskManager] Number of channel connections: 0
+170227.213028 INFO [TaskManager] [monitor] ================================================================
+170227.213328 INFO [TaskManager] [monitor] ================================================================
+170227.213328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.213328 INFO [TaskManager] Number of channel connections: 0
+170227.213328 INFO [TaskManager] [monitor] ================================================================
+170227.213628 INFO [TaskManager] [monitor] ================================================================
+170227.213628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.213628 INFO [TaskManager] Number of channel connections: 0
+170227.213628 INFO [TaskManager] [monitor] ================================================================
+170227.213928 INFO [TaskManager] [monitor] ================================================================
+170227.213928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.213928 INFO [TaskManager] Number of channel connections: 0
+170227.213928 INFO [TaskManager] [monitor] ================================================================
+170227.214228 INFO [TaskManager] [monitor] ================================================================
+170227.214228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.214228 INFO [TaskManager] Number of channel connections: 0
+170227.214228 INFO [TaskManager] [monitor] ================================================================
+170227.214528 INFO [TaskManager] [monitor] ================================================================
+170227.214528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.214528 INFO [TaskManager] Number of channel connections: 0
+170227.214528 INFO [TaskManager] [monitor] ================================================================
+170227.214828 INFO [TaskManager] [monitor] ================================================================
+170227.214828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.214828 INFO [TaskManager] Number of channel connections: 0
+170227.214828 INFO [TaskManager] [monitor] ================================================================
+170227.215128 INFO [TaskManager] [monitor] ================================================================
+170227.215128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.215128 INFO [TaskManager] Number of channel connections: 0
+170227.215128 INFO [TaskManager] [monitor] ================================================================
+170227.215428 INFO [TaskManager] [monitor] ================================================================
+170227.215428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.215428 INFO [TaskManager] Number of channel connections: 0
+170227.215428 INFO [TaskManager] [monitor] ================================================================
+170227.215728 INFO [TaskManager] [monitor] ================================================================
+170227.215728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.215728 INFO [TaskManager] Number of channel connections: 0
+170227.215728 INFO [TaskManager] [monitor] ================================================================
+170227.220028 INFO [TaskManager] [monitor] ================================================================
+170227.220028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.220028 INFO [TaskManager] Number of channel connections: 0
+170227.220028 INFO [TaskManager] [monitor] ================================================================
+170227.220328 INFO [TaskManager] [monitor] ================================================================
+170227.220328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.220328 INFO [TaskManager] Number of channel connections: 0
+170227.220328 INFO [TaskManager] [monitor] ================================================================
+170227.220628 INFO [TaskManager] [monitor] ================================================================
+170227.220628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.220628 INFO [TaskManager] Number of channel connections: 0
+170227.220628 INFO [TaskManager] [monitor] ================================================================
+170227.220928 INFO [TaskManager] [monitor] ================================================================
+170227.220928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.220928 INFO [TaskManager] Number of channel connections: 0
+170227.220928 INFO [TaskManager] [monitor] ================================================================
+170227.221228 INFO [TaskManager] [monitor] ================================================================
+170227.221228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.221228 INFO [TaskManager] Number of channel connections: 0
+170227.221228 INFO [TaskManager] [monitor] ================================================================
+170227.221528 INFO [TaskManager] [monitor] ================================================================
+170227.221528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.221528 INFO [TaskManager] Number of channel connections: 0
+170227.221528 INFO [TaskManager] [monitor] ================================================================
+170227.221828 INFO [TaskManager] [monitor] ================================================================
+170227.221828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.221828 INFO [TaskManager] Number of channel connections: 0
+170227.221828 INFO [TaskManager] [monitor] ================================================================
+170227.222128 INFO [TaskManager] [monitor] ================================================================
+170227.222128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.222128 INFO [TaskManager] Number of channel connections: 0
+170227.222128 INFO [TaskManager] [monitor] ================================================================
+170227.222428 INFO [TaskManager] [monitor] ================================================================
+170227.222428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.222428 INFO [TaskManager] Number of channel connections: 0
+170227.222428 INFO [TaskManager] [monitor] ================================================================
+170227.222728 INFO [TaskManager] [monitor] ================================================================
+170227.222728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.222728 INFO [TaskManager] Number of channel connections: 0
+170227.222728 INFO [TaskManager] [monitor] ================================================================
+170227.223028 INFO [TaskManager] [monitor] ================================================================
+170227.223028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.223028 INFO [TaskManager] Number of channel connections: 0
+170227.223028 INFO [TaskManager] [monitor] ================================================================
+170227.223328 INFO [TaskManager] [monitor] ================================================================
+170227.223328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.223328 INFO [TaskManager] Number of channel connections: 0
+170227.223328 INFO [TaskManager] [monitor] ================================================================
+170227.223628 INFO [TaskManager] [monitor] ================================================================
+170227.223628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.223628 INFO [TaskManager] Number of channel connections: 0
+170227.223628 INFO [TaskManager] [monitor] ================================================================
+170227.223928 INFO [TaskManager] [monitor] ================================================================
+170227.223928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.223928 INFO [TaskManager] Number of channel connections: 0
+170227.223928 INFO [TaskManager] [monitor] ================================================================
+170227.224228 INFO [TaskManager] [monitor] ================================================================
+170227.224228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.224228 INFO [TaskManager] Number of channel connections: 0
+170227.224228 INFO [TaskManager] [monitor] ================================================================
+170227.224528 INFO [TaskManager] [monitor] ================================================================
+170227.224528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.224528 INFO [TaskManager] Number of channel connections: 0
+170227.224528 INFO [TaskManager] [monitor] ================================================================
+170227.224828 INFO [TaskManager] [monitor] ================================================================
+170227.224828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.224828 INFO [TaskManager] Number of channel connections: 0
+170227.224828 INFO [TaskManager] [monitor] ================================================================
+170227.225128 INFO [TaskManager] [monitor] ================================================================
+170227.225128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.225128 INFO [TaskManager] Number of channel connections: 0
+170227.225128 INFO [TaskManager] [monitor] ================================================================
+170227.225428 INFO [TaskManager] [monitor] ================================================================
+170227.225428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.225428 INFO [TaskManager] Number of channel connections: 0
+170227.225428 INFO [TaskManager] [monitor] ================================================================
+170227.225728 INFO [TaskManager] [monitor] ================================================================
+170227.225728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.225728 INFO [TaskManager] Number of channel connections: 0
+170227.225728 INFO [TaskManager] [monitor] ================================================================
+170227.230028 INFO [TaskManager] [monitor] ================================================================
+170227.230028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.230028 INFO [TaskManager] Number of channel connections: 0
+170227.230028 INFO [TaskManager] [monitor] ================================================================
+170227.230328 INFO [TaskManager] [monitor] ================================================================
+170227.230328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.230328 INFO [TaskManager] Number of channel connections: 0
+170227.230328 INFO [TaskManager] [monitor] ================================================================
+170227.230628 INFO [TaskManager] [monitor] ================================================================
+170227.230628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.230628 INFO [TaskManager] Number of channel connections: 0
+170227.230628 INFO [TaskManager] [monitor] ================================================================
+170227.230928 INFO [TaskManager] [monitor] ================================================================
+170227.230928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.230928 INFO [TaskManager] Number of channel connections: 0
+170227.230928 INFO [TaskManager] [monitor] ================================================================
+170227.231228 INFO [TaskManager] [monitor] ================================================================
+170227.231228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.231228 INFO [TaskManager] Number of channel connections: 0
+170227.231228 INFO [TaskManager] [monitor] ================================================================
+170227.231528 INFO [TaskManager] [monitor] ================================================================
+170227.231528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.231528 INFO [TaskManager] Number of channel connections: 0
+170227.231528 INFO [TaskManager] [monitor] ================================================================
+170227.231828 INFO [TaskManager] [monitor] ================================================================
+170227.231828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.231828 INFO [TaskManager] Number of channel connections: 0
+170227.231828 INFO [TaskManager] [monitor] ================================================================
+170227.232128 INFO [TaskManager] [monitor] ================================================================
+170227.232128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.232128 INFO [TaskManager] Number of channel connections: 0
+170227.232128 INFO [TaskManager] [monitor] ================================================================
+170227.232428 INFO [TaskManager] [monitor] ================================================================
+170227.232428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.232428 INFO [TaskManager] Number of channel connections: 0
+170227.232428 INFO [TaskManager] [monitor] ================================================================
+170227.232728 INFO [TaskManager] [monitor] ================================================================
+170227.232728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.232728 INFO [TaskManager] Number of channel connections: 0
+170227.232728 INFO [TaskManager] [monitor] ================================================================
+170227.233028 INFO [TaskManager] [monitor] ================================================================
+170227.233028 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.233028 INFO [TaskManager] Number of channel connections: 0
+170227.233028 INFO [TaskManager] [monitor] ================================================================
+170227.233328 INFO [TaskManager] [monitor] ================================================================
+170227.233328 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.233328 INFO [TaskManager] Number of channel connections: 0
+170227.233328 INFO [TaskManager] [monitor] ================================================================
+170227.233628 INFO [TaskManager] [monitor] ================================================================
+170227.233628 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.233628 INFO [TaskManager] Number of channel connections: 0
+170227.233628 INFO [TaskManager] [monitor] ================================================================
+170227.233928 INFO [TaskManager] [monitor] ================================================================
+170227.233928 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.233928 INFO [TaskManager] Number of channel connections: 0
+170227.233928 INFO [TaskManager] [monitor] ================================================================
+170227.234228 INFO [TaskManager] [monitor] ================================================================
+170227.234228 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.234228 INFO [TaskManager] Number of channel connections: 0
+170227.234228 INFO [TaskManager] [monitor] ================================================================
+170227.234528 INFO [TaskManager] [monitor] ================================================================
+170227.234528 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.234528 INFO [TaskManager] Number of channel connections: 0
+170227.234528 INFO [TaskManager] [monitor] ================================================================
+170227.234828 INFO [TaskManager] [monitor] ================================================================
+170227.234828 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.234828 INFO [TaskManager] Number of channel connections: 0
+170227.234828 INFO [TaskManager] [monitor] ================================================================
+170227.235128 INFO [TaskManager] [monitor] ================================================================
+170227.235128 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.235128 INFO [TaskManager] Number of channel connections: 0
+170227.235128 INFO [TaskManager] [monitor] ================================================================
+170227.235428 INFO [TaskManager] [monitor] ================================================================
+170227.235428 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.235428 INFO [TaskManager] Number of channel connections: 0
+170227.235428 INFO [TaskManager] [monitor] ================================================================
+170227.235728 INFO [TaskManager] [monitor] ================================================================
+170227.235728 INFO [TaskManager] Pools: 0/10, active: 0, completed: 0, task: 0, isShutdown: false, isTerminated: false
+170227.235728 INFO [TaskManager] Number of channel connections: 0
+170227.235728 INFO [TaskManager] [monitor] ================================================================
