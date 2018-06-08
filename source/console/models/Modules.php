@@ -15,7 +15,7 @@ class Modules extends \common\models\ModulesBase {
             $data->ie_name = CHECK_SYSTEM_STATUS_HEADER;
             $data->data = CHECK_SYSTEM_STATUS_HEADER . $id;
             $data->status = 0;
-            $data->created_at = new Expression('NOW()');
+            $data->created_at = new \yii\db\Expression('NOW()');
             $data->save(false);
         }
     }
