@@ -251,8 +251,6 @@ class Modules extends ModulesBase {
     public function moduleStatus() {
         switch ($this->status) {
             case 1:
-                return 'Đã gửi bản tin xuống client';
-                break;
             case 3:
                 return '<div class="module-online">Online</div>';
                 break;
