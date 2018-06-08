@@ -141,7 +141,7 @@ $this->title = 'Home';
             [
                 'label' => Yii::t('backend', 'Trạng thái'),
                 'content' => function ($data) {
-                    return bindec($data->moduleStatus());
+                    return $data->moduleStatus();
                 }
             ],
         ],
