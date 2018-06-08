@@ -253,7 +253,7 @@ class Modules extends ModulesBase {
             case 1:
                 return 'Đã gửi bản tin xuống client';
                 break;
-            case 2:
+            case 3:
                 return 'Online';
                 break;
             case 4:
