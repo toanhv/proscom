@@ -19,7 +19,7 @@ class ModulesSearch extends Modules {
      */
     public function rules() {
         return [
-            [['id', 'country_id', 'privincial_id', 'distric_id', 'created_by', 'updated_by'], 'integer'],
+            [['id', 'country_id', 'privincial_id', 'distric_id', 'created_by', 'updated_by', 'status'], 'integer'],
             [['msisdn', 'customer_code', 'address', 'created_at', 'updated_at'], 'safe'],
             [['keywork', 'name'], 'string'],
             [['keywork', 'name'], 'trim'],
@@ -58,6 +58,10 @@ class ModulesSearch extends Modules {
         }
 
         $this->customer_code = substr($this->name, 9);
+
+        $query->andFilterWhere([
+            'status' => $this->status,
+        ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
                 ->orFilterWhere(['like', 'customer_code', $this->name]);

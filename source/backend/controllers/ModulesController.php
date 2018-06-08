@@ -58,7 +58,8 @@ class ModulesController extends AppController {
      */
     public function actionIndex() {
         $searchModel = new ModulesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->post());
+        //$dataProvider = $searchModel->search(Yii::$app->request->post());
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         \Yii::$app->session->set('module_alarm', null);
         \Yii::$app->session->set('module_id', null);
