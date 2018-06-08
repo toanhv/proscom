@@ -265,4 +265,18 @@ class Modules extends ModulesBase {
         }
     }
 
+    public function getClass() {
+        switch ($this->status) {
+            case 3:
+                return '.module-online';
+                break;
+            case 4:
+                return '.module-offline';
+                break;
+            default :
+                return 'DataColumn::className()';
+                break;
+        }
+    }
+
 }

@@ -274,4 +274,10 @@
     font-size: 16px;
     background-color: #364150;    
 }
+.module-online {
+    color: #1caf9a;
+}
+.module-offline {
+    color: red;
+}
 

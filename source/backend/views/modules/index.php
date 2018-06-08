@@ -139,6 +139,9 @@ $this->title = 'Home';
                 }
             ],
             [
+                'class' => function ($data) {
+                    return $data->getClass();
+                },
                 'label' => Yii::t('backend', 'Trạng thái'),
                 'content' => function ($data) {
                     return $data->moduleStatus();
