@@ -138,6 +138,12 @@ $this->title = 'Home';
                     return bindec($data->sensors->cam_bien_ap_suat_bon_gia_nhiet);
                 }
             ],
+            [
+                'label' => Yii::t('backend', 'Trạng thái'),
+                'content' => function ($data) {
+                    return bindec($data->moduleStatus());
+                }
+            ],
         ],
     ]);
     ?>

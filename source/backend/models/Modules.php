@@ -248,4 +248,21 @@ class Modules extends ModulesBase {
         $data->save(false);
     }
 
+    public function moduleStatus() {
+        switch ($this->status) {
+            case 1:
+                return 'Đã gửi bản tin xuống client';
+                break;
+            case 2:
+                return 'Online';
+                break;
+            case 4:
+                return 'Offline';
+                break;
+            default :
+                return 'connection error';
+                break;
+        }
+    }
+
 }
