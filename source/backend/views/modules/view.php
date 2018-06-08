@@ -379,7 +379,7 @@ $outputMode = $model->outputModes;
                         </div>  
                         <div class="info-block-item">
                             <span class="text-02"><?php echo Yii::t('backend', 'Environment Temp'); ?></span>
-                            <span class="text-01"><?php echo bindec($sensors->du_phong); ?><sup>o</sup>C</span>
+                            <span class="text-01"><?php echo bindec(substr($sensors->du_phong, 0, 8)); ?><sup>o</sup>C</span>
                         </div>  
                         <div class="info-block-item">
                             <span class="text-02"><?php echo Yii::t('backend', 'Solar panels temp'); ?></span>
