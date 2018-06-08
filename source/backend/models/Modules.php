@@ -251,7 +251,7 @@ class Modules extends ModulesBase {
     public function moduleStatus() {
         switch ($this->status) {
             case 1:
-            case 3:
+            case CONFIRM_STATUS:
                 return '<div class="module-online">Online</div>';
                 break;
             case 4:
