@@ -254,27 +254,13 @@ class Modules extends ModulesBase {
                 return 'Đã gửi bản tin xuống client';
                 break;
             case 3:
-                return 'Online';
+                return '<div class="module-online">Online</div>';
                 break;
             case 4:
-                return 'Offline';
+                return '<div class="module-offline">Offline</div>';
                 break;
             default :
                 return 'connection error';
-                break;
-        }
-    }
-
-    public function getClass() {
-        switch ($this->status) {
-            case 3:
-                return '.module-online';
-                break;
-            case 4:
-                return '.module-offline';
-                break;
-            default :
-                return 'DataColumn::className()';
                 break;
         }
     }
