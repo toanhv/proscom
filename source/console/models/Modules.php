@@ -7,7 +7,7 @@ use Yii;
 class Modules extends \common\models\ModulesBase {
 
     public static function status() {
-        $modules = \console\models\Modules::find()->all();
+        $modules = \console\models\Modules::find()->where(['status' => [1, 4]])->all();
         foreach ($modules as $item) {
             $id = ID_HEADER . \common\socket\Socket::dec2bin($item->country->code . $item->privincial->code . $item->distric->code . $item->customer_code);
             $data = new \backend\models\DataClient();
