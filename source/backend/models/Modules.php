@@ -255,19 +255,19 @@ class Modules extends ModulesBase {
                 $alarm = $this->alarms;
                 if ($alarm) {
                     if ($alarm->qua_ap_suat == '11') {
-                        return 'Quá áp suất';
+                        return '<div class="module-offline">Quá áp suất</div>';
                         break;
                     }
                     if ($alarm->tran_be == '11') {
-                        return 'Tràn bể';
+                        return '<div class="module-offline">Tràn bể</div>';
                         break;
                     }
                     if ($alarm->mat_dien == '11') {
-                        return 'Mất điện';
+                        return '<div class="module-offline">Mất điện</div>';
                         break;
                     }
                     if ($alarm->qua_nhiet == '11') {
-                        return 'Quá nhiệt';
+                        return '<div class="module-offline">Quá nhiệt</div>';
                         break;
                     }
                 }
