@@ -100,6 +100,10 @@ class ModulesController extends AppController {
             $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
             $module_alarm['lost_conn']['count'] = 0;
             Yii::$app->session->set('module_alarm', $module_alarm);
+        } else {
+            $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
+            $module_alarm['lost_conn']['count'] = 0;
+            Yii::$app->session->set('module_alarm', $module_alarm);
         }
 
         $model->setVan_dien_tu_ba_nga_up();
