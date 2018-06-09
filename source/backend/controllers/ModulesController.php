@@ -97,10 +97,8 @@ class ModulesController extends AppController {
             $module_alarm['qua_nhiet']['count'] = 0;
             $module_alarm['tran_be']['status'] = $alarms->tran_be == '11' ? 1 : 0;
             $module_alarm['tran_be']['count'] = 0;
-            if ($model->status == 4) {
-                $module_alarm['lost_conn']['status'] = 1;
-                $module_alarm['lost_conn']['count'] = 0;
-            }
+            $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
+            $module_alarm['lost_conn']['count'] = 0;
             Yii::$app->session->set('module_alarm', $module_alarm);
         }
 
