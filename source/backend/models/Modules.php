@@ -252,6 +252,25 @@ class Modules extends ModulesBase {
         switch ($this->status) {
             case 1:
             case CONFIRM_STATUS:
+                $alarm = $this->alarms;
+                if ($alarm) {
+                    if ($alarm->qua_ap_suat == '11') {
+                        return 'Quá áp suất';
+                        break;
+                    }
+                    if ($alarm->tran_be == '11') {
+                        return 'Tràn bể';
+                        break;
+                    }
+                    if ($alarm->mat_dien == '11') {
+                        return 'Mất điện';
+                        break;
+                    }
+                    if ($alarm->qua_nhiet == '11') {
+                        return 'Quá nhiệt';
+                        break;
+                    }
+                }
                 return '<div class="module-online">Online</div>';
                 break;
             case 4:

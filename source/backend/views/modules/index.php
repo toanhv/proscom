@@ -15,10 +15,7 @@ $this->title = 'Home';
 </div>
 <div class="page-bar">
     <?php
-    $form = ActiveForm::begin([
-                'action' => ['index'],
-                'method' => 'get',
-    ]);
+    $form = ActiveForm::begin();
     ?>
     <ul class="page-breadcrumb">
         <li>
@@ -108,7 +105,7 @@ $this->title = 'Home';
             [
                 'label' => Yii::t('backend', 'Environment Temp'),
                 'content' => function ($data) {
-                    return bindec($data->sensors->du_phong);
+                    return bindec(substr($data->sensors->du_phong, 0, 8));
                 }
             ],
             [
