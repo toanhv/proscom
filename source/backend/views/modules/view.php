@@ -258,7 +258,7 @@ $outputMode = $model->outputModes;
                 <div class="c-01">&nbsp;</div>
 
                 <div class="c-02 text-04 environment" data-toggle="tooltip" data-placement="right" title="<?php echo Yii::t('backend', 'Environment Temp'); ?>">
-                    <p><?php echo bindec($sensors->du_phong); ?>&deg;C</p>
+                    <p><?php echo bindec(substr($sensors->du_phong, 0, 8)); ?>&deg;C</p>
                 </div>
 
                 <div class="c-02 text-04" data-toggle="tooltip" data-placement="right" title="<?php echo Yii::t('backend', 'Solar panels temp'); ?>">
