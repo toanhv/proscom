@@ -180,6 +180,14 @@ class ModulesBase extends \common\models\db\ModulesDB {
             $module_alarm['qua_nhiet']['count'] = 0;
             $module_alarm['tran_be']['status'] = 0;
             $module_alarm['tran_be']['count'] = 0;
+            $module_alarm['lost_conn']['status'] = 0;
+            $module_alarm['lost_conn']['count'] = 0;
+        }
+
+        if ($this->status == 4) {
+            $module_alarm['lost_conn']['status'] = 1;
+            $module_alarm['lost_conn']['count'] += 1;
+            $return = 1;
         }
 
         if ($alarm->qua_ap_suat == '11') {
