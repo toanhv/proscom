@@ -429,7 +429,7 @@ $outputMode = $model->outputModes;
                 <span>Lượng điện tiêu thụ <b><?php echo number_format($addParams->luong_dien_tieu_thu) ?></b> Kwh</span>
             </p>
             <p>
-                <span>Số tiền tiết kiệm <b><?php echo number_format($addParams->so_tien_tiet_kiem) ?></b> triệu/span>
+                <span>Số tiền tiết kiệm <b><?php echo number_format($addParams->so_tien_tiet_kiem) ?></b> triệu</span>
             </p>
             <p>
                 <span>Lượng khí thải CO2 giảm <b><?php echo number_format($addParams->luong_khi_thai_co2_giam) ?></b> tấn</span>
