@@ -423,16 +423,16 @@ $outputMode = $model->outputModes;
         </div>
         <div class="buttom-content">
             <p>
-                <span>Lượng nước đã làm nóng <?php echo number_format($addParams->luong_nuoc_da_lam_nong) ?> m3</span>
+                <span>Lượng nước đã làm nóng <b><?php echo number_format($addParams->luong_nuoc_da_lam_nong) ?></b> m3</span>
             </p>
             <p>
-                <span>Lượng điện tiêu thụ <?php echo number_format($addParams->luong_dien_tieu_thu) ?> Kwh</span>
+                <span>Lượng điện tiêu thụ <b><?php echo number_format($addParams->luong_dien_tieu_thu) ?></b> Kwh</span>
             </p>
             <p>
-                <span>Số tiền tiết kiệm <?php echo number_format($addParams->so_tien_tiet_kiem) ?> triệu/span>
+                <span>Số tiền tiết kiệm <b><?php echo number_format($addParams->so_tien_tiet_kiem) ?></b> triệu/span>
             </p>
             <p>
-                <span>Lượng khí thải CO2 giảm <?php echo number_format($addParams->luong_khi_thai_co2_giam) ?> tấn</span>
+                <span>Lượng khí thải CO2 giảm <b><?php echo number_format($addParams->luong_khi_thai_co2_giam) ?></b> tấn</span>
             </p>      
         </div>
     </div>      
