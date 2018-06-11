@@ -258,9 +258,7 @@
     color: white;
 }
 .buttom-content {
-    text-align: center;
-    margin: 20px;
-    margin-bottom: 100px;
+    display: inline-block;
 }
 .buttom-content p {
     display: block;
