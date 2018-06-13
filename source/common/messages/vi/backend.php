@@ -64,7 +64,7 @@ return [
     'Mật khẩu gõ lại chưa đúng' => '',
     'Mật khẩu phải từ 6-20 ký tự và bao gồm chữ thường, chữ HOA, số và ký tự đặc biệt' => '',
     'Name' => '',
-    'Nation' => '',
+    'Nation' => 'Quốc Gia',
     'OFF' => '',
     'ON' => '',
     'Operation Logs' => '',
