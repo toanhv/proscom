@@ -17,7 +17,9 @@ class Modules extends \common\models\ModulesBase {
             $data->status = 0;
             $data->created_at = new \yii\db\Expression('NOW()');
             $data->save(false);
+            echo 'Done module > ' . $item->id . ' at ' . date('Y-m-d H:i:s');
         }
+        echo 'Done at ' . date('Y-m-d H:i:s');
     }
 
 }
