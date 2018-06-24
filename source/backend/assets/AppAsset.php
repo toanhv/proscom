@@ -33,6 +33,7 @@ class AppAsset extends AssetBundle {
         'css/diagram.css',
         'css/jquery.datetimepicker.css',
         'css/bootstrap-select.css',
+        'css/jquery-confirm.min.css',
         'css/custom.css',
     ];
     public $js = [
@@ -53,6 +54,7 @@ class AppAsset extends AssetBundle {
         'js/cms.js',
         'js/jquery.datetimepicker.full.min.js',
         'js/show-popup.js',
+        'js/jquery-confirm.min.js',
         'js/pump.js',
     ];
     public $depends = [
