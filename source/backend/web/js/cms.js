@@ -42,12 +42,8 @@ $(document).ready(function () {
         step: 1,
     });
     $("form").on('submit', function () {
-        var mess = $('.btn-primary').attr('data-confirm');
-        if (mess) {
-            confirm(mess, function () {
-                waitingDialog.show('Connecting to client');
-            });            
-            return;
+        if ($('.btn-primary').attr('data-confirm')) {
+            waitingDialog.show('Connecting to client');
         }
     });
     $('a#flag-language').click(function () {
@@ -74,15 +70,15 @@ $(document).ready(function () {
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
 });
 
-confirm = function (message, trueCallback, falseCallback) {
+jconfirm = function(message, trueCallback, falseCallback) {
     $.confirm({
         title: '',
         content: message,
         buttons: {
-            Ok: function () {
+            Ok: function() {
                 trueCallback();
             },
-            cancel: function () {
+            cancel: function() {
                 falseCallback;
             }
         }
