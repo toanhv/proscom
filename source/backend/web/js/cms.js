@@ -46,8 +46,8 @@ $(document).ready(function () {
         if (mess) {
             confirm(mess, function () {
                 $('form').submit();
-            });
-            waitingDialog.show('Connecting to client');
+                waitingDialog.show('Connecting to client');
+            });            
             return;
         }
     });
