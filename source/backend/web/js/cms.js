@@ -157,3 +157,11 @@ function loadManagerInfo() {
     });
 
 }
+
+function alert(message) {
+    $.alert({
+        title: 'Thông báo!',
+        content: message
+    });
+    return false;
+}
