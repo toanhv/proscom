@@ -45,7 +45,6 @@ $(document).ready(function () {
         var mess = $('.btn-primary').attr('data-confirm');
         if (mess) {
             confirm(mess, function () {
-                $('form').submit();
                 waitingDialog.show('Connecting to client');
             });            
             return;
