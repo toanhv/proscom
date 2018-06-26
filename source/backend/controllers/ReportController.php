@@ -107,7 +107,7 @@ class ReportController extends AppController {
                 bindec($sens->cam_bien_nhiet_do_duong_ong_1),
                 bindec($sens->cam_bien_nhiet_do_duong_ong_2),
                 bindec($sens->cam_bien_ap_suat_duong_ong),
-                bindec($sens->du_phong)
+                bindec(substr($sens->du_phong, 0, 8))
             );
             fputcsv($fp, $put, $delimiter);
             $j++;
