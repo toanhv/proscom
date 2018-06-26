@@ -70,8 +70,8 @@ class ModulesController extends AppController {
         ]);
     }
 
-    public function actionAllView() {
-        $id = \Yii::$app->session->get('module_id', 0);
+    public function actionAllView($id) {
+        $id = \Yii::$app->session->get('module_id', $id);
         $model = $this->findModel($id);
 
         $sensors = $model->sensors;
@@ -124,7 +124,7 @@ class ModulesController extends AppController {
      */
     public function actionView($id) {
         \Yii::$app->session->set('module_id', $id);
-        return $this->redirect(['all-view']);
+        return $this->redirect(['all-view', 'id' => $id]);
     }
 
     public function actionStatus() {
