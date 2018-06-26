@@ -72,6 +72,9 @@ class ModulesController extends AppController {
 
     public function actionAllView($id) {
         $id = \Yii::$app->session->get('module_id', $id);
+        if (!$id) {
+            return $this->redirect(['index']);
+        }
         $model = $this->findModel($id);
 
         $sensors = $model->sensors;
