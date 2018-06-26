@@ -12,11 +12,11 @@ $this->title = 'Sensor Report';
         <form method="post" action="/report/index" id="report-sensor-alarm">
             <div class="params">
                 <h3 class="title">ID: <?php echo $module->getModuleId() . ' - ' . Html::encode($module->name); ?></h3>
-                <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>">
+                <input type="hidden" name="_csrf" value="<?php Yii::$app->request->csrfToken ?>" autocomplete="off"/>
                 From:
                 <input type="text" name="from" id="report_from" value="<?php echo $from ?>">
                 To:
-                <input type="text" name="to" id="report_to" value="<?php echo $to ?>">
+                <input type="text" name="to" id="report_to" value="<?php echo $to ?>" autocomplete="off"/>
 
                 <button type="submit" name="export" value="0" class="btn-reprt btn-primary">Report</button>
                 <button type="submit" name="export" value="1" class="btn-reprt btn-primary">Excel</button>
