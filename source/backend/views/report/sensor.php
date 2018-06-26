@@ -27,7 +27,7 @@ $this->title = 'Sensor Report';
         $sensorChart = [];
         $sensorItem = [
             'cam_bien_buc_xa_dan_thu',
-            'du_phong',
+            'moi_truong',
             'cam_bien_dan_thu',
             'cam_bien_nhiet_dinh_bon_solar',
             'cam_bien_bon_solar',
@@ -44,7 +44,11 @@ $this->title = 'Sensor Report';
                 $sensorChart[$sensorName]['title'] = $item->attributeLabels()[$sensorName];
                 $sensorChart[$sensorName]['color'] = "rgba(" . rand(0, 255) . "," . rand(0, 255) . "," . rand(0, 255) . "," . rand(0, 255) . ")";
                 $sensorChart[$sensorName]['labels'][] = $item->created_at;
-                $sensorChart[$sensorName]['data'][] = bindec($item->$sensorName);
+                if ($sensorName == 'sensorName') {
+                    $sensorChart[$sensorName]['data'][] = bindec(substr($item->du_phong, 0, 8));
+                } else {
+                    $sensorChart[$sensorName]['data'][] = bindec($item->$sensorName);
+                }
             }
         }
 

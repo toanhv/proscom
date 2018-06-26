@@ -6,6 +6,8 @@ use Yii;
 
 class Sensor extends \common\models\SensorBase {
 
+    public $moi_truong;
+
     /**
      * @inheritdoc
      */
@@ -30,6 +32,7 @@ class Sensor extends \common\models\SensorBase {
             'luong_dien_tieu_thu' => Yii::t('backend', 'Lượng điện đã tiêu thụ'),
             'so_tien_tiet_kiem' => Yii::t('backend', 'Số tiền tiết kiệm được'),
             'luong_khi_thai_co2_giam' => Yii::t('backend', 'Lượng khí thải CO2 giảm'),
+            'moi_truong' => Yii::t('backend', 'Môi trường'),
         ];
     }
 
