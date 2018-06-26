@@ -42,7 +42,7 @@ class ReportController extends AppController {
     public function actionAlarm() {
         $alarms = array();
         $from = date('Y-m-d', strtotime('-1 day'));
-        $to = date('Y-m-d');
+        $to = date('Y-m-d H:i:s');
         $module_id = \Yii::$app->session->get('module_id', 0);
         if (!$module_id) {
             return $this->goHome();
