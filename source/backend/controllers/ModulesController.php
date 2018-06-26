@@ -71,7 +71,7 @@ class ModulesController extends AppController {
     }
 
     public function actionAllView($id) {
-        $id = \Yii::$app->session->get('module_id', $id);
+        $id = \Yii::$app->session->get('module_id', 0);
         if (!$id) {
             return $this->redirect(['index']);
         }
@@ -127,7 +127,7 @@ class ModulesController extends AppController {
      */
     public function actionView($id) {
         \Yii::$app->session->set('module_id', $id);
-        return $this->redirect(['all-view', 'id' => $id]);
+        return $this->redirect(['all-view']);
     }
 
     public function actionStatus() {
