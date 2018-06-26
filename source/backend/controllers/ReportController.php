@@ -10,9 +10,8 @@ use backend\models\Modules;
 class ReportController extends AppController {
 
     public function actionIndex() {
-        $sensors = null;
         $from = date('Y-m-d', strtotime('-1 day'));
-        $to = date('Y-m-d');
+        $to = date('Y-m-d H:i:s');
         $module_id = \Yii::$app->session->get('module_id', 0);
         if (!$module_id) {
             return $this->goHome();
