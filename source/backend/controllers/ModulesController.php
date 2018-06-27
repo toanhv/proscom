@@ -73,7 +73,7 @@ class ModulesController extends AppController {
     public function actionAllView() {
         $id = \Yii::$app->session->get('module_id', 0);
         if (!$id) {
-            return $this->redirect(['index']);
+            return $this->redirect('/');
         }
         $model = $this->findModel($id);
 
@@ -283,7 +283,8 @@ class ModulesController extends AppController {
         if (($model = Modules::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+			return $this->redirect('/');
+            //throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
 
