@@ -160,7 +160,7 @@ Pjax::end();
 $script = <<< JS
     setTimeout(function(){
         window.location.reload();
-    }, 60000);
+    }, 30000);
 JS;
 $this->registerJs($script);
 ?>
