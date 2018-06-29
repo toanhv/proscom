@@ -160,7 +160,7 @@ yii\widgets\Pjax::end();
 $script = <<< JS
     setTimeout(function(){
         window.location.reload();
-    }, 30000);
+    }, 20000);
 JS;
 $this->registerJs($script);
 ?>
