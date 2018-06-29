@@ -25,7 +25,7 @@ $this->title = 'Home';
     <?php ActiveForm::end(); ?>
 </div>
 <?php
-Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
+yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
 ?>
 <div id="module-icon" class="row modules" style="display: none;">
     <?php
@@ -153,7 +153,7 @@ Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
     ?>
 </div>
 <?php
-Pjax::end();
+yii\widgets\Pjax::end();
 ?>
 
 <?php
