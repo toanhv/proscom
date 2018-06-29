@@ -5,14 +5,13 @@ namespace backend\controllers;
 use Yii;
 use backend\models\AddParams;
 use backend\models\AddParamsSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * AddParamsController implements the CRUD actions for AddParams model.
  */
-class AddParamsController extends Controller {
+class AddParamsController extends AppController {
 
     public function behaviors() {
         return [
