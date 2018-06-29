@@ -24,6 +24,9 @@ $this->title = 'Home';
     </ul>   
     <?php ActiveForm::end(); ?>
 </div>
+<?php
+Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
+?>
 <div id="module-icon" class="row modules" style="display: none;">
     <?php
     $data = $dataProvider->getModels();
@@ -149,3 +152,15 @@ $this->title = 'Home';
     ]);
     ?>
 </div>
+<?php
+Pjax::end();
+?>
+
+<?php
+$script = <<< JS
+    setTimeout(function(){
+        window.location.reload();
+    }, 60000);
+JS;
+$this->registerJs($script);
+?>
