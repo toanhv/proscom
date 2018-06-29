@@ -17,6 +17,9 @@ $outputMode = $model->outputModes;
             <img src="/images/btn_emergency.jpg" width="50"/>
         </a>-->
 <?php } ?>
+<?php
+yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
+?>
 <div class="output-mode-view">    
     <div class="info-diagram">
         <h3 class="title">ID: <?php echo $model->getModuleId() . ' - ' . \yii\helpers\Html::encode($model->name); ?></h3>        
@@ -437,6 +440,9 @@ $outputMode = $model->outputModes;
         </div>
     </div>      
 </div>
+<?php
+yii\widgets\Pjax::end();
+?>
 <?php if ($model->status == 1) { ?>
     <?=
     $this->registerJs(
@@ -453,4 +459,13 @@ $outputMode = $model->outputModes;
     ]);
     yii\bootstrap\Modal::end();
 }
+?>
+
+<?php
+$script = <<< JS
+    setTimeout(function(){
+        window.location.reload();
+    }, 30000);
+JS;
+$this->registerJs($script);
 ?>
