@@ -1,0 +1,34 @@
+Quý khách vui lòng ssh vào server và mở file : /etc/csf/csf.conf
+
+tìm đến dòng TCP_IN và TCP_OUT để thêm các port cần mở vào.
+
+SAu đó cho restart lại csf: csf -r
+
+cat /usr/local/directadmin/conf/mysql.conf
+
+CREATE USER 'proscom'@'%' IDENTIFIED BY 'Proscom@123#*#';
+
+GRANT ALL PRIVILEGES ON proscom.* TO 'proscom'@'%' IDENTIFIED BY 'Proscom@123#*#';
+
+IP: 45.117.169.229
+
+root/MegaSun@082018#*#
+
+'dsn' => 'mysql:host=45.117.169.229:3306;dbname=proscom',
+'username' => 'root',
+'password' => 'OGE5ZTNl@#*#0818',
+
+
+URL Control Panel: https://cloudpanel86150.superdata.vn:4083
+
+Username : duonglinh@proscom.vn
+
+Password : Proscom@2017
+
+https://support.pavietnam.vn
+Mã số khách hàng: PA-291313
+Mật khẩu mới: 5226b91624
+
+Username : duonglinh@proscom.vn
+
+Password : Proscom@2017
