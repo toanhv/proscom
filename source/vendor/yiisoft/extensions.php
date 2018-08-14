@@ -327,15 +327,6 @@ return array(
             '@mongosoft/soapclient' => $vendorDir . '/mongosoft/yii2-soap-client',
         ),
     ),
-    'kartik-v/yii2-mpdf' =>
-    array(
-        'name' => 'kartik-v/yii2-mpdf',
-        'version' => '1.0.0.0',
-        'alias' =>
-        array(
-            '@kartik/mpdf' => $vendorDir . '/kartik-v/yii2-mpdf',
-        ),
-    ),
     'kartik-v/yii2-export' =>
     array(
         'name' => 'kartik-v/yii2-export',
