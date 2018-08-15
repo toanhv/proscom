@@ -188,5 +188,5 @@ page_reload = function (id) {
             window.location.reload();
         }
     });
-    setTimeout(page_reload, 30000);
+    setTimeout(page_reload(id), 30000);
 };
