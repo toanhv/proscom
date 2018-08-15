@@ -463,7 +463,7 @@ yii\widgets\Pjax::end();
 
 <?php
 $script = <<< JS
-    page_reload($id);
+    page_reload($id, '/modules/all-view');
 JS;
 $this->registerJs($script);
 ?>
