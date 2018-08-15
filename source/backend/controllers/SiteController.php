@@ -76,4 +76,24 @@ class SiteController extends AppController {
         return $this->goHome();
     }
 
+    public function actionRefresh($id) {
+        $this->layout = false;
+        $cache = Yii::$app->cache;
+        $key = 'refresh_timer_' . $id;
+        if ($id) {
+            $module = \backend\models\Modules::find()->where(['id' => intval($id)])->one();
+        } else {
+            $module = \backend\models\Modules::find()->orderBy(['updated_at' => SORT_DESC])->one();
+        }
+        if ($module) {
+            if ($cache->get($key) && strtotime($cache->get($key)) >= strtotime($module->updated_at)) {
+                return 0;
+            } else {
+                $cache->set($key, $module->updated_at, 86400);
+                return 1;
+            }
+        }
+        return 0;
+    }
+
 }

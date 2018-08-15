@@ -157,10 +157,14 @@ yii\widgets\Pjax::end();
 ?>
 
 <?php
-//$script = <<< JS
-//    setTimeout(function(){
-//        window.location.reload();
-//    }, 30000);
-//JS;
-//$this->registerJs($script);
+$script = <<< JS
+    setTimeout(function(){
+        $.get("/modules/refresh?id=0", {}, function (status) {
+            if(status == 1) {
+                window.location.reload();
+            }
+        });
+    }, 30000);
+JS;
+$this->registerJs($script);
 ?>

@@ -117,6 +117,7 @@ class ModulesController extends AppController {
                     'statuses' => $statuses,
                     'alarms' => $alarms,
                     'addParams' => $addParams[0],
+                    'id' => $id,
         ]);
     }
 
@@ -283,7 +284,7 @@ class ModulesController extends AppController {
         if (($model = Modules::findOne($id)) !== null) {
             return $model;
         } else {
-			return $this->redirect('/');
+            return $this->redirect('/');
             //throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
