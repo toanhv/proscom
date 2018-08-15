@@ -462,10 +462,10 @@ yii\widgets\Pjax::end();
 ?>
 
 <?php
-$script = <<< JS
-    $(document).ready(function () {
-        setTimeout(page_reload($id, '/modules/all-view'), 30000);
-    });
-JS;
-$this->registerJs($script);
+//$script = <<< JS
+//    $(document).ready(function () {
+//        setTimeout(page_reload($id, '/modules/all-view'), 30000);
+//    });
+//JS;
+//$this->registerJs($script);
 ?>
