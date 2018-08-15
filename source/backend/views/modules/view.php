@@ -463,9 +463,7 @@ yii\widgets\Pjax::end();
 
 <?php
 $script = <<< JS
-    setTimeout(function(){
-        page_reload($id);
-    }, 30000);
+    page_reload($id);
 JS;
 $this->registerJs($script);
 ?>
