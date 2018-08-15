@@ -159,7 +159,7 @@ yii\widgets\Pjax::end();
 <?php
 $script = <<< JS
     setTimeout(function(){
-        $.get("/modules/refresh?id=0", {}, function (status) {
+        $.get("/site/refresh?id=0", {}, function (status) {
             console.log("status: " + status);
             if(status == 1) {
                 window.location.reload();
