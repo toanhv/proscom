@@ -158,7 +158,9 @@ yii\widgets\Pjax::end();
 
 <?php
 $script = <<< JS
-    page_reload(0, '/');
+    $(document).ready(function () {
+        page_reload(0, '/');
+    });
 JS;
 $this->registerJs($script);
 ?>
