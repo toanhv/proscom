@@ -70,15 +70,15 @@ $(document).ready(function () {
     $("div.all-disable select,div.all-disable input").prop('disabled', 'disabled');
 });
 
-jconfirm = function(message, trueCallback, falseCallback) {
+jconfirm = function (message, trueCallback, falseCallback) {
     $.confirm({
         title: '',
         content: message,
         buttons: {
-            Ok: function() {
+            Ok: function () {
                 trueCallback();
             },
-            cancel: function() {
+            cancel: function () {
                 falseCallback;
             }
         }
@@ -179,4 +179,13 @@ function alert(message) {
         content: message
     });
     return false;
+}
+
+function page_reload(id) {
+    $.get("/site/refresh?id=" + id, {}, function (sts) {
+        console.log("status: " + sts);
+        if (sts == 1) {
+            window.location.reload();
+        }
+    });
 }

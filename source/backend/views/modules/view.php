@@ -464,12 +464,7 @@ yii\widgets\Pjax::end();
 <?php
 $script = <<< JS
     setTimeout(function(){
-        $.get("/site/refresh?id=$id", {}, function (status) {
-            console.log("status: " + status);
-            if(status == 1) {
-                window.location.reload();
-            }
-        });
+        page_reload($id);
     }, 30000);
 JS;
 $this->registerJs($script);
