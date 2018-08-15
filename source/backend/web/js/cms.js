@@ -182,11 +182,17 @@ function alert(message) {
 }
 
 page_reload = function (id, url) {
-    $.get("/site/refresh?id=" + id, {}, function (sts) {
-        console.log("status: " + sts);
-        if (sts == 1) {
-            window.location.href = url;
+    $.ajax({
+        url: "/site/refresh?id=" + id,
+        success: function (sts) {
+            console.log("status: " + sts);
+            if (sts == 1) {
+                window.location.href = url;
+            }
         }
     });
     setTimeout(page_reload(id, url), 30000);
 };
+
+
+
