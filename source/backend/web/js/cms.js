@@ -181,11 +181,12 @@ function alert(message) {
     return false;
 }
 
-function page_reload(id) {
+page_reload = function (id) {
     $.get("/site/refresh?id=" + id, {}, function (sts) {
         console.log("status: " + sts);
         if (sts == 1) {
             window.location.reload();
         }
     });
-}
+    setTimeout(page_reload, 30000);
+};
