@@ -181,7 +181,7 @@ function alert(message) {
     return false;
 }
 
-page_reload = function (id, url) {
+function page_reload(id, url) {
     console.log("start");
     $.ajax({
         url: "/site/refresh?id=" + id,
@@ -193,7 +193,7 @@ page_reload = function (id, url) {
         }
     });
     setTimeout(page_reload(id, url), 30000);
-};
+}
 
 
 
