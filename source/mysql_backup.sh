@@ -1,8 +1,8 @@
 #! /bin/sh
 
 date=`/bin/date +%Y%m%d-%H%M`
-pass="OGE5ZTNl@#*#0818"
-mysqldump -uroot -p$pass proscom > /root/tool/proscom.sql
+pass="Proscom@123#*#"
+mysqldump -uproscom -p$pass proscom > /root/tool/proscom.sql
 cd /root/tool
 /bin/tar czf proscom-$date.tgz proscom.sql
 /bin/rm -rf proscom.sql
