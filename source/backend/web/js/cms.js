@@ -189,7 +189,7 @@ function page_reload(id, url) {
         success: function (sts) {
             console.log("status: " + sts);
             if (sts == 1) {
-                window.location.href = url;
+                window.location.href = window.location.href;
                 page_reload = 1;
             }
         }
