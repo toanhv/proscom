@@ -182,6 +182,7 @@ function alert(message) {
 }
 
 page_reload = function (id, url) {
+    console.log("start");
     $.ajax({
         url: "/site/refresh?id=" + id,
         success: function (sts) {
