@@ -197,21 +197,5 @@ function page_reload(id, url) {
     }, 30000);
 }
 
-function view_reload(id, url) {
-    console.log("url: " + url);
-    $.ajax({
-        url: "/site/refresh?id=" + id,
-        success: function (sts) {
-            console.log("status: " + sts);
-            if (sts == 1) {
-                window.location.href = url;
-            }
-        }
-    });
-    setInterval(function () {
-        page_reload(id, url);
-    }, 30000);
-}
-
 
 
