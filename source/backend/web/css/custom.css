@@ -124,6 +124,65 @@
     margin-left: -60px;
 }
 
+.page-header {
+    background: url('../images/banner.jpg') no-repeat 0 0;
+}
+.distric-index {
+    margin-top: 25px;
+}
+.distric-index .summary {
+    display: none;
+}
+.table-striped tr th {
+    font-weight: bold;
+}
+#module-list .table-striped > thead > tr {
+    background-color: #1caf9a !important;
+    text-align: center;
+    vertical-align: middle;
+}
+#module-list .table-striped > thead > tr > th {
+    text-align: center;
+    alignment-adjust: middle;
+    vertical-align: middle;
+    color: #fff;
+}
+#module-list .table-striped > tbody > tr > td {
+    text-align: center;
+    alignment-adjust: middle;
+    vertical-align: middle;
+}
+.text-shadow {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.text-shadow:hover {
+    color: white;
+}
+.buttom-content {
+    display: inline-block;
+}
+.buttom-content p {
+    display: block;
+    float: left;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: #364150;    
+}
+.module-online {
+    color: #1caf9a;
+}
+.module-offline {
+    color: red;
+}
+
 @media (max-width: 440px) {
     .info-diagram, .diagram, .output-mode-view {
         overflow-x: auto;
@@ -220,65 +279,7 @@
         margin: 11px -136px 0;
     }
     .buttom-content p {
-        float: none;
+        float: none !important;
     }
-}
-.page-header {
-    background: url('../images/banner.jpg') no-repeat 0 0;
-}
-.distric-index {
-    margin-top: 25px;
-}
-.distric-index .summary {
-    display: none;
-}
-.table-striped tr th {
-    font-weight: bold;
-}
-#module-list .table-striped > thead > tr {
-    background-color: #1caf9a !important;
-    text-align: center;
-    vertical-align: middle;
-}
-#module-list .table-striped > thead > tr > th {
-    text-align: center;
-    alignment-adjust: middle;
-    vertical-align: middle;
-    color: #fff;
-}
-#module-list .table-striped > tbody > tr > td {
-    text-align: center;
-    alignment-adjust: middle;
-    vertical-align: middle;
-}
-.text-shadow {
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
-.text-shadow:hover {
-    color: white;
-}
-.buttom-content {
-    display: inline-block;
-}
-.buttom-content p {
-    display: block;
-    float: left;
-    overflow: hidden;
-    color: white;
-    text-align: center;
-    vertical-align: middle;
-    padding: 5px;
-    margin: 10px;
-    font-size: 16px;
-    background-color: #364150;    
-}
-.module-online {
-    color: #1caf9a;
-}
-.module-offline {
-    color: red;
 }
 
