@@ -192,7 +192,7 @@ function page_reload(id, url) {
             }
         }
     });
-    setTimeout(page_reload(id, url), 30000);
+    //setTimeout(page_reload(id, url), 30000);
 }
 
 
