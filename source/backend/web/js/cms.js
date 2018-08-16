@@ -181,6 +181,7 @@ function alert(message) {
     return false;
 }
 
+
 function page_reload(id, url) {
     console.log("start");
     $.ajax({
@@ -189,10 +190,13 @@ function page_reload(id, url) {
             console.log("status: " + sts);
             if (sts == 1) {
                 window.location.href = url;
+                page_reload = 1;
             }
         }
     });
-    //setTimeout(page_reload(id, url), 30000);
+    setInterval(function () {
+        page_reload(id, url);
+    }, 30000);
 }
 
 
