@@ -12,7 +12,7 @@ GRANT ALL PRIVILEGES ON proscom.* TO 'proscom'@'%' IDENTIFIED BY 'Proscom@123#*#
 
 IP: 45.117.169.229
 
-root/MegaSun@082018#*#
+root/MegaSun@2018#*#
 
 'dsn' => 'mysql:host=45.117.169.229:3306;dbname=proscom',
 'username' => 'root',
