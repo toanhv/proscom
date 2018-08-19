@@ -57,13 +57,17 @@ class AddParamsController extends AppController {
     public function actionCreate() {
         $model = new AddParams();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                        'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            if (!$model->luong_khi_thai_co2_giam) {
+                $model->luong_khi_thai_co2_giam = number_format(intval($model->luong_dien_tieu_thu) * 0.6245, 2);
+            }
+            if ($model->save()) {
+                return $this->redirect('/modules/all-view');
+            }
         }
+        return $this->render('create', [
+                    'model' => $model,
+        ]);
     }
 
     /**
@@ -75,13 +79,17 @@ class AddParamsController extends AppController {
     public function actionUpdate() {
         $model = $this->findModel();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect('/modules/all-view');
-        } else {
-            return $this->render('update', [
-                        'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            if (!$model->luong_khi_thai_co2_giam) {
+                $model->luong_khi_thai_co2_giam = number_format(intval($model->luong_dien_tieu_thu) * 0.6245, 2);
+            }
+            if ($model->save()) {
+                return $this->redirect('/modules/all-view');
+            }
         }
+        return $this->render('update', [
+                    'model' => $model,
+        ]);
     }
 
     /**
