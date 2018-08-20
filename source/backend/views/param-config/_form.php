@@ -27,7 +27,7 @@
         <input type="text" name="return_pump_t2_start" value="<?php echo bindec(substr($model->return_pump, 16, 8)); ?>" class="type-text" style="width:30px"> : 
         <input type="text" name="return_pump_t2_end" value="<?php echo bindec(substr($model->return_pump, 24, 8)); ?>" class="type-text" style="width:30px">
     </p>
-    <p data-toggle="tooltip" class="text-04" data-placement="right" title="<?php echo Yii::t('backend', 'Water temperature difference between Solar panels and Solar tank'); ?>">
+    <p>
         <?php echo Yii::t('backend', 'Range to turn on the Pump'); ?> <input type="text" name="return_pump_delta_t" value="<?php echo $model->getReturnPumpDeltat(); ?>" class="type-text" style="width:30px"><sup>o</sup>C
     </p>
 </div>
