@@ -44,7 +44,7 @@ $this->title = 'Sensor Report';
                 $sensorChart[$sensorName]['title'] = $item->attributeLabels()[$sensorName];
                 $sensorChart[$sensorName]['color'] = "rgba(" . rand(0, 255) . "," . rand(0, 255) . "," . rand(0, 255) . "," . rand(0, 255) . ")";
                 $sensorChart[$sensorName]['labels'][] = $item->created_at;
-                if ($sensorName == 'sensorName') {
+                if ($sensorName == 'moi_truong') {
                     $sensorChart[$sensorName]['data'][] = bindec(substr($item->du_phong, 0, 8));
                 } else {
                     $sensorChart[$sensorName]['data'][] = bindec($item->$sensorName);
