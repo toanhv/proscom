@@ -8,6 +8,7 @@ use mdm\admin\components\MenuHelper;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
+use mdm\admin\components\Configs;
 
 /**
  * MenuController implements the CRUD actions for Menu model.
@@ -65,7 +66,7 @@ class MenuController extends AppController {
         $model = new Menu;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            //MenuHelper::invalidate();
+            self::invalidate();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -86,7 +87,7 @@ class MenuController extends AppController {
             $model->parent_name = $model->menuParent->name;
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            //MenuHelper::invalidate();
+            self::invalidate();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -120,6 +121,15 @@ class MenuController extends AppController {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    /**
+     * Use to invalidate cache.
+     */
+    public static function invalidate() {
+        if (Configs::cache() !== null) {
+            \yii\caching\TagDependency::invalidate(Configs::cache(), Configs::CACHE_TAG);
         }
     }
 

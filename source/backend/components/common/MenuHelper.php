@@ -123,7 +123,9 @@ class MenuHelper {
             }
             $assigned = static::requiredParent($assigned, $menus);
             if ($cache !== null) {
-                $cache->set($key, $assigned, CACHE_TIMEOUT);
+                $cache->set($key, $assigned, 2592000, new TagDependency([
+                    'tags' => Configs::CACHE_TAG
+                ]));
             }
         }
 
@@ -131,7 +133,9 @@ class MenuHelper {
         if ($refresh || $callback !== null || $cache === null || (($result = $cache->get($key)) === false)) {
             $result = static::normalizeMenu($assigned, $menus, $callback, $root);
             if ($cache !== null && $callback === null) {
-                $cache->set($key, $result, CACHE_TIMEOUT);
+                $cache->set($key, $result, 2592000, new TagDependency([
+                    'tags' => Configs::CACHE_TAG
+                ]));
             }
         }
 
