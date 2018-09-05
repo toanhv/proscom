@@ -106,6 +106,10 @@ class ModulesController extends AppController {
         } else {
             $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
             $module_alarm['lost_conn']['count'] = 0;
+            if ($sensors) {
+                $module_alarm['tran_be']['status'] = bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3 ? 1 : 0;
+                $module_alarm['tran_be']['count'] = 0;
+            }
             Yii::$app->session->set('module_alarm', $module_alarm);
         }
 
