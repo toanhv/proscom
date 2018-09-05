@@ -287,6 +287,10 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
                             <span class="row-03"></span>
                         <?php } elseif ($number == 1) { ?>
                             <span class="row-03"></span>
+                        <?php } elseif ($number > 3) { ?>
+                            <span class="row-01" style="background-color: red"></span>
+                            <span class="row-02" style="background-color: red"></span>
+                            <span class="row-03" style="background-color: red"></span>
                         <?php } ?>
                     </div>
                 </div>

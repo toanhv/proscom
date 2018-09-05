@@ -98,7 +98,7 @@ class ModulesController extends AppController {
             $module_alarm['qua_ap_suat']['count'] = 0;
             $module_alarm['qua_nhiet']['status'] = $alarms->qua_nhiet == '11' ? 1 : 0;
             $module_alarm['qua_nhiet']['count'] = 0;
-            $module_alarm['tran_be']['status'] = $alarms->tran_be == '11' ? 1 : 0;
+            $module_alarm['tran_be']['status'] = $alarms->tran_be == '11' || bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3 ? 1 : 0;
             $module_alarm['tran_be']['count'] = 0;
             $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
             $module_alarm['lost_conn']['count'] = 0;
