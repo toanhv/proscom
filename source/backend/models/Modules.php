@@ -252,13 +252,14 @@ class Modules extends ModulesBase {
         switch ($this->status) {
             case 1:
             case CONFIRM_STATUS:
-                $alarm = $this->alarms;
+                $alarm = Yii::$app->session->get('module_alarm', null);
+                $sensors = $model->sensors;
                 if ($alarm) {
                     if ($alarm->qua_ap_suat == '11') {
                         return '<div class="module-offline">Quá áp suất</div>';
                         break;
                     }
-                    if ($alarm->tran_be == '11') {
+                    if ($alarm->tran_be == '11' || bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3) {
                         return '<div class="module-offline">Tràn bể</div>';
                         break;
                     }
