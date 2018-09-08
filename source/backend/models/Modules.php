@@ -259,11 +259,11 @@ class Modules extends ModulesBase {
                 $sensors = $this->sensors;
                 if ($alarm) {
                     if ($alarm->qua_ap_suat == '11') {
-                        return '<div class="module-offline">Quá áp suất</div>';
+                        return '<div class="module-offline">Online<br/>Quá áp suất</div>';
                         break;
                     }
                     if ($alarm->tran_be == '11' || bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3) {
-                        return '<div class="module-offline">Tràn bể</div>';
+                        return '<div class="module-offline">Online<br/>Tràn bể</div>';
                         break;
                     }
                     if ($alarm->mat_dien == '11') {
@@ -271,7 +271,7 @@ class Modules extends ModulesBase {
                         break;
                     }
                     if ($alarm->qua_nhiet == '11') {
-                        return '<div class="module-offline">Quá nhiệt</div>';
+                        return '<div class="module-offline">Online<br/>Quá nhiệt</div>';
                         break;
                     }
                 }

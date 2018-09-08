@@ -71,7 +71,7 @@ class ModulesSearch extends Modules {
         }
 
         $role = \Yii::$app->authManager->getAssignment('module', Yii::$app->user->getId());
-        if ($role && $role->roleName == 'module') {
+        if ($role && $role->roleName != 'admin') {
             $query->andFilterWhere([
                 'created_by' => Yii::$app->user->getId(),
             ]);
