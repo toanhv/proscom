@@ -250,10 +250,13 @@ class Modules extends ModulesBase {
 
     public function moduleStatus() {
         switch ($this->status) {
+            case 4:
+                return '<div class="module-offline">Offline</div>';
+                break;
             case 1:
             case CONFIRM_STATUS:
-                $alarm = Yii::$app->session->get('module_alarm', null);
-                $sensors = $model->sensors;
+                $alarm = $this->alarms;
+                $sensors = $this->sensors;
                 if ($alarm) {
                     if ($alarm->qua_ap_suat == '11') {
                         return '<div class="module-offline">Quá áp suất</div>';
@@ -273,9 +276,6 @@ class Modules extends ModulesBase {
                     }
                 }
                 return '<div class="module-online">Online</div>';
-                break;
-            case 4:
-                return '<div class="module-offline">Offline</div>';
                 break;
             default :
                 return 'connection error';
