@@ -225,7 +225,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $status = $client->status;
         $endTime = strtotime(date('Y-m-d H:i:s'));
         if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
-            sleep($timeConfirm);
+            sleep(TIME_OUT_REFRESH);
             return self::getStatusClient($clientId);
         }
 
