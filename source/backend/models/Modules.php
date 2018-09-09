@@ -257,7 +257,7 @@ class Modules extends ModulesBase {
             case CONFIRM_STATUS:
                 $alarm = $this->alarms;
                 $sensors = $this->sensors;
-                if ($alarm) {
+                if ($alarm || $sensors) {
                     if ($alarm->qua_ap_suat == '11') {
                         return '<div class="module-offline">Online<br/>Quá áp suất</div>';
                         break;

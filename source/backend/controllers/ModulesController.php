@@ -64,6 +64,13 @@ class ModulesController extends AppController {
         \Yii::$app->session->set('module_alarm', null);
         \Yii::$app->session->set('module_id', null);
 
+        if ($_GET['list'] && $_GET['list'] == 'menu') {
+            return $this->render('index2', [
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+            ]);
+        }
+
         return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
