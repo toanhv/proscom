@@ -51,10 +51,10 @@ $(document).ready(function () {
         window.location.href = '/site/language?ref=' + ref;
     });
     $('.fa-th-large').click(function () {
-        location.href = 'http://smartx.megasun.com.vn?list=menu';
+        location.href = '/?list=menu';
     });
     $('.fa-align-justify').click(function () {
-        location.href = 'http://smartx.megasun.com.vn';
+        location.href = '/';
     });
 
     if ($('#banner-home').html()) {
