@@ -43,3 +43,4 @@ phpunit.phar
 
 # logs is ignored
 /logs/*
+/nbproject/*
