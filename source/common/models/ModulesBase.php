@@ -217,13 +217,13 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart) {
-        set_time_limit(max_execution_time);
-        ini_set('max_execution_time', max_execution_time);
-        ini_set('request_terminate_timeout', max_execution_time);
+        //set_time_limit(max_execution_time);
+        //ini_set('max_execution_time', max_execution_time);
+        //ini_set('request_terminate_timeout', max_execution_time);
         //sleep(TIME_OUT_REFRESH);
         $client = DataClientBase::find()->where(['id' => $clientId])->one();
         $status = $client->status;
-        $endTime = strtotime(date('Y-m-d H:i:s'));
+        $endTime = time(); // strtotime(date('Y-m-d H:i:s'));
         if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
             sleep(TIME_OUT_REFRESH);
             return self::getStatusClient($clientId);
@@ -233,9 +233,10 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function checkClientStatus($status, $clientId, $moduleId) {
+        set_time_limit(max_execution_time);
         ini_set('max_execution_time', max_execution_time);
         ini_set('request_terminate_timeout', max_execution_time);
-        $timeStart = strtotime(date('Y-m-d H:i:s'));
+        $timeStart = time(); // strtotime(date('Y-m-d H:i:s'));
         $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
         $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
         $counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
