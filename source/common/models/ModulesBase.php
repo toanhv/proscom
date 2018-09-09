@@ -220,7 +220,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         set_time_limit(max_execution_time);
         ini_set('max_execution_time', max_execution_time);
         ini_set('request_terminate_timeout', max_execution_time);
-        sleep(TIME_OUT_REFRESH);
+        //sleep(TIME_OUT_REFRESH);
         $client = DataClientBase::find()->where(['id' => $clientId])->one();
         $status = $client->status;
         $endTime = strtotime(date('Y-m-d H:i:s'));
