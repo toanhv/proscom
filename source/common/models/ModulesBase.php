@@ -165,9 +165,9 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $data;
     }
 
-    public function checkAlarm() {
-        $alarm = $this->alarms;
-        $sensors = $this->sensors;
+    public function checkAlarm($alarm = null, $sensors = null) {
+        $alarm = ($alarm) ? $alarm : $this->alarms;
+        $sensors = ($sensors) ? $sensors : $this->sensors;
 
         $return = 0;
 

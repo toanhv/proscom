@@ -249,15 +249,15 @@ class Modules extends ModulesBase {
     }
 
     public function moduleStatus() {
-        $this->checkAlarm();
+        $alarm = $this->alarms;
+        $sensors = $this->sensors;
+        $this->checkAlarm($alarm, $sensors);
         switch ($this->status) {
             case 4:
                 return '<div class="module-offline">Offline</div>';
                 break;
             case 1:
             case CONFIRM_STATUS:
-                $alarm = $this->alarms;
-                $sensors = $this->sensors;
                 if ($alarm || $sensors) {
                     if ($alarm->qua_ap_suat == '11') {
                         return '<div class="module-offline">Online<br/>Quá áp suất</div>';
