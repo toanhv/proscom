@@ -252,11 +252,11 @@ class Modules extends ModulesBase {
         $this->checkAlarm();
         switch ($this->status) {
             case 4:
-                return '<div class="module-offline">Offline</div>' . self::moduleWarning();
+                return '<div class="module-offline">Offline</div>' . $this->moduleWarning();
                 break;
             case 1:
             case CONFIRM_STATUS:
-                return '<div class="module-online">Online</div>' . self::moduleWarning();
+                return '<div class="module-online">Online</div>' . $this->moduleWarning();
                 break;
             default :
                 return 'connection error';
@@ -264,7 +264,7 @@ class Modules extends ModulesBase {
         }
     }
 
-    public static function moduleWarning() {
+    public function moduleWarning() {
         $str = '';
         if ($this->over_tank > 3) {
             $str .= '<br/><div class="module-offline">Tràn bể</div>';
