@@ -92,7 +92,7 @@ class ModulesController extends AppController {
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {
             $client = $model->checkSystemStatus();
-            \backend\models\Modules::checkClientStatus($client->status, $client->id, $id);
+            \backend\models\Modules::checkClientStatus($client->status, $client->id, $id, $sensors->created_at);
             return $this->redirect(['view', 'id' => $id]);
         }
 

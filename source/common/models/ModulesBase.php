@@ -216,31 +216,33 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $return;
     }
 
-    public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart) {
-        //set_time_limit(max_execution_time);
-        //ini_set('max_execution_time', max_execution_time);
-        //ini_set('request_terminate_timeout', max_execution_time);
-        //sleep(TIME_OUT_REFRESH);
+    public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart, $reportTime) {
+        $sensor = \common\models\SensorBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+        if (strtotime($sensor->created_at) > strtotime($reportTime)) {
+            return 3;
+        }
+
         $client = DataClientBase::find()->where(['id' => $clientId])->one();
         $status = $client->status;
-        $endTime = time(); // strtotime(date('Y-m-d H:i:s'));
+        $endTime = time();
+
         if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
             sleep(TIME_OUT_REFRESH);
-            return self::getStatusClient($clientId);
+            return self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart, $reportTime);
         }
 
         return $status;
     }
 
-    public static function checkClientStatus($status, $clientId, $moduleId) {
+    public static function checkClientStatus($status, $clientId, $moduleId, $reportTime) {
         set_time_limit(max_execution_time);
         ini_set('max_execution_time', max_execution_time);
         ini_set('request_terminate_timeout', max_execution_time);
-        $timeStart = time(); // strtotime(date('Y-m-d H:i:s'));
+        $timeStart = time();
         $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
         $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
         $counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
-        $status = self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart);
+        $status = self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart, $reportTime);
         switch ($status) {
             case 1:
                 Yii::$app->session->setFlash('error', 'The client has not responded!');

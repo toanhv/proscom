@@ -59,6 +59,19 @@ class ModulesSearch extends Modules {
 
         $this->customer_code = substr($this->name, 9);
 
+        if ($_GET['alarm']) {
+            switch (intval($_GET['alarm'])) {
+//                case 1:
+//                    $query->joinWith(['sensors' => function ($q) {
+//                            $q->from(Sensor::tableName() . ' sensor')->andFilterCompare('sensor.cam_bien_muc_nuoc_bon_solar', 3, '>=');
+//                        }]);
+//                    break;
+                case 2:
+                    $this->status = 4;
+                    break;
+            }
+        }
+
         $query->andFilterWhere([
             'status' => $this->status,
         ]);
