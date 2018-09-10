@@ -165,12 +165,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $data;
     }
 
-    public function checkAlarm($alarm = null, $sensors = null) {
-        $alarm = ($alarm) ? $alarm : $this->alarms;
-        $sensors = ($sensors) ? $sensors : $this->sensors;
-
+    public function checkAlarm() {
         $return = 0;
-
         $module_alarm = Yii::$app->session->get('module_alarm', null);
         if (!is_array($module_alarm)) {
             $module_alarm['mat_dien']['status'] = 0;
@@ -191,22 +187,22 @@ class ModulesBase extends \common\models\db\ModulesDB {
             $return = 1;
         }
 
-        if ($alarm->qua_ap_suat == '11') {
+        if ($this->over_pressure) {
             $module_alarm['qua_ap_suat']['status'] = 1;
             $module_alarm['qua_ap_suat']['count'] += 1;
             $return = 1;
         }
-        if ($alarm->tran_be == '11' || bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3) {
+        if ($this->over_tank > 3) {
             $module_alarm['tran_be']['status'] = 1;
             $module_alarm['tran_be']['count'] += 1;
             $return = 1;
         }
-        if ($alarm->mat_dien == '11') {
+        if ($this->lost_supply) {
             $module_alarm['mat_dien']['status'] = 1;
             $module_alarm['mat_dien']['count'] += 1;
             $return = 1;
         }
-        if ($alarm->qua_nhiet == '11') {
+        if ($this->over_pressure) {
             $module_alarm['qua_nhiet']['status'] = 1;
             $module_alarm['qua_nhiet']['count'] += 1;
             $return = 1;

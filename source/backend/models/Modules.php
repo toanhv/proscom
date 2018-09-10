@@ -249,39 +249,36 @@ class Modules extends ModulesBase {
     }
 
     public function moduleStatus() {
-        $alarm = $this->alarms;
-        $sensors = $this->sensors;
-        $this->checkAlarm($alarm, $sensors);
+        $this->checkAlarm();
         switch ($this->status) {
             case 4:
-                return '<div class="module-offline">Offline</div>';
+                return '<div class="module-offline">Offline</div>' . self::moduleWarning();
                 break;
             case 1:
             case CONFIRM_STATUS:
-                if ($alarm || $sensors) {
-                    if ($alarm->qua_ap_suat == '11') {
-                        return '<div class="module-offline">Online<br/>Quá áp suất</div>';
-                        break;
-                    }
-                    if ($alarm->tran_be == '11' || bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3) {
-                        return '<div class="module-offline">Online<br/>Tràn bể</div>';
-                        break;
-                    }
-                    if ($alarm->mat_dien == '11') {
-                        return '<div class="module-offline">Mất điện</div>';
-                        break;
-                    }
-                    if ($alarm->qua_nhiet == '11') {
-                        return '<div class="module-offline">Online<br/>Quá nhiệt</div>';
-                        break;
-                    }
-                }
-                return '<div class="module-online">Online</div>';
+                return '<div class="module-online">Online</div>' . self::moduleWarning();
                 break;
             default :
                 return 'connection error';
                 break;
         }
+    }
+
+    public static function moduleWarning() {
+        $str = '';
+        if ($this->over_tank > 3) {
+            $str .= '<br/><div class="module-offline">Tràn bể</div>';
+        }
+        if ($this->over_head) {
+            $str .= '<br/><div class="module-offline">Quá nhiệt</div>';
+        }
+        if ($this->over_pressure) {
+            $str .= '<br/><div class="module-offline">Quá áp suất</div>';
+        }
+        if ($this->lost_supply) {
+            $str .= '<br/><div class="module-offline">Mất điện</div>';
+        }
+        return $str;
     }
 
 }

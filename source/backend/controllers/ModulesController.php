@@ -99,13 +99,13 @@ class ModulesController extends AppController {
         $module_alarm = null;
         Yii::$app->session->set('module_alarm', null);
         if ($alarms) {
-            $module_alarm['mat_dien']['status'] = $alarms->mat_dien == '11' ? 1 : 0;
+            $module_alarm['mat_dien']['status'] = $model->lost_supply ? 1 : 0;
             $module_alarm['mat_dien']['count'] = 0;
-            $module_alarm['qua_ap_suat']['status'] = $alarms->qua_ap_suat == '11' ? 1 : 0;
+            $module_alarm['qua_ap_suat']['status'] = $model->over_pressure ? 1 : 0;
             $module_alarm['qua_ap_suat']['count'] = 0;
-            $module_alarm['qua_nhiet']['status'] = $alarms->qua_nhiet == '11' ? 1 : 0;
+            $module_alarm['qua_nhiet']['status'] = $model->over_head ? 1 : 0;
             $module_alarm['qua_nhiet']['count'] = 0;
-            $module_alarm['tran_be']['status'] = $alarms->tran_be == '11' || bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3 ? 1 : 0;
+            $module_alarm['tran_be']['status'] = $model->over_tank > 3 ? 1 : 0;
             $module_alarm['tran_be']['count'] = 0;
             $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
             $module_alarm['lost_conn']['count'] = 0;
@@ -114,7 +114,7 @@ class ModulesController extends AppController {
             $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
             $module_alarm['lost_conn']['count'] = 0;
             if ($sensors) {
-                $module_alarm['tran_be']['status'] = bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3 ? 1 : 0;
+                $module_alarm['tran_be']['status'] = $model->over_tank > 3 ? 1 : 0;
                 $module_alarm['tran_be']['count'] = 0;
             }
             Yii::$app->session->set('module_alarm', $module_alarm);

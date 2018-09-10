@@ -25,6 +25,11 @@ use Yii;
  * @property integer $updated_by
  * @property string $updated_at
  * @property integer $status
+ * @property integer $over_tank
+ * @property integer $lost_connection
+ * @property integer $over_head
+ * @property integer $over_pressure
+ * @property integer $lost_supply
  *
  * @property AddParamsDB[] $addParams
  * @property AlarmDB[] $alarms
@@ -63,7 +68,7 @@ class ModulesDB extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'msisdn', 'country_id', 'privincial_id', 'distric_id', 'customer_code'], 'required'],
-            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by', 'status'], 'integer'],
+            [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by', 'status', 'over_tank', 'lost_connection', 'over_head', 'over_pressure', 'lost_supply'], 'integer'],
             [['money', 'data'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'address', 'password'], 'string', 'max' => 255],
@@ -97,7 +102,12 @@ class ModulesDB extends \yii\db\ActiveRecord
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_by' => Yii::t('backend', 'Updated By'),
             'updated_at' => Yii::t('backend', 'Updated At'),
-            'status' => Yii::t('backend', '1: hoat dong; 0: dung hoat dong'),
+            'status' => Yii::t('backend', '0 - not been sent, 1 - sent; 3 - client confirm ok; 4 - connection error'),
+            'over_tank' => Yii::t('backend', 'Cảm biến tràn'),
+            'lost_connection' => Yii::t('backend', 'Mất kết nối'),
+            'over_head' => Yii::t('backend', 'Quá nhiệt'),
+            'over_pressure' => Yii::t('backend', 'Quá áp suất'),
+            'lost_supply' => Yii::t('backend', 'Mất điện'),
         ];
     }
 
