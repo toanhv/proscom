@@ -216,8 +216,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $return;
     }
 
-    public static function getStatusClient($clientId, $timeConfirm, $counter, $timeStart, $reportTime) {
-        $sensor = \common\models\SensorBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+    public static function getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime) {
+        $sensor = \common\models\SensorBase::find()->where(['module_id' => $moduleId])->orderBy(['created_at' => SORT_DESC])->one();
         if (strtotime($sensor->created_at) > strtotime($reportTime)) {
             return 3;
         }
@@ -228,7 +228,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
 
         if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
             sleep(TIME_OUT_REFRESH);
-            return self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart, $reportTime);
+            return self::getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime);
         }
 
         return $status;
@@ -242,7 +242,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
         $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
         $counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
-        $status = self::getStatusClient($clientId, $timeConfirm, $counter, $timeStart, $reportTime);
+        $status = self::getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime);
         switch ($status) {
             case 1:
                 Yii::$app->session->setFlash('error', 'The client has not responded!');
