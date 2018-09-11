@@ -266,8 +266,7 @@ class Modules extends ModulesBase {
 
     public function moduleWarning() {
         $str = '';
-        $sensor = $this->sensors;
-        if (bindec($sensor->cam_bien_muc_nuoc_bon_solar) > 3) {
+        if ($this->over_tank > 3) {
             $str .= '<div class="module-offline">Tràn bể</div>';
         }
         if ($this->over_head) {
