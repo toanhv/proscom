@@ -193,7 +193,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
             $return = 1;
         }
         $sensors = $this->sensors;
-        if ($sensors->cam_bien_muc_nuoc_bon_solar > 3) {
+        if (bindec($sensors->cam_bien_muc_nuoc_bon_solar) > 3) {
             $module_alarm['tran_be']['status'] = 1;
             $module_alarm['tran_be']['count'] += 1;
             $return = 1;
