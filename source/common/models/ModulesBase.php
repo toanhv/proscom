@@ -192,7 +192,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
             $module_alarm['qua_ap_suat']['count'] += 1;
             $return = 1;
         }
-        if ($this->over_tank > 3) {
+        $sensors = $this->sensors;
+        if ($sensors->cam_bien_muc_nuoc_bon_solar > 3) {
             $module_alarm['tran_be']['status'] = 1;
             $module_alarm['tran_be']['count'] += 1;
             $return = 1;
