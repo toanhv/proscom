@@ -62,7 +62,7 @@ class ModulesSearch extends Modules {
         if ($_GET['alarm']) {
             switch (intval($_GET['alarm'])) {
                 case 1:
-                    //$query->andFilterCompare($this->over_tank, 3, '>');
+                    $query->andFilterCompare('over_tank', 3, '>');
                     break;
                 case 2:
                     $this->status = 4;
