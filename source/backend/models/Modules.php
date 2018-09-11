@@ -267,16 +267,16 @@ class Modules extends ModulesBase {
     public function moduleWarning() {
         $str = '';
         if ($this->over_tank > 3) {
-            $str .= '<br/><div class="module-offline">Tràn bể</div>';
+            $str .= '<div class="module-offline">Tràn bể</div>';
         }
         if ($this->over_head) {
-            $str .= '<br/><div class="module-offline">Quá nhiệt</div>';
+            $str .= '<div class="module-offline">Quá nhiệt</div>';
         }
         if ($this->over_pressure) {
-            $str .= '<br/><div class="module-offline">Quá áp suất</div>';
+            $str .= '<div class="module-offline">Quá áp suất</div>';
         }
         if ($this->lost_supply) {
-            $str .= '<br/><div class="module-offline">Mất điện</div>';
+            $str .= '<div class="module-offline">Mất điện</div>';
         }
         return $str;
     }
