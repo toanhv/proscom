@@ -224,6 +224,9 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $endTime = time();
 
         if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
+            set_time_limit(max_execution_time);
+            ini_set('max_execution_time', max_execution_time);
+            ini_set('request_terminate_timeout', max_execution_time);
             return self::getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime);
         }
 
