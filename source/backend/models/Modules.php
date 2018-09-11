@@ -249,7 +249,7 @@ class Modules extends ModulesBase {
     }
 
     public function moduleStatus() {
-        $this->checkAlarm();
+        //$this->checkAlarm();
         switch ($this->status) {
             case 4:
                 return '<div class="module-offline">Offline</div>' . $this->moduleWarning();
