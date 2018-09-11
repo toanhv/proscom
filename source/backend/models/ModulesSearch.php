@@ -61,19 +61,30 @@ class ModulesSearch extends Modules {
 
         if ($_GET['alarm']) {
             switch (intval($_GET['alarm'])) {
-//                case 1:
-//                    $query->joinWith(['sensors' => function ($q) {
-//                            $q->from(Sensor::tableName() . ' sensor')->andFilterCompare('sensor.cam_bien_muc_nuoc_bon_solar', 3, '>=');
-//                        }]);
-//                    break;
+                case 1:
+                    $this->over_tank = 1;
+                    break;
                 case 2:
                     $this->status = 4;
+                    break;
+                case 3:
+                    $this->over_head = 1;
+                    break;
+                case 4:
+                    $this->over_pressure = 1;
+                    break;
+                case 5:
+                    $this->lost_supply = 1;
                     break;
             }
         }
 
         $query->andFilterWhere([
             'status' => $this->status,
+            'over_tank' => $this->over_tank,
+            'over_head' => $this->over_head,
+            'over_pressure' => $this->over_pressure,
+            'lost_supply' => $this->lost_supply,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
