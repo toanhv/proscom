@@ -187,6 +187,11 @@ class ModulesBase extends \common\models\db\ModulesDB {
             $return = 1;
         }
 
+        if ($this->over_head) {
+            $module_alarm['qua_nhiet']['status'] = 1;
+            $module_alarm['qua_nhiet']['count'] += 1;
+            $return = 1;
+        }
         if ($this->over_pressure) {
             $module_alarm['qua_ap_suat']['status'] = 1;
             $module_alarm['qua_ap_suat']['count'] += 1;
