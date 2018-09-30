@@ -32,3 +32,7 @@ Mật khẩu mới: 5226b91624
 Username : duonglinh@proscom.vn
 
 Password : Proscom@2017
+
+free -t|grep "buffers\/cache"|awk '{print "Mem used: "$3/($4+$3)*100}'|awk -F"." '{print $1"%"}'
+
+top -b -n 1 | grep "Cpu(s)" | awk '{print $2+$3"%"}'

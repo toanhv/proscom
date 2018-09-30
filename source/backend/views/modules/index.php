@@ -99,7 +99,9 @@ yii\widgets\Pjax::end();
 <?php
 $script = <<< JS
     $(document).ready(function () {
-        //page_reload(0, '/');
+        setTimeout(function(){
+            window.location.reload(1);
+        }, 30000);
     });
 JS;
 $this->registerJs($script);

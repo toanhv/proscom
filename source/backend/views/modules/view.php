@@ -465,11 +465,13 @@ yii\widgets\Pjax::end();
 }
 ?>
 
-<?php
-//$script = <<< JS
-//    $(document).ready(function () {
-//        page_reload($id, '/modules/all-view');
-//    });
-//JS;
-//$this->registerJs($script);
-?>
+    <?php
+    $script = <<< JS
+    $(document).ready(function () {
+        setTimeout(function(){
+            window.location.reload(1);
+        }, 30000);
+    });
+JS;
+    $this->registerJs($script);
+    ?>
