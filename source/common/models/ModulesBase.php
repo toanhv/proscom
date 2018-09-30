@@ -207,11 +207,6 @@ class ModulesBase extends \common\models\db\ModulesDB {
             $module_alarm['mat_dien']['count'] += 1;
             $return = 1;
         }
-        if ($this->over_pressure) {
-            $module_alarm['qua_nhiet']['status'] = 1;
-            $module_alarm['qua_nhiet']['count'] += 1;
-            $return = 1;
-        }
         Yii::$app->session->set('module_alarm', $module_alarm);
 
         return $return;
