@@ -308,7 +308,7 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
 
                 <?php if (!in_array($mode, [3, 7, 8, 9])) { ?>
                     <div class="c-07">&nbsp;</div>
-                    <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '00' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
+                    <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '11' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
                     <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '11' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>  
                 <?php } ?>
 
@@ -465,13 +465,13 @@ yii\widgets\Pjax::end();
 }
 ?>
 
-    <?php
-    $script = <<< JS
+<?php
+$script = <<< JS
     $(document).ready(function () {
         setTimeout(function(){
             window.location.reload(1);
         }, 30000);
     });
 JS;
-    $this->registerJs($script);
-    ?>
+$this->registerJs($script);
+?>
