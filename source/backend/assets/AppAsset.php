@@ -30,7 +30,7 @@ class AppAsset extends AssetBundle {
         'css/plugins-md.css',
         'css/layout.css',
         'css/themes/darkblue.css',
-        'css/diagram.css',
+        'css/diagram.css?v=1.0',
         'css/jquery.datetimepicker.css',
         'css/bootstrap-select.css',
         'css/jquery-confirm.min.css',
