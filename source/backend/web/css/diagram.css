@@ -254,7 +254,7 @@
     left:514px;
     top:284px;
     width:15px;
-    height:14px;
+    /*height:14px;*/
 }
 
 .bg-12-red,.bg-12-green {
@@ -262,7 +262,7 @@
     left:514px;
     top:324px;
     width:15px;
-    height:14px;
+    /*height:14px;*/
     background:red;
 }
 
@@ -299,12 +299,34 @@
     background:green;
 }
 
+.bg-red-none {
+    background:red !important;
+}
+
+.bg-green-none {
+    background:green !important;
+}
+
 .bg-red {
     background:red !important;
 }
 
 .bg-green {
     background:green !important;
+}
+
+.bg-red:after {
+    content: "OFF";
+    font-size: 7px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bg-green:after {
+    content: "ON";
+    font-size: 7px;
+    vertical-align: middle;
+    text-align: center;
 }
 
 /*---------------*/

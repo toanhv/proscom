@@ -308,8 +308,8 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
 
                 <?php if (!in_array($mode, [3, 7, 8, 9])) { ?>
                     <div class="c-07">&nbsp;</div>
-                    <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '11' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
-                    <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '11' ? 'bg-green' : 'bg-red' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>  
+                    <div class="bg-07-green <?php echo $model->van_dien_tu_ba_nga_up == '11' ? 'bg-green-none' : 'bg-red-none' ?>" van_dien_tu_ba_nga_up="<?php echo $model->van_dien_tu_ba_nga_up; ?>"></div>
+                    <div class="bg-07-red <?php echo $model->van_dien_tu_ba_nga_down == '11' ? 'bg-green-none' : 'bg-red-none' ?>" van_dien_tu_ba_nga_down="<?php echo $model->van_dien_tu_ba_nga_down; ?>"></div>  
                 <?php } ?>
 
                 <?php if (!in_array($mode, [9])) { ?>
@@ -330,8 +330,8 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
 
                 <?php if (!in_array($mode, [6, 8, 9])) { ?>
                     <div class="c-10">&nbsp;</div>
-                    <div class="bg-10-red <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_1 == '00' ? 'bg-green' : 'bg-red' ?>"></div>
-                    <div class="bg-10-green <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_2 == '00' ? 'bg-green' : 'bg-red' ?>"></div>   
+                    <div class="bg-10-red <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_1 == '00' ? 'bg-green-none' : 'bg-red-none' ?>"></div>
+                    <div class="bg-10-green <?php echo $statuses->dien_tro_nhiet_bon_gia_nhiet_2 == '00' ? 'bg-green-none' : 'bg-red-none' ?>"></div>   
                 <?php } ?>
 
                 <?php if (!in_array($mode, [5, 7, 9])) { ?>
