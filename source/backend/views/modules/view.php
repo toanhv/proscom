@@ -469,7 +469,7 @@ yii\widgets\Pjax::end();
 $script = <<< JS
     $(document).ready(function () {
         setTimeout(function(){
-            #window.location.reload(1);
+            window.location.reload(1);
         }, 30000);
     });
 JS;
