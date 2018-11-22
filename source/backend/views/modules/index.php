@@ -31,7 +31,6 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
     <?=
     yii\grid\GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
         'columns' => [
             [
                 'label' => 'ID',
