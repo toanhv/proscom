@@ -105,6 +105,15 @@ class TimerCounterController extends AppController {
         $model = $this->findModel($id);
 
         $module = $model->module;
+
+        if ($module->status == 4 || $module->lost_supply) {
+            Yii::$app->session->setFlash('error', 'Connection error!');
+            if ($values['url_back']) {
+                return $this->redirect($values['url_back']);
+            }
+            return $this->redirect(['update', 'id' => $id]);
+        }
+
         if ($_GET['reload'] == 'true') {
             $client = $module->checkTimerCounter();
             \backend\models\Modules::checkClientStatus($client->status, $client->id, $model->module_id);

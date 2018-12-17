@@ -89,6 +89,15 @@ class ParamConfigController extends AppController {
             return $this->goHome();
         }
         $module = \backend\models\Modules::findOne($moduleId);
+
+        if ($module->status == 4 || $module->lost_supply) {
+            Yii::$app->session->setFlash('error', 'Connection error!');
+            if ($values['url_back']) {
+                return $this->redirect($values['url_back']);
+            }
+            return $this->redirect(['/modules/view', 'id' => $moduleId]);
+        }
+
         if ($module && $module->paramConfigs) {
             $model = $this->findModel($module->paramConfigs->id);
         } else {

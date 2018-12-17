@@ -89,6 +89,13 @@ class OutputModeController extends AppController {
             return $this->goHome();
         }
         $module = \backend\models\Modules::findOne($moduleId);
+        if ($module->status == 4 || $module->lost_supply) {
+            Yii::$app->session->setFlash('error', 'Connection error!');
+            if ($values['url_back']) {
+                return $this->redirect($values['url_back']);
+            }
+            return $this->redirect('/param-config/update');
+        }
         if ($module && $module->outputModes) {
             $model = $this->findModel($module->outputModes->id);
         } else {
