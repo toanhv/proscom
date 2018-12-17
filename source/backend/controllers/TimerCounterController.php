@@ -108,9 +108,6 @@ class TimerCounterController extends AppController {
 
         if ($module->status == 4 || $module->lost_supply) {
             Yii::$app->session->setFlash('error', 'Connection error!');
-            if ($values['url_back']) {
-                return $this->redirect($values['url_back']);
-            }
             return $this->redirect(['/modules/view', 'id' => $module->id]);
         }
 

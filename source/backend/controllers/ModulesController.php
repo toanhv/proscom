@@ -244,6 +244,10 @@ class ModulesController extends AppController {
     public function actionMode($id) {
         $model = $this->findModel($id);
         if (Yii::$app->request->isPost) {
+            if ($model->status == 4 || $model->lost_supply) {
+                Yii::$app->session->setFlash('error', 'Connection error!');
+                return $this->redirect(['/modules/view', 'id' => $id]);
+            }
             $values = Yii::$app->request->post();
             $model->mode_id = intval($values['mode_id']);
             if ($model->mode_id) {
