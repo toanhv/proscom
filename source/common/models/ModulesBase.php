@@ -213,6 +213,9 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime) {
+        if ($this->status == 4) {
+            return 0;
+        }
         sleep(TIME_OUT_REFRESH);
         $sensor = \common\models\SensorBase::find()->where(['module_id' => $moduleId])->orderBy(['created_at' => SORT_DESC])->one();
         if (strtotime($sensor->created_at) > strtotime($reportTime)) {
