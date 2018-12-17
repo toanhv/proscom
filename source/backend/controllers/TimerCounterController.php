@@ -111,7 +111,7 @@ class TimerCounterController extends AppController {
             if ($values['url_back']) {
                 return $this->redirect($values['url_back']);
             }
-            return $this->redirect(['update', 'id' => $id]);
+            return $this->redirect(['/modules/view', 'id' => $module->id]);
         }
 
         if ($_GET['reload'] == 'true') {

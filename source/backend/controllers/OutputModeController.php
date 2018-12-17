@@ -94,7 +94,7 @@ class OutputModeController extends AppController {
             if ($values['url_back']) {
                 return $this->redirect($values['url_back']);
             }
-            return $this->redirect('/param-config/update');
+            return $this->redirect(['/modules/view', 'id' => $moduleId]);
         }
         if ($module && $module->outputModes) {
             $model = $this->findModel($module->outputModes->id);
