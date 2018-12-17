@@ -213,9 +213,6 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime) {
-        if ($this->status == 4) {
-            return 0;
-        }
         sleep(TIME_OUT_REFRESH);
         $sensor = \common\models\SensorBase::find()->where(['module_id' => $moduleId])->orderBy(['created_at' => SORT_DESC])->one();
         if (strtotime($sensor->created_at) > strtotime($reportTime)) {
@@ -237,6 +234,10 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function checkClientStatus($status, $clientId, $moduleId, $reportTime) {
+        if ($this->status == 4) {
+            Yii::$app->session->setFlash('error', 'Connection error!');
+            return 0;
+        }
         set_time_limit(max_execution_time);
         ini_set('max_execution_time', max_execution_time);
         ini_set('request_terminate_timeout', max_execution_time);
