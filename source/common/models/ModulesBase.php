@@ -234,7 +234,8 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public static function checkClientStatus($status, $clientId, $moduleId, $reportTime) {
-        if ($this->status == 4) {
+        $module = ModulesBase::findOne($moduleId);
+        if ($module->status == 4 || $module->lost_supply) {
             Yii::$app->session->setFlash('error', 'Connection error!');
             return 0;
         }
