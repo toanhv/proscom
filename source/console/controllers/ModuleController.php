@@ -51,6 +51,14 @@ class ModuleController extends Controller {
             $key = 'getMode_module_' . $this->id;
             $cache->set($key, null);
             $item->mode;
+            //time counter
+            $key = 'getTimerCounters_module_' . $this->id;
+            $cache->set($key, null);
+            $item->timerCounters;
+            //time counter
+            $key = 'getRuntimeStatistics_module_' . $this->id;
+            $cache->set($key, null);
+            $item->runtimeStatistics;
         }
     }
 

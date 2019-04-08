@@ -112,14 +112,30 @@ class ModulesDB extends \yii\db\ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getAddParams() {
-        return $this->hasMany(AddParamsDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getAddParams_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\AddParamsDB::find()->where(['module_id' => $this->id])->orderBy(['id' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getAlarms() {
-        return $this->hasMany(AlarmDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getAlarms_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\AlarmDB::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -154,7 +170,15 @@ class ModulesDB extends \yii\db\ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getModuleStatuses() {
-        return $this->hasMany(ModuleStatusDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getModuleStatuses_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\ModuleStatusDB::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -196,7 +220,15 @@ class ModulesDB extends \yii\db\ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getMode() {
-        return $this->hasOne(ModeDB::className(), ['id' => 'mode_id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getMode_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = $this->hasOne(ModeDB::className(), ['id' => 'mode_id']);
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -210,21 +242,45 @@ class ModulesDB extends \yii\db\ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getOutputModes() {
-        return $this->hasMany(OutputModeDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getOutputModes_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\OutputModeDB::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getParamConfigs() {
-        return $this->hasMany(ParamConfigDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getParamConfigs_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\ParamConfigDB::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getRuntimeStatistics() {
-        return $this->hasMany(RuntimeStatisticsDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getRuntimeStatistics_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = $this->hasMany(RuntimeStatisticsDB::className(), ['module_id' => 'id']);
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -246,7 +302,15 @@ class ModulesDB extends \yii\db\ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getTimerCounters() {
-        return $this->hasMany(TimerCounterDB::className(), ['module_id' => 'id']);
+        $cache = \Yii::$app->cache;
+        $key = 'getTimerCounters_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = $this->hasMany(TimerCounterDB::className(), ['module_id' => 'id']);
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
 }
