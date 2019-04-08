@@ -150,7 +150,7 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $data = $cache->get($key);
 
         if (!$data) {
-            $data = $this->hasOne(ModeDB::className(), ['id' => 'mode_id']);
+            $data = $this->hasOne(ModeBase::className(), ['id' => 'mode_id']);
             $cache->set($key, $data, CACHE_TIME_OUT);
         }
         return $data;
