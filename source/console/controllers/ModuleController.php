@@ -39,6 +39,18 @@ class ModuleController extends Controller {
             $key = 'getAddParams_module_' . $this->id;
             $cache->set($key, null);
             $item->addParams;
+            //output mode
+            $key = 'getOutputModes_module_' . $this->id;
+            $cache->set($key, null);
+            $item->outputModes;
+            //param config
+            $key = 'getParamConfigs_module_' . $this->id;
+            $cache->set($key, null);
+            $item->paramConfigs;
+            //mode
+            $key = 'getMode_module_' . $this->id;
+            $cache->set($key, null);
+            $item->mode;
         }
     }
 

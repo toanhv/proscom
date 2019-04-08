@@ -88,14 +88,30 @@ class ModulesBase extends \common\models\db\ModulesDB {
      * @return \yii\db\ActiveQuery
      */
     public function getOutputModes() {
-        return \common\models\OutputModeBase::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
+        $cache = \Yii::$app->cache;
+        $key = 'getOutputModes_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\OutputModeBase::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getParamConfigs() {
-        return \common\models\ParamConfigBase::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
+        $cache = \Yii::$app->cache;
+        $key = 'getParamConfigs_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\ParamConfigBase::find()->where(['module_id' => $this->id])->orderBy(['updated_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -120,6 +136,21 @@ class ModulesBase extends \common\models\db\ModulesDB {
 
         if (!$data) {
             $data = \common\models\AddParamsBase::find()->where(['module_id' => $this->id])->orderBy(['id' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMode() {
+        $cache = \Yii::$app->cache;
+        $key = 'getMode_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\ModeBase::find()->where(['mode_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
             $cache->set($key, $data, CACHE_TIME_OUT);
         }
         return $data;
