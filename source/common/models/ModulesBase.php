@@ -44,7 +44,15 @@ class ModulesBase extends \common\models\db\ModulesDB {
      * @return \yii\db\ActiveQuery
      */
     public function getSensors() {
-        return \common\models\SensorBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+        $cache = \Yii::$app->cache;
+        $key = 'getSensors_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\SensorBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -90,7 +98,15 @@ class ModulesBase extends \common\models\db\ModulesDB {
     }
 
     public function getModuleId() {
-        return $this->country->code . $this->privincial->code . $this->distric->code . $this->customer_code;
+        $cache = \Yii::$app->cache;
+        $key = 'Module_id_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = $this->country->code . $this->privincial->code . $this->distric->code . $this->customer_code;
+            $cache->set($key, $data, CACHE_LONG_TIME_OUT);
+        }
+        return $data;
     }
 
     public function checkSystemMode() {

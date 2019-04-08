@@ -71,3 +71,6 @@ define('BACKUP', '00000000');
 #timeout refresh
 define('TIME_OUT_REFRESH', 5); //in seconds
 define('max_execution_time', 120); //in seconds
+
+define('CACHE_LONG_TIME_OUT', 3600);
+define('CACHE_TIME_OUT', 60);
