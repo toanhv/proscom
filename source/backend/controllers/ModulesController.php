@@ -91,6 +91,13 @@ class ModulesController extends AppController {
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {
             $client = $model->checkSystemStatus();
+            $cache = \Yii::$app->cache;
+            $key = 'getSensors_module_' . $item->id;
+            $cache->set($key, null);
+            $key = 'getModuleStatuses_module_' . $this->id;
+            $cache->set($key, null);
+            $key = 'getAlarms_module_' . $this->id;
+            $cache->set($key, null);
             \backend\models\Modules::checkClientStatus($client->status, $client->id, $id, $sensors->created_at);
             return $this->redirect(['view', 'id' => $id]);
         }
@@ -295,12 +302,18 @@ class ModulesController extends AppController {
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id) {
-        if (($model = Modules::findOne($id)) !== null) {
-            return $model;
-        } else {
-            return $this->redirect('/');
-            //throw new NotFoundHttpException('The requested page does not exist.');
+        $cache = \Yii::$app->cache;
+        $key = 'findModel_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            if (($data = Modules::findOne($id)) !== null) {
+                $cache->set($key, $data, CACHE_TIME_OUT);
+            } else {
+                return $this->redirect('/');
+            }
         }
+        return $data;
     }
 
     public function actionAccountmanager() {

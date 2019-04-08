@@ -73,7 +73,15 @@ class ModulesBase extends \common\models\db\ModulesDB {
      * @return \yii\db\ActiveQuery
      */
     public function getModuleStatuses() {
-        return \common\models\ModuleStatusBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+        $cache = \Yii::$app->cache;
+        $key = 'getModuleStatuses_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\ModuleStatusBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -94,7 +102,27 @@ class ModulesBase extends \common\models\db\ModulesDB {
      * @return \yii\db\ActiveQuery
      */
     public function getAlarms() {
-        return \common\models\AlarmBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+        $cache = \Yii::$app->cache;
+        $key = 'getAlarms_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\AlarmBase::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
+    }
+
+    public function getAddParams() {
+        $cache = \Yii::$app->cache;
+        $key = 'getAddParams_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\AddParamsBase::find()->where(['module_id' => $this->id])->orderBy(['id' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     public function getModuleId() {

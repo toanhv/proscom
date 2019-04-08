@@ -23,6 +23,22 @@ class ModuleController extends Controller {
             $key = 'Module_id_' . $this->id;
             $cache->set($key, null);
             $item->getModuleId();
+            //find model
+            $key = 'findModel_module_' . $this->id;
+            $cache->set($key, null);
+            $cache->set($key, $item, CACHE_TIME_OUT);
+            //module status
+            $key = 'getModuleStatuses_module_' . $this->id;
+            $cache->set($key, null);
+            $item->moduleStatuses;
+            //alarm
+            $key = 'getAlarms_module_' . $this->id;
+            $cache->set($key, null);
+            $item->alarms;
+            //add param
+            $key = 'getAddParams_module_' . $this->id;
+            $cache->set($key, null);
+            $item->addParams;
         }
     }
 
