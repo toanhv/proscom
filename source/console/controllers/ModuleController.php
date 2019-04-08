@@ -13,7 +13,7 @@ class ModuleController extends Controller {
 
     public function actionCached() {
         $cache = \Yii::$app->cache;
-        $modules = \common\models\ModulesBase::findAll();
+        $modules = \common\models\ModulesBase::find()->all();
         foreach ($modules as $item) {
             //sensor
             $key = 'getSensors_module_' . $item->id;
