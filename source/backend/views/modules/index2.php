@@ -29,7 +29,14 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
 ?>
 <div id="module-icon" class="row modules">
     <?php
-    $data = $dataProvider->getModels();
+    $cache = \Yii::$app->cache;
+    $key = 'index2_getModules';
+    $data = $cache->get($key);
+
+    if (!$data) {
+        $data = $dataProvider->getModels();
+        $cache->set($key, $data, CACHE_TIME_OUT);
+    }
     if (!empty($data)) {
         foreach ($data as $val) {
             $url = 'javascript:void(0);';

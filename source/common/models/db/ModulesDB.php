@@ -51,21 +51,19 @@ use Yii;
  * @property SensorDB[] $sensors
  * @property TimerCounterDB[] $timerCounters
  */
-class ModulesDB extends \yii\db\ActiveRecord
-{
+class ModulesDB extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'modules';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['name', 'msisdn', 'country_id', 'privincial_id', 'distric_id', 'customer_code'], 'required'],
             [['country_id', 'privincial_id', 'distric_id', 'mode_id', 'created_by', 'updated_by', 'status', 'over_tank', 'lost_connection', 'over_head', 'over_pressure', 'lost_supply'], 'integer'],
@@ -82,8 +80,7 @@ class ModulesDB extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('backend', 'ID'),
             'name' => Yii::t('backend', 'Name'),
@@ -114,152 +111,142 @@ class ModulesDB extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAddParams()
-    {
+    public function getAddParams() {
         return $this->hasMany(AddParamsDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAlarms()
-    {
+    public function getAlarms() {
         return $this->hasMany(AlarmDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getConfigurationLogs()
-    {
+    public function getConfigurationLogs() {
         return $this->hasMany(ConfigurationLogDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDataClients()
-    {
+    public function getDataClients() {
         return $this->hasMany(DataClientDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getImages()
-    {
+    public function getImages() {
         return $this->hasMany(ImagesDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getImsis()
-    {
+    public function getImsis() {
         return $this->hasMany(ImsiDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getModuleStatuses()
-    {
+    public function getModuleStatuses() {
         return $this->hasMany(ModuleStatusDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCountry()
-    {
+    public function getCountry() {
         return $this->hasOne(CountryDB::className(), ['id' => 'country_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPrivincial()
-    {
+    public function getPrivincial() {
         return $this->hasOne(ProvincialDB::className(), ['id' => 'privincial_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDistric()
-    {
+    public function getDistric() {
         return $this->hasOne(DistricDB::className(), ['id' => 'distric_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCreatedBy()
-    {
+    public function getCreatedBy() {
         return $this->hasOne(UserDB::className(), ['id' => 'created_by']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUpdatedBy()
-    {
+    public function getUpdatedBy() {
         return $this->hasOne(UserDB::className(), ['id' => 'updated_by']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->hasOne(ModeDB::className(), ['id' => 'mode_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getOperationLogs()
-    {
+    public function getOperationLogs() {
         return $this->hasMany(OperationLogDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getOutputModes()
-    {
+    public function getOutputModes() {
         return $this->hasMany(OutputModeDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getParamConfigs()
-    {
+    public function getParamConfigs() {
         return $this->hasMany(ParamConfigDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getRuntimeStatistics()
-    {
+    public function getRuntimeStatistics() {
         return $this->hasMany(RuntimeStatisticsDB::className(), ['module_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSensors()
-    {
-        return $this->hasMany(SensorDB::className(), ['module_id' => 'id']);
+    public function getSensors() {
+        $cache = \Yii::$app->cache;
+        $key = 'getSensors_module_' . $this->id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = \common\models\SensorDB::find()->where(['module_id' => $this->id])->orderBy(['created_at' => SORT_DESC])->one();
+            $cache->set($key, $data, CACHE_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTimerCounters()
-    {
+    public function getTimerCounters() {
         return $this->hasMany(TimerCounterDB::className(), ['module_id' => 'id']);
     }
+
 }
