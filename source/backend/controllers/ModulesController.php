@@ -92,11 +92,11 @@ class ModulesController extends AppController {
         if ($model->mode_id && $_GET['reload'] == 'true') {
             $client = $model->checkSystemStatus();
             $cache = \Yii::$app->cache;
-            $key = 'getSensors_module_' . $item->id;
+            $key = 'getSensors_module_' . $model->id;
             $cache->set($key, null);
-            $key = 'getModuleStatuses_module_' . $this->id;
+            $key = 'getModuleStatuses_module_' . $model->id;
             $cache->set($key, null);
-            $key = 'getAlarms_module_' . $this->id;
+            $key = 'getAlarms_module_' . $model->id;
             $cache->set($key, null);
             \backend\models\Modules::checkClientStatus($client->status, $client->id, $id, $sensors->created_at);
             return $this->redirect(['view', 'id' => $id]);
