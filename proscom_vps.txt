@@ -36,3 +36,7 @@ Password : Proscom@2017
 free -t|grep "buffers\/cache"|awk '{print "Mem used: "$3/($4+$3)*100}'|awk -F"." '{print $1"%"}'
 
 top -b -n 1 | grep "Cpu(s)" | awk '{print $2+$3"%"}'
+
+GRANT ALL PRIVILEGES ON proscom.* TO 'proscom'@'localhost' IDENTIFIED BY 'Proscom@123#*#';
+
+REVOKE ALL PRIVILEGES ON proscom.* FROM 'proscom'@'%';

@@ -414,7 +414,7 @@ yii\widgets\Pjax::begin(['formSelector' => 'form', 'enablePushState' => false]);
                         </div>  
                         <div class="info-block-item">
                             <span class="text-02"><?php echo Yii::t('backend', 'Pipeline pressure'); ?></span>
-                            <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_duong_ong); ?>B
+                            <span class="text-01"><?php echo common\helpers\Helpers::number2String(bindec($sensors->cam_bien_ap_suat_duong_ong)); ?>B
                         </div>
                         <div class="info-block-item">
                             <span class="text-02"><?php echo Yii::t('backend', 'Pipeline temp 1'); ?></span>

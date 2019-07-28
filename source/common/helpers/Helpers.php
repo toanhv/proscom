@@ -120,12 +120,6 @@ class Helpers {
         return false;
     }
 
-    /**
-     * Kiem tra moi gia tri mang $childArray co thuoc mang $parentArray ko?
-     * @param $childArray
-     * @param $parentArray
-     * @return bool
-     */
     public static function checkChildArray($childArray, $parentArray) {
         foreach ($childArray as $child) {
             if (!in_array($child, $parentArray)) {
@@ -176,12 +170,6 @@ class Helpers {
         return array_column($array, $column_name);
     }
 
-    /**
-     * huync2: kiem tra ky tu co o cuoi chuoi hay ko
-     * @param $haystack
-     * @param $needle
-     * @return bool
-     */
     public static function endsWith($haystack, $needle) {
         $length = strlen($needle);
         if ($length == 0) {
@@ -190,14 +178,15 @@ class Helpers {
         return (substr($haystack, -$length) === $needle);
     }
 
-    /**
-     * huync2
-     * @param $s
-     * @param $e
-     * @return mixed
-     */
     public static function preLikeQuery($s, $e = "|") {
         return str_replace(array($e, '_', '%'), array($e . $e, $e . '_', $e . '%'), $s);
+    }
+
+    public static function number2String($number) {
+        if (strlen($number) > 1 && $number > 10) {
+            return $number[0] . ',' . $number[1];
+        }
+        return $number;
     }
 
 }

@@ -340,4 +340,14 @@ class ModulesBase extends \common\models\db\ModulesDB {
         return $status;
     }
 
+    public function resetCache() {
+        $cache = \Yii::$app->cache;
+        $key = 'getSensors_module_' . $this->id;
+        $cache->set($key, null);
+        $key = 'getModuleStatuses_module_' . $this->id;
+        $cache->set($key, null);
+        $key = 'getAlarms_module_' . $this->id;
+        $cache->set($key, null);
+    }
+
 }
