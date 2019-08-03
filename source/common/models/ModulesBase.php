@@ -299,9 +299,9 @@ class ModulesBase extends \common\models\db\ModulesDB {
         $endTime = time();
 
         if (in_array($status, [1, 0]) && ($endTime - $timeStart) < ($timeConfirm * $counter)) {
-            set_time_limit(max_execution_time);
-            ini_set('max_execution_time', max_execution_time);
-            ini_set('request_terminate_timeout', max_execution_time);
+//            set_time_limit(max_execution_time);
+//            ini_set('max_execution_time', max_execution_time);
+//            ini_set('request_terminate_timeout', max_execution_time);
             return self::getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime);
         }
 
@@ -314,13 +314,15 @@ class ModulesBase extends \common\models\db\ModulesDB {
             Yii::$app->session->setFlash('error', 'Connection error!');
             return 0;
         }
-        set_time_limit(max_execution_time);
-        ini_set('max_execution_time', max_execution_time);
-        ini_set('request_terminate_timeout', max_execution_time);
+//        set_time_limit(max_execution_time);
+//        ini_set('max_execution_time', max_execution_time);
+//        ini_set('request_terminate_timeout', max_execution_time);
         $timeStart = time();
         $timeConfirmModel = TimerCounterBase::find()->where(['module_id' => $moduleId])->orderBy('created_at desc')->one();
-        $timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
-        $counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
+        //$timeConfirm = $timeConfirmModel->timer_1 ? $timeConfirmModel->timer_1 : TIME_OUT_REFRESH;
+        $timeConfirm = TIME_OUT_REFRESH;
+        //$counter = $timeConfirmModel->counter ? $timeConfirmModel->counter : 3;
+        $counter = 2;
         $status = self::getStatusClient($clientId, $moduleId, $timeConfirm, $counter, $timeStart, $reportTime);
         switch ($status) {
             case 1:

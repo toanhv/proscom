@@ -116,7 +116,7 @@ class ParamConfigController extends AppController {
                     . Socket::alldec2bin($values['return_pump_t2_start'])
                     . Socket::alldec2bin($values['return_pump_t2_end'])
                     . Socket::alldec2bin($values['return_pump_delta_t']);
-            $model->incresed_pressure_pump = Socket::alldec2bin($values['pressure_pump_p1']);
+            $model->incresed_pressure_pump = Socket::alldec2bin(str_replace(',', '', $values['pressure_pump_p1']));
             $model->heat_pump = Socket::alldec2bin($values['heat_pump_t1']);
             $model->heat_resistor = Socket::alldec2bin($values['heater_resis_t1'])
                     . Socket::alldec2bin($values['heater_resister_delay_time']);

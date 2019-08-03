@@ -69,11 +69,15 @@ class ModulesController extends AppController {
                         'dataProvider' => $dataProvider,
             ]);
         }
-
-        return $this->render('index', [
-                    'searchModel' => $searchModel,
-                    'dataProvider' => $dataProvider,
-        ]);
+        $param = [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ];
+        if (Yii::$app->request->isAjax) {
+            return $this->renderAjax('index', $param);
+        } else {
+            return $this->render('index', $param);
+        }
     }
 
     public function actionAllView() {
@@ -90,8 +94,8 @@ class ModulesController extends AppController {
 
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {
-            $client = $model->checkSystemStatus();
             $model->resetCache();
+            $client = $model->checkSystemStatus();
             \backend\models\Modules::checkClientStatus($client->status, $client->id, $id, $sensors->created_at);
             return $this->redirect(['view', 'id' => $id]);
         }
@@ -122,14 +126,23 @@ class ModulesController extends AppController {
 
         $model->setVan_dien_tu_ba_nga_up();
 
-        return $this->render('view', [
-                    'model' => $model,
-                    'sensors' => $sensors,
-                    'statuses' => $statuses,
-                    'alarms' => $alarms,
-                    'addParams' => $addParams[0],
-                    'id' => $id,
-        ]);
+        $param = [
+            'model' => $model,
+            'sensors' => $sensors,
+            'statuses' => $statuses,
+            'alarms' => $alarms,
+            'addParams' => $addParams[0],
+            'id' => $id,
+            'mode' => $model->mode->mode,
+            'outputMode' => $model->outputModes,
+            'module_hide' => \Yii::$app->params['module_hide']
+        ];
+
+        if (Yii::$app->request->isAjax) {
+            return $this->renderAjax('_detail', $param);
+        } else {
+            return $this->render('view', $param);
+        }
     }
 
     /**

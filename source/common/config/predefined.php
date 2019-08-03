@@ -69,8 +69,9 @@ define('ID_ASSIGNMENT_DP', '00000000000000000000');
 define('BACKUP', '00000000');
 
 #timeout refresh
-define('TIME_OUT_REFRESH', 5); //in seconds
+define('TIME_OUT_REFRESH', 3); //in seconds
 define('max_execution_time', 120); //in seconds
 
 define('CACHE_LONG_TIME_OUT', 3600);
 define('CACHE_TIME_OUT', 60);
+define('TIME_REFRESH', 60000);

@@ -184,6 +184,7 @@ class Helpers {
 
     public static function number2String($number) {
         if (strlen($number) > 1 && $number > 10) {
+            $number = (string) $number;
             return $number[0] . ',' . $number[1];
         }
         return $number;

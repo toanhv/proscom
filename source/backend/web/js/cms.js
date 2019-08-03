@@ -57,10 +57,17 @@ $(document).ready(function () {
         location.href = '/';
     });
 
-    if ($('#banner-home').html()) {
-        //$('.page-container').css('margin', '150px 0 0');
-        //$('.page-content-wrapper').css('margin-top', '-35px');
-    }
+    $('#pressure_pump_p1').keypress(function (e) {
+        var number = $(this).val();
+        if (number.length > 1) {
+            e.stopPropagation();
+        } else {
+            if (number) {
+                $(this).val(number + ',' + e.key);
+            }
+        }
+    });
+
     //$('#module-list .table-striped > tbody > tr:nth-of-type(2n+1)').css('background-color', genColor());
     //$('#module-list .table-striped > tbody > tr:nth-of-type(2n+2)').css('background-color', genColor());
 
