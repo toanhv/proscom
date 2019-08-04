@@ -43,7 +43,6 @@ class ModulesSearch extends Modules {
      */
     public function search($params) {
         $query = Modules::find();
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => ['defaultOrder' => ['created_at' => SORT_DESC]]

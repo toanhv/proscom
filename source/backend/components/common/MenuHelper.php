@@ -65,15 +65,31 @@ class MenuHelper {
      * @param boolean  $refresh
      * @return array
      */
-    public static function getAssignedMenu($userId, $root = null, $callback = null, $refresh = true) {
+    public static function getAssignedMenu($userId, $root = null, $callback = null, $refresh = false) {
         $config = Configs::instance();
+        $cache = $config->cache;
 
         /* @var $manager \yii\rbac\BaseManager */
-        $manager = Yii::$app->getAuthManager();
+        $key = 'manager.' . $userId;
+        $manager = $cache->get($key);
+        if (!$manager) {
+            $manager = Yii::$app->getAuthManager();
+            $cache->set($key, $manager, CACHE_LONG_TIME_OUT, new TagDependency([
+                'tags' => Configs::CACHE_TAG
+            ]));
+        }
+
         $type = (\Yii::$app->session->get('module_id', 0)) ? 1 : 0;
-        $menus = Menu::find()->where(['type' => $type])->asArray()->indexBy('id')->all();
-        $key = [__METHOD__, $userId, $manager->defaultRoles];
-        $cache = $config->cache;
+        $key = 'menu.all.type.' . $type;
+        $menus = $cache->get($key);
+        if (!$menus) {
+            $menus = Menu::find()->where(['type' => $type])->asArray()->indexBy('id')->all();
+            $cache->set($key, $menus, 2592000, new TagDependency([
+                'tags' => Configs::CACHE_TAG
+            ]));
+        }
+
+        $key = json_encode([__METHOD__, $userId, $manager->defaultRoles]);
 
         if ($refresh || $cache === null || ($assigned = $cache->get($key)) === false) {
             $routes = $filter1 = $filter2 = [];

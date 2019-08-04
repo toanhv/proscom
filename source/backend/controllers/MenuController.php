@@ -104,7 +104,7 @@ class MenuController extends AppController {
      */
     public function actionDelete($id) {
         $this->findModel($id)->delete();
-        //MenuHelper::invalidate();
+        self::invalidate();
 
         return $this->redirect(['index']);
     }

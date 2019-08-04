@@ -83,7 +83,15 @@ class User extends \common\models\db\UserDB implements IdentityInterface {
      * @inheritdoc
      */
     public static function findIdentity($id) {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        $cache = \Yii::$app->cache;
+        $key = 'findIdentity.' . $id;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+            $cache->set($key, $data, CACHE_LONG_TIME_OUT);
+        }
+        return $data;
     }
 
     /**
@@ -100,7 +108,15 @@ class User extends \common\models\db\UserDB implements IdentityInterface {
      * @return static|null
      */
     public static function findByUsername($username) {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        $cache = \Yii::$app->cache;
+        $key = 'findByUsername.' . $username;
+        $data = $cache->get($key);
+
+        if (!$data) {
+            $data = static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+            $cache->set($key, $data, CACHE_LONG_TIME_OUT);
+        }
+        return $data;
     }
 
     /**

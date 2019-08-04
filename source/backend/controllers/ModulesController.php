@@ -89,8 +89,9 @@ class ModulesController extends AppController {
 
         $sensors = $model->sensors;
         $statuses = $model->moduleStatuses;
-        $alarms = $model->alarms;
+        //$alarms = $model->alarms;
         $addParams = $model->addParams;
+        $mode = $model->mode;
 
         //check system status
         if ($model->mode_id && $_GET['reload'] == 'true') {
@@ -101,39 +102,31 @@ class ModulesController extends AppController {
         }
 
         $module_alarm = null;
-        Yii::$app->session->set('module_alarm', null);
-        if ($alarms) {
-            $module_alarm['mat_dien']['status'] = $model->lost_supply ? 1 : 0;
-            $module_alarm['mat_dien']['count'] = 0;
-            $module_alarm['qua_ap_suat']['status'] = $model->over_pressure ? 1 : 0;
-            $module_alarm['qua_ap_suat']['count'] = 0;
-            $module_alarm['qua_nhiet']['status'] = $model->over_head ? 1 : 0;
-            $module_alarm['qua_nhiet']['count'] = 0;
-            $module_alarm['tran_be']['status'] = $model->over_tank > 3 ? 1 : 0;
-            $module_alarm['tran_be']['count'] = 0;
-            $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
-            $module_alarm['lost_conn']['count'] = 0;
-            Yii::$app->session->set('module_alarm', $module_alarm);
-        } else {
-            $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
-            $module_alarm['lost_conn']['count'] = 0;
-            if ($sensors) {
-                $module_alarm['tran_be']['status'] = $model->over_tank > 3 ? 1 : 0;
-                $module_alarm['tran_be']['count'] = 0;
-            }
-            Yii::$app->session->set('module_alarm', $module_alarm);
-        }
+        //Yii::$app->session->set('module_alarm', null);
+        $module_alarm['mat_dien']['status'] = $model->lost_supply ? 1 : 0;
+        $module_alarm['mat_dien']['count'] = 0;
+        $module_alarm['qua_ap_suat']['status'] = $model->over_pressure ? 1 : 0;
+        $module_alarm['qua_ap_suat']['count'] = 0;
+        $module_alarm['qua_nhiet']['status'] = $model->over_head ? 1 : 0;
+        $module_alarm['qua_nhiet']['count'] = 0;
+        $module_alarm['tran_be']['status'] = $model->over_tank > 3 ? 1 : 0;
+        $module_alarm['tran_be']['count'] = 0;
+        $module_alarm['lost_conn']['status'] = ($model->status == 4) ? 1 : 0;
+        $module_alarm['lost_conn']['count'] = 0;
+        Yii::$app->session->set('module_alarm', $module_alarm);
 
         $model->setVan_dien_tu_ba_nga_up();
+
+
 
         $param = [
             'model' => $model,
             'sensors' => $sensors,
             'statuses' => $statuses,
-            'alarms' => $alarms,
-            'addParams' => $addParams[0],
+            //'alarms' => $alarms,
+            'addParams' => $addParams,
             'id' => $id,
-            'mode' => $model->mode->mode,
+            'mode' => $mode->mode,
             'outputMode' => $model->outputModes,
             'module_hide' => \Yii::$app->params['module_hide']
         ];
@@ -297,6 +290,9 @@ class ModulesController extends AppController {
         $model = $this->findModel($id);
         \backend\models\Imsi::deleteAll(['module_id' => $model->id]);
         $model->delete();
+        $cache = \Yii::$app->cache;
+        $key = 'findModel_module_' . $id;
+        $cache->set($key, null);
 
         return $this->redirect(['index']);
     }
@@ -310,7 +306,7 @@ class ModulesController extends AppController {
      */
     protected function findModel($id) {
         $cache = \Yii::$app->cache;
-        $key = 'findModel_module_' . $this->id;
+        $key = 'findModel_module_' . $id;
         $data = $cache->get($key);
 
         if (!$data) {

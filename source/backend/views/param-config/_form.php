@@ -35,7 +35,7 @@
 <div class="item" data-toggle="tooltip" class="text-04" data-placement="right" title="<?php echo Yii::t('backend', 'Pump ON when pressure in pipeline lower than this value'); ?>"> 
     <h3 style="margin-bottom:10px"><?php echo Yii::t('backend', 'Incresed pressure Pump'); ?></h3>       	
     <p>
-        <?php echo Yii::t('backend', 'Pressure value to turn on the Pump'); ?> <input type="text" min="0" max="99" maxlength="2" id="pressure_pump_p1" name="pressure_pump_p1" value="<?php echo $model->getPressurePumpP1(); ?>" class="type-text" style="width:40px">Bar
+        <?php echo Yii::t('backend', 'Pressure value to turn on the Pump'); ?> <input type="text" min="0" max="99" maxlength="2" id="pressure_pump_p1" name="pressure_pump_p1" value="<?php echo common\helpers\Helpers::number2String($model->getPressurePumpP1()); ?>" class="type-text" style="width:40px">Bar
     </p>
 </div>
 

@@ -39,8 +39,8 @@ use mdm\admin\models\Menu;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-class MenuHelper
-{
+class MenuHelper {
+
     /**
      * Use to get assigned menu of user.
      * @param mixed $userId
@@ -62,8 +62,7 @@ class MenuHelper
      * @param boolean  $refresh
      * @return array
      */
-    public static function getAssignedMenu($userId, $root = null, $callback = null, $refresh = false)
-    {
+    public static function getAssignedMenu($userId, $root = null, $callback = null, $refresh = false) {
         $config = Configs::instance();
 
         /* @var $manager \yii\rbac\BaseManager */
@@ -145,8 +144,7 @@ class MenuHelper
      * @param  array $menus
      * @return array
      */
-    private static function requiredParent($assigned, &$menus)
-    {
+    private static function requiredParent($assigned, &$menus) {
         $l = count($assigned);
         for ($i = 0; $i < $l; $i++) {
             $id = $assigned[$i];
@@ -164,8 +162,7 @@ class MenuHelper
      * @param  string $route
      * @return mixed
      */
-    public static function parseRoute($route)
-    {
+    public static function parseRoute($route) {
         if (!empty($route)) {
             $url = [];
             $r = explode('&', $route);
@@ -190,8 +187,7 @@ class MenuHelper
      * @param  integer $parent
      * @return array
      */
-    private static function normalizeMenu(&$assigned, &$menus, $callback, $parent = null)
-    {
+    private static function normalizeMenu(&$assigned, &$menus, $callback, $parent = null) {
         $result = [];
         $order = [];
         foreach ($assigned as $id) {
@@ -219,4 +215,5 @@ class MenuHelper
 
         return $result;
     }
+
 }
