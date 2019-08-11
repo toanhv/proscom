@@ -85,7 +85,7 @@ return [
     'Timer Counters' => '',
     'Username' => '',
     'Users' => '',
-    'Backflow value' => '',
+    'Backflow value' => 'Van hồi đường ống',
     'Backup temp' => '',
     'Begin ilde time' => 'Thời gian bắt đầu',
     'Bottom of Solar tank temp' => 'Đáy bồn Solar',
