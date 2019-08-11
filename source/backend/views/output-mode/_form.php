@@ -22,7 +22,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="convection_pump_time" name="convection_pump[time]" value="<?php echo $model->getConvectionTime() ?>"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="convection_pump_time" name="convection_pump[time]" value="<?php echo $model->getConvectionTime() ?>"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="cwsp_pump_time" name="cwsp_pump[time]" value="<?php echo $model->getCwspTime() ?>"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="cwsp_pump_time" name="cwsp_pump[time]" value="<?php echo $model->getCwspTime() ?>"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="return_pump_time" name="return_pump[time]" value="<?php echo $model->getReturnPumpTime() ?>"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="return_pump_time" name="return_pump[time]" value="<?php echo $model->getReturnPumpTime() ?>"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
 
@@ -134,7 +134,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="pressure_pump_time" name="pressure_pump[time]" value="<?php echo $model->getPressurePumpTime() ?>"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="pressure_pump_time" name="pressure_pump[time]" value="<?php echo $model->getPressurePumpTime() ?>"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
 
@@ -181,7 +181,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
             </div>
         </div>
@@ -198,7 +198,7 @@
 
             <button class="btn btn-success item-coditions" disabled="disabled"><?php echo Yii::t('backend', 'Under operation coditions'); ?></button>
             <div class="add-info" style="opacity:0.5;">
-                <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px;" disabled="disabled" type="text"> min
+                <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px;" disabled="disabled" type="text"> <?php echo Yii::t('backend', 'min'); ?>
             </div>
         </div>
     </div>
@@ -226,7 +226,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="heater_resis_time" name="heater_resis[time]" value="<?php echo $model->getHeaterResisTime() ?>"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" type="text" id="heater_resis_time" name="heater_resis[time]" value="<?php echo $model->getHeaterResisTime() ?>"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
 
                 <div class="add-info" style="width:170px">
@@ -248,7 +248,7 @@
                 </select>
 
                 <div class="add-info">
-                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> min
+                    <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px" disabled type="text"> <?php echo Yii::t('backend', 'min'); ?>
                 </div>
 
                 <div class="add-info" style="width:170px">
@@ -269,7 +269,7 @@
 
             <button class="btn btn-success item-coditions" disabled="disabled"><?php echo Yii::t('backend', 'Under operation coditions'); ?></button>
             <div class="add-info" style="opacity:0.5;">
-                <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px;" disabled="disabled" type="text"> min
+                <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px;" disabled="disabled" type="text"> <?php echo Yii::t('backend', 'min'); ?>
             </div>
         </div>
     </div>
@@ -285,7 +285,7 @@
 
             <button class="btn btn-success item-coditions" disabled="disabled"><?php echo Yii::t('backend', 'Under operation coditions'); ?></button>
             <div class="add-info" style="opacity:0.5;">
-                <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px;" disabled="disabled" type="text"> min
+                <?php echo Yii::t('backend', 'Wait for Master'); ?> <input class="type-text" style="width:30px;" disabled="disabled" type="text"> <?php echo Yii::t('backend', 'min'); ?>
             </div>
         </div>
     </div>                

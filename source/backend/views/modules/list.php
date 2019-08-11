@@ -19,7 +19,7 @@ $this->title = Yii::t('backend', 'Module list');
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'name',
-            ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}'],
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
     ?>

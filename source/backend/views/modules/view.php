@@ -36,10 +36,10 @@ $this->title = 'Overal View';
                 <span><?php echo Yii::t('backend', 'Power Consumption'); ?> <b><?php echo number_format($addParams->luong_dien_tieu_thu); ?></b> Kwh</span>
             </p>
             <p>
-                <span><?php echo Yii::t('backend', 'Money of Saveings'); ?> <b><?php echo number_format($addParams->so_tien_tiet_kiem); ?></b> triệu</span>
+                <span><?php echo Yii::t('backend', 'Money of Saveings'); ?> <b><?php echo number_format($addParams->so_tien_tiet_kiem); ?></b> <?php echo Yii::t('backend', 'million'); ?></span>
             </p>
             <p>
-                <span><?php echo Yii::t('backend', 'CO2 emissions decrease'); ?> <b><?php echo number_format($addParams->luong_khi_thai_co2_giam); ?></b> tấn</span>
+                <span><?php echo Yii::t('backend', 'CO2 emissions decrease'); ?> <b><?php echo number_format($addParams->luong_khi_thai_co2_giam); ?></b> <?php echo Yii::t('backend', 'ton'); ?></span>
             </p>      
         </div>
     </div>      

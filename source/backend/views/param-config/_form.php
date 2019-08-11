@@ -52,7 +52,7 @@
         <?php echo Yii::t('backend', 'Temperature to turn on Resistor'); ?> <input type="number" name="heater_resis_t1" value="<?php echo $model->getHeaterResisT1(); ?>" class="type-text" style="width:40px"><sup>o</sup>C
     </p>
     <p>
-        <?php echo Yii::t('backend', 'Wail for heater pump'); ?> <input type="number" name="heater_resister_delay_time" value="<?php echo $model->getHeaterResisDelay(); ?>" class="type-text" style="width:40px">min
+        <?php echo Yii::t('backend', 'Wail for heater pump'); ?> <input type="number" name="heater_resister_delay_time" value="<?php echo $model->getHeaterResisDelay(); ?>" class="type-text" style="width:40px"><?php echo Yii::t('backend', 'min'); ?>
     </p>
 </div>
 

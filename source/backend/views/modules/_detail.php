@@ -66,7 +66,7 @@
 
         <div class="c-09">&nbsp;
             <p class="text-04" data-toggle="tooltip" data-placement="right" title="<?php echo Yii::t('backend', 'Heater tank pressure'); ?>">
-                <?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>B
+                <?php echo common\helpers\Helpers::number2String(bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet)); ?>B
             </p>
         </div>
         <div class="icon-09"><img src="/images/04.png"/></div>   
