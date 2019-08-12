@@ -75,7 +75,7 @@ $this->title = 'Home';
                 [
                     'label' => Yii::t('backend', 'Heater tank pressure'),
                     'content' => function ($data) {
-                        return bindec($data->sensors->cam_bien_ap_suat_bon_gia_nhiet);
+                        return common\helpers\Helpers::number2String(bindec($data->sensors->cam_bien_ap_suat_bon_gia_nhiet));
                     }
                 ],
                 [

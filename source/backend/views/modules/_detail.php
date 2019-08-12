@@ -154,7 +154,7 @@
             </div>
             <div class="info-block-item">
                 <span class="text-02"><?php echo Yii::t('backend', 'Heater tank pressure'); ?></span>
-                <span class="text-01"><?php echo bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet); ?>B
+                <span class="text-01"><?php echo common\helpers\Helpers::number2String(bindec($sensors->cam_bien_ap_suat_bon_gia_nhiet)); ?>B
             </div>  
             <div class="info-block-item">
                 <span class="text-02"><?php echo Yii::t('backend', 'Pipeline pressure'); ?></span>

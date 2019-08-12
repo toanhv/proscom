@@ -183,8 +183,8 @@ class Helpers {
     }
 
     public static function number2String($number) {
-        if (strlen($number) > 1 && $number > 10) {
-            $number = (string) $number;
+        $number = (string) $number;
+        if (strlen($number) > 1) {
             return $number[0] . ',' . $number[1];
         }
         return $number;
